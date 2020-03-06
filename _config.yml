@@ -18,16 +18,29 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: Tropy
+#email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Tropy is free open-source software that allows you to organize and describe
+  photographs of research material.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://tropy.org" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: tropy
+github_username: tropy
+
+# Metadata for Jekyll SEO tag
+tagline: Explore your research photos
+twitter:
+  username: tropy
+  card: summary
+#logo:
+social:
+  name: Tropy
+  links:
+    - https://twitter.com/tropy
+    - https://github.com/tropy
+google_site_verification: f4Qn7nonE_x2wrByaZVZfPeuP5iVt-W67eiIGE-KOWI
+lang: en_US
 
 # Build settings
 theme: null

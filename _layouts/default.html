@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  {%- include head.html -%}
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    {%- seo -%}
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+  </head>
   <body>
-
     {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
-
+    {{ content }}
     {%- include footer.html -%}
-
   </body>
-
 </html>
