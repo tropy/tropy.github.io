@@ -6,7 +6,7 @@
     {%- feed_meta -%}
     <link rel="stylesheet" href="assets/stylesheets/main.css">
   </head>
-  <body>
+  <body class="{{ page.class }}">
     {%- include header.html -%}
     {{ content }}
     {%- include footer.html -%}
