@@ -1,0 +1,53 @@
+//
+// Key features
+//
+
+.key-features {
+  padding: 64px 0;
+  overflow: hidden;
+
+  @media (min-width: $sm) and (max-width: $lg - 1px) {
+    text-align: center;
+  }
+
+  section {
+    padding: 64px 0;
+
+    @media (min-width: $sm) and (max-width: $lg - 1px) {
+      padding-top: 64px - 12px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: (4 / 3);
+    color: #555;
+    margin: 0;
+
+    @media (min-width: $sm) {
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 12px;
+      margin-bottom: 32px - 7px;
+    }
+
+    @media (min-width: $sm) and (max-width: $lg - 1px) {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+
+    @media (min-width: $lg) {
+      max-width: none;
+    }
+  }
+}

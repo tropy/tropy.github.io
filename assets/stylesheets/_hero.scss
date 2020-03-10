@@ -1,0 +1,41 @@
+//
+// Hero
+//
+
+.hero {
+  margin-top: -96px;
+  background: linear-gradient($blue-dark, $blue, tint($blue-light, 40%) calc(100% - 80px));
+  min-height: 560px;
+  padding-top: 128px;
+  text-align: center;
+  color: $white;
+
+  .lead {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: $headings-line-height;
+    margin-bottom: 32px - 7px;
+    letter-spacing: -0.015em;
+  }
+
+  .btn-download {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    padding: 10px 16px;
+    border: 2px solid $white;
+    border-radius: 4px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    &:hover {
+      color: $blue;
+      background-color: $white;
+    }
+
+    &:active {
+      opacity: 0.84;
+    }
+  }
+}

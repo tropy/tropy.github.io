@@ -1,0 +1,35 @@
+//
+// Grid
+//
+
+.container-fluid {
+  margin: 0 auto;
+  padding: 0 ($grid-gutter-width / 2);
+  max-width: 1232px;
+
+  @media (min-width: $sm) {
+    width: 87.5%; // 64px margin on portrait tablet
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$grid-gutter-width / 2);
+}
+
+[class*="col"] {
+  padding: 0 ($grid-gutter-width / 2);
+}
+
+@media (min-width: $sm) {
+  @include make-grid(sm);
+}
+
+@media (min-width: $md) {
+  @include make-grid(md);
+}
+
+@media (min-width: $lg) {
+  @include make-grid(lg);
+}
