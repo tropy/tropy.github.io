@@ -23,14 +23,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 64px;
+    height: $header-height-mobile;
     list-style: none;
     margin: 0;
     padding: 0;
 
     @media (min-width: $sm) {
       justify-content: space-between;
-      height: 96px;
+      height: $header-height;
     }
   }
 

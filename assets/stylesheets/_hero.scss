@@ -3,12 +3,26 @@
 //
 
 .hero {
-  margin-top: -96px;
+  margin-top: -$header-height-mobile;
   background: linear-gradient($blue-dark, $blue, tint($blue-light, 40%) calc(100% - 80px));
   min-height: 560px;
-  padding-top: 128px;
+  padding-top: $header-height-mobile + $space-xl;
   text-align: center;
   color: $white;
+
+  @media (min-width: $sm) {
+    margin-top: -$header-height;
+    padding-top: $header-height + $space-xl;
+  }
+
+  h1 {
+    width: 156px;
+    height: 134px;
+    background: url("/assets/images/tropy-icon-4px.svg") no-repeat 0 0;
+    text-indent: -99em;
+    overflow: hidden;
+    margin: 0 auto;
+  }
 
   .lead {
     font-size: 40px;
