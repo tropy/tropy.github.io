@@ -8,7 +8,11 @@ $blue-light: #68c1e8;
 $blue:       #5c93e5;
 $blue-dark:  #395bac;
 
-$white: #fff;
+$white:      #fff;
+$gray-light: #ebebeb;
+$gray:       #777;
+$gray-dark:  #555;
+$black:      #111;
 
 $brand-primary: $blue;
 
@@ -23,7 +27,7 @@ $space-xl:  32px;
 
 // Base
 
-$body-color: #111;
+$body-color: $black;
 
 // Type
 
@@ -55,3 +59,6 @@ $header-color:         #111;
 $header-home-color:    #fff;
 $header-height:        96px;
 $header-height-mobile: 64px;
+
+// Footer
+$footer-color:  $body-color;
