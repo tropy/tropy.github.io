@@ -30,18 +30,18 @@
   }
 
   .lead {
-    font-size: 25px;
+    font-size: 30px; // 3/4
     font-weight: 600;
     line-height: $headings-line-height;
     text-align: center;
-    margin-top: 36px - 16px;
-    margin-bottom: 32px - 7px;
+    margin-top: 36px - 12px;
+    margin-bottom: 32px - 5px;
     letter-spacing: -0.015em;
 
     @media (min-width: $sm) {
       font-size: 40px;
-      margin-top: 36px - 10px;
-      margin-bottom: 32px - 4px;
+      margin-top: 36px - 16px;
+      margin-bottom: 32px - 7px;
     }
   }
 
