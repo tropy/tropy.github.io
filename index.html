@@ -4,7 +4,17 @@ class: home
 ---
 
 <section class="hero">
-  <h1>Tropy</h1>
-  <p class="lead">Explore your research photos</p>
-  <a href="/download/mac/" class="btn-download">Download Tropy for macOS</a>
+  <div class="container-fluid">
+    <h1>Tropy</h1>
+    <p class="lead">Explore your research photos</p>
+    <a class="btn btn-download" href="/download/mac/" >Download Tropy for macOS</a>
+    <a class="btn btn-email" href="mailto:?subject=Download%20Tropy&amp;body={%- include email-body.html -%}">Email Download Links</a>
+    <div class="download-links">
+      <a class="download-link linux" href="/download/linux">Linux 64-bit</a>
+      <a class="download-link mac" href="/download/mac" style="display: none;">macOS</a>
+      <a class="download-link win" href="/download/win">Windows 64-bit</a>
+      <a class="download-link other" href="https://github.com/tropy/tropy/releases/">Other&nbsp;platforms</a>
+    </div>
+  </div>
 </section>
+

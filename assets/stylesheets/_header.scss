@@ -7,6 +7,10 @@ header {
   position: relative;
   z-index: $z-index-header;
 
+  @media (max-width: 359px) {
+    letter-spacing: -0.02em;
+  }
+
   .home & {
     color: $header-home-color;
   }
@@ -21,7 +25,7 @@ header {
 
   ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: $header-height-mobile;
     list-style: none;
@@ -29,7 +33,7 @@ header {
     padding: 0;
 
     @media (min-width: $sm) {
-      justify-content: space-between;
+      justify-content: space-evenly;
       height: $header-height;
     }
   }
