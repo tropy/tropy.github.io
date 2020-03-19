@@ -53,7 +53,10 @@
     border: 2px solid $white;
     border-radius: 4px;
     margin-bottom: ($space-lg - 6px);
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    transition:
+      color 0.15s ease-in-out,
+      background-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
 
     @media (hover: hover) {
       &:hover {
@@ -64,6 +67,11 @@
       &:active {
         opacity: 0.84;
       }
+    }
+
+    @include focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px $white;
     }
   }
 
@@ -93,5 +101,8 @@
     text-decoration: none;
     margin: 0 10px;
 
+    @include focus-visible {
+      outline-color: $white;
+    }
   }
 }

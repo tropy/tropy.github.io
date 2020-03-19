@@ -54,19 +54,20 @@ footer {
     &:hover {
       color: $gray-dark;
     }
+
+    @include focus-visible {
+      outline-offset: -3px;
+    }
   }
 
   .social-nav {
     @media (min-width: $sm) {
+      padding-right: $space-xs;
+
       li {
         a {
           padding-left: $space-xs;
-        }
-
-        &:not(:last-child) {
-          a {
-            padding-right: $space-xs;
-          }
+          padding-right: $space-xs;
         }
       }
     }

@@ -44,9 +44,15 @@ header {
     text-decoration: none;
     padding: $space-sm $space-xs;
     white-space: nowrap;
+    outline-offset: -3px;
 
     @media (min-width: $sm) {
       padding: $space-sm $space-md;
+    }
+
+    @include focus-visible {
+      outline-offset: -3px;
+      outline-color: $white;
     }
   }
 
@@ -68,6 +74,18 @@ header {
 
     .home & {
       display: none;
+    }
+  }
+
+  .github {
+    a {
+      padding-top: 14px;
+      padding-bottom: 14px;
+
+      @media (min-width: $sm) {
+        padding-top: $space-xs;
+        padding-bottom: $space-xs;
+      }
     }
   }
 

@@ -4,6 +4,15 @@
 
 * {
   box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+
+    .key & {
+      outline: 3px solid $focus-color;
+      outline-offset: 2px;
+    }
+  }
 }
 
 body {

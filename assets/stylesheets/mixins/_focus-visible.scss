@@ -1,0 +1,11 @@
+//
+// Focus-visible
+//
+
+@mixin focus-visible {
+  &:focus {
+    .key & {
+      @content;
+    }
+  }
+}
