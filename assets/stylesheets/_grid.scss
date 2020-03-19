@@ -5,10 +5,10 @@
 .container-fluid {
   margin: 0 auto;
   padding: 0 ($grid-gutter-width / 2);
-  max-width: 1232px;
+  max-width: $container-fluid-max-width;
 
   @media (min-width: $sm) {
-    width: 87.5%; // 64px margin on portrait tablet
+    width: $container-fluid-width;
   }
 }
 

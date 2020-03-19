@@ -1,0 +1,17 @@
+//
+// Tween
+//
+
+@mixin tween($target, $width, $start, $stop) {
+  $range: $stop - $start;
+  $diff: $width - $width * ($target / 100%);
+  $factor: $diff / $range;
+
+  @media (min-width: $start) {
+    width: calc(100% - (100vw - #{$start}) * #{$factor});
+  }
+
+  @media (min-width: $stop + 1px) {
+    width: $target;
+  }
+}
