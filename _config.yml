@@ -42,6 +42,10 @@ social:
 google_site_verification: f4Qn7nonE_x2wrByaZVZfPeuP5iVt-W67eiIGE-KOWI
 lang: en_US
 
+collections:
+  posts:
+    permalink: /blog/:slug
+
 # Build settings
 theme: null
 plugins:
