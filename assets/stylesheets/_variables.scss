@@ -57,6 +57,11 @@ $lg: 1200px;
 
 $z-index-header: 1010;
 
+// Layout
+
+$section-padding-y: 128px;
+$section-padding-y-phone: 64px;
+
 // Components
 
 // Header
@@ -67,6 +72,7 @@ $header-height-mobile: 64px;
 
 // File support
 $file-support-max-width: $container-fluid-max-width * 10 / 12;
+$file-support-icon-size: 80px;
 
 // Footer
 $footer-color:  $body-color;
