@@ -2,6 +2,7 @@
 layout: post
 title: "Tropy 1.0 Released"
 date: "2017-10-24 16:29:42"
+author: "Sean Takats"
 categories:
 ---
 

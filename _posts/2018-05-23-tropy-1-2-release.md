@@ -2,6 +2,7 @@
 layout: post
 title: "Tropy 1.2 Release"
 date: "2018-05-23 14:51:47"
+author: "Abby Mullen"
 categories:
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: "Release: Tropy 1.1"
 date: "2018-02-26 14:00:00"
+author: "Abby Mullen"
 categories:
 ---
 

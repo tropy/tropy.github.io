@@ -2,6 +2,7 @@
 layout: post
 title: "Looking Forward to Tropy 2"
 date: "2018-03-30 13:24:13"
+author: "Abby Mullen"
 categories:
 ---
 

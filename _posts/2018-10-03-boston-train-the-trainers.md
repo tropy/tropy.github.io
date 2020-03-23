@@ -2,6 +2,7 @@
 layout: post
 title: "Boston Train the Trainers"
 date: "2018-10-03 16:23:31"
+author: "Abby Mullen"
 categories:
 ---
 

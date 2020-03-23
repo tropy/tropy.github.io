@@ -2,6 +2,7 @@
 layout: post
 title: "Using Tropy with Newspapers"
 date: "2018-03-29 14:00:00"
+author: "Abby Mullen"
 categories:
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: "Tropy's Institutional Partners"
 date: "2017-03-07 14:27:00"
+author: "Abby Mullen"
 categories:
 ---
 

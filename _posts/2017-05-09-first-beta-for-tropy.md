@@ -2,6 +2,7 @@
 layout: post
 title: "First Beta for Tropy"
 date: "2017-05-09 14:44:59"
+author: "Sean Takats"
 categories:
 ---
 
