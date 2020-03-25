@@ -70,6 +70,9 @@ $header-home-color:    #fff;
 $header-height:        96px;
 $header-height-mobile: 64px;
 
+// Featues
+$features-max-width: $container-fluid-max-width * 10 / 12;
+
 // File support
 $file-support-max-width: $container-fluid-max-width * 10 / 12;
 $file-support-icon-size: 80px;

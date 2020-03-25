@@ -31,10 +31,12 @@
 
   .lead {
     @include tween(
-      $target: 80%,
-      $width: ($container-fluid-max-width * 10 / 12 - $grid-gutter-width),
-      $start: $sm,
-      $stop: ($container-fluid-max-width * 10 / 12) / ($container-fluid-width / 100%));
+      $file-support-max-width - $grid-gutter-width,
+      80%,
+      $sm,
+      $file-support-max-width / ($container-fluid-width / 100%),
+      width
+    );
   }
 
   ul {
