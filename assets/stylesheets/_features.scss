@@ -9,17 +9,13 @@
     padding: $section-padding-y 0 ($section-padding-y - 6px);
   }
 
-  .container-fluid {
-    max-width: $features-max-width;
-  }
-
-  .col-sm-6 {
+  .col-md-5 {
     @include tween(
-      16px,
-      16px,
-      40px,
+      0px,
+      0px,
+      24px,
       $sm,
-      $features-max-width / ($container-fluid-width / 100%),
+      $container-fluid-max-width / ($container-fluid-width / 100%),
       padding-left, padding-right
     );
   }
@@ -53,16 +49,20 @@
 
   p {
     margin: 0;
+
+    @media (min-width: $sm) {
+      text-align: center;
+    }
   }
 
   .lead {
     @include tween(
       100%,
-      $features-max-width - $grid-gutter-width,
-      ($features-max-width - $grid-gutter-width) * 0.8,
+      columns(12, $container-fluid-max-width),
+      columns(10, $container-fluid-max-width) * 0.8,
       $sm,
-      $features-max-width / ($container-fluid-width / 100%),
-      width,
+      $container-fluid-max-width / ($container-fluid-width / 100%),
+      width
     );
 
     @media (min-width: $sm) {

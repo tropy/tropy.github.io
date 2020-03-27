@@ -4,22 +4,25 @@
 
 .container-fluid {
   margin: 0 auto;
-  padding: 0 ($grid-gutter-width / 2);
+  padding: 0 ($grid-column-gap / 2);
   max-width: $container-fluid-max-width;
 
   @media (min-width: $sm) {
     width: $container-fluid-width;
+    padding: 0;
   }
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 (-$grid-gutter-width / 2);
+  @media (min-width: $sm) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: $grid-column-gap;
+  }
 }
 
 [class*="col"] {
-  padding: 0 ($grid-gutter-width / 2);
+  grid-column-end: span 12;
 }
 
 @media (min-width: $sm) {

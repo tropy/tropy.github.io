@@ -32,10 +32,10 @@
   .lead {
     @include tween(
       100%,
-      $file-support-max-width - $grid-gutter-width,
-      ($file-support-max-width - $grid-gutter-width) * 0.8,
+      columns(10, $container-fluid-max-width),
+      columns(10, $container-fluid-max-width) * 0.8,
       $sm,
-      $file-support-max-width / ($container-fluid-width / 100%),
+      $container-fluid-max-width / ($container-fluid-width / 100%),
       width
     );
   }

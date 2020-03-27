@@ -1,0 +1,11 @@
+//
+// Columns
+//
+
+@function columns($number, $width) {
+  @return
+    ($width - $grid-column-gap * 11)
+    / 12
+    * $number
+    + $grid-column-gap * ($number - 1);
+}

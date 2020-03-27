@@ -5,12 +5,11 @@
 @mixin make-grid($bp) {
   @for $i from 1 through 12 {
     .col-#{$bp}-#{$i} {
-      flex: 0 0 ($i / 12 * 100%);
-      max-width: $i / 12 * 100%;
+      grid-column-end: span $i;
     }
 
-    .offset-#{$bp}-#{$i} {
-      margin-left: $i / 12 * 100%;
+    .start-#{$bp}-#{$i} {
+      grid-column-start: $i;
     }
   }
 

@@ -42,10 +42,10 @@ $headings-font-weight: 600;
 
 // Grid
 
-$container-fluid-width: 87.5%; // 64px margin on portrait tablet
-$container-fluid-max-width: 1232px;
+$container-fluid-width: 100% * 5 / 6; // 64px margin on portrait tablet
+$container-fluid-max-width: 1200px;
 
-$grid-gutter-width: $space-xl;
+$grid-column-gap: $space-xl;
 
 // Breakpoints
 
@@ -69,9 +69,6 @@ $header-color:         #111;
 $header-home-color:    #fff;
 $header-height:        96px;
 $header-height-mobile: 64px;
-
-// Featues
-$features-max-width: $container-fluid-max-width * 10 / 12;
 
 // File support
 $file-support-max-width: $container-fluid-max-width * 10 / 12;
