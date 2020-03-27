@@ -16,6 +16,7 @@
   .col-sm-6 {
     @include tween(
       16px,
+      16px,
       40px,
       $sm,
       $features-max-width / ($container-fluid-width / 100%),
@@ -56,8 +57,9 @@
 
   .lead {
     @include tween(
+      100%,
       $features-max-width - $grid-gutter-width,
-      80%,
+      ($features-max-width - $grid-gutter-width) * 0.8,
       $sm,
       $features-max-width / ($container-fluid-width / 100%),
       width,

@@ -31,8 +31,9 @@
 
   .lead {
     @include tween(
+      100%,
       $file-support-max-width - $grid-gutter-width,
-      80%,
+      ($file-support-max-width - $grid-gutter-width) * 0.8,
       $sm,
       $file-support-max-width / ($container-fluid-width / 100%),
       width

@@ -2,36 +2,18 @@
 // Tween
 //
 
-@mixin tween($original, $target, $start, $stop, $properties...) {
-  @if is-percentage($target) {
-    $range: $stop - $start;
-    $diff: $original - $original * ($target / 100%);
-    $factor: $diff / $range;
+@mixin tween($original, $from, $to, $start, $stop, $properties...) {
+  $range: $stop - $start;
+  $delta: $from - $to;
+  $factor: $delta / $range;
 
-    @each $property in $properties {
-      @media (min-width: $start) {
-        #{$property}: calc(100% - (100vw - #{$start}) * #{$factor});
-      }
-
-      @media (min-width: $stop + 1px) {
-        #{$property}: $target;
-      }
+  @each $property in $properties {
+    @media (min-width: $start) {
+      #{$property}: calc(#{$original} - (100vw - #{$start}) * #{$factor});
     }
-  }
 
-  @if is-absolute-length($target) {
-    $range: $stop - $start;
-    $diff: $original - $target;
-    $factor: $diff / $range;
-
-    @each $property in $properties {
-      @media (min-width: $start) {
-        #{$property}: calc(#{$original} - (100vw - #{$start}) * #{$factor});
-      }
-
-      @media (min-width: $stop + 1px) {
-        #{$property}: $target;
-      }
+    @media (min-width: $stop + 1px) {
+      #{$property}: $to;
     }
   }
 }
