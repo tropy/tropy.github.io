@@ -1,0 +1,115 @@
+//
+// Portable projects
+//
+
+.portable-projects {
+  background-color: #212121;
+  color: $white;
+  overflow: visible;
+  padding-top: $section-padding-y;
+
+  .row {
+    position: relative;
+  }
+
+  .col-md-6 {
+    @media (min-width: $md) {
+      padding: $section-padding-y 0;
+    }
+
+    @include tween(
+      0px,
+      0px,
+      columns(2, $container-fluid-max-width) + $grid-column-gap,
+      $sm,
+      $container-fluid-max-width / ($container-fluid-width / 100%),
+      padding-right
+    );
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0 0 12px;
+  }
+
+  p {
+    color: #bbb;
+    font-size: 24px;
+    line-height: (4 / 3);
+    margin: 0;
+  }
+
+  a {
+    color: tint($link-color, 20%);
+  }
+
+  .tpy-icon {
+    width: 192px;
+    height: 192px;
+    background-color: $blue;
+    position: absolute;
+    left: 75.67%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .illustration {
+    background: rgba(magenta, 0.2);
+    grid-row: 2;
+    grid-column: span 12;
+    height: 500px;
+    position: relative;
+
+    @media (min-width: $md) {
+      grid-row: initial;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      min-width: 1050px;
+    }
+
+    @include tween (
+      1050px,
+      1050px,
+      1200px,
+      $md,
+      $container-fluid-max-width / ($container-fluid-width / 100%),
+      min-width
+    );
+  }
+
+  .notebook-1 {
+    width: 200px;
+    height: 200px;
+    background-color: $gray;
+    position: absolute;
+    bottom: 0;
+    right: 15.78%;
+    transform: translate(50%, 50%) translateY(-48px) rotate(-18deg);
+  }
+
+  .notebook-2 {
+    width: 200px;
+    height: 200px;
+    background-color: $gray;
+    position: absolute;
+    left: 50%;
+    top: 58.25%;
+    transform: translate(-50%, -50%) rotate(81deg);
+  }
+
+  .notebook-3 {
+    width: 200px;
+    height: 200px;
+    background-color: $gray;
+    position: absolute;
+    left: 92.55%;
+    top: 0;
+    transform: translate(-50%, -50%) translateY(69px) rotate(-144deg);
+  }
+}

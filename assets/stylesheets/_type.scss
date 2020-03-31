@@ -47,3 +47,12 @@ h3 {
 p {
   margin: 1em 0;
 }
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
