@@ -13,7 +13,7 @@
   }
 
   .col-md-6 {
-    @media (min-width: $md) {
+    @media (min-width: $sm) {
       padding: $section-padding-y 0;
     }
 
@@ -29,6 +29,15 @@
 
   h2 {
     margin: 0;
+
+    @media (min-width: $sm) {
+      margin: 0 0 ($section-padding-y * 5 / 8 - $section-padding-y - 20px);
+      text-align: left;
+    }
+
+    @media (min-width: $md) {
+      text-align: center;
+    }
   }
 
   h3 {
@@ -40,6 +49,15 @@
     font-size: 24px;
     line-height: (4 / 3);
     margin: 0;
+    letter-spacing: -0.01em;
+
+    & + h3 {
+      margin-top: $space-lg;
+    }
+
+    & ~ p {
+      margin-bottom: -7px;
+    }
   }
 
   a {
@@ -51,36 +69,47 @@
     height: 192px;
     background-color: $blue;
     position: absolute;
-    left: 75.67%;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
 
   .illustration {
-    background: rgba(magenta, 0.2);
+    background-color: rgba(magenta, 0.2);
     grid-row: 2;
     grid-column: span 12;
-    height: 500px;
+    height: 687px;
     position: relative;
 
     @media (min-width: $md) {
       grid-row: initial;
       position: absolute;
-      left: 0;
+      left: 50%;
       top: 0;
-      width: 100%;
+      width: 50%;
       height: 100%;
-      min-width: 1050px;
+      min-width: 525px;
+      margin-left: 75px;
     }
 
     @include tween (
-      1050px,
-      1050px,
-      1200px,
+      536px,
+      536px,
+      600px,
       $md,
       $container-fluid-max-width / ($container-fluid-width / 100%),
       min-width
     );
+
+    @include tween (
+      100px,
+      100px,
+      0px,
+      $md,
+      $container-fluid-max-width / ($container-fluid-width / 100%),
+      margin-left
+    );
+
   }
 
   .notebook-1 {
@@ -89,7 +118,7 @@
     background-color: $gray;
     position: absolute;
     bottom: 0;
-    right: 15.78%;
+    right: 32.42%;
     transform: translate(50%, 50%) translateY(-48px) rotate(-18deg);
   }
 
@@ -98,7 +127,7 @@
     height: 200px;
     background-color: $gray;
     position: absolute;
-    left: 50%;
+    left: 0;
     top: 58.25%;
     transform: translate(-50%, -50%) rotate(81deg);
   }
@@ -108,8 +137,8 @@
     height: 200px;
     background-color: $gray;
     position: absolute;
-    left: 92.55%;
+    left: 85.16%;
     top: 0;
-    transform: translate(-50%, -50%) translateY(69px) rotate(-144deg);
+    transform: translate(-50%, -50%) translateY(128px) rotate(-144deg);
   }
 }
