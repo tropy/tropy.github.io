@@ -4,9 +4,18 @@
 
 .portable-projects {
   background-color: #212121;
+  background-repeat: no-repeat;
+  background-blend-mode: color-dodge;
   color: $white;
   overflow: visible;
   padding-top: $section-padding-y;
+
+  @media (min-width: ($container-fluid-max-width / ($container-fluid-width / 100%))) {
+    $x: calc((100% - #{$container-fluid-max-width}) / 2 + #{$container-fluid-max-width} * 0.75);
+    $y: calc(50% + 56px);
+
+    background-image: radial-gradient(circle at $x $y, $blue-dark 0, $blue-dark 360px, transparent 360px);
+  }
 
   .row {
     position: relative;
