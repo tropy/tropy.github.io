@@ -25,6 +25,12 @@ $ bundle exec jekyll serve
 $ bundle exec jekyll serve --drafts
 ```
 
+## Getting rid of gem deprecation warnings
+
+```
+$ gem pristine --all --no-extensions
+```
+
 ## Updating
 To stay in sync with GitHub Pages run `bundle update github-pages`.
 
