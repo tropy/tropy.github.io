@@ -31,7 +31,7 @@
 
   img {
     display: block;
-    margin: auto;
+    margin: 0 auto ($space-xl - 10px);
 
     @media (min-width: $sm) {
       margin-bottom: $space-xl - 12px;
@@ -40,22 +40,16 @@
 
   h3 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 10px;
 
     @media (min-width: $sm) {
       margin-bottom: 12px;
     }
   }
 
-  p {
-    margin: 0;
-
-    @media (min-width: $sm) {
-      text-align: center;
-    }
-  }
-
   .lead {
+    margin-bottom: ($section-padding-y-phone * 5 / 8) - 6px;
+
     @include tween(
       100%,
       columns(12, $container-fluid-max-width),
@@ -70,6 +64,25 @@
       margin-left: auto;
       margin-right: auto;
       margin-bottom: ($section-padding-y * 5 / 8) - 7px;
+    }
+  }
+
+  .feature {
+    p {
+      color: $gray-dark;
+      margin: 0;
+
+      @media (min-width: $sm) {
+        text-align: center;
+      }
+    }
+
+    &:first-child {
+      margin-bottom: ($section-padding-y-phone * 5 / 8) - 6px;
+
+      @media (min-width: $sm) {
+        margin-bottom: 0;
+      }
     }
   }
 }
