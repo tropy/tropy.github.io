@@ -46,7 +46,7 @@
   );
 
   @media (min-width: ($container-fluid-max-width / ($container-fluid-width / 100%))) {
-    --x: calc((100% - #{$container-fluid-max-width}) / 2 + #{$container-fluid-max-width} * 0.75);
+    --x: calc((100% - #{$container-fluid-max-width}) / 2 + #{$container-fluid-max-width} * 0.75 + 8px);
   }
 
   .row {
@@ -124,16 +124,16 @@
     @media (min-width: $md) {
       grid-row: initial;
       position: absolute;
-      left: 50%;
+      left: calc(50% + #{$grid-column-gap / 2});
       top: 0;
-      width: 50%;
+      width: calc(50% - #{$grid-column-gap / 2});
       height: 100%;
     }
 
     @include tween (
-      536px,
-      536px,
-      600px,
+      520px,
+      520px,
+      584px,
       $md,
       $container-fluid-max-width / ($container-fluid-width / 100%),
       min-width
@@ -198,7 +198,7 @@
   .notebook-2 {
     left: 0;
     top: 58.25%;
-    transform: translate(-50%, -50%) rotate(81deg);
+    transform: translate(-50%, -50%) translateX(-16px) rotate(81deg);
   }
 
   .notebook-3 {
@@ -209,5 +209,29 @@
     transform: translate(-50%, -50%) translateY(var(--t)) rotate(-144deg);
 
     @include tween(0px, 0px, 128px, 320px, ($sm - 1px), --t);
+  }
+
+  [class*="pixel-"] {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    &.lg {
+      width: 14px;
+      height: 14px;
+    }
+
+    &.green {
+      background-color: #67ce9d;
+    }
+  }
+
+  .pixel-1 {
+    left: 52.57%;
+    top: 21.83%;
+  }
+
+  .pixel-9 {
+    left: 53.94%;
+    top: 72.93%;
   }
 }
