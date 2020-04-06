@@ -152,7 +152,6 @@
   .tpy-icon {
     width: 96px;
     height: 96px;
-    background-color: $blue;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -177,9 +176,9 @@
     position: absolute;
 
     @include tween(
-      100px,
-      100px,
-      200px,
+      110px,
+      110px,
+      220px,
       320px,
       ($sm - 1px),
       width, height
@@ -189,7 +188,6 @@
   .notebook-1 {
     --t: 0px;
 
-    background-color: $gray;
     bottom: 0;
     right: 32.42%;
     transform: translate(50%, 50%) translateY(var(--t)) rotate(-18deg);
@@ -198,7 +196,6 @@
   }
 
   .notebook-2 {
-    background-color: $gray;
     left: 0;
     top: 58.25%;
     transform: translate(-50%, -50%) rotate(81deg);
@@ -207,7 +204,6 @@
   .notebook-3 {
     --t: 0px;
 
-    background-color: $gray;
     left: 85.16%;
     top: 0;
     transform: translate(-50%, -50%) translateY(var(--t)) rotate(-144deg);
