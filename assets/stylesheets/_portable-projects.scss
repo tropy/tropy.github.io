@@ -62,6 +62,8 @@
 
   h2 {
     margin: 0;
+    position: relative;
+    z-index: 1;
 
     @media (min-width: $sm) {
       margin: 0 0 ($section-padding-y * 5 / 8 - $section-padding-y - 20px);
