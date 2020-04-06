@@ -4,7 +4,8 @@
 
 .portable-projects {
   --x: 50%;
-  --y: calc(100% - 687px / 2);
+  --y: calc(100% - (50vw - 16px));
+  --r: 180px;
 
   background-color: #212121;
   background-repeat: no-repeat;
@@ -16,9 +17,16 @@
     radial-gradient(
       circle at var(--x) var(--y),
       $blue-dark 0,
-      $blue-dark 360px,
-      transparent 360px
+      $blue-dark var(--r),
+      transparent var(--r)
     );
+
+  @include tween(180px, 180px, 360px, 320px, ($sm - 1px), --r);
+
+  @media (min-width: $sm) {
+    --y: calc(100% - 687px / 2);
+    --r: 360px;
+  }
 
   @media (min-width: $md) {
     --y: calc(50% + 56px);
@@ -91,7 +99,9 @@
     }
 
     & ~ p {
-      margin-bottom: -7px;
+      @media (min-width: $md) {
+        margin-bottom: -7px;
+      }
     }
   }
 
@@ -99,22 +109,17 @@
     color: tint($link-color, 20%);
   }
 
-  .tpy-icon {
-    width: 192px;
-    height: 192px;
-    background-color: $blue;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   .illustration {
     background-color: rgba(magenta, 0.2);
     grid-row: 2;
     grid-column: span 12;
-    height: 687px;
+    padding-top: 100%;
     position: relative;
+
+    @media (min-width: $sm) {
+      padding-top: 0;
+      height: 687px;
+    }
 
     @media (min-width: $md) {
       grid-row: initial;
@@ -144,33 +149,69 @@
     );
   }
 
-  .notebook-1 {
-    width: 200px;
-    height: 200px;
-    background-color: $gray;
+  .tpy-icon {
+    width: 96px;
+    height: 96px;
+    background-color: $blue;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+
+    @include tween(
+      96px,
+      96px,
+      192px,
+      320px,
+      ($sm - 1px),
+      width, height
+    );
+  }
+
+  .notebook-1,
+  .notebook-2,
+  .notebook-3 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+
+    @include tween(
+      100px,
+      100px,
+      200px,
+      320px,
+      ($sm - 1px),
+      width, height
+    );
+  }
+
+  .notebook-1 {
+    --t: 0px;
+
+    background-color: $gray;
     bottom: 0;
     right: 32.42%;
-    transform: translate(50%, 50%) translateY(-48px) rotate(-18deg);
+    transform: translate(50%, 50%) translateY(var(--t)) rotate(-18deg);
+
+    @include tween(0px, 0px, -48px, 320px, ($sm - 1px), --t);
   }
 
   .notebook-2 {
-    width: 200px;
-    height: 200px;
     background-color: $gray;
-    position: absolute;
     left: 0;
     top: 58.25%;
     transform: translate(-50%, -50%) rotate(81deg);
   }
 
   .notebook-3 {
-    width: 200px;
-    height: 200px;
+    --t: 0px;
+
     background-color: $gray;
-    position: absolute;
     left: 85.16%;
     top: 0;
-    transform: translate(-50%, -50%) translateY(128px) rotate(-144deg);
+    transform: translate(-50%, -50%) translateY(var(--t)) rotate(-144deg);
+
+    @include tween(0px, 0px, 128px, 320px, ($sm - 1px), --t);
   }
 }
