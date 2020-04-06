@@ -3,18 +3,42 @@
 //
 
 .portable-projects {
+  --x: 50%;
+  --y: calc(100% - 687px / 2);
+
   background-color: #212121;
   background-repeat: no-repeat;
   background-blend-mode: color-dodge;
   color: $white;
   overflow: visible;
   padding-top: $section-padding-y;
+  background-image:
+    radial-gradient(
+      circle at var(--x) var(--y),
+      $blue-dark 0,
+      $blue-dark 360px,
+      transparent 360px
+    );
+
+  @media (min-width: $md) {
+    --y: calc(50% + 56px);
+  }
+
+  @include tween(
+    calc(
+      (100% - #{$container-fluid-width}) / 2
+      + #{$container-fluid-width} * 0.75
+      + 155px
+    ),
+    155px,
+    0px,
+    $md,
+    $container-fluid-max-width / ($container-fluid-width / 100%),
+    --x
+  );
 
   @media (min-width: ($container-fluid-max-width / ($container-fluid-width / 100%))) {
-    $x: calc((100% - #{$container-fluid-max-width}) / 2 + #{$container-fluid-max-width} * 0.75);
-    $y: calc(50% + 56px);
-
-    background-image: radial-gradient(circle at $x $y, $blue-dark 0, $blue-dark 360px, transparent 360px);
+    --x: calc((100% - #{$container-fluid-max-width}) / 2 + #{$container-fluid-max-width} * 0.75);
   }
 
   .row {
@@ -97,8 +121,6 @@
       top: 0;
       width: 50%;
       height: 100%;
-      min-width: 525px;
-      margin-left: 75px;
     }
 
     @include tween (
@@ -118,7 +140,6 @@
       $container-fluid-max-width / ($container-fluid-width / 100%),
       margin-left
     );
-
   }
 
   .notebook-1 {
