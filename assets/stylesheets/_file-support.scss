@@ -31,8 +31,7 @@
 
   .lead {
     @include tween(
-      100%,
-      columns(10, $container-fluid-max-width),
+      $sm * 5 / 6,
       columns(10, $container-fluid-max-width) * 0.8,
       $sm,
       $container-fluid-max-width / ($container-fluid-width / 100%),

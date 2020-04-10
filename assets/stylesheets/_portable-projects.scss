@@ -21,7 +21,7 @@
       transparent var(--r)
     );
 
-  @include tween(180px, 180px, 360px, 320px, ($sm - 1px), --r);
+  @include tween(180px, 360px, 320px, $sm, --r);
 
   @media (min-width: $sm) {
     --y: calc(100% - 687px / 2);
@@ -33,11 +33,6 @@
   }
 
   @include tween(
-    calc(
-      (100% - #{$container-fluid-width}) / 2
-      + #{$container-fluid-width} * 0.75
-      + 155px
-    ),
     155px,
     0px,
     $md,
@@ -59,7 +54,6 @@
     }
 
     @include tween(
-      0px,
       0px,
       columns(2, $container-fluid-max-width) + $grid-column-gap,
       $sm,
@@ -132,7 +126,6 @@
 
     @include tween (
       520px,
-      520px,
       584px,
       $md,
       $container-fluid-max-width / ($container-fluid-width / 100%),
@@ -140,7 +133,6 @@
     );
 
     @include tween (
-      100px,
       100px,
       0px,
       $md,
@@ -160,10 +152,9 @@
 
     @include tween(
       96px,
-      96px,
       192px,
       320px,
-      ($sm - 1px),
+      $sm,
       width, height
     );
   }
@@ -177,10 +168,9 @@
 
     @include tween(
       110px,
-      110px,
       220px,
       320px,
-      ($sm - 1px),
+      $sm,
       width, height
     );
   }
@@ -192,7 +182,7 @@
     right: 32.42%;
     transform: translate(50%, 50%) translateY(var(--t)) rotate(-18deg);
 
-    @include tween(0px, 0px, -48px, 320px, ($sm - 1px), --t);
+    @include tween(0px, -48px, 320px, $sm, --t);
   }
 
   .notebook-2 {
@@ -208,7 +198,7 @@
     top: 0;
     transform: translate(-50%, -50%) translateY(var(--t)) rotate(-144deg);
 
-    @include tween(0px, 0px, 128px, 320px, ($sm - 1px), --t);
+    @include tween(0px, 128px, 320px, $sm, --t);
   }
 
   [class*="pixel-"] {
