@@ -8,41 +8,9 @@
   --r: 180px;
 
   background-color: #212121;
-  background-repeat: no-repeat;
-  background-blend-mode: color-dodge;
   color: $white;
   overflow: visible;
   padding-top: $section-padding-y;
-  background-image:
-    radial-gradient(
-      circle at var(--x) var(--y),
-      $blue-dark 0,
-      $blue-dark var(--r),
-      transparent var(--r)
-    );
-
-  @include tween(180px, 360px, 320px, $sm, --r);
-
-  @media (min-width: $sm) {
-    --y: calc(100% - 687px / 2);
-    --r: 360px;
-  }
-
-  @media (min-width: $md) {
-    --y: calc(50% + 56px);
-  }
-
-  @include tween(
-    155px,
-    0px,
-    $md,
-    $container-fluid-max-width / ($container-fluid-width / 100%),
-    --x
-  );
-
-  @media (min-width: ($container-fluid-max-width / ($container-fluid-width / 100%))) {
-    --x: calc((100% - #{$container-fluid-max-width}) / 2 + #{$container-fluid-max-width} * 0.75 + 8px);
-  }
 
   .row {
     position: relative;
@@ -104,7 +72,7 @@
   }
 
   .illustration {
-    background-color: rgba(magenta, 0.2);
+    //background-color: rgba(magenta, 0.2);
     grid-row: 2;
     grid-column: span 12;
     padding-top: 100%;
@@ -128,7 +96,7 @@
       520px,
       584px,
       $md,
-      $container-fluid-max-width / ($container-fluid-width / 100%),
+      $xl,
       min-width
     );
 
@@ -136,9 +104,30 @@
       100px,
       0px,
       $md,
-      $container-fluid-max-width / ($container-fluid-width / 100%),
+      $xl,
       margin-left
     );
+  }
+
+  .radial-gradient {
+    --r: 180px;
+
+    pointer-events: none;
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    bottom: -100px;
+    left: -100px;
+    mix-blend-mode: color-dodge;
+    clip-path: inset(0px 0px 100px 0px);
+    background-image:
+      radial-gradient(
+        circle at 50% 50%,
+        $blue-dark 0,
+        transparent var(--r)
+      );
+
+    @include tween(180px, 360px, 320px, $sm, --r);
   }
 
   .tpy-icon {
