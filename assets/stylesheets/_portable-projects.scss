@@ -140,7 +140,7 @@
     opacity: 0.5;
 
     @include tween(
-      96px,
+      80px,
       192px,
       320px,
       $sm,
@@ -156,7 +156,7 @@
     position: absolute;
 
     @include tween(
-      110px,
+      91.67px,
       220px,
       320px,
       $sm,
@@ -195,30 +195,40 @@
     transform: translate(-50%, -50%);
     width: 6px;
     height: 6px;
+    background-repeat: no-repeat;
+
+    @media (max-width: $sm - 1px) {
+      // Scale background-image to keep the pixels perfectly square
+      background-size: (0.9375vw * 1.2) (0.9375vw * 1.2);
+    }
 
     &.lg {
       width: 14px;
       height: 14px;
+
+      @media (max-width: $sm - 1px) {
+        background-size: (1.875vw * 1.2) (1.875vw * 1.2);
+      }
     }
 
     &.green {
-      background-color: #67ce9d;
+      background-image: linear-gradient(#67ce9d, #67ce9d);
     }
 
     &.blue-dark {
-      background-color: $blue-dark;
+      background-image: linear-gradient($blue-dark, $blue-dark);
     }
 
     &.red {
-      background-color: #f66;
+      background-image: linear-gradient(#f66, #f66);
     }
 
     &.blue-light {
-      background-color: $blue-light;
+      background-image: linear-gradient($blue-light, $blue-light);
     }
 
     &.brown {
-      background-color: #736673;
+      background-image: linear-gradient(#736673, #736673);
     }
   }
 
@@ -240,6 +250,11 @@
   .pixel-4 {
     left: calc(50% + 60px);
     top: calc(50% - 33px);
+
+    @media (max-width: $sm - 1px) {
+      left: calc(50% + 7.8125vw);
+      top: calc(50% - 4.296875vw);
+    }
   }
 
   .pixel-5 {
