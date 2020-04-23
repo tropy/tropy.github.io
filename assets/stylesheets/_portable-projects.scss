@@ -175,9 +175,17 @@
   }
 
   .notebook-2 {
+    --t: 0px;
+
     left: 0;
-    top: 58.25%;
-    transform: translate(-50%, -50%) translateX(-16px) rotate(81deg);
+    top: 59.13%;
+    transform: translate(-50%, -50%) translateX(var(--t)) rotate(81deg);
+
+    @include tween(4px, 32px, 320px, $sm, --t);
+
+    @media (min-width: $sm) {
+      transform: translate(-50%, -50%) translateX(-16px) rotate(81deg);
+    }
   }
 
   .notebook-3 {
@@ -320,6 +328,10 @@
   .pixel-17 {
     left: -2.74%;
     top: 39.16%;
+
+    @media (max-width: $sm - 1px) {
+      left: 2.74%;
+    }
   }
 
   .pixel-18 {
