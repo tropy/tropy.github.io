@@ -171,7 +171,7 @@
     right: 32.42%;
     transform: translate(50%, 50%) translateY(var(--t)) rotate(-18deg);
 
-    @include tween(0px, -48px, 320px, $sm, --t);
+    @include tween(-18px, -42px, 320px, $sm, --t);
   }
 
   .notebook-2 {
