@@ -238,8 +238,8 @@
   }
 
   .pixel-4 {
-    left: 60.27%;
-    top: 45.12%;
+    left: calc(50% + 60px);
+    top: calc(50% - 33px);
   }
 
   .pixel-5 {
