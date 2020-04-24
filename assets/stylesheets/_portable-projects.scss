@@ -189,13 +189,29 @@
   }
 
   .notebook-3 {
-    --t: 0px;
+    left: 84.70%;
+    top: 11.68%;
+    transform: translate(-50%, -50%) rotate(-144deg);
 
-    left: 85.16%;
-    top: 0;
-    transform: translate(-50%, -50%) translateY(var(--t)) rotate(-144deg);
+    @media (min-width: $md) {
+      --r: -144deg;
+      --x: -10px;
+      --y: 350px;
 
-    @include tween(0px, 128px, 320px, $sm, --t);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(var(--r)) translate(var(--x), var(--y));
+    }
+
+    @for $i from ($md / 1px) through ($xl / 1px) {
+      @media (min-width: #{$i}px) {
+        #{--r}: -162deg + 18deg * ($i - ($md / 1px)) * 1 / (($xl - $md) / 1px);
+      }
+    }
+
+    @include tween(13px, -10px, $md, $xl, --x);
+
+    @include tween(344px, 350px, $md, $xl, --y);
   }
 
   [class*="pixel-"] {
