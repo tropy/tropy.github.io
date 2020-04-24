@@ -125,7 +125,7 @@
       radial-gradient(
         circle at 50% 50%,
         $blue-dark 0,
-        transparent var(--r)
+        rgba($blue-dark, 0) var(--r)
       );
 
     @include tween(180px, 360px, 320px, $sm, --r);
