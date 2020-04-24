@@ -25,7 +25,7 @@
       0px,
       columns(2, $container-fluid-max-width) + $grid-column-gap,
       $sm,
-      $container-fluid-max-width / ($container-fluid-width / 100%),
+      $xl,
       padding-right
     );
   }
@@ -102,7 +102,7 @@
     );
 
     @include tween (
-      100px,
+      76px,
       0px,
       $md,
       $xl,
@@ -184,8 +184,10 @@
     @include tween(4px, 32px, 320px, $sm, --t);
 
     @media (min-width: $sm) {
-      transform: translate(-50%, -50%) translateX(-16px) rotate(81deg);
+      --t: -16px;
     }
+
+    @include tween(8px, -16px, $md, $xl, --t);
   }
 
   .notebook-3 {
@@ -205,7 +207,7 @@
 
     @for $i from ($md / 1px) through ($xl / 1px) {
       @media (min-width: #{$i}px) {
-        #{--r}: -162deg + 18deg * ($i - ($md / 1px)) * 1 / (($xl - $md) / 1px);
+        #{--r}: -153deg + 9deg * ($i - ($md / 1px)) * 1 / (($xl - $md) / 1px);
       }
     }
 
@@ -322,8 +324,15 @@
   }
 
   .pixel-13 {
+    --x: 0;
+    --y: 0;
+
     left: 24.32%;
     top: 58.95%;
+    transform: translate(var(--x), var(--y));
+
+    @include tween(12px, 0, $md, $xl, --x);
+    @include tween(6px, 0, $md, $xl, --y);
   }
 
   .pixel-14 {
