@@ -6,6 +6,7 @@
   @for $i from 1 through 12 {
     .col-#{$bp}-#{$i} {
       grid-column-end: span $i;
+      grid-row: 1;
     }
 
     .start-#{$bp}-#{$i} {
@@ -13,7 +14,7 @@
     }
   }
 
-  .order-#{$bp}-first {
-    order: -1;
+  .justify-self-#{$bp}-end {
+    justify-self: end;
   }
 }

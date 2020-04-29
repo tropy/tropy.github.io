@@ -23,6 +23,7 @@
 
 [class*="col"] {
   grid-column-end: span 12;
+  min-width: 0; // Prevent grid blowout
 }
 
 @media (min-width: $sm) {
