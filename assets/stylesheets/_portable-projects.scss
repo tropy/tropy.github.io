@@ -10,7 +10,7 @@
   background-color: #212121;
   color: $white;
   overflow: visible;
-  padding-top: $section-padding-y-phone - 14px;
+  padding-top: $section-padding-y-phone;
 
   @media (min-width: $sm) {
     padding-top: $section-padding-y;
@@ -35,12 +35,12 @@
   }
 
   h2 {
-    margin: 0 0 ($section-padding-y-phone * 3 / 4 - 16px);
+    margin: -14px 0 ($section-padding-y-phone * 3 / 4 - 16px);
     position: relative;
     z-index: 1;
 
     @media (min-width: $sm) {
-      margin: 0 0 ($section-padding-y * 3 / 4 - $section-padding-y - 20px);
+      margin: -19px 0 ($section-padding-y * 3 / 4 - $section-padding-y - 20px);
       text-align: left;
     }
 
