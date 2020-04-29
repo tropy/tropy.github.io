@@ -19,10 +19,35 @@
   }
 
   section {
-    padding: 64px 0;
+    padding: ($section-padding-y-phone / 2) 0;
 
-    @media (min-width: $sm) and (max-width: $lg - 1px) {
-      padding-top: 64px - 12px;
+    //@media (min-width: $sm) and (max-width: $lg - 1px) {
+    //  padding-top: $section-padding-y / 2 - 12px;
+    //  padding-bottom: $section-padding-y / 2;
+    //}
+
+    @media (min-width: $lg) {
+      padding: ($section-padding-y / 2) 0;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: (4 / 3);
+      color: #555;
+      margin: 10px 0;
+
+      @media (min-width: $sm) {
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: 12px;
+      }
+
+      @media (min-width: $sm) and (max-width: $lg - 1px) {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 32px - 7px;
+      }
     }
   }
 
@@ -30,35 +55,14 @@
     margin: 0;
   }
 
-  p {
+  .lead {
     font-size: 20px;
-    line-height: (4 / 3);
-    color: #555;
-    margin: 0;
     margin-top: 10px;
 
     @media (min-width: $sm) {
       font-size: 24px;
-      line-height: 32px;
       margin-top: 12px;
-    }
-
-    @media (min-width: $sm) and (max-width: $lg - 1px) {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 32px - 7px;
-    }
-  }
-
-  .lead {
-    font-size: 24px; // ~ 5/6
-    margin-top: 12px;
-
-    @media (min-width: $sm) {
-      font-size: 28px;
       width: 87.5%;
-      margin-top: 14px;
       margin-left: auto;
       margin-right: auto;
     }
