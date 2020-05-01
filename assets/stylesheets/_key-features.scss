@@ -7,7 +7,7 @@
   overflow: hidden;
 
   @media (min-width: $sm) {
-    padding: $section-padding-y * 5 / 8;
+    padding: ($section-padding-y * 5 / 8) 0;
   }
 
   @media (min-width: $sm) and (max-width: $lg - 1px) {
@@ -76,9 +76,15 @@
     }
   }
 
-  img {
+  .screenshot {
     max-width: 100%;
     height: auto;
+    border-radius: 5px;
+    box-shadow:
+      0 0 4px 0 rgba(0, 0, 0, 0.1),
+      0 0px 36px -18px rgba(0, 0, 0, 0.125),
+      0 18px 36px -18px rgba(0, 0, 0, 0.25),
+      0 27px 54px -27px rgba($blue-dark, 0.25);
 
     @media (min-width: $lg) {
       max-width: none;
