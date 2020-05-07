@@ -77,17 +77,28 @@
   }
 
   .screenshot {
-    max-width: 100%;
-    height: auto;
+    overflow: hidden;
     border-radius: 5px;
     box-shadow:
+      inset 0 0.5px 0.5px 0.1px rgba(255, 255, 255, 0.67),
       0 0 4px 0 rgba(0, 0, 0, 0.1),
       0 0px 36px -18px rgba(0, 0, 0, 0.125),
       0 18px 36px -18px rgba(0, 0, 0, 0.25),
       0 27px 54px -27px rgba($blue-dark, 0.25);
 
     @media (min-width: $lg) {
-      max-width: none;
+      width: 1280px;
+    }
+
+    img {
+      position: relative;
+      z-index: -1;
+      max-width: 100%;
+      height: auto;
+
+      @media (min-width: $lg) {
+        max-width: none;
+      }
     }
   }
 }
