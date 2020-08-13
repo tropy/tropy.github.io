@@ -41,7 +41,6 @@ header {
   a {
     display: block;
     color: inherit;
-    text-decoration: none;
     padding: $space-sm $space-xs;
     white-space: nowrap;
     outline-offset: -3px;
@@ -53,6 +52,10 @@ header {
     @include focus-visible {
       outline-offset: -3px;
       outline-color: $white;
+    }
+
+    &:hover {
+      text-decoration: none;
     }
   }
 

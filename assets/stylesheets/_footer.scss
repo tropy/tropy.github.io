@@ -49,10 +49,10 @@ footer {
   a {
     display: block;
     color: $footer-color;
-    text-decoration: none;
 
     &:hover {
       color: $gray-dark;
+      text-decoration: none;
     }
 
     @include focus-visible {
