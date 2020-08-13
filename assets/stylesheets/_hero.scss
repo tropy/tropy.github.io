@@ -5,13 +5,17 @@
 .hero {
   margin-top: -$header-height-mobile;
   background: linear-gradient($blue-dark, $blue, tint($blue-light, 40%) calc(100% - 80px));
-  min-height: 560px;
   padding-top: $header-height-mobile + $space-xl;
   color: $white;
+  margin-bottom: 200px; // todo
+  position: relative;
+
 
   @media (min-width: $sm) {
-    margin-top: -$header-height;
     padding-top: $header-height + $space-xl;
+    padding-bottom: 122px; // 560px height
+    margin-top: -$header-height;
+    margin-bottom: 221px;
   }
 
   .container-fluid {
@@ -105,5 +109,14 @@
     @include focus-visible {
       outline-color: $white;
     }
+  }
+
+  .hero-illustration {
+    position: absolute;
+    right: 0;
+    bottom: -250px;
+    left: 0;
+    height: 810px;
+    background: url("../images/hero-illustration.svg") no-repeat center bottom;
   }
 }
