@@ -15,7 +15,7 @@
     padding-top: $header-height + $space-xl;
     padding-bottom: 122px; // 560px height
     margin-top: -$header-height;
-    margin-bottom: 221px;
+    margin-bottom: $section-padding-y + 61px + 32px; // 32px: compensation for illustration
   }
 
   .container-fluid {
@@ -117,7 +117,11 @@
     bottom: -250px;
     left: 0;
     height: 810px;
-    background: url("../images/hero-illustration.svg") no-repeat center bottom;
+    background: url("../images/hero-illustration.png") no-repeat center bottom;
     pointer-events: none;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../images/hero-illustration@2x.png") no-repeat center bottom / 3008px 810px;
+    }
   }
 }
