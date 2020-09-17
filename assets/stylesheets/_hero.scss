@@ -18,6 +18,10 @@
     margin-bottom: $section-padding-y + 61px + 32px; // 32px: compensation for illustration
   }
 
+  @media (pointer: coarse) and (min-width: $sm) {
+    padding-bottom: 117px; // 30px to highest summit
+  }
+
   .container-fluid {
     display: flex;
     flex-direction: column;
