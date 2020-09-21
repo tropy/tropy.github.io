@@ -42,7 +42,7 @@
     p {
       font-size: 18px;
       line-height: (4 / 3);
-      color: #555;
+      color: $gray-dark;
       margin: 9px 0 (30px - 6px);
 
       @media (min-width: $sm) {

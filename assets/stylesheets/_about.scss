@@ -69,14 +69,14 @@
 
       &:not(:hover) {
         path {
-          fill: #777;
+          fill: $gray;
 
           &.digits {
-            fill: #999;
+            fill: #939399;
           }
 
           &.stroke {
-            fill: #bbb;
+            fill: #b6b6ba;
           }
         }
       }
