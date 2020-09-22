@@ -3,7 +3,7 @@
 //
 
 .features {
-  padding: $section-padding-y-phone 0 ($section-padding-y-phone - $space-min) 0;
+  padding: $section-padding-y-phone 0 ($section-padding-y-phone - 6px) 0;
 
   @media (min-width: $sm) {
     padding: $section-padding-y 0 ($section-padding-y - 6px);
@@ -21,10 +21,11 @@
 
   h2 {
     margin-top: -14px;
-    margin-bottom: 0;
+    margin-bottom: $section-padding-y-phone * 3 / 4 - 9px; // 2.5% optical correction
 
     @media (min-width: $sm) {
       margin-top: -19px;
+      margin-bottom: $section-padding-y * 3 / 4 - 14px;
     }
   }
 
@@ -46,25 +47,6 @@
     }
   }
 
-  .lead {
-    margin-bottom: ($section-padding-y-phone * 3 / 3) - 6px;
-
-    @include tween(
-      $sm * 5 / 6,
-      columns(10, $container-fluid-max-width) * 0.8,
-      $sm,
-      $container-fluid-max-width / ($container-fluid-width / 100%),
-      width
-    );
-
-    @media (min-width: $sm) {
-      margin-top: 12px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: ($section-padding-y * 3 / 4) - 7px;
-    }
-  }
-
   .feature {
     p {
       color: $gray-dark;
@@ -76,7 +58,7 @@
     }
 
     &:first-child {
-      margin-bottom: ($section-padding-y-phone * 5 / 8) - 6px;
+      margin-bottom: ($section-padding-y-phone * 5 / 8) - 8px;
 
       @media (min-width: $sm) {
         margin-bottom: 0;
