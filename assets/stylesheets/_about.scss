@@ -4,11 +4,11 @@
 
 .about {
   border-top: 1px solid $gray-light;
-  padding: ($section-padding-y-phone - 14px) 0 ($section-padding-y-phone -  6px) 0;
+  padding: ($section-padding-y-phone - 14px) 0 ($section-padding-y-phone -  8px) 0;
 
   @media (min-width: $sm) {
     padding-top: $section-padding-y - 19px;
-    padding-bottom: $section-padding-y - 6px;
+    padding-bottom: $section-padding-y - 8px;
   }
 
   .container-fluid {
@@ -21,7 +21,11 @@
   }
 
   p {
-    margin: 0 0 ($section-padding-y * 3 / 4) 0;
+    margin: 0 0 ($section-padding-y-phone * 3 / 4 - 18px) 0;
+
+    @media (min-width: $sm) {
+      margin-bottom: $section-padding-y * 3 / 4 - 18px;
+    }
 
     &:not(.lead) {
       @media (min-width: $sm) {
@@ -44,17 +48,50 @@
     }
   }
 
+  @keyframes marquee {
+    100% {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
   .marquee {
-    margin-top: -18px;
-    margin-left: -102.67px;
-    margin-right: -102.67px;
+    display: flex;
 
     ul {
+      flex: 1 0 815px;
       display: flex;
       justify-content: space-around;
       list-style: none;
       margin: 0;
       padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+      animation: marquee 30s linear infinite;
+
+      // 64px spacing in 320px viewport
+      @include tween(
+        815px,
+        866px,
+        320px,
+        947px,
+        flex-basis
+      );
+
+      @media (min-width: 947px) {
+        max-width: 866px;
+        animation: none;
+      }
+
+      @media (min-width: $lg) {
+        max-width: 994.67px;
+        justify-content: space-around;
+      }
+
+      & + ul {
+        @media (min-width: 947px) {
+          display: none;
+        }
+      }
     }
 
     a,
