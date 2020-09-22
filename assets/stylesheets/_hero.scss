@@ -11,12 +11,12 @@
   position: relative;
 
   @media (pointer: coarse), (max-width: $sm - 1px) {
-    padding-bottom: 117px; // 30px to highest summit
+    padding-bottom: 110px; // 23px to highest summit
   }
 
   @media (min-width: $sm) {
     padding-top: $header-height + $space-xl;
-    padding-bottom: 122px; // 560px height
+    padding-bottom: 123px; // 560px height
     margin-top: -$header-height;
     margin-bottom: $section-padding-y + 61px + 32px; // 32px: compensation for illustration
   }
@@ -32,12 +32,18 @@
   }
 
   h1 {
-    width: 156px;
-    height: 134px;
-    background: url("/assets/images/tropy-icon-4px.svg") no-repeat 0 0;
+    width: 118px;
+    height: 101px;
+    background: url("/assets/images/tropy-icon-phone.svg") no-repeat 0 0;
     text-indent: -99em;
     overflow: hidden;
     margin: 0 auto;
+
+    @media (min-width: $sm) {
+      width: 156px;
+      height: 134px;
+      background: url("/assets/images/tropy-icon.svg") no-repeat 0 0;
+    }
   }
 
   .lead {
@@ -45,14 +51,14 @@
     font-weight: 600;
     line-height: $headings-line-height;
     text-align: center;
-    margin-top: 36px - 12px;
-    margin-bottom: 32px - 5px;
+    margin-top: 36px - 22px; // 3/4
+    margin-bottom: 32px - 13px; // 3/4
     letter-spacing: -0.015em;
     color: inherit;
 
     @media (min-width: $sm) {
       font-size: 40px;
-      margin-top: 36px - 16px;
+      margin-top: 36px - 17px;
       margin-bottom: 32px - 7px;
     }
   }
