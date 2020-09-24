@@ -33,9 +33,10 @@ $link-color:  $brand-primary;
 
 // Type
 
-$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-size-base:   16px;
-$line-height-base: 1.5;
+$font-family-base:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-size-base:        16px;
+$line-height-base:      1.5;
 
 $headings-line-height: 1.1;
 $headings-font-weight: 600;
@@ -77,3 +78,9 @@ $file-support-icon-size: 80px;
 
 // Footer
 $footer-color:  $body-color;
+
+// Blog
+$blog-max-width: 700px;
+$blog-font-size: 17px;
+$blog-line-height: 1.6;
+$blog-link-color: mix($blue-dark, $blue, 50%);

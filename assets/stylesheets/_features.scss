@@ -24,6 +24,7 @@
     margin-bottom: $section-padding-y-phone * 3 / 4 - 9px; // 2.5% optical correction
 
     @media (min-width: $sm) {
+      text-align: center;
       margin-top: -19px;
       margin-bottom: $section-padding-y * 3 / 4 - 14px;
     }
