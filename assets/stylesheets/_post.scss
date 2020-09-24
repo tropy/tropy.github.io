@@ -30,6 +30,7 @@
     font-size: 32px; // 4/5
     margin-top: 2 * $section-padding-y-phone * 3 / 4 - 76px;
     margin-bottom: -17px;
+    letter-spacing: -0.015em;
 
     @media (min-width: $sm) {
       font-size: 40px;
@@ -47,6 +48,7 @@
     font-size: 26px;
     padding-top: $blog-font-size;
     margin: 0 0 -10px 0;
+    letter-spacing: -0.01em;
 
     @media (min-width: $sm) {
       font-size: 30px;
@@ -59,6 +61,7 @@
     font-size: 21px;
     padding-top: $blog-font-size - 4px;
     margin: 0 0 -10px 0;
+    letter-spacing: -0.01em;
 
     @media (min-width: $sm) {
       font-size: 22.5px;
@@ -72,6 +75,7 @@
     font-weight: 700;
     padding-top: 0;
     margin: 0 0 -10px 0;
+    letter-spacing: 0;
   }
 
   h2 + .h4,
