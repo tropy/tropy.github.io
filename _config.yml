@@ -28,6 +28,9 @@ url: "https://tropy.org" # the base hostname & protocol for your site, e.g. http
 twitter_username: tropy
 github_username: tropy
 
+# Options
+show_excerpts: true
+
 # Metadata for Jekyll SEO tag
 tagline: Explore your research photos
 twitter:
@@ -57,7 +60,7 @@ sass:
   sass_dir: assets/stylesheets
 
 feed:
-  path: blog/rss/index.xml
+  path: /blog/rss/index.xml
 
 # Serve command options
 host: 0.0.0.0

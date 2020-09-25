@@ -1,0 +1,62 @@
+//
+// Blog
+//
+
+.blog {
+  font-size: $blog-font-size;
+  line-height: $blog-line-height;
+
+  h2,
+  .h2 {
+    font-size: 26px;
+    padding-top: $blog-font-size;
+    margin: 0 0 -10px 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: $sm) {
+      font-size: 30px;
+      padding-top: $blog-font-size * $blog-line-height;
+    }
+  }
+
+  h3,
+  .h3 {
+    font-size: 21px;
+    padding-top: $blog-font-size - 4px;
+    margin: 0 0 -10px 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: $sm) {
+      font-size: 22.5px;
+      padding-top: $blog-font-size;
+    }
+  }
+
+  h4,
+  .h4 {
+    font-size: $blog-font-size;
+    font-weight: 700;
+    padding-top: 0;
+    margin: 0 0 -10px 0;
+    letter-spacing: 0;
+  }
+
+  h2 + .h4,
+  h3 + .h4 {
+    margin-top: 32px;
+  }
+
+  p {
+    margin: ($blog-font-size * $blog-line-height) 0;
+  }
+
+  a {
+    color: $blog-link-color;
+  }
+
+  .author {
+    &::before {
+      content: " · ";
+    }
+  }
+}

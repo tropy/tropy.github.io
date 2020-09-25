@@ -1,0 +1,47 @@
+//
+// Blog home
+//
+
+.blog.home {
+  @media (min-width: $sm) {
+    padding-bottom: $section-padding-y - 33px;
+  }
+
+  .container-fluid {
+    @media (min-width: $sm) {
+      max-width: $blog-max-width;
+    }
+  }
+
+  .page-heading {
+    font-size: 32px; // 4/5
+    margin-top: 2 * $section-padding-y-phone * 3 / 4  - 76px;
+    margin-bottom: $section-padding-y-phone * 3 / 4 - 34px;
+    letter-spacing: -0.015em;
+
+    @media (min-width: $sm) {
+      font-size: 40px;
+      text-align: center;
+      margin-top: 2 * $section-padding-y * 3 / 4 - 112px;
+      margin-bottom: $section-padding-y * 3 / 4 - 46px;
+    }
+  }
+
+  h2 {
+    a {
+      color: inherit;
+    }
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-meta {
+    font-size: 14px;
+    color: $gray-dark;
+    margin-top: -$blog-font-size;
+  }
+}
