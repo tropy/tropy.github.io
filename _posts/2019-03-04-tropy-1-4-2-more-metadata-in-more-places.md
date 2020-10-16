@@ -4,6 +4,8 @@ title: "Tropy 1.4.3: More Metadata in More Places!"
 date: "2019-03-04 15:17:35"
 author: "Abby Mullen"
 categories:
+  - News
+  - Getting Started
 ---
 
 Today we released Tropy 1.4.3. Its primary new features are some new ways to add metadata in more places.

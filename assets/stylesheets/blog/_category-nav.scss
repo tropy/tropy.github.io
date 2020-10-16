@@ -1,0 +1,29 @@
+//
+// Category nav
+//
+
+.category-nav {
+  margin-bottom: 15px; // Same spacing as between articles
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  li {
+    a {
+      display: block;
+      padding: $space-sm $space-md;
+      color: $gray;
+      text-decoration: none;
+    }
+
+    &.selected a {
+      color: $body-color;
+    }
+  }
+}
+

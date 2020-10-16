@@ -1,0 +1,66 @@
+---
+layout: default
+class: blog blog-category
+---
+
+<section class="blog-hero">
+  <div class="container-fluid">
+    <h1>{{ page.title }}</h1>
+  </div>
+  <div class="hero-illustration"></div>
+</section>
+<section class="posts">
+  <div class="container-fluid">
+    <nav class="category-nav">
+      <ul class="category-list">
+        <li>
+          <a href="/blog">All Posts</a>
+        </li>
+        {%- assign sorted_cats = site.categories | sort -%}
+        {%- for category in sorted_cats -%}
+          {%- assign category_url = category[0] | replace: ' ', '-' | downcase -%}
+          {%- if category[0] == page.category -%}
+            {%- assign selected = "selected" -%}
+          {%- else -%}
+            {%- assign selected = null -%}
+          {%- endif -%}
+          <li class="{{selected}}">
+            <a href="/blog/category/{{category_url}}">{{ category[0] }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <ul>
+    {%- for post in site.categories[page.category] -%}
+      <article class="post post-preview">
+        <h2 class="h2">
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h2>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+        <p class="post-meta">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-date">{{ post.date | date: date_format }}</span>
+          {%- if post.author -%}
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="author h-card" itemprop="name">{{ post.author }}</span>
+            </span>
+          {%- endif -%}
+          {%- if post.categories.size > 0 -%}
+            <span class="post-category-nav">
+              {%- for post_category in post.categories -%}
+                {%- assign category_url = post_category | replace: ' ', '-' | downcase -%}
+                <span class="comma">,</span>
+                <a href="/blog/category/{{category_url}}">{{ post_category }}</a>
+              {%- endfor -%}
+            </span>
+          {%- endif -%}
+        </p>
+      </article>
+    {% endfor%}
+    </ul>
+  </div>
+</section>

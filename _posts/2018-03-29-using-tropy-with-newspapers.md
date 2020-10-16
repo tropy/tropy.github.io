@@ -4,6 +4,7 @@ title: "Using Tropy with Newspapers"
 date: "2018-03-29 14:00:00"
 author: "Abby Mullen"
 categories:
+  - Research Practices
 ---
 
 As I outlined in my last post, my primary Tropy project is mostly composed of handwritten correspondence. I also have side projects that include different types of sources. And I’ve also been getting my sources in a different way.

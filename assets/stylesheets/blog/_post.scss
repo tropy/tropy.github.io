@@ -2,16 +2,15 @@
 // Post
 //
 
-.blog.post {
-  padding-bottom: $section-padding-y-phone - 35px;
+.post {
+  font-size: $blog-font-size;
+  line-height: $blog-line-height;
 
-  @media (min-width: $sm) {
-    padding-bottom: $section-padding-y - 35px;
-  }
+  &.post-full {
+    padding-bottom: $section-padding-y-phone - 35px;
 
-  .container-fluid {
     @media (min-width: $sm) {
-      max-width: $blog-max-width;
+      padding-bottom: $section-padding-y - 35px;
     }
   }
 
@@ -27,7 +26,7 @@
   .post-title {
     font-size: 32px; // 4/5
     margin-top: 2 * $section-padding-y-phone * 3 / 4 - 76px;
-    margin-bottom: -17px;
+    margin-bottom: $blog-font-size * $blog-line-height;
     letter-spacing: -0.015em;
 
     @media (min-width: $sm) {
@@ -39,6 +38,69 @@
   .post-meta {
     font-size: 14px;
     color: $gray-dark;
+    margin-top: -$blog-font-size;
+  }
+
+  h2,
+  .h2 {
+    font-size: 26px;
+    padding-top: $blog-font-size;
+    margin: 0 0 -10px 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: $sm) {
+      font-size: 30px;
+      padding-top: $blog-font-size * $blog-line-height;
+    }
+  }
+
+  &.post-preview {
+    h2,
+    .h2 {
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          color: $blue-dark;
+        }
+      }
+    }
+  }
+
+  h3,
+  .h3 {
+    font-size: 21px;
+    padding-top: $blog-font-size - 4px;
+    margin: 0 0 -10px 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: $sm) {
+      font-size: 22.5px;
+      padding-top: $blog-font-size;
+    }
+  }
+
+  h4,
+  .h4 {
+    font-size: $blog-font-size;
+    font-weight: 700;
+    padding-top: 0;
+    margin: 0 0 -10px 0;
+    letter-spacing: 0;
+  }
+
+  h2 + .h4,
+  h3 + .h4 {
+    margin-top: 32px;
+  }
+
+  p {
+    margin: ($blog-font-size * $blog-line-height) 0;
+  }
+
+  a {
+    color: $blog-link-color;
   }
 
   img {
@@ -126,5 +188,22 @@
     padding-left: $space-md;
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .author,
+  .post-category-nav {
+    &::before {
+      content: " · ";
+    }
+  }
+
+  .post-category-nav {
+    a {
+      color: inherit;
+    }
+
+    .comma:first-child {
+      display: none;
+    }
   }
 }

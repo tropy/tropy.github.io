@@ -4,6 +4,7 @@ title: "Tropy's Institutional Partners"
 date: "2017-03-07 14:27:00"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 Tropy is designed to help researchers organize and describe the photos they take in archives. It is intended to be one piece of a researcher's workflow that starts with locating and viewing archival material in the archives. Because Tropy is dependent on archival material, we partnered with several archives and libraries to gain their feedback about the research process from their perspective. We also enlisted their help in doing some user testing for us, both on the concept and on the beta version of Tropy.

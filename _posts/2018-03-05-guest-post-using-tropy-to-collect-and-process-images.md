@@ -4,6 +4,7 @@ title: "Guest Post: Using Tropy to Collect and Process Images"
 date: "2018-03-05 17:03:00"
 author: "Abby Mullen"
 categories:
+  - Research Practices
 ---
 
 [This post features a guest author, David McKenzie. David is a graduate student at George Mason University as well as the associate director of education for digital resources at Ford's Theatre.]

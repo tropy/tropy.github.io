@@ -1,0 +1,35 @@
+//
+// Blog hero
+//
+
+main .blog-hero {
+  height: 560px;
+  background-image: linear-gradient(#000 0%, #4848b3 75%, #68c1e8 100%);
+  color: $white;
+  position: relative;
+
+  @media (min-width: $sm) {
+    padding: $section-padding-y 0;
+    margin-top: -$header-height;
+    margin-bottom: $section-padding-y + 138px + 32px; // 32px: compensation for illustration
+  }
+
+  h1 {
+    font-size: 108px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    margin-top: 91px; // todo
+    margin-bottom: 0; // todo
+    //font-weight: 200;
+  }
+
+  .hero-illustration {
+    position: absolute;
+    right: 0;
+    bottom: -250px;
+    left: 0;
+    height: 810px;
+    background: url("/assets/images/blog-hero-illustration.png") no-repeat center bottom;
+    pointer-events: none;
+  }
+}

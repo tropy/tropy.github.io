@@ -2,7 +2,7 @@
 // Header
 //
 
-header {
+.main-header {
   color: $header-color;
   position: relative;
   z-index: $z-index-header;
@@ -11,7 +11,9 @@ header {
     letter-spacing: -0.02em;
   }
 
-  .home & {
+  .home &,
+  .blog-home &,
+  .blog-category & {
     color: $header-home-color;
   }
 

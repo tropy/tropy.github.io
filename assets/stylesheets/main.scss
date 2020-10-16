@@ -22,9 +22,12 @@
 @import "file-support";
 @import "about";
 @import "footer";
-@import "blog";
-@import "blog-home";
-@import "post";
+
+// Blog
+@import "blog/base";
+@import "blog/hero";
+@import "blog/category-nav";
+@import "blog/post";
 
 // Utilities
 @import "utilities";
