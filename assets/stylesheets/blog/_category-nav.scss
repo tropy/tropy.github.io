@@ -44,16 +44,16 @@
       text-decoration: none;
       white-space: nowrap;
 
-      &:first-child {
+      @media (min-width: $sm) {
+        padding: $space-sm $space-md;
+      }
+
+      @include variant("li:first-child") {
         padding-left: $space-md;
       }
 
-      &:last-child {
+      @include variant("li:last-child") {
         padding-right: $space-md;
-      }
-
-      @media (min-width: $sm) {
-        padding: $space-sm $space-md;
       }
     }
 
