@@ -7,6 +7,7 @@ main .blog-hero {
   background-image: linear-gradient(#000 0%, #4848b3 75%, #68c1e8 100%);
   color: $white;
   position: relative;
+  margin-bottom: $section-padding-y-phone + 200px; // todo
 
   @media (min-width: $sm) {
     padding: $section-padding-y 0;

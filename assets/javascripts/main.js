@@ -1,3 +1,10 @@
+'use strict';
+
+import { CategoryNav } from './category-nav.js';
+
+const categoryNav = new CategoryNav('.category-nav');
+
+
 var html = document.querySelector('html');
 
 document.addEventListener("keydown", function(event) {
