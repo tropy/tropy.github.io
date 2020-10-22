@@ -1,6 +1,8 @@
 ---
 layout: default
 class: blog blog-home
+loading-js: /assets/javascripts/blog-loading.js
+js: /assets/javascripts/blog.js
 ---
 
 <section class="blog-hero">
@@ -9,18 +11,18 @@ class: blog blog-home
   </div>
   <div class="hero-illustration"></div>
 </section>
-<section class="posts">
+<section id="posts" class="posts">
   <div class="container-fluid">
-    <nav id="categories" class="category-nav">
+    <nav class="category-nav">
       <ul class="category-list">
         <li class="selected">
-          <a href="/blog#categories">All Posts</a>
+          <a href="/blog#posts">All Posts</a>
         </li>
         {% assign sorted_cats = site.categories | sort %}
         {% for category in sorted_cats %}
           {% assign category_url = category[0] | replace: ' ', '-' | downcase %}
           <li>
-            <a href="/blog/category/{{category_url}}#categories">{{ category[0] }}</a>
+            <a href="/blog/category/{{category_url}}#posts">{{ category[0] }}</a>
           </li>
         {%- endfor -%}
       </ul>

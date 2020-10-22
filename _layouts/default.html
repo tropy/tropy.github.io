@@ -1,3 +1,7 @@
+---
+js: /assets/javascripts/main.js
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,6 +10,9 @@
     {%- seo -%}
     {%- feed_meta -%}
     <link rel="stylesheet" href="/assets/stylesheets/main.css">
+    {%- if layout.loading-js -%}
+      <script type="module" src="{{ layout.loading.js }}"></script>
+    {%- endfor -%}
   </head>
   <body class="{{ page.class}}{{layout.class}}">
     {%- include header.html -%}
@@ -13,6 +20,6 @@
       {{ content }}
     </main>
     {%- include footer.html -%}
-    <script type="module" src="/assets/javascripts/main.js"></script>
+    <script type="module" src="{{ layout.js }}"></script>
   </body>
 </html>

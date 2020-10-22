@@ -9,6 +9,10 @@ main .blog-hero {
   position: relative;
   margin-bottom: $section-padding-y-phone + 200px; // todo
 
+  .fragment-loading & {
+    visibility: hidden;
+  }
+
   @media (min-width: $sm) {
     padding: $section-padding-y 0;
     margin-top: -$header-height;
