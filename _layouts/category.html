@@ -11,10 +11,10 @@ class: blog blog-category
 </section>
 <section class="posts">
   <div class="container-fluid">
-    <nav class="category-nav">
+    <nav id="categories" class="category-nav">
       <ul class="category-list">
         <li>
-          <a href="/blog">All Posts</a>
+          <a href="/blog#categories">All Posts</a>
         </li>
         {%- assign sorted_cats = site.categories | sort -%}
         {%- for category in sorted_cats -%}
@@ -25,7 +25,7 @@ class: blog blog-category
             {%- assign selected = null -%}
           {%- endif -%}
           <li class="{{selected}}">
-            <a href="/blog/category/{{category_url}}">{{ category[0] }}</a>
+            <a href="/blog/category/{{category_url}}#categories">{{ category[0] }}</a>
           </li>
         {%- endfor -%}
       </ul>
