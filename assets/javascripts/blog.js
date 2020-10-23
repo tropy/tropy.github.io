@@ -5,3 +5,4 @@ import { FragmentScroll } from './blog/fragment-scroll.js';
 
 const categoryNav = new CategoryNav('.category-nav');
 const fragmentScroll = new FragmentScroll();
+

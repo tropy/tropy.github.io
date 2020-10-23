@@ -11,7 +11,7 @@ js: /assets/javascripts/main.js
     {%- feed_meta -%}
     <link rel="stylesheet" href="/assets/stylesheets/main.css">
     {%- if layout.loading-js -%}
-      <script type="module" src="{{ layout.loading.js }}"></script>
+      {%- include {{ layout.loading-js }} -%}
     {%- endif -%}
   </head>
   <body class="{{ page.class}}{{layout.class}}">
