@@ -6,7 +6,7 @@ class CategoryNav {
 		this.target = document.querySelector('.sticky-sentinel');
 		this.options = {
 		  root: null,
-		  rootMargin: '0px',
+		  rootMargin: '-1px',
 		  threshold: 1
 		}
 

@@ -12,22 +12,22 @@ js: /assets/javascripts/blog.js
   <div class="hero-illustration"></div>
 </section>
 <section id="posts" class="posts">
-  <div class="container-fluid">
-    <div class="sticky-sentinel"></div>
-    <nav class="category-nav">
-      <ul class="category-list">
-        <li class="selected">
-          <a href="/blog#posts">All Posts</a>
+  <div class="sticky-sentinel" aria-hidden="true"></div>
+  <nav class="category-nav">
+    <ul class="category-list">
+      <li class="selected">
+        <a href="/blog#posts">All Posts</a>
+      </li>
+      {% assign sorted_cats = site.categories | sort %}
+      {% for category in sorted_cats %}
+        {% assign category_url = category[0] | replace: ' ', '-' | downcase %}
+        <li>
+          <a href="/blog/category/{{category_url}}#posts">{{ category[0] }}</a>
         </li>
-        {% assign sorted_cats = site.categories | sort %}
-        {% for category in sorted_cats %}
-          {% assign category_url = category[0] | replace: ' ', '-' | downcase %}
-          <li>
-            <a href="/blog/category/{{category_url}}#posts">{{ category[0] }}</a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </nav>
+      {%- endfor -%}
+    </ul>
+  </nav>
+  <div class="container-fluid">
     {%- if site.posts.size > 0 -%}
       {%- for post in site.posts -%}
         <article class="post post-preview">

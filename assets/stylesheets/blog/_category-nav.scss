@@ -5,7 +5,7 @@
 .category-nav {
   overflow-x: auto;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-  margin: 0 (-$grid-column-gap / 2) ($blog-font-size * $blog-line-height - 13px);
+  margin: 0 0 ($blog-font-size * $blog-line-height - 13px) 0;
   position: sticky;
   top: 0;
   background-color: $white;
@@ -15,11 +15,10 @@
     justify-content: center;
     box-shadow: none;
     margin: 0 0 15px 0; // Same spacing as between articles
+    overflow-x: visible;
 
     &.stuck {
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-      margin-left: -50vw;
-      margin-right: -50vw;
     }
   }
 
@@ -41,10 +40,10 @@
 
     @media (min-width: $sm) {
       justify-content: center;
-      border-bottom: 1px solid #ebebeb;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 
       @include state(".category-nav.stuck") {
-        border-bottom: none;
+        box-shadow: none;
       }
     }
   }
@@ -75,4 +74,3 @@
     }
   }
 }
-

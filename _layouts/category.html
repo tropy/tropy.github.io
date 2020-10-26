@@ -12,27 +12,27 @@ js: /assets/javascripts/blog.js
   <div class="hero-illustration"></div>
 </section>
 <section id="posts" class="posts">
-  <div class="container-fluid">
-    <div class="sticky-sentinel"></div>
-    <nav id="categories" class="category-nav">
-      <ul class="category-list">
-        <li>
-          <a href="/blog#posts">All Posts</a>
+  <div class="sticky-sentinel" aria-hidden="true"></div>
+  <nav id="categories" class="category-nav">
+    <ul class="category-list">
+      <li>
+        <a href="/blog#posts">All Posts</a>
+      </li>
+      {%- assign sorted_cats = site.categories | sort -%}
+      {%- for category in sorted_cats -%}
+        {%- assign category_url = category[0] | replace: ' ', '-' | downcase -%}
+        {%- if category[0] == page.category -%}
+          {%- assign selected = "selected" -%}
+        {%- else -%}
+          {%- assign selected = null -%}
+        {%- endif -%}
+        <li class="{{selected}}">
+          <a href="/blog/category/{{category_url}}#posts">{{ category[0] }}</a>
         </li>
-        {%- assign sorted_cats = site.categories | sort -%}
-        {%- for category in sorted_cats -%}
-          {%- assign category_url = category[0] | replace: ' ', '-' | downcase -%}
-          {%- if category[0] == page.category -%}
-            {%- assign selected = "selected" -%}
-          {%- else -%}
-            {%- assign selected = null -%}
-          {%- endif -%}
-          <li class="{{selected}}">
-            <a href="/blog/category/{{category_url}}#posts">{{ category[0] }}</a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </nav>
+      {%- endfor -%}
+    </ul>
+  </nav>
+  <div class="container-fluid">
     {%- for post in site.categories[page.category] -%}
       <article class="post post-preview">
         <h2 class="h2">
