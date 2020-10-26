@@ -3,12 +3,6 @@
 class CategoryNav {
   constructor(container) {
     this.nav = document.querySelector(container);
-		this.target = document.querySelector('.sticky-sentinel');
-		this.options = {
-		  root: null,
-		  rootMargin: '-1px',
-		  threshold: 1
-		}
 
 		this.handleIntersect = (entries, observer) => {
 		  entries.forEach(entry => {
@@ -20,9 +14,13 @@ class CategoryNav {
 		  });
 		}
 
-		this.observer = new IntersectionObserver(this.handleIntersect, this.options);
+		this.observer = new IntersectionObserver(this.handleIntersect, {
+		  root: null,
+		  rootMargin: '-1px 0px 0px 0px',
+		  threshold: 1
+		});
 
-		this.observer.observe(this.target);
+		this.observer.observe(this.nav);
 
     if (this.nav.scrollWidth > this.nav.clientWidth) {
       const list = this.nav.querySelector('ul');
