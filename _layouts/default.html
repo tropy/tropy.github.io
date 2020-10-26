@@ -3,7 +3,7 @@ js: /assets/javascripts/main.js
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="{{ page.class}}{{layout.class}}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@ js: /assets/javascripts/main.js
       {%- include {{ layout.loading-js }} -%}
     {%- endif -%}
   </head>
-  <body class="{{ page.class}}{{layout.class}}">
+  <body>
     {%- include header.html -%}
     <main>
       {{ content }}

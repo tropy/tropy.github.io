@@ -15,9 +15,13 @@
   }
 }
 
-html,
-body {
-  overflow-x: hidden;
+html {
+  &.home {
+    &,
+    body {
+      overflow-x: hidden;
+    }
+  }
 }
 
 body {
