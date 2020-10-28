@@ -3,6 +3,7 @@
 //
 
 .main-header {
+  flex: 0 0 auto;
   color: $header-color;
   position: relative;
   z-index: $z-index-header;

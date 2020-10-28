@@ -25,6 +25,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   font-family: $font-family-base;
   font-size: $font-size-base;
@@ -32,6 +35,10 @@ body {
   color: $body-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 img,
