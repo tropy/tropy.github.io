@@ -3,9 +3,10 @@
 //
 
 .category-nav {
+  display: flex; // Stretch category-list
   overflow-x: auto;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-  margin: 0 0 ($blog-font-size * $blog-line-height - 13px) 0;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+  margin: 0 0 ($blog-font-size * $blog-line-height + 6px) 0;
   position: sticky;
   top: 0;
   background-color: $white;
@@ -14,7 +15,7 @@
     display: flex;
     justify-content: center;
     box-shadow: none;
-    margin: 0 0 15px 0; // Same spacing as between articles
+    margin: 0 0 34px 0; // Same spacing as between articles
     overflow-x: visible;
 
     &.stuck {
@@ -34,12 +35,13 @@
 
   ul {
     list-style: none;
-    padding: 0;
+    padding: 0 $space-xs;
     margin: 0;
     display: flex;
 
     @media (min-width: $sm) {
       justify-content: center;
+      padding: 0;
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 
       @include state(".category-nav.stuck") {
@@ -51,7 +53,7 @@
   li {
     a {
       display: block;
-      padding: $space-sm $space-xs;
+      padding: $space-sm $space-xs ($space-sm + 1px);
       color: $gray;
       text-decoration: none;
       white-space: nowrap;
@@ -59,18 +61,15 @@
       @media (min-width: $sm) {
         padding: $space-sm $space-md;
       }
-
-      @include variant("li:first-child") {
-        padding-left: $space-md;
-      }
-
-      @include variant("li:last-child") {
-        padding-right: $space-md;
-      }
     }
 
     &.selected a {
       color: $body-color;
+      box-shadow: inset 0 -1px 0 $black;
+
+      @media (min-width: $sm) {
+        box-shadow: 0 1px 0 $black;
+      }
     }
   }
 }
