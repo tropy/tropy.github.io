@@ -20,7 +20,7 @@ main .blog-hero {
   }
 
   h1 {
-    font-size: 108px;
+    font-size: clamp(30px, 7.5vw, 108px);
     text-align: center;
     letter-spacing: -0.015em;
     margin-top: 91px; // todo
