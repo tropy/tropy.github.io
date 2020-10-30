@@ -51,6 +51,15 @@ Unless you link to an external image add your photos to this location (create su
 /assets/images/blog/
 ```
 
+### Post image
+You can specify one image in the post’s front matter to be used as preview image in tweets:
+
+```
+---
+image: /path/to/image.png
+---
+```
+
 ### Responsive images
 There is a way to embed images with multiple resolutions using Jekyll’s kramdown syntax:
 
