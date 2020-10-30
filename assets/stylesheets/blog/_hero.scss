@@ -49,7 +49,14 @@ main .blog-hero {
     bottom: -250px;
     left: 0;
     height: 810px;
-    background: url("/assets/images/blog-hero-illustration.png") no-repeat center bottom;
     pointer-events: none;
+
+    @media (min-width: $sm) {
+      background: url("/assets/images/blog-hero-illustration.png") no-repeat center bottom;
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2ddpx) {
+        background: url("../images/blog-hero-illustration@2x.png") no-repeat center bottom / 3280px 810px;
+      }
+    }
   }
 }
