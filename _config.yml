@@ -45,6 +45,13 @@ social:
 google_site_verification: f4Qn7nonE_x2wrByaZVZfPeuP5iVt-W67eiIGE-KOWI
 lang: en_US
 
+# Set default twitter image via front matter defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/twitter-icon-1.1.png
+
 collections:
   posts:
     permalink: /blog/:slug

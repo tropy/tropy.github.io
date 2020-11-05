@@ -145,6 +145,15 @@
           }
       }
     }
+
+    &.visual {
+      position: static;
+      max-width: 100%;
+      left: initial;
+      transform: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   figcaption {
