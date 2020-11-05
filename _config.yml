@@ -35,7 +35,7 @@ show_excerpts: true
 tagline: Explore your research photos
 twitter:
   username: tropy
-  card: summary
+  card: summary_large_image
 #logo:
 social:
   name: Tropy
