@@ -52,11 +52,17 @@ Unless you link to an external image add your photos to this location (create su
 ```
 
 ### Post image
-You can specify one image in the post’s front matter to be used as preview image in tweets:
+You can specify one (high-res) image in the post’s front matter that will be rendered on top of the post’s content (but it is not rendered in the post excerpts).
+
+The post image can be used as a large preview image in tweets instead of the smaller Tropy icon. As Twitter crops preview images it is not recommended to use them for artwork, add artwork as image to your tweet instead of the preview.
+
+Both a low-res (e.g. *image.png*) and a high-res (e.g. *image`@2x`.png*) version must exist.
 
 ```
 ---
-image: /path/to/image.png
+image: /path/to/image@2x.png
+twitter:
+  card: summary_large_image
 ---
 ```
 
