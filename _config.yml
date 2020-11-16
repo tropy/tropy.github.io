@@ -46,12 +46,15 @@ google_site_verification: f4Qn7nonE_x2wrByaZVZfPeuP5iVt-W67eiIGE-KOWI
 lang: en_US
 
 # Set default twitter image via front matter defaults
+page_image: &page_image "/assets/images/twitter-icon-1.1.png"
+
 defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/twitter-icon-1.1.png
+      image: *page_image
 
+# Set blog post permalinks
 collections:
   posts:
     permalink: /blog/:slug

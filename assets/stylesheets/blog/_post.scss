@@ -106,14 +106,15 @@
   img {
     display: block;
     max-width: 100%;
-    margin-top: $blog-font-size + 17px;
-    margin-bottom: $blog-font-size + 18px;
+    margin: ($blog-font-size + 17px) auto ($blog-font-size + 18px) auto;
 
     @media (min-width: $md) {
       position: relative;
       max-width: 127.43%;
       left: 50%;
       transform: translateX(-50%);
+      margin-left: initial;
+      margin-right: initial;
     }
 
     &.border {
@@ -142,17 +143,8 @@
           box-shadow:
             0 0 0px 0.5px $gray-light,
             0 12.6px 25.2px -12.6px rgba(0, 0, 0, 0.175);
-          }
+        }
       }
-    }
-
-    &.page-image {
-      position: static;
-      max-width: 100%;
-      left: initial;
-      transform: none;
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 

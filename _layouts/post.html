@@ -16,12 +16,11 @@ class: blog blog-post
         {%- endif -%}</p>
     </header>
     <div class="post-content e-content" itemprop="articleBody">
-      {%- if page.image -%}
+      {%- if page.image and page.image != site.page_image -%}
         <p>
           <img
             srcset="{{ page.image | replace: "@2x", "" }} 1x, {{ page.image }} 2x"
             src="{{ page.image | replace: "@2x", "" }}"
-            class="page-image"
           >
         </p>
       {%- endif -%}
