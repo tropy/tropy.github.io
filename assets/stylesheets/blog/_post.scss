@@ -39,6 +39,10 @@
     font-size: 14px;
     color: $gray-dark;
     margin-top: -$blog-font-size;
+
+    @include variant(".post.post-preview") {
+      margin-bottom: -10px;
+    }
   }
 
   h2,
@@ -52,11 +56,10 @@
       font-size: 30px;
       padding-top: $blog-font-size * $blog-line-height;
     }
-  }
 
-  &.post-preview {
-    h2,
-    .h2 {
+    @include variant("post.post-preview") {
+      margin-bottom: $blog-font-size * $blog-line-height;
+
       a {
         color: inherit;
         text-decoration: none;
