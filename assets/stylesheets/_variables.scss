@@ -4,9 +4,10 @@
 
 // Colors
 
-$blue-light: #68c1e8;
-$blue:       #5c93e5;
-$blue-dark:  #395bac;
+$blue-light:   #68c1e8;
+$blue:         #5c93e5;
+$blue-dark:    #395bac;
+$blue-darkest: #060d2e;
 
 $white:      #fff;
 $gray-light: #e6e6eb; // 2% saturation
@@ -83,4 +84,4 @@ $footer-color:  $body-color;
 $blog-max-width: 700px;
 $blog-font-size: 17px;
 $blog-line-height: 1.6;
-$blog-link-color: mix($blue-dark, $blue, 50%);
+$blog-link-color: mix(#4848b3, $blue, 50%);

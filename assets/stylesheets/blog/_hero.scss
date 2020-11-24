@@ -4,24 +4,24 @@
 
 main .blog-hero {
   display: flex;
-  flex-direction: column;
-  height: 439px;
-  background-image: linear-gradient(#000 0%, #4848b3 75%, #68c1e8 100%);
+  background-image: linear-gradient(#{$blue-darkest} 0%, #4848b3 56%, #68c1e8 100%);
   color: $white;
-  padding-top: $header-height-mobile + $space-xl;
+  padding-top: $section-padding-y-phone + 26px;
+  padding-bottom: $section-padding-y-phone + 66px + 10px; // Optical 80px
   margin-top: -$header-height-mobile;
   margin-bottom: $section-padding-y-phone + 171px;
   position: relative;
 
-  @media (pointer: coarse), (max-width: $sm - 1px) {
-    padding-bottom: 128px;
-  }
-
   @media (min-width: $sm) {
     height: 560px;
+    background-image: linear-gradient(#{$blue-darkest} 0%, mix($blue-darkest, #4848b3, 50%), #4848b3 75%, #68c1e8 100%);
     padding: $section-padding-y 0;
     margin-top: -$header-height;
     margin-bottom: $section-padding-y + 138px + 32px; // 32px: compensation for illustration
+  }
+
+  @media (pointer: coarse) and (min-width: $sm) {
+    height: 533px;
   }
 
   .fragment-loading & {
@@ -50,6 +50,36 @@ main .blog-hero {
     left: 0;
     height: 810px;
     pointer-events: none;
+    background: url("../images/blog-hero-illustration-mobile-part-2.png") no-repeat center bottom;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+      background:
+        url("../images/blog-hero-illustration-mobile-part-2@2x.png") no-repeat center bottom / 768px 810px;
+    }
+
+    @media (max-width: $sm - 1px) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url("../images/blog-hero-illustration-mobile-part-1.png") no-repeat -418px bottom;
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+          background: url("../images/blog-hero-illustration-mobile-part-1@2x.png") no-repeat -418px bottom / 768px 810px;
+        }
+
+        @include tween(
+          -418px,
+          0px,
+          320px,
+          $sm,
+          background-position-x
+        );
+      }
+    }
 
     @media (min-width: $sm) {
       background: url("/assets/images/blog-hero-illustration.png") no-repeat center bottom;
