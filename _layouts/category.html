@@ -39,9 +39,6 @@ js: /assets/javascripts/blog.js
             {{ post.title | escape }}
           </a>
         </h2>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
         <p class="post-meta">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           <span class="post-date">{{ post.date | date: date_format }}</span>
@@ -60,6 +57,9 @@ js: /assets/javascripts/blog.js
             </span>
           {%- endif -%}
         </p>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
       </article>
     {% endfor%}
   </div>
