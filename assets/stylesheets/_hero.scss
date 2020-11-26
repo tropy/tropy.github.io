@@ -63,64 +63,30 @@
     }
   }
 
-  .btn {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 600;
-    padding: 10px 16px;
-    border: 2px solid $white;
-    border-radius: 4px;
-    margin-bottom: ($space-lg - 6px);
-    transition:
-      color 0.15s ease-in-out,
-      background-color 0.15s ease-in-out,
-      box-shadow 0.15s ease-in-out;
-
-    @media (hover: hover) {
-      &:hover {
-        color: $blue;
-        background-color: $white;
-      }
-
-      &:active {
-        opacity: 0.84;
-      }
-    }
-
-    @include focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 2px $white;
-    }
-  }
-
   .btn-download {
+    margin-bottom: ($space-lg - 6px);
+
     @media (pointer: coarse), (max-width: $sm - 1px) {
       display: none;
     }
   }
 
   .btn-email {
+    margin-bottom: (18px - 6px);
+
     @media (pointer: fine) and (min-width: $sm) {
       display: none;
     }
   }
 
-  .download-links {
-    display: flex;
-
-    @media (pointer: coarse), (max-width: $sm - 1px) {
-      display: none;
-    }
-  }
-
-  .download-link {
+  .version {
     font-size: 14px;
     color: inherit;
     text-decoration: none;
-    margin: 0 10px;
+    margin-bottom: ($space-lg - 11px);
 
-    @include focus-visible {
-      outline-color: $white;
+    @media (min-width: $sm) {
+      margin-bottom: 0;
     }
   }
 

@@ -1,0 +1,49 @@
+//
+// Buttons
+//
+
+.btn {
+  margin: 0;
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: 2px solid $white;
+  border-radius: 4px;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $blue;
+      background-color: $white;
+      text-decoration: none;
+    }
+  }
+
+  @include focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px $white;
+  }
+
+  > * {
+    pointer-events: none;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &.dropdown-toggle {
+    .show & {
+      color: $blue;
+      background-color: $white;
+      border-color: white;
+    }
+  }
+}

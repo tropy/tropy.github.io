@@ -9,11 +9,12 @@ $blue:         #5c93e5;
 $blue-dark:    #395bac;
 $blue-darkest: #060d2e;
 
-$white:      #fff;
-$gray-light: #e6e6eb; // 2% saturation
-$gray:       #77777c; // 4% saturation
-$gray-dark:  #515154; // 4% saturation
-$black:      #101012; // 8% saturation
+$white:        #fff;
+$gray-lighter: #f0f0f5; // 2% saturation
+$gray-light:   #e6e6eb; // 2% saturation
+$gray:         #77777c; // 4% saturation
+$gray-dark:    #515154; // 4% saturation
+$black:        #101012; // 8% saturation
 
 $brand-primary: $blue;
 
@@ -58,7 +59,8 @@ $xl: 1440px;
 
 // Z-index master list
 
-$z-index-header: 1010;
+$z-index-header:   1010;
+$z-index-dropdown: 1020;
 
 // Layout
 

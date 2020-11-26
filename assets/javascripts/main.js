@@ -1,5 +1,10 @@
 'use strict';
 
+import { Dropdown } from './dropdown.js';
+
+const dropdown = new Dropdown();
+
+
 var html = document.querySelector('html');
 
 document.addEventListener("keydown", function(event) {
