@@ -1,6 +1,4 @@
-'use strict';
-
-class FragmentScroll {
+export class FragmentScroll {
   constructor() {
     const html = document.querySelector('html');
 
@@ -15,5 +13,3 @@ class FragmentScroll {
     }
   }
 }
-
-export { FragmentScroll };

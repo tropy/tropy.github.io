@@ -1,6 +1,4 @@
-'use strict';
-
-class CategoryNav {
+export class CategoryNav {
   constructor(container) {
     this.nav = document.querySelector(container);
 
@@ -35,5 +33,3 @@ class CategoryNav {
     }
   }
 }
-
-export { CategoryNav };

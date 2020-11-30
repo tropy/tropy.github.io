@@ -14,7 +14,7 @@ export class Dropdown {
       if (this.show == false) {
         if (e.target.classList.contains('dropdown-toggle')) {
           this.toggle = e.target;
-          this.open(e.target);
+          this.open();
         }
       } else {
         this.close();
