@@ -36,7 +36,19 @@
   white-space: nowrap;
 
   &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
     background-color: $gray-lighter;
     text-decoration: none;
+
+    .key & {
+      outline: none;
+    }
+  }
+
+  &.disabled {
+    display: none;
   }
 }
