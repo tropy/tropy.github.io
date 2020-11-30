@@ -1,35 +1,42 @@
-'use strict';
-
-class Dropdown {
+export class Dropdown {
   constructor() {
-    const dropdown = document.querySelectorAll('.dropdown');
-    const toggle = document.querySelectorAll('.dropdown-toggle');
-
-    this.toggleAttribute = (el) => {
-      if (el.getAttribute('aria-expanded') == 'false') {
-        return 'true';
-      } else {
-        return 'false';
-      }
-    }
+    this.dropdown = document.querySelectorAll('.dropdown');
+    this.show = false;
 
     document.addEventListener('click', e => {
-      if (e.target.classList.contains('dropdown-toggle')) {
-        e.target.parentNode.classList.toggle('show');
-        e.target.setAttribute('aria-expanded', this.toggleAttribute(e.target));
-
+      if (this.show == false) {
+        if (e.target.classList.contains('dropdown-toggle')) {
+          this.open(e.target);
+        }
       } else {
-        dropdown.forEach(el => {
-          if (el.classList.contains('show')) {
-            const toggle = el.querySelector('.dropdown-toggle');
+        this.close();
+      }
+    });
 
-            el.classList.remove('show');
-            toggle.setAttribute('aria-expanded', this.toggleAttribute(toggle));
-          }
-        });
+    document.addEventListener('keydown', e => {
+      if (this.show && e.key == 'Escape') {
+        this.close();
       }
     });
   }
-}
 
-export { Dropdown };
+  open(el) {
+    el.parentNode.classList.add('show');
+    el.setAttribute('aria-expanded', 'true');
+
+    this.show = true;
+  }
+
+  close() {
+    this.dropdown.forEach(el => {
+      if (el.classList.contains('show')) {
+        const toggle = el.querySelector('.dropdown-toggle');
+
+        el.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    this.show = false;
+  }
+}
