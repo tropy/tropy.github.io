@@ -1,4 +1,4 @@
 ---
 title: Tropy Blog
-layout: home
+layout: blog-home
 ---

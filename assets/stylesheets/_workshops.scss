@@ -1,0 +1,56 @@
+//
+// Workshops
+//
+
+.workshops {
+  main {
+    padding-bottom: $section-padding-y-phone - 23px;
+
+    @media (min-width: $sm) {
+      text-align: center;
+      padding-bottom: $section-padding-y - 25px;
+    }
+
+    h1 {
+      margin-top: 2 * $section-padding-y-phone * 3 / 4 - 78px;
+      margin-bottom: ($section-padding-y-phone * 3 / 4) - 16px;
+
+      @media (min-width: $sm) {
+        margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
+        margin-bottom: ($section-padding-y * 3 / 4) - 20px;
+      }
+    }
+
+    h2 {
+      margin-top: ($section-padding-y-phone * 3 / 4) - 17px;
+      margin-bottom: 18px;
+
+      @media (min-width: $sm) {
+        margin-top: ($section-padding-y * 3 / 4) - 21px;
+        margin-bottom: 24px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: 18px;
+      color: $gray-dark;
+
+      @media (min-width: $sm) {
+        font-size: 24px;
+      }
+
+      + li {
+        margin-top: 9px;
+
+        @media (min-width: $sm) {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+}

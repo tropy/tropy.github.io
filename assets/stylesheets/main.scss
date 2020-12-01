@@ -19,19 +19,24 @@
 @import "icons";
 @import "dropdown";
 @import "header";
-@import "hero";
-@import "key-features";
-@import "portable-projects";
-@import "features";
-@import "file-support";
-@import "about";
 @import "footer";
+
+// Home
+@import "home/hero";
+@import "home/key-features";
+@import "home/portable-projects";
+@import "home/features";
+@import "home/file-support";
+@import "home/about";
 
 // Blog
 @import "blog/base";
 @import "blog/hero";
 @import "blog/category-nav";
 @import "blog/post";
+
+// Workshops
+@import "workshops";
 
 // Utilities
 @import "utilities";

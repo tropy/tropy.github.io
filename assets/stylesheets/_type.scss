@@ -12,7 +12,8 @@ h1, h2, h3, h4, h5, h6,
   line-height: $headings-line-height;
 }
 
-h2 {
+h1,
+.h1 {
   font-size: 36px; // 3/4
   letter-spacing: -0.015em;
 
@@ -21,8 +22,9 @@ h2 {
   }
 }
 
-h3 {
-  font-size: 32px * 3 / 4 ;
+h2,
+.h2 {
+  font-size: 32px * 3 / 4;
   letter-spacing: -0.01em;
 
   @media (min-width: $sm) {
