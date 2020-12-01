@@ -48,7 +48,10 @@ export class Dropdown {
   }
 
   prev() {
-    if (this.active > 0) {
+    if (this.active == null) {
+      this.active = this.items.length - 1;
+      this.setActive();
+    } else if (this.active > 0) {
       this.active--;
       this.setActive();
     }
