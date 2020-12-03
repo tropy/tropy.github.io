@@ -16,7 +16,9 @@
       <nav class="social-nav">
         <ul>
           <li><a href="https://tropy.org/blog/rss/">RSS</a></li>
-          <li><a href="https://twitter.com/tropy">Twitter</a></li>
+          {%- if site.twitter_username -%}
+            <li><a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a></li>
+          {%- endif -%}
         </ul>
       </nav>
     </div>
