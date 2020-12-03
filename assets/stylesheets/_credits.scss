@@ -1,0 +1,153 @@
+//
+// Credits
+//
+
+.credits {
+  text-align: center;
+
+  main {
+    .container-fluid {
+      @media (min-width: $sm) {
+        max-width: 789px;
+      }
+    }
+
+    h1 {
+      margin-top: 2 * $section-padding-y-phone * 3 / 4 - 78px;
+      margin-bottom: ($section-padding-y-phone * 3 / 4) - 16px;
+
+      @media (min-width: $sm) {
+        margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
+        margin-bottom: ($section-padding-y * 3 / 4) - 20px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .contributors {
+    text-align: center;
+
+    h2 {
+      @media (min-width: $sm) {
+        margin-top: $section-padding-y - 20px;
+        margin-bottom: $section-padding-y * 3 / 4 - 16px;
+      }
+    }
+
+    ul {
+      color: $gray-dark;
+
+      @media (min-width: $sm) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    li {
+      flex: 0 0 33.33%;
+      margin-bottom: 72px - 16px;
+    }
+  }
+
+  .contributor {
+    font-size: $font-size-large;
+    margin: 0;
+    line-height: $headings-line-height;
+    margin: 0 0 6px 0;
+  }
+
+  .description {
+    margin: 0;
+  }
+
+  .software {
+    h2 {
+      @media (min-width: $sm) {
+        margin-top: $section-padding-y - 74px;
+        margin-bottom: $section-padding-y * 3 / 4; // todo
+      }
+    }
+
+    ul {
+      @media (min-width: $sm) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    li {
+      flex: 0 0 33.33%;
+      margin-bottom: 72px; // todo
+    }
+
+    svg {
+      @media (hover: hover) {
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .colorize {
+        @media (hover: none) {
+          fill: $gray-dark;
+        }
+
+        @media (hover: hover) {
+          transition: fill 0.5s ease;
+
+          @include state("svg:not(:hover)") {
+            fill: $gray-dark;
+          }
+        }
+      }
+    }
+
+    .pixijs-logo {
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .photo-credits {
+    padding-bottom: $section-padding-y-phone - 7px;
+
+    @media (min-width: $sm) {
+      padding-bottom: $section-padding-y - 9px;
+    }
+
+    h2 {
+      margin-top: $section-padding-y-phone; // todo
+
+      @media (min-width: $sm) {
+        margin-top: $section-padding-y; // todo
+      }
+    }
+
+    li {
+      color: $gray-dark;
+      font-size: $font-size-large * 3 / 4;
+
+      @media (min-width: $sm) {
+        font-size: $font-size-large;
+      }
+
+      & + li {
+        margin-top: $font-size-large * 3 / 4 / 2;
+
+        @media (min-width: $sm) {
+          margin-top: $font-size-large / 2;
+        }
+      }
+    }
+  }
+}
