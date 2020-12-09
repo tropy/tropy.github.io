@@ -1,77 +1,108 @@
 ---
-layout: page
+layout: default
 class: credits
 ---
 
-<h1>Credits</h1>
+<div class="container-fluid">
+  <h1>Credits</h1>
+</div>
 <section class="contributors">
-  <h2>Contributors</h2>
-  <ul>
-    <li>
-      <p class="contributor">Megan Brett</p>
-      <p class="description">Outreach coordinator</p>
-    </li>
-    <li>
-      <p class="contributor">Faolan Cheslack-Postava</p>
-      <p class="description">Prototyping</p>
-    </li>
-    <li>
-      <p class="contributor">Sylvester Keil</p>
-      <p class="description">Lead developer</p>
-    </li>
-    <li>
-      <p class="contributor">Johannes Krtek</p>
-      <p class="description">Product designer</p>
-    </li>
-    <li>
-      <p class="contributor">Roberto Martínez</p>
-      <p class="description">Developer (2019–2020)</p>
-    </li>
-    <li>
-      <p class="contributor">Abby Mullen</p>
-      <p class="description">Principal investigator</p>
-    </li>
-    <li>
-      <p class="contributor">Stephen Robertson</p>
-      <p class="description">Co-PI (2015–2018)</p>
-    </li>
-    <li>
-      <p class="contributor">Jim Safley</p>
-      <p class="description">Metadata specialist</p>
-    </li>
-    <li>
-      <p class="contributor">Kirill Stytsenko</p>
-      <p class="description">Developer (2017–2018)</p>
-    </li>
-    <li>
-      <p class="contributor">Sean Takats</p>
-      <p class="description">Principal investigator</p>
-    </li>
-  </ul>
+  <div class="container-fluid">
+    <h2>Contributors</h2>
+    <ul>
+      <li>
+        <p class="contributor">Megan Brett</p>
+        <p class="description">Outreach coordinator</p>
+      </li>
+      <li>
+        <p class="contributor">Faolan Cheslack-Postava</p>
+        <p class="description">Prototyping</p>
+      </li>
+      <li>
+        <p class="contributor">Sylvester Keil</p>
+        <p class="description">Lead developer</p>
+      </li>
+      <li>
+        <p class="contributor">Johannes Krtek</p>
+        <p class="description">Product designer</p>
+      </li>
+      <li>
+        <p class="contributor">Jessica Mack</p>
+        <p class="description">Outreach coordinator</p>
+      </li>
+      <li>
+        <p class="contributor">Roberto Martínez</p>
+        <p class="description">Developer (2019–2020)</p>
+      </li>
+      <li>
+        <p class="contributor">Abby Mullen</p>
+        <p class="description">Principal investigator</p>
+      </li>
+      <li>
+        <p class="contributor">Stephen Robertson</p>
+        <p class="description">Co-PI (2015–2018)</p>
+      </li>
+      <li>
+        <p class="contributor">Jim Safley</p>
+        <p class="description">Metadata specialist</p>
+      </li>
+      <li>
+        <p class="contributor">Kirill Stytsenko</p>
+        <p class="description">Developer (2017–2018)</p>
+      </li>
+      <li>
+        <p class="contributor">Sean Takats</p>
+        <p class="description">Principal investigator</p>
+      </li>
+    </ul>
+  </div>
 </section>
 <section class="software">
-  <h2>Software</h2>
-  <ul>
-    <li>
-      <a href="https://reactjs.org/">
-        {%- include react.svg -%}
-      </a>
-    </li>
-    <li>
-      <a href="https://www.pixijs.com/">
-        {%- include pixijs.svg -%}
-      </a>
-    </li>
-    <li>SQLite</li>
-    <li>Electron</li>
-    <li>ProseMirror</li>
+  <div class="container-fluid">
+    <h2>Software used in Tropy</h2>
+  </div>
+  <div class="marquee">
+    <ul>
+      <li><a href="https://www.electronjs.org/">{%- include electron.svg -%}</a></li>
+      <li><a href="https://reactjs.org/">{%- include react.svg -%}</a></li>
+      <li><a href="https://www.pixijs.com/">{%- include pixijs.svg -%}</a></li>
+      <li><a href="https://www.sqlite.org/">{%- include sqlite.svg -%}</a></li>
+      <li><a href="https://prosemirror.net/">{%- include prosemirror.svg -%}</a></li>
+    </ul>
+    <ul aria-hidden="true">
+      <li><a href="https://www.electronjs.org/">{%- include electron.svg -%}</a></li>
+      <li><a href="https://reactjs.org/">{%- include react.svg -%}</a></li>
+      <li><a href="https://www.pixijs.com/">{%- include pixijs.svg -%}</a></li>
+      <li><a href="https://www.sqlite.org/">{%- include sqlite.svg -%}</a></li>
+      <li><a href="https://prosemirror.net/">{%- include prosemirror.svg -%}</a></li>
+    </ul>
+  </div>
 </section>
 <section class="photo-credits">
-  <h2>Photos</h2>
-  <ul>
-    <li>The letters in <a href="/#screenshot-1">screenshot 1</a> are from <a href="https://digitalcollections.nypl.org/collections/philip-schuyler-papers">The New York Public Library</a>.</li>
-    <li>The specimens in <a href="/#screenshot-2">screenshot 2</a> are from Wikipedia.</li>
-    <li>The posters in <a href="/#">screenshot 3</a> are courtesy of NASA/JPL-Caltech.</li>
-    <li>The plate in <a href="/#screenshot-4">screenshot 4</a> is from <a href="https://digitalcollections.nypl.org/items/84a79560-0070-0136-37c0-2b71ac269dcc">The New York Public Library</a>.</li>
-  </ul>
+  <div class="container-fluid">
+    <h2>Photos</h2>
+    <ul>
+      <li>The letters in <a href="assets/images/screenshot-1.jpg">screenshot 1</a> are from <a href="https://digitalcollections.nypl.org/collections/philip-schuyler-papers">The New York Public Library</a>.</li>
+      <li>
+        These specimens in <a href="assets/images/screenshot-2.jpg">screenshot 2</a> are from Wikimedia Commons:
+        <a href="https://en.wikipedia.org/wiki/Akzidenz-Grotesk#/media/File:AkzidenzGroteskspecAIB1.svg">Akzidenz Grotesk</a>,
+        <a href="https://en.wikipedia.org/wiki/Johnston_(typeface)#/media/File:JohnstonSpecimenEN.svg">Johnston</a>,
+        <a href="https://en.wikipedia.org/wiki/Erbar#/media/File:Die_sch%C3%B6ne_Erbar-Grotesk.jpg">Erbar</a>,
+        <a href="https://en.wikipedia.org/wiki/Gill_Sans#/media/File:GillSansEG.svg">Gill Sans</a>,
+        <a href="https://en.wikipedia.org/wiki/Futura_(typeface)#/media/File:Futura_Bold_Condensed.jpg">Futura</a>,
+        <a href="https://en.wikipedia.org/wiki/Kabel_(typeface)#/media/File:Kabel_new_specimen.png">Kabel</a>,
+        <a href="https://en.wikipedia.org/wiki/Metro_(typeface)#/media/File:MetroDoubleDuty.png">Metro</a>,
+        <a href="https://en.wikipedia.org/wiki/Twentieth_Century_(typeface)#/media/File:Twentieth_Century_a.png">Twentieth Century</a>,
+        <a href="https://en.wikipedia.org/wiki/Semplicit%C3%A0#/media/File:Semplicit%C3%A0_typeface_sample.png">Semplicità</a>,
+        <a href="https://en.wikipedia.org/wiki/Tempo_(typeface)#/media/File:Tempo_Medium_Italic_Type_Specimen_(24552250119).jpg">Tempo</a>,
+        <a href="https://en.wikipedia.org/wiki/Microgramma_(typeface)#/media/File:Microgramma_Specimen.svg">Microgramma</a>,
+        <a href="https://en.wikipedia.org/wiki/Folio_(typeface)#/media/File:FolioSP01.png">Folio</a>,
+        <a href="https://en.wikipedia.org/wiki/Helvetica#/media/File:Specimen-1963-Neuburg_Rudin.jpg">Helvetica</a>,
+        <a href="https://en.wikipedia.org/wiki/Univers#/media/File:Univers_sample_2015.png">Univers</a>,
+        <a href="https://en.wikipedia.org/wiki/Syntax_(typeface)#/media/File:SyntaxAIB.svg">Syntax</a>.
+      </li>
+      <li>The posters in <a href="assets/images/screenshot-3.jpg">screenshot 3</a> are courtesy of NASA/JPL-Caltech.</li>
+      <li>The plate in <a href="assets/images/screenshot-4.jpg">screenshot 4</a> is from <a href="https://digitalcollections.nypl.org/items/84a79560-0070-0136-37c0-2b71ac269dcc">The New York Public Library</a>.</li>
+    </ul>
+  </div>
 </section>

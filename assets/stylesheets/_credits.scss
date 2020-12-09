@@ -3,22 +3,16 @@
 //
 
 .credits {
-  text-align: center;
-
   main {
-    .container-fluid {
-      @media (min-width: $sm) {
-        max-width: 789px;
-      }
+    @media (min-width: $sm) {
+      text-align: center;
     }
 
     h1 {
       margin-top: 2 * $section-padding-y-phone * 3 / 4 - 78px;
-      margin-bottom: ($section-padding-y-phone * 3 / 4) - 16px;
 
       @media (min-width: $sm) {
         margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
-        margin-bottom: ($section-padding-y * 3 / 4) - 20px;
       }
     }
 
@@ -30,9 +24,10 @@
   }
 
   .contributors {
-    text-align: center;
-
     h2 {
+      margin-top: ($section-padding-y-phone * 3 / 4) - 16px;
+      margin-bottom: $section-padding-y-phone * 9 / 16 - 12px;
+
       @media (min-width: $sm) {
         margin-top: $section-padding-y - 20px;
         margin-bottom: $section-padding-y * 3 / 4 - 16px;
@@ -45,21 +40,39 @@
       @media (min-width: $sm) {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
       }
     }
 
     li {
-      flex: 0 0 33.33%;
-      margin-bottom: 72px - 16px;
+      flex: 0 0 25%;
+      margin-bottom: $font-size-base;
+
+
+      @media (min-width: $sm) {
+        flex: 0 0 50%;
+        margin-bottom: 72px - 16px;
+      }
+
+      @media (min-width: $md) {
+        flex: 0 0 33.33%;
+      }
+
+      @media (min-width: $xl) {
+        flex: 0 0 25%;
+      }
     }
   }
 
   .contributor {
-    font-size: $font-size-large;
+    font-size: 20px;
     margin: 0;
     line-height: $headings-line-height;
-    margin: 0 0 6px 0;
+    margin: 0 0 3px 0;
+
+    @media (min-width: $sm) {
+      font-size: $font-size-large;
+      margin-bottom: 6px;
+    }
   }
 
   .description {
@@ -67,35 +80,57 @@
   }
 
   .software {
+    overflow: hidden;
+
     h2 {
+      margin-top: $section-padding-y-phone * 3 / 4 - 32px;
+      margin-bottom: $section-padding-y-phone * 9 / 16 - 23px;
+
       @media (min-width: $sm) {
-        margin-top: $section-padding-y - 74px;
-        margin-bottom: $section-padding-y * 3 / 4; // todo
+        margin-top: 2 * $section-padding-y * 3 / 4 - 74px;
+        margin-bottom: $section-padding-y * 3 / 4 - 25px; // x-height of React
+      }
+    }
+
+    .marquee {
+      display: flex;
+
+      @media(min-width: $lg) {
+        justify-content: center;
       }
     }
 
     ul {
-      @media (min-width: $sm) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+      flex: 0 0 1000px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      animation: marquee 30s linear infinite;
+
+      @media (min-width: $lg) {
+        flex: 0 0 $container-fluid-width;
+        max-width: $container-fluid-max-width;
+        animation: none;
+      }
+
+      & + ul {
+        @media (min-width: $lg) {
+          display: none;
+        }
       }
     }
 
     li {
-      flex: 0 0 33.33%;
-      margin-bottom: 72px; // todo
+      flex: 0 0 auto;
+    }
+
+    a,
+    svg {
+      display: block;
     }
 
     svg {
-      @media (hover: hover) {
-        transition: all 0.5s ease;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
+      position: relative;
 
       .colorize {
         @media (hover: none) {
@@ -103,18 +138,43 @@
         }
 
         @media (hover: hover) {
-          transition: fill 0.5s ease;
+          transition: fill 0.25s ease;
 
           @include state("svg:not(:hover)") {
             fill: $gray-dark;
           }
         }
       }
+
+      .colorize-70 {
+        @media (hover: none) {
+          fill: mix($gray-dark, $white, 70%);
+        }
+
+        @media (hover: hover) {
+          transition: fill 0.25s ease;
+
+          @include state("svg:not(:hover)") {
+            fill: mix($gray-dark, $white, 70%);
+          }
+        }
+      }
+    }
+
+    .electron-logo {
+      top: 1px;
     }
 
     .pixijs-logo {
-      position: relative;
       top: -2px;
+    }
+
+    .sqlite-logo {
+      top: -5px;
+    }
+
+    .prosemirror-logo {
+      top: -1px;
     }
   }
 
@@ -122,20 +182,30 @@
     padding-bottom: $section-padding-y-phone - 7px;
 
     @media (min-width: $sm) {
-      padding-bottom: $section-padding-y - 9px;
+      padding-bottom: 2 * $section-padding-y * 3 / 4 - 9px;
     }
 
     h2 {
-      margin-top: $section-padding-y-phone; // todo
+      margin-top: $section-padding-y-phone * 3 / 4 - 22px;
+      margin-bottom: 18px;
 
       @media (min-width: $sm) {
-        margin-top: $section-padding-y; // todo
+        margin-top: 2 * $section-padding-y * 3 / 4 - 24px;
+        margin-bottom: 24px;
+      }
+    }
+
+    ul {
+      @media (min-width: $sm) {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
     li {
       color: $gray-dark;
-      font-size: $font-size-large * 3 / 4;
+      font-size: 21px;
 
       @media (min-width: $sm) {
         font-size: $font-size-large;
