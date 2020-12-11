@@ -32,6 +32,13 @@ h2,
   }
 }
 
+h3,
+.h3 {
+  @media (min-width: $sm) {
+    font-size: 21px;
+  }
+}
+
 .lead {
   font-size: 18px;
   color: $gray-dark;
@@ -56,4 +63,9 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+pre {
+  font-family: $font-family-monospace;
+  overflow: auto;
 }

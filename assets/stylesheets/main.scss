@@ -18,8 +18,12 @@
 @import "button-group";
 @import "icons";
 @import "dropdown";
+@import "modal";
 @import "header";
 @import "footer";
+
+// Utilities
+@import "utilities";
 
 // Home
 @import "home/hero";
@@ -41,5 +45,7 @@
 // Credits
 @import "credits";
 
-// Utilities
-@import "utilities";
+// License
+@import "license";
+
+

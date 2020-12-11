@@ -1,0 +1,91 @@
+//
+// License
+//
+
+.license {
+  @media (min-width: $sm) {
+    text-align: center;
+  }
+
+  main > .container-fluid {
+    @media (min-width: $sm) {
+      max-width: 789px;
+      font-size: 21px;
+    }
+  }
+
+  h1 {
+    @media (min-width: $sm) {
+      margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
+      margin-bottom: $section-padding-y * 3 / 4 - 20px;
+    }
+  }
+
+  h2 {
+    @media (min-width: $sm) {
+      margin-top: $section-padding-y * 3 / 4 - 20px;
+      margin-bottom: 21px;
+    }
+  }
+
+  h3 {
+    @media (min-width: $sm) {
+      margin-top: $section-padding-y * 3 / 4; // todo
+    }
+  }
+
+  .dependencies {
+
+    @media (min-width: $sm) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 21px;
+    }
+  }
+
+  .dependency {
+    display: inline;
+    margin-right: $space-md;
+
+    @media (min-width: $sm) {
+      flex: 0 0 auto;
+    }
+
+    .license {
+      display: none;
+    }
+  }
+}
+
+.modal.license {
+
+  .modal-content {
+    max-width: 823px;
+    color: #9bebeb;
+    border-radius: 10px;
+    font-size: $font-size-base;
+  }
+
+  .modal-title {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 2px $space-md;
+    background-color: rgba($blue-darkest, 1);
+    //border-bottom: 1px solid rgba(#9bebeb, 1);
+  }
+
+  .modal-body {
+    text-align: left;
+    background-color: rgba($blue-darkest, 1);
+    padding: $space-md;
+  }
+
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+}
+

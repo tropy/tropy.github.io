@@ -26,6 +26,7 @@ $space-sm:  12px;
 $space-md:  16px;
 $space-lg:  24px;
 $space-xl:  32px;
+$space-xxl: 48px;
 
 // Base
 
@@ -36,7 +37,7 @@ $link-color:  $brand-primary;
 // Type
 
 $font-family-base:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-monospace: "SFMono-Regular", Menlo, Consolas, Monaco, "Courier New", monospace;
 $font-size-base:        16px;
 $font-size-large:       24px;
 $line-height-base:      1.5;
@@ -62,6 +63,8 @@ $xl: 1440px;
 
 $z-index-header:   1010;
 $z-index-dropdown: 1020;
+$z-index-backdrop: 1030;
+$z-index-modal:    1040;
 
 // Layout
 
