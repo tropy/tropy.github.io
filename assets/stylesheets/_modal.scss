@@ -44,6 +44,23 @@
   }
 }
 
+.modal-header {
+  position: relative;
+
+  .btn-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+
+    svg {
+      vertical-align: top;
+      pointer-events: none;
+    }
+  }
+}
+
 .modal-backdrop {
   position: fixed;
   top: 0;

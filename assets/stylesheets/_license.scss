@@ -60,7 +60,6 @@
 }
 
 .modal.license {
-
   .modal-content {
     max-width: 823px;
     color: #9bebeb;
@@ -76,6 +75,12 @@
     padding: 2px $space-md;
     background-color: rgba($blue-darkest, 1);
     //border-bottom: 1px solid rgba(#9bebeb, 1);
+    margin: 0;
+  }
+
+  .btn-close {
+    color: inherit;
+    padding: 4px;
   }
 
   .modal-body {

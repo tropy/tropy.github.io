@@ -35,7 +35,10 @@ export class Modal {
   }
 
   handleClick(e) {
-    if (e.target.classList.contains('modal')) {
+    if (
+      e.target.classList.contains('modal') ||
+      e.target.classList.contains('btn-close')
+    ) {
       this.hide();
     };
   }
