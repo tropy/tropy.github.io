@@ -11,6 +11,10 @@
     width: $container-fluid-width;
     padding: 0;
   }
+
+  .page main & {
+    max-width: 789px;
+  }
 }
 
 .row {

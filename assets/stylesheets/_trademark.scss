@@ -1,0 +1,46 @@
+//
+// Trademark
+//
+
+.trademark {
+  main {
+    padding-bottom: $section-padding-y-phone - 22px;
+
+    @media (min-width: $sm) {
+      padding-bottom: $section-padding-y - 22px;
+    }
+
+    h1,
+    h2 {
+      @media (min-width: $sm) {
+        text-align: center;
+      }
+    }
+
+    h1 {
+      margin-top: 2 * $section-padding-y-phone * 3 / 4 - 78px;
+      margin-bottom: 16px;
+
+      @media (min-width: $sm) {
+        margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
+      }
+    }
+
+    h2 {
+      margin-top: $section-padding-y-phone * 3 / 4 - 16px;
+      margin-bottom: $font-size-base;
+      font-size: 25px; // todo: remove after h2 update
+
+      @media (min-width: $sm) {
+        margin-top: $section-padding-y * 3 / 4 - 18px;
+        font-size: 32px; // todo: remove after h2 update
+      }
+    }
+
+    .lead { // todo: remove after lead update
+      @media (min-width: $sm) {
+        font-size: 21px;
+      }
+    }
+  }
+}
