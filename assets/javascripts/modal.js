@@ -3,15 +3,11 @@ export class Modal {
     this.modal = document.querySelector('.modal');
     this.modalTitle = document.querySelector('.modal-title');
     this.modalBody = document.querySelector('.modal-body');
-    this.handleKey = this.handleKey.bind(this);
     this.trigger;
     this.backdrop;
 
-    document.addEventListener('click', e => {
-      if (e.target.classList.contains('modal')) {
-        this.hide();
-      };
-    });
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKey = this.handleKey.bind(this);
   }
 
   show(params) {
@@ -24,6 +20,7 @@ export class Modal {
     this.modalBody.appendChild(body);
     this.addBackdrop();
     document.body.classList.add('modal-open');
+    document.addEventListener('click', this.handleClick);
     document.addEventListener('keydown', this.handleKey);
   }
 
@@ -37,15 +34,10 @@ export class Modal {
     this.trigger.focus();
   }
 
-  addBackdrop() {
-    const el = document.createElement('div');
-
-    el.className = 'modal-backdrop';
-    this.backdrop = document.body.appendChild(el);
-  }
-
-  removeBackdrop() {
-    this.backdrop.remove();
+  handleClick(e) {
+    if (e.target.classList.contains('modal')) {
+      this.hide();
+    };
   }
 
   handleKey(e) {
@@ -56,5 +48,16 @@ export class Modal {
       case 'Tab':
         e.preventDefault();
     }
+  }
+
+  addBackdrop() {
+    const el = document.createElement('div');
+
+    el.className = 'modal-backdrop';
+    this.backdrop = document.body.appendChild(el);
+  }
+
+  removeBackdrop() {
+    this.backdrop.remove();
   }
 }
