@@ -28,7 +28,7 @@ social:
 google_site_verification: f4Qn7nonE_x2wrByaZVZfPeuP5iVt-W67eiIGE-KOWI
 lang: en_US
 
-# Set default twitter image via front matter defaults
+# Set default twitter image and blog post classes via front matter defaults
 page_image: &page_image "/assets/images/twitter-icon-1.1.png"
 
 defaults:
@@ -36,6 +36,10 @@ defaults:
       path: ""
     values:
       image: *page_image
+  - scope:
+      path: "_posts"
+    values:
+      class: "blog blog-post"
 
 # Set blog post permalinks
 collections:
