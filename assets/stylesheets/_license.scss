@@ -96,11 +96,11 @@
     color: #9bebeb;
     border-radius: 10px;
     font-size: $font-size-base;
+    background-color: $blue-darkest;
   }
 
   .modal-header {
     padding: 0 36px;
-    background-color: rgba($blue-darkest, 1);
 
     @media (min-width: $sm) {
       padding: 0 24px;
@@ -117,7 +117,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @media (min-width: $sm) {
+    @media (min-width: $sm) and (pointer: fine) {
       font-size: 13px;
       line-height: 24px;
     }
@@ -128,12 +128,12 @@
     padding: 10px;
     -webkit-tap-highlight-color: transparent;
 
-    @media (min-width: $sm) {
+    @media (min-width: $sm) and (pointer: fine) {
       padding: 4px;
     }
 
     svg {
-      @media (max-width: $sm - 1px) {
+      @media (max-width: $sm - 1px), (pointer: coarse) {
         transform: scale(1.33);
       }
     }
@@ -141,7 +141,6 @@
 
   .modal-body {
     text-align: left;
-    background-color: rgba($blue-darkest, 1);
     padding: $space-md;
   }
 
