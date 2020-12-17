@@ -2,6 +2,12 @@
 // Buttons
 //
 
+button {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
 .btn {
   margin: 0;
   background-color: transparent;
@@ -35,9 +41,6 @@
     pointer-events: none;
   }
 
-  &:not(:disabled) {
-    cursor: pointer;
-  }
 
   &.dropdown-toggle {
     .show & {
