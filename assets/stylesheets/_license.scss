@@ -61,7 +61,6 @@
 
   .dependencies {
     font-size: 18px;
-    overflow: hidden; // Prevent horizontal rubber band effect
     margin-bottom: -2px;
 
     @media (min-width: $sm) {
