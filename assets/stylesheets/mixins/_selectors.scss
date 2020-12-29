@@ -16,7 +16,7 @@
     $selectors: str-parse($string, " ");
 
     @each $sel in $selectors {
-      @if str-index(#{&}, $sel) != null {
+      @if str-index(unquote("#{&}"), $sel) != null {
         @at-root #{selector-replace(&, $sel, $state)} {
           @content;
         }
