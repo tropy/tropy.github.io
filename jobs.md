@@ -1,6 +1,9 @@
 ---
 layout: page
 class: page jobs
+image: /assets/images/tropy-jobs-twitter-card@2x.png
+twitter:
+  card: summary_large_image
 ---
 
 # Jobs at Tropy
