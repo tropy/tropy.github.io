@@ -22,6 +22,7 @@
     }
 
     .lead {
+      color: inherit;
       margin-top: $section-padding-y-phone * 3 / 4 - 16px; // 2.5% Optical adjustment
 
       @media (min-width: $sm) {

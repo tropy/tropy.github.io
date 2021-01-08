@@ -36,7 +36,6 @@
   }
 
   .about-text {
-    color: $gray-dark;
     margin: 0 0 ($section-padding-y-phone * 3 / 4 - 18px) 0;
 
     @media (min-width: $sm) {

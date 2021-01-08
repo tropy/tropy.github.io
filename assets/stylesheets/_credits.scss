@@ -35,8 +35,6 @@
     }
 
     ul {
-      color: $gray-dark;
-
       @media (min-width: $sm) {
         display: flex;
         flex-wrap: wrap;
@@ -76,6 +74,7 @@
   }
 
   .description {
+    color: $gray-dark;
     margin: 0;
   }
 
@@ -204,7 +203,6 @@
     }
 
     li {
-      color: $gray-dark;
       font-size: 18px;
 
       @media (min-width: $sm) {
