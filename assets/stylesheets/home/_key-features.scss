@@ -46,9 +46,8 @@
       margin: 9px 0 (30px - 6px);
 
       @media (min-width: $sm) {
-        font-size: 24px;
-        line-height: 32px;
-        margin: 12px 0 (48px - 7px);
+        font-size: $font-size-large;
+        margin: 11px 0 (48px - 7px);
       }
 
       @media (min-width: $sm) and (max-width: $lg - 1px) {
@@ -85,12 +84,12 @@
     margin-bottom: $section-padding-y-phone - 36px;
 
     @media (min-width: $sm) {
-      font-size: 24px;
-      margin-top: 12px;
+      font-size: $font-size-large;
+      margin-top: 11px;
       width: 87.5%;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: $section-padding-y - 55px;
+      margin-bottom: $section-padding-y - 54px;
     }
   }
 

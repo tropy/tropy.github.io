@@ -8,7 +8,7 @@
 
     @media (min-width: $sm) {
       text-align: center;
-      padding-bottom: $section-padding-y - 25px;
+      padding-bottom: $section-padding-y - 24px;
     }
 
     h1 {
@@ -17,7 +17,6 @@
 
       @media (min-width: $sm) {
         margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
-        margin-bottom: ($section-padding-y * 3 / 4) - 20px;
       }
     }
 
@@ -26,8 +25,8 @@
       margin-bottom: 18px;
 
       @media (min-width: $sm) {
-        margin-top: ($section-padding-y * 3 / 4) - 21px;
-        margin-bottom: 24px;
+        margin-top: ($section-padding-y * 3 / 4) - 20px;
+        margin-bottom: $font-size-large;
       }
     }
 
@@ -41,14 +40,14 @@
       color: $gray-dark;
 
       @media (min-width: $sm) {
-        font-size: 24px;
+        font-size: $font-size-large;
       }
 
       + li {
         margin-top: 9px;
 
         @media (min-width: $sm) {
-          margin-top: 12px;
+          margin-top: 11px;
         }
       }
     }

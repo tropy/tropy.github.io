@@ -41,7 +41,7 @@
     }
 
     h3 {
-      margin-top: $section-padding-y-phone * 27 / 64 - 3px;
+      margin-top: ceil($section-padding-y-phone * 27 / 64 - 2px);
       margin-bottom: -9px;
 
       @media (min-width: $sm) {

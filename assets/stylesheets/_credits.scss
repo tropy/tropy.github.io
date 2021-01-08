@@ -30,7 +30,7 @@
 
       @media (min-width: $sm) {
         margin-top: $section-padding-y - 20px;
-        margin-bottom: $section-padding-y * 3 / 4 - 16px;
+        margin-bottom: $section-padding-y * 3 / 4 - 14px;
       }
     }
 
@@ -50,7 +50,7 @@
 
       @media (min-width: $sm) {
         flex: 0 0 50%;
-        margin-bottom: 72px - 16px;
+        margin-bottom: 72px - 14px;
       }
 
       @media (min-width: $md) {
@@ -87,7 +87,7 @@
       margin-bottom: $section-padding-y-phone * 9 / 16 - 23px;
 
       @media (min-width: $sm) {
-        margin-top: 2 * $section-padding-y * 3 / 4 - 74px;
+        margin-top: 2 * $section-padding-y * 3 / 4 - 76px;
         margin-bottom: $section-padding-y * 3 / 4 - 25px; // x-height of React
       }
     }
@@ -182,7 +182,7 @@
     padding-bottom: $section-padding-y-phone - 7px;
 
     @media (min-width: $sm) {
-      padding-bottom: 2 * $section-padding-y * 3 / 4 - 9px;
+      padding-bottom: 2 * $section-padding-y * 3 / 4 - 8px;
     }
 
     h2 {
@@ -191,13 +191,13 @@
 
       @media (min-width: $sm) {
         margin-top: 2 * $section-padding-y * 3 / 4 - 24px;
-        margin-bottom: 24px;
+        margin-bottom: $font-size-large;
       }
     }
 
     ul {
       @media (min-width: $sm) {
-        width: 80%;
+        max-width: 840px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -205,17 +205,17 @@
 
     li {
       color: $gray-dark;
-      font-size: 21px;
+      font-size: 18px;
 
       @media (min-width: $sm) {
         font-size: $font-size-large;
       }
 
       & + li {
-        margin-top: $font-size-large * 3 / 4 / 2;
+        margin-top: 9px;
 
         @media (min-width: $sm) {
-          margin-top: $font-size-large / 2;
+          margin-top: ceil($font-size-large / 2);
         }
       }
     }

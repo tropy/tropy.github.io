@@ -29,17 +29,9 @@
     h2 {
       margin-top: $section-padding-y-phone * 3 / 4 - 16px;
       margin-bottom: $font-size-base;
-      font-size: 25px; // todo: remove after h2 update
 
       @media (min-width: $sm) {
         margin-top: $section-padding-y * 3 / 4 - 18px;
-        font-size: 32px; // todo: remove after h2 update
-      }
-    }
-
-    .lead { // todo: remove after lead update
-      @media (min-width: $sm) {
-        font-size: 21px;
       }
     }
   }
