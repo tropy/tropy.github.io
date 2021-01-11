@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Archival Research in a Time of Social Distancing"
 date: "2020-03-17 00:00:00"
 author: "Abby Mullen"

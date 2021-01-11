@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "DC Train the Trainers"
 date: "2018-10-17 15:12:49"
 author: "Abby Mullen"

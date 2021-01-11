@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Untangling the Mess: Researchers’ Photo Practices"
 date: "2016-11-01 14:00:00"
 author: "Abby Mullen"

@@ -40,6 +40,7 @@ defaults:
       path: "_posts"
     values:
       class: "blog blog-post"
+      layout: "post"
 
 # Set blog post permalinks
 collections:

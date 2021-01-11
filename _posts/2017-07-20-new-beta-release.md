@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "New Beta Release"
 date: "2017-07-20 17:17:17"
 author: "Abby Mullen"
@@ -15,6 +14,6 @@ New features include these:
 - **Explode items**: Undo a merge on any item.
 - **New themes**: Choose from light mode or dark mode, which sometimes helps make documents more legible.
 
-The draft documentation available at [docs.tropy.org](https://docs.tropy.org) has been updated with information on these new features. 
+The draft documentation available at [docs.tropy.org](https://docs.tropy.org) has been updated with information on these new features.
 
 We plan photo editing and export for a future beta release.

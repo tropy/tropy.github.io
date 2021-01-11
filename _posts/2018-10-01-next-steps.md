@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Next Steps for Tropy"
 date: "2018-10-01 14:00:00"
 author: "Sean Takats"

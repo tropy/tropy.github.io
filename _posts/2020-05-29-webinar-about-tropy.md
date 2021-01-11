@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Webinar about Tropy!"
 date: "2020-05-29 00:00:00"
 author: "Abby Mullen"

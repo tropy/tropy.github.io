@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Train the Trainers Fall Registrations"
 date: "2019-10-07 17:52:20"
 author: "Abby Mullen"
