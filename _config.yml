@@ -37,7 +37,8 @@ defaults:
     values:
       image: *page_image
   - scope:
-      path: "_posts"
+      path: ""
+      type: "posts"
     values:
       class: "blog blog-post"
       layout: "post"
