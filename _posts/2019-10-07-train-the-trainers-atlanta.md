@@ -3,6 +3,7 @@ title: "Train the Trainers Fall Registrations"
 date: "2019-10-07 17:52:20"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 It’s that time again — time for another round of Train the Trainers! This fall we're going to Atlanta and Texas, and in the spring we'll be heading to Illinois and the Midwest. These session are free, but registration is required.

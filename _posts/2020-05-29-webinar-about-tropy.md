@@ -3,6 +3,7 @@ title: "Webinar about Tropy!"
 date: "2020-05-29 00:00:00"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 You've been asking for a long time for the Tropy team to provide online instruction about our software, which helps you organize and describe your photos. Recent events may have made your need for an organizational system more pressing.

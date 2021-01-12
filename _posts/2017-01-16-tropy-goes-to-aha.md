@@ -3,6 +3,7 @@ title: "Tropy Goes to AHA"
 date: "2017-01-16 14:27:00"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 A poster about Tropy, developed by Stephen Robertson and Abby Mullen, drawing on Johannes Krtek’s design work, was presented January 7, in a poster session at the American Historical Association Conference in Denver. As part of our efforts to raise awareness of the project among historians, the poster highlighted where Tropy fits in the research practices and workflow of scholars gathering material in archives.

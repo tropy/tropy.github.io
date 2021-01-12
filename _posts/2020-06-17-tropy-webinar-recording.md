@@ -2,6 +2,8 @@
 title: "Tropy Webinar Recording"
 date: "2020-06-17 14:19:13"
 author: "Abby Mullen"
+categories:
+  - News
 ---
 
 We held our first Tropy webinar on June 16, 2020, and it was a success! If you couldn't make it, that's ok. We have made a recording available of the unedited session [on YouTube](https://youtu.be/jWjP90EWHkQ).

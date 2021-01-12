@@ -3,6 +3,7 @@ title: "Webinar Just for Graduate Students"
 date: "2020-08-11 14:28:00"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 Hey, graduate students! We're guessing this whole covid business isn't what you thought you were getting when you started grad school. You probably saw yourself as spending hours, days, or weeks looking at sources from which you can create incisive analysis, or traveling to farflung locations to do research. But now you may be feeling apprehensive or discouraged about doing archival research in the age of covid. You also might be thinking that keeping yourself on track amidst everything else that's going on feels impossible.

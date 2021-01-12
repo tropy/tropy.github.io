@@ -3,6 +3,7 @@ title: "DC Train the Trainers"
 date: "2018-10-17 15:12:49"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 Train the Trainers is coming to Washington, DC (or really, to Fairfax, VA)! We'll be convening on our home turf, George Mason University, to do two sessions, one for librarians/archivists, and one for faculty, as outlined [here](https://tropy.org/blog/training-you-to-teach-tropy/).

@@ -3,6 +3,7 @@ title: "Training You to Teach Tropy"
 date: "2018-10-03 15:04:47"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 I love teaching Tropy workshops. It is a delight to see the glimmer of hope and excitement in people's eyes as they realize their research photos don't have to be a gigantic stressful mess. But I can't be everywhere, and I can't teach everyone.

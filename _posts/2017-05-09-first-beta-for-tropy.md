@@ -3,6 +3,7 @@ title: "First Beta for Tropy"
 date: "2017-05-09 14:44:59"
 author: "Sean Takats"
 categories:
+  - News
 ---
 
 Today we're releasing the first beta version of [Tropy](http://tropy.org), free and open-source software that helps you organize and describe your research photographs.

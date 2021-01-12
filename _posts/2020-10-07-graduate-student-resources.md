@@ -3,6 +3,7 @@ title: "Graduate Student Resources"
 date: "2020-10-07 17:15:08"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 The Tropy webinar for graduate students is coming up this Friday, October 9 at 11:00am EDT. We’ve had a lot of grad student interest in this session, and registration is now full. Here are some links to resources that will be discussed during the session:

@@ -4,6 +4,7 @@ date: "2017-10-24 16:29:42"
 author: "Sean Takats"
 image: /assets/images/blog/2017/10/maze-1.0@2x.png
 categories:
+  - News
 ---
 
 We are pleased to announce that the 1.0 release of Tropy is now available. While our crack team of developers continues to refine the software and add new features, Tropy is now officially out of its beta testing phase. If you haven't yet tried Tropy, now is the perfect time to try this new tool for working with your archival research photos.

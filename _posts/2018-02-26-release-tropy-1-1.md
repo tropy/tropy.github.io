@@ -4,6 +4,7 @@ date: "2018-02-26 14:00:00"
 author: "Abby Mullen"
 image: /assets/images/blog/2018/02/maze-1.1@2x.png
 categories:
+  - News
 ---
 
 We are delighted to announce the release of Tropy 1.1!

@@ -4,7 +4,7 @@ date: "2018-05-23 14:51:47"
 author: "Abby Mullen"
 image: /assets/images/blog/2018/05/maze-1.2@2x.png
 categories:
- - News
+  - News
 ---
 
 We are happy to announce the release of Tropy 1.2. This [release](https://github.com/tropy/tropy/releases/tag/1.2.0) includes several new features that make it easier to work with custom metadata templates.

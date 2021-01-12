@@ -3,6 +3,7 @@ title: "Using Tropy to Track Duplicates"
 date: "2018-01-30 15:16:43"
 author: "Abby Mullen"
 categories:
+  - Research Practices
 ---
 
 As a historian who works on the U.S. Navy in the early republican era, I have found that many, if not most, of my sources have been published in some form. Many have been published both in print and online. So when I go to an archive to look at manuscripts, there’s a strong chance that the documents I look at have already been published. Thus, it might seem like photographing manuscripts, particularly in big federal archives like the Library of Congress or the National Archives, is a waste of my time.

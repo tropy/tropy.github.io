@@ -3,6 +3,7 @@ title: "Boston Train the Trainers"
 date: "2018-10-03 16:23:31"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 The Tropy team is pleased to announce the first of our Train the Trainers workshops, to be held **at Northeastern University on November 13**.

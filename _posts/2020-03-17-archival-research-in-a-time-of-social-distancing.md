@@ -3,6 +3,8 @@ title: "Archival Research in a Time of Social Distancing"
 date: "2020-03-17 00:00:00"
 author: "Abby Mullen"
 categories:
+  - News
+  - Research Practices
 ---
 
 All over the world, archives and libraries are shutting their doors as covid-19 spreads. These closures mean that researchers can't use the not-yet-digitized collections that exist in those places. Or does it?

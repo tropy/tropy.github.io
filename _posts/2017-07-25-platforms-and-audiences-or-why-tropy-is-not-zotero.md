@@ -3,6 +3,7 @@ title: "Platforms and Audiences, or why Tropy is not Zotero"
 date: "2017-07-25 14:32:44"
 author: "Sean Takats"
 categories:
+  - Research Practices
 ---
 
 Since Zotero's earliest days, our users have clamored for better support of historical manuscripts and, later, images. Zotero after all was developed by the Center for *History* and New Media, and as historians began to conduct their archival research with digital cameras instead of pencils, why shouldn't Zotero help them? And years later when we sketched out and then launched development of Tropy, why did we choose to develop it as a separate application rather than add its functionality to Zotero?

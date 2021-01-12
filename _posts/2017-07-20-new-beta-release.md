@@ -3,6 +3,7 @@ title: "New Beta Release"
 date: "2017-07-20 17:17:17"
 author: "Abby Mullen"
 categories:
+  - News
 ---
 
 **A new beta version of Tropy is now available.** From this point on, your projects should migrate as Tropy is updated through the 1.0 release. We do recommend that you make backups of your project files, as this is still beta software and some irregularities may remain.
