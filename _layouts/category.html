@@ -57,7 +57,9 @@ js: /assets/javascripts/blog.js
           {%- endif -%}
         </p>
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          <p>
+            {{ post.excerpt | strip_html }}
+          </p>
         {%- endif -%}
       </article>
     {% endfor%}
