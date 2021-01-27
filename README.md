@@ -67,20 +67,17 @@ twitter:
 ```
 
 ### Responsive images
-There is a way to embed images with multiple resolutions using Jekyll’s kramdown syntax:
+Use a liquid tag to embed images with multiple resolutions (specify `@2x` version only):
 
 ```
-![Alt text](/path/to/image.png){: srcset="/path/to/image.png 1x, /path/to/image@2x.png 2x"}
+{% include image.html src="/path/to/image@2x.png" alt="" %}
 ```
 
 ### Captions
-For captions we have to resort to vanilla HTML:
+Use a liquid tag for images with captions (specify `@2x` version only):
 
 ```
-<figure>
-  <img srcset="…" src="…">
-  <figcaption>The caption</figcaption>
-</figure>
+{% include figure.html src="/path/to/image@2x.png" alt="" caption="Example" %}
 ```
 
 ### Screenshots and borders
