@@ -74,23 +74,25 @@ Use a liquid tag to embed images with multiple resolutions (specify `@2x` versio
 ```
 
 ### Captions
-Use a liquid tag for images with captions (specify `@2x` version only):
+Use a liquid tag for responsive images with captions (specify `@2x` version only):
 
 ```
 {% include figure.html src="/path/to/image@2x.png" alt="" caption="Example" %}
 ```
 
+**Heads up**: use single quotes inside captions: `caption="<a href='…'>Source</a>"`
+
 ### Screenshots and borders
-You can add a shadow and rounded corners images by adding the `screenshot` class:
+You can add a shadow and rounded corners to images and figures by adding the `screenshot` class:
 
 ```
-![Alt text](/path/to/image.png){: .screenshot srcset="…"}
+{% include image.html src="…" alt="…" %}{: .screenshot}
 ```
 
 If all you want is a border, you can add the `border` class instead:
 
 ```
-![Alt text](/path/to/image.png){: .border srcset="…"}
+{% include image.html src="…" alt="…" %}{: .border}
 ```
 
 ## Deployment
