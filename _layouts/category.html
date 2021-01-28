@@ -39,6 +39,9 @@ js: /assets/javascripts/blog.js
           </a>
         </h2>
         <p class="post-meta">
+          {%- if post.draft -%}
+            <span class="draft-label">Draft</span>
+          {%- endif -%}
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           <span class="post-date">{{ post.date | date: date_format }}</span>
           {%- if post.author -%}

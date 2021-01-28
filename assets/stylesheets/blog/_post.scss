@@ -35,6 +35,14 @@
     }
   }
 
+  .draft-label {
+    padding: 2px 4px;
+    color: #fff;
+    background-color: $gray;
+    border-radius: 3px;
+    margin-right: 6px;
+  }
+
   .post-meta {
     font-size: 14px;
     color: $gray-dark;
