@@ -48,7 +48,10 @@ In order to keep the outline of a post semantic in terms of accessibility, no he
 Unless you link to an external image add your photos to this location (create subfolders for year and month):
 
 ```
-/assets/images/blog/
+tropy.github.io
+└── assets
+    └── images
+        └── blog
 ```
 
 ### Post image
