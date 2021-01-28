@@ -128,11 +128,11 @@
       margin-right: initial;
     }
 
-    @include variant("img.border, figure.border img") {
+    @include variant("img.border, .border img") {
       border: 1px solid $gray-light;
     }
 
-    @include variant("img.screenshot, figure.screenshot img") {
+    @include variant("img.screenshot, .screenshot img") {
       border-radius: 0.6vw;
       box-shadow:
         0 0 0px 1px $gray-light,
