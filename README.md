@@ -74,7 +74,7 @@ Use a liquid tag to embed images with multiple resolutions (specify `@2x` versio
 ```
 
 ### Captions
-Use a liquid tag for responsive images with captions (specify `@2x` version only):
+Use a liquid tag for images with captions (specify `@2x` version for responsive images):
 
 ```
 {% include figure.html src="/path/to/image@2x.png" alt="" caption="Example" %}
