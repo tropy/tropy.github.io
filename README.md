@@ -70,14 +70,14 @@ twitter:
 Use a liquid tag to embed images with multiple resolutions (specify `@2x` version only):
 
 ```
-{% include image.html src="/path/to/image@2x.png" alt="" %}
+{% include image src="/path/to/image@2x.png" alt="" %}
 ```
 
 ### Captions
 Use a liquid tag for images with captions (specify `@2x` version for responsive images):
 
 ```
-{% include figure.html src="/path/to/image@2x.png" alt="" caption="Example" %}
+{% include figure src="/path/to/image@2x.png" alt="" caption="Example" %}
 ```
 
 **Heads up**: use single quotes inside captions: `caption="<a href='…'>Source</a>"`
@@ -86,13 +86,13 @@ Use a liquid tag for images with captions (specify `@2x` version for responsive 
 You can add a shadow and rounded corners to images and figures by adding the `screenshot` class:
 
 ```
-{% include image.html src="…" alt="…" %}{: .screenshot}
+{% include image src="…" alt="…" %}{: .screenshot}
 ```
 
 If all you want is a border, you can add the `border` class instead:
 
 ```
-{% include image.html src="…" alt="…" %}{: .border}
+{% include image src="…" alt="…" %}{: .border}
 ```
 
 ## Deployment

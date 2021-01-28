@@ -16,7 +16,7 @@ To add an additional field to an item's metadata, right-click on the template na
 
 In our example here, you can see that "Contributor" is in italics — this is our additional field, which won't appear in any other instances of the template *Digitized Artwork*. It's only for this item.
 
-{% include image.html src="/assets/images/blog/2019/03/additional-field@2x.png" alt="" %}{: .screenshot}
+{% include image src="/assets/images/blog/2019/03/additional-field@2x.png" alt="" %}{: .screenshot}
 
 This feature is available for templates of any level: item, photo, or selection.
 
@@ -30,7 +30,7 @@ This feature is especially nice if you're working with long multi-photo items, o
 
 In our example here, we've created a template to represent the additional metadata we want to collect from this article: title, author, and attribution.
 
-{% include image.html src="/assets/images/blog/2019/03/selection-template@2x.png" alt="" %}{: .screenshot}
+{% include image src="/assets/images/blog/2019/03/selection-template@2x.png" alt="" %}{: .screenshot}
 
 ## Extra Bonus Features
 We've also rolled out a new tool for photo clarity: sharpen. You can access sharpen in the [advanced tools](https://docs.tropy.org/in-the-item-view/photo-editing#advanced-photo-editing) on the photo-editing toolbar.

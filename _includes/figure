@@ -1,4 +1,4 @@
 <figure>
-  {% include image.html src=include.src alt=include.alt %}
+  {% include image src=include.src alt=include.alt %}
   <figcaption>{{ include.caption }}</figcaption>
 </figure>

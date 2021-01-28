@@ -16,7 +16,7 @@ The best way to illustrate this point is to demonstrate my process for working w
 ## Make a Custom Template
 For my most recent side project, I’ve been focusing on newspapers from Chronicling America. Knowing that I was going to be using newspapers, I wanted to harvest as much consistent metadata from those papers as possible. So I created a custom template for newspapers.
 
-{% include figure.html src="/assets/images/blog/2018/03/newspaper-template@2x.png" caption="My custom newspaper template" %}
+{% include figure src="/assets/images/blog/2018/03/newspaper-template@2x.png" caption="My custom newspaper template" %}
 
 My template breaks down into three basic groups of information: article information, paper information, and archive information. The first three fields deal with the article itself--the title of the article, its author (if listed), and the attribution (where it was reprinted from, if listed).
 
@@ -41,7 +41,7 @@ Chronicling America allows you to “clip” a portion of the page, just like an
 
 Tropy provides a different solution to this problem. Its tools allow me to get the benefit of having the high-resolution image of the whole page with the legibility of a smaller section. In the item view, you can create a selection to demarcate a specific area of your photo. You can then zoom directly to that area, change that area’s title, and add notes specifically related to that area. You can have multiple selections per image, so if you’re interested in more than one article on the page, or your article spans multiple columns, you can manage them all in one item. So I get the advantage of the clipping function along with the full-resolution image.
 
-{% include figure.html src="/assets/images/blog/2018/03/selection@2x.jpg" alt="" caption="Here, the article I am interested in is highlighted as a selection." %}
+{% include figure src="/assets/images/blog/2018/03/selection@2x.jpg" alt="" caption="Here, the article I am interested in is highlighted as a selection." %}
 
 Newspapers are still clunky, because an article is a tall and skinny area. When I’m creating my selections, I generally drag the notes pane to its smallest size, so nearly the whole window is the image, fit to the width of the window. When I’m ready to take notes or do analysis, I can pull the notes pane back up and zoom in on my selection.
 
