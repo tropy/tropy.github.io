@@ -1,4 +1,10 @@
-<img
-  srcset="{{ include.src | replace: "@2x", "" }} 1x, {{ include.src }} 2x"
-  src="{{ include.src | replace: "@2x", "" }}"
-  alt="{{ include.alt | default: "" }}">
+{% if include.src contains "@2x" %}
+  <img
+    srcset="{{ include.src | replace: "@2x", "" }} 1x, {{ include.src }} 2x"
+    src="{{ include.src | replace: "@2x", "" }}"
+    alt="{{ include.alt | default: "" }}">
+{% else %}
+  <img
+    src="{{ include.src }}"
+    alt="{{ include.alt | default: "" }}">
+{% endif %}
