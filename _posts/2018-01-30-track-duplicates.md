@@ -1,6 +1,5 @@
 ---
 title: "Using Tropy to Track Duplicates"
-date: "2018-01-30 15:16:43"
 author: "Abby Mullen"
 categories:
   - Research Practices

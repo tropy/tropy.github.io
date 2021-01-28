@@ -1,6 +1,5 @@
 ---
 title: "Webinar Just for Graduate Students"
-date: "2020-08-11 14:28:00"
 author: "Abby Mullen"
 categories:
   - News

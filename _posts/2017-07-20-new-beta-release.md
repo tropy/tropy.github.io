@@ -1,6 +1,5 @@
 ---
 title: "New Beta Release"
-date: "2017-07-20 17:17:17"
 author: "Abby Mullen"
 categories:
   - News

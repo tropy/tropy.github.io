@@ -1,6 +1,5 @@
 ---
 title: "Tropy Goes to AHA"
-date: "2017-01-16 14:27:00"
 author: "Abby Mullen"
 categories:
   - News

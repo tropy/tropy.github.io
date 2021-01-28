@@ -1,6 +1,5 @@
 ---
 title: "Platforms and Audiences, or why Tropy is not Zotero"
-date: "2017-07-25 14:32:44"
 author: "Sean Takats"
 categories:
   - Research Practices

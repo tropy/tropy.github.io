@@ -1,6 +1,5 @@
 ---
 title: "Tropy Webinar Recording"
-date: "2020-06-17 14:19:13"
 author: "Abby Mullen"
 categories:
   - News

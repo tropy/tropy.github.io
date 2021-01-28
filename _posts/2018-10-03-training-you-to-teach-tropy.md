@@ -1,6 +1,5 @@
 ---
 title: "Training You to Teach Tropy"
-date: "2018-10-03 15:04:47"
 author: "Abby Mullen"
 categories:
   - News

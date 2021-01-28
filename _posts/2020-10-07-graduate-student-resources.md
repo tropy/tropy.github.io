@@ -1,6 +1,5 @@
 ---
 title: "Graduate Student Resources"
-date: "2020-10-07 17:15:08"
 author: "Abby Mullen"
 categories:
   - News

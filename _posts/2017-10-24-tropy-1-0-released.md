@@ -1,6 +1,5 @@
 ---
 title: "Tropy 1.0 Released"
-date: "2017-10-24 16:29:42"
 author: "Sean Takats"
 image: /assets/images/blog/2017/10/maze-1.0@2x.png
 categories:
