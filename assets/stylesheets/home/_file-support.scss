@@ -54,13 +54,14 @@
     @media (min-width: $sm) {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       grid-gap: 0; // Reset
       width: 5 * ($file-support-icon-size + $space-xl);
       margin-top: ($section-padding-y * 3 / 4) - 6px;
     }
 
-    @media (min-width: $lg) {
+    @media (min-width: $lg + 10px) {
+      justify-content: center;
       width: auto;
     }
   }
