@@ -12,7 +12,7 @@
   }
 
   .container-fluid {
-    max-width: 789.33px;
+    max-width: columns(8, $container-fluid-max-width);
   }
 
   h2 {
