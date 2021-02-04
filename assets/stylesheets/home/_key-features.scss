@@ -47,17 +47,13 @@
 
       @media (min-width: $sm) {
         font-size: $font-size-large;
-        margin: 11px 0 (48px - 7px);
+        margin: 11px 0 (48px - 6px);
       }
 
       @media (min-width: $sm) and (max-width: $lg - 1px) {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-      }
-
-      @media (min-width: $md) {
-        margin-bottom: 60px - 7px;
       }
 
       @media (min-width: $lg) {
