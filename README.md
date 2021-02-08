@@ -17,7 +17,7 @@ $ bundle install
 $ bundle exec jekyll serve
 ```
 
-… and visit at `http://127.0.0.1:4000`.
+… and visit at `localhost:4000`.
 
 ## Switch for previewing drafts of blog posts
 
@@ -32,7 +32,11 @@ $ gem pristine --all --no-extensions
 ```
 
 ## Updating
-To stay in sync with GitHub Pages run `bundle update github-pages`.
+To stay in sync with GitHub Pages run:
+
+```
+$ bundle update github-pages
+```
 
 ## Writing blog posts
 
