@@ -54,7 +54,11 @@
 
     @include focus-visible {
       outline-offset: -3px;
-      outline-color: $white;
+      outline-color: $focus-color;
+
+      @include variant(".home.key, .blog-home.key, .blog-category.key") {
+        outline-color: $white;
+      }
     }
 
     &:hover {
