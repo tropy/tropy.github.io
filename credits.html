@@ -63,20 +63,8 @@ title: Credits
     <h2>Software used in Tropy</h2>
   </div>
   <div class="marquee">
-    <ul>
-      <li><a href="https://www.electronjs.org/">{%- include electron.svg -%}</a></li>
-      <li><a href="https://reactjs.org/">{%- include react.svg -%}</a></li>
-      <li><a href="https://www.pixijs.com/">{%- include pixijs.svg -%}</a></li>
-      <li><a href="https://www.sqlite.org/">{%- include sqlite.svg -%}</a></li>
-      <li><a href="https://prosemirror.net/">{%- include prosemirror.svg -%}</a></li>
-    </ul>
-    <ul aria-hidden="true">
-      <li><a href="https://www.electronjs.org/">{%- include electron.svg -%}</a></li>
-      <li><a href="https://reactjs.org/">{%- include react.svg -%}</a></li>
-      <li><a href="https://www.pixijs.com/">{%- include pixijs.svg -%}</a></li>
-      <li><a href="https://www.sqlite.org/">{%- include sqlite.svg -%}</a></li>
-      <li><a href="https://prosemirror.net/">{%- include prosemirror.svg -%}</a></li>
-    </ul>
+    {%- include marquee.html -%}
+    {%- include marquee.html attr="aria-hidden='true'" -%}
   </div>
 </section>
 <section class="photo-credits">

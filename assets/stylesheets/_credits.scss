@@ -80,6 +80,7 @@
 
   .software {
     overflow: hidden;
+    padding-bottom: 1px; // Prevent clipped electron outline
 
     h2 {
       margin-top: $section-padding-y-phone * 3 / 4 - 32px;
@@ -123,13 +124,13 @@
       flex: 0 0 auto;
     }
 
-    a,
-    svg {
+    a {
       display: block;
+      position: relative;
     }
 
     svg {
-      position: relative;
+      display: block;
 
       .colorize {
         @media (hover: none) {
@@ -185,11 +186,11 @@
     }
 
     h2 {
-      margin-top: $section-padding-y-phone * 3 / 4 - 22px;
+      margin-top: $section-padding-y-phone * 3 / 4 - 23px;
       margin-bottom: 18px;
 
       @media (min-width: $sm) {
-        margin-top: 2 * $section-padding-y * 3 / 4 - 24px;
+        margin-top: 2 * $section-padding-y * 3 / 4 - 25px;
         margin-bottom: $font-size-large;
       }
     }
