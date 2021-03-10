@@ -8,6 +8,12 @@ button {
   }
 }
 
+tpy-dropdown-toggle:not([disabled]) {
+  &::part(button) {
+    cursor: pointer;
+  }
+}
+
 .btn,
 tpy-dropdown-toggle::part(button) {
   margin: 0;
