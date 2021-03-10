@@ -23,12 +23,6 @@ class DropdownItem extends HTMLElement {
 
   attributeChangedCallback(name, oldVal, newVal) {
     if (name == 'selected' && this.selected) this.a.focus()
-    if (name == 'disabled' && this.disabled) this.disable()
-  }
-
-  disable() {
-    this.href = null
-    this.a.removeAttribute('href')
   }
 }
 
