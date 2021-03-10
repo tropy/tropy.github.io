@@ -2,7 +2,7 @@ import { os } from '../helpers/os.js'
 import { withAccessors } from '../helpers/with-accessors.js'
 
 
-export class DownloadButton extends HTMLElement {
+class DownloadButton extends HTMLElement {
   static get observedAttributes() {
     return ['href', 'text']
   }
@@ -39,3 +39,5 @@ const DownloadButtonWithAccessors = withAccessors(DownloadButton, {
   href: false,
   text: false
 })
+
+export { DownloadButtonWithAccessors as DownloadButton }
