@@ -71,7 +71,7 @@ class Dropdown extends HTMLElement {
   }
 
   setup() {
-    this.dropdownToggle.id = `${this.id}-toggle`
+    this.dropdownToggle.buttonId = `${this.id}-toggle`
     this.dropdownMenu.ariaLabelledby = this.dropdownToggle.id
     this.dropdownItems.forEach((item, index) => item.index = index)
   }
