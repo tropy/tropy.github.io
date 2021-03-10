@@ -13,6 +13,7 @@ js: /assets/javascripts/main.js
     {%- if layout.loading-js -%}
       <script src="{{ layout.loading-js }}"></script>
     {%- endif -%}
+    <script type="module" src="{{ layout.js }}"></script>
   </head>
   <body>
     {%- include header.html -%}
@@ -20,6 +21,5 @@ js: /assets/javascripts/main.js
       {{ content }}
     </main>
     {%- include footer.html -%}
-    <script type="module" src="{{ layout.js }}"></script>
   </body>
 </html>
