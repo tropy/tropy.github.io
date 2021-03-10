@@ -79,15 +79,18 @@
     }
   }
 
-  .version {
+  .release-notes {
     font-size: 14px;
     font-weight: 600;
     color: inherit;
-    text-decoration: none;
     margin-bottom: ($space-lg - 11px);
 
     @media (min-width: $sm) {
       margin-bottom: 0;
+    }
+
+    &:focus {
+      outline-color: $white;
     }
   }
 

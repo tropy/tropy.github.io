@@ -11,20 +11,19 @@ title: Explore your research photos
 
     <div class="btn-group btn-download">
       <a class="btn" href="#" >Download Tropy for macOS</a>
-      <div class="btn-group dropdown">
-        <button class="btn dropdown-toggle dropdown-toggle-split" id="dropdownToggle" aria-haspopup="true" aria-expanded="false" aria-label="More Platforms">
+      <tpy-dropdown class="btn-group">
+        <tpy-dropdown-toggle class="dropdown-toggle-split" aria-label="More Platforms">
           <span class="icon icon-caret-down">{%- include chevron-down.svg -%}</span>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownToggle">
-          <a class="dropdown-item linux" href="/download/linux" tabindex="-1">Linux 64-bit</a>
-          <a class="dropdown-item mac disabled" href="/download/mac" tabindex="-1">macOS</a>
-          <a class="dropdown-item win" href="/download/win" tabindex="-1">Windows 64-bit</a>
-          <a class="dropdown-item other" href="https://github.com/tropy/tropy/releases/" tabindex="-1">Other&nbsp;platforms</a>
-        </div>
-      </div>
+        </tpy-dropdown-toggle>
+        <tpy-dropdown-menu>
+          <tpy-download-option mac href="/download/mac">macOS</tpy-download-option>
+          <tpy-download-option win href="/download/windows">Windows 64-bit</tpy-download-option>
+          <tpy-download-option linux href="/download/linux">Linux 64-bit</tpy-download-option>
+        </tpy-dropdown-menu>
+      </tpy-dropdown>
     </div>
     <a class="btn btn-email" href="mailto:?subject=Download%20Tropy&amp;body={%- include email-body.html -%}">Email Download Links</a>
-    <div class="version">Version 2.0.0</div>
+    <a href="https://github.com/tropy/tropy/releases" class="release-notes">What’s new in v2.0.0</a>
   </div>
   <div class="hero-illustration"></div>
 </section>

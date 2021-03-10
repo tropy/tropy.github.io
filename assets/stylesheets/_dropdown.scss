@@ -2,18 +2,17 @@
 // Dropdown
 //
 
-.dropdown {
+tpy-dropdown {
   display: flex;
   z-index: $z-index-dropdown;
   position: relative;
+
+  &:not(:defined) {
+    display: none;
+  }
 }
 
-.dropdown-toggle-split {
-  padding-left: $space-sm;
-  padding-right: $space-sm;
-}
-
-.dropdown-menu {
+tpy-dropdown-menu {
   position: absolute;
   left: 0;
   top: 100%;
@@ -24,31 +23,60 @@
   box-shadow: 0 16px 32px -16px rgba($blue-darkest, 0.5);
   display: none;
 
-  .show & {
+  &[is-open] {
     display: block;
   }
 }
 
-.dropdown-item {
-  display: block;
-  color: $body-color;
-  padding: $space-min $space-md;
-  white-space: nowrap;
+tpy-dropdown-toggle {
+  display: flex;
 
-  &:hover {
-    text-decoration: none;
+  > * {
+    pointer-events: none;
   }
 
-  &:focus {
-    background-color: $gray-lighter;
-    text-decoration: none;
-
-    .key & {
+  &::part(button) {
+    &:focus {
       outline: none;
     }
-  }
 
-  &.disabled {
+    @include state("tpy-dropdown-toggle[is-open]") {
+      color: $blue;
+      background-color: $white;
+      border-color: white;
+    }
+
+    @include variant("tpy-dropdown-toggle.dropdown-toggle-split") {
+      padding-left: $space-sm;
+      padding-right: $space-sm;
+    }
+  }
+}
+
+tpy-dropdown-item {
+  &[disabled] {
     display: none;
   }
+
+  &::part(a) {
+    display: block;
+    color: $body-color;
+    padding: $space-min $space-md;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $gray-lighter;
+      text-decoration: none;
+    }
+  }
+}
+
+tpy-download-option {
+  @extend tpy-dropdown-item;
 }

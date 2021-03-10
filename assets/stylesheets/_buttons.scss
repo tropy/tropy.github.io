@@ -8,7 +8,8 @@ button {
   }
 }
 
-.btn {
+.btn,
+tpy-dropdown-toggle::part(button) {
   margin: 0;
   background-color: transparent;
   text-decoration: none;
@@ -39,14 +40,5 @@ button {
 
   > * {
     pointer-events: none;
-  }
-
-
-  &.dropdown-toggle {
-    .show & {
-      color: $blue;
-      background-color: $white;
-      border-color: white;
-    }
   }
 }

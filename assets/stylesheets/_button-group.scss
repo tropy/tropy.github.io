@@ -9,7 +9,7 @@
     margin-left: -2px;
   }
 
-  > .btn:not(:last-child):not(.dropdown-toggle) {
+  > .btn:not(:last-child):not(tpy-dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -18,6 +18,13 @@
     > .btn {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+    }
+
+    > tpy-dropdown-toggle {
+      &::part(button) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     }
   }
 }
