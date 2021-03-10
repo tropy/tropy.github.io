@@ -70,6 +70,10 @@
     @media (pointer: coarse), (max-width: $sm - 1px) {
       display: none;
     }
+
+    tpy-download-button::part(strong) {
+      font-weight: 800;
+    }
   }
 
   .btn-email {

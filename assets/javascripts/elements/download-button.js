@@ -10,7 +10,7 @@ class DownloadButton extends HTMLElement {
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
-      .innerHTML = `<a part="a">Download Tropy for</a>`
+      .innerHTML = `<a part="a"></a>`
     this.a = this.shadowRoot.querySelector('a')
   }
 
@@ -31,7 +31,9 @@ class DownloadButton extends HTMLElement {
 
   attributeChangedCallback(name, oldVal, newVal) {
     if (name == 'href') this.a.setAttribute('href', this.href)
-    if (name == 'text') this.a.innerText += ` ${this.text}`
+
+    if (name == 'text') this.a.innerHTML = `
+      Download Tropy for <strong part="strong">${this.text}</strong>`
   }
 }
 
