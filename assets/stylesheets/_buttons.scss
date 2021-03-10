@@ -15,6 +15,7 @@ tpy-dropdown-toggle:not([disabled]) {
 }
 
 .btn,
+tpy-download-button::part(a),
 tpy-dropdown-toggle::part(button) {
   margin: 0;
   background-color: transparent;
@@ -47,4 +48,8 @@ tpy-dropdown-toggle::part(button) {
   > * {
     pointer-events: none;
   }
+}
+
+tpy-download-button {
+  display: flex;
 }

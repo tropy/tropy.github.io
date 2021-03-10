@@ -63,8 +63,9 @@
     }
   }
 
-  .btn-download {
+  .download {
     margin-bottom: ($space-lg - 6px);
+    min-height: $space-xxl;
 
     @media (pointer: coarse), (max-width: $sm - 1px) {
       display: none;
