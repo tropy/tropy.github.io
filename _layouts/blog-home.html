@@ -11,20 +11,22 @@ js: /assets/javascripts/blog.js
   <div class="hero-illustration"></div>
 </section>
 <section id="posts" class="posts">
-  <nav class="category-nav">
-    <ul class="category-list">
-      <li class="selected">
-        <a href="/blog#posts">All Posts</a>
-      </li>
-      {% assign sorted_cats = site.categories | sort %}
-      {% for category in sorted_cats %}
-        {% assign category_url = category[0] | replace: ' ', '-' | downcase %}
-        <li>
-          <a href="/blog/category/{{category_url}}#posts">{{ category[0] }}</a>
+  <tpy-sticky>
+    <tpy-scroll-nav class="category-nav">
+      <ul class="category-list">
+        <li class="selected">
+          <a href="/blog#posts">All Posts</a>
         </li>
-      {%- endfor -%}
-    </ul>
-  </nav>
+        {% assign sorted_cats = site.categories | sort %}
+        {% for category in sorted_cats %}
+          {% assign category_url = category[0] | replace: ' ', '-' | downcase %}
+          <li>
+            <a href="/blog/category/{{category_url}}#posts">{{ category[0] }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </tpy-scroll-nav>
+  </tpy-sticky>
   <div class="container-fluid">
     {%- if site.posts.size > 0 -%}
       {%- for post in site.posts -%}

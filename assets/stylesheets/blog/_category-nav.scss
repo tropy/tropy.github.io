@@ -3,6 +3,7 @@
 //
 
 .category-nav {
+  display: block;
   overflow-x: auto;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
   margin: 0 0 ($blog-font-size * $blog-line-height + 6px) 0;

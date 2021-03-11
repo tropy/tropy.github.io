@@ -1,6 +1,9 @@
 import { FocusVisible } from './focus-visible.js'
-import { CategoryNav } from './blog/category-nav.js'
+import { Sticky } from './elements/sticky.js'
+import { ScrollNav } from './elements/scroll-nav.js'
 
+
+customElements.define('tpy-sticky', Sticky)
+customElements.define('tpy-scroll-nav', ScrollNav)
 
 const focusVisible = new FocusVisible()
-const categoryNav = new CategoryNav('.category-nav')
