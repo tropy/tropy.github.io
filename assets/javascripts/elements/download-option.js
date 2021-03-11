@@ -3,7 +3,7 @@ import { DropdownItem } from './dropdown/index.js'
 import { withAccessors } from '../helpers/with-accessors.js'
 
 
-export class DownloadOption extends DropdownItem {
+class DownloadOption extends DropdownItem {
   static get observedAttributes() {
     return ['href', 'index', 'selected', 'disabled', 'mac', 'win', 'linux']
   }
@@ -22,3 +22,5 @@ export class DownloadOption extends DropdownItem {
 const DownloadOptionWithAccessors = withAccessors(DownloadOption, {
   disabled: true
 })
+
+export { DownloadOptionWithAccessors as DownloadOption }
