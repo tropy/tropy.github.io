@@ -2,6 +2,10 @@
 // License
 //
 
+tpy-license-link:focus {
+  background: yellow !important;
+}
+
 .license {
   @media (min-width: $sm) {
     text-align: center;
@@ -89,8 +93,8 @@
   }
 }
 
-.modal.license {
-  .modal-content {
+tpy-modal.license {
+  &::part(modal-content) {
     max-width: 823px;
     color: #9bebeb;
     border-radius: 10px;
@@ -98,59 +102,64 @@
     background-color: $blue-darkest;
   }
 
-  .modal-header {
+  tpy-modal-header {
     padding: 0 36px;
 
     @media (min-width: $sm) {
       padding: 0 24px;
     }
-  }
 
-  .modal-title {
-    font-size: 16px;
-    line-height: 36px;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    &::part(modal-title) {
+      font-size: 16px;
+      line-height: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
-    @media (min-width: $sm) and (pointer: fine) {
-      font-size: 13px;
-      line-height: 24px;
-    }
-  }
-
-  .btn-close {
-    color: inherit;
-    padding: 10px;
-    -webkit-tap-highlight-color: transparent;
-
-    @media (min-width: $sm) and (pointer: fine) {
-      padding: 4px;
+      @media (min-width: $sm) and (pointer: fine) {
+        font-size: 13px;
+        line-height: 24px;
+      }
     }
 
-    svg {
+    &::part(btn-close) {
+      color: inherit;
+      padding: 10px;
+      -webkit-tap-highlight-color: transparent;
+
+      @media (min-width: $sm) and (pointer: fine) {
+        padding: 4px;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &::part(icon) {
       @media (max-width: $sm - 1px), (pointer: coarse) {
         transform: scale(1.33);
       }
     }
   }
 
-  .modal-body {
+  tpy-modal-body {
     text-align: left;
     padding: $space-md;
-  }
 
-  pre {
-    margin: 0;
-    white-space: pre-line;
-    overflow-wrap: break-word;
+    &::part(pre) {
+      margin: 0;
+      white-space: pre-line;
+      overflow-wrap: break-word;
 
-    @media (min-width: $sm) {
-      white-space: pre-wrap;
+      @media (min-width: $sm) {
+        white-space: pre-wrap;
+      }
     }
   }
 }
+
 

@@ -1,31 +1,30 @@
-import { Modal } from './modal.js';
-
 export class License {
   constructor() {
-    this.module;
-    this.modal = new Modal();
+    this.module
+    this.modal = document.querySelector('tpy-modal')
 
     document.addEventListener('click', e => {
       if (e.target.classList.contains('module')) {
-        this.module = e.target;
+        this.module = e.target
 
-        e.preventDefault();
-        this.modal.show({
-          trigger: e.target,
-          title: this.getTitle(),
-          body: this.getLicense()
-        });
+        e.preventDefault()
+        Object.assign(this.modal, {
+          modalTitle: this.getTitle(),
+          content: this.getLicense(),
+          trigger: this.module,
+          isOpen: true
+        })
       }
     })
   }
 
   getTitle() {
-    return this.module.innerText;
+    return this.module.innerText
   }
 
   getLicense() {
     const license = this.module.nextElementSibling.querySelector('pre');
 
-    return license.cloneNode(true);
+    return license.outerHTML;
   }
 }

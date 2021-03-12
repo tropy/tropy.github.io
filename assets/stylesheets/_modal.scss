@@ -2,7 +2,7 @@
 // Modal
 //
 
-.modal {
+tpy-modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -13,68 +13,71 @@
   overflow-y: auto;
   display: none;
 
-  &.show {
+  &[is-open] {
     display: block;
   }
-}
 
-.modal-dialog {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  pointer-events: none;
+  &::part(modal-dialog) {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    pointer-events: none;
 
-  &.centered {
-    align-items: center;
-    min-height: 100%;
+    @include variant("tpy-modal[centered]") {
+      align-items: center;
+      min-height: 100%;
+    }
+
+    @include variant("tpy-modal[scrollable-phone]") {
+      @media (max-width: $sm - 1px) {
+        height: 100%;
+      }
+    }
   }
 
-  &.modal-scrollable-phone {
-    @media (max-width: $sm - 1px) {
-      height: 100%;
+  &::part(modal-content) {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 16px);
+    pointer-events: all;
+    margin: $space-xs;
+    overflow: hidden;
+
+    @media (min-width: $sm) {
+      width: calc(100% - 2 * #{$space-xl});
+      margin: $space-xl;
+    }
+
+    @include variant("tpy-modal[scrollable-phone]") {
+      @media (max-width: $sm - 1px) {
+        max-height: calc(100% - #{2 * $space-xs});
+      }
     }
   }
 }
 
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  width: calc(100% - 16px);
-  pointer-events: all;
-  margin: $space-xs;
-  overflow: hidden;
-
-  @media (min-width: $sm) {
-    width: calc(100% - 2 * #{$space-xl});
-    margin: $space-xl;
-  }
-
-  .modal-scrollable-phone & {
-    @media (max-width: $sm - 1px) {
-      max-height: calc(100% - #{2 * $space-xs});
-    }
-  }
-}
-
-.modal-header {
+tpy-modal-header {
+  display: block;
   position: relative;
 
-  .btn-close {
+  &::part(btn-close) {
     position: absolute;
     right: 0;
     top: 0;
     background-color: transparent;
     border: none;
+  }
 
-    svg {
-      vertical-align: top;
-      pointer-events: none;
-    }
+  &::part(icon) {
+    vertical-align: top;
+    pointer-events: none;
   }
 }
 
-.modal-body {
-  .modal-scrollable-phone & {
+tpy-modal-body {
+  display: block;
+
+  [scrollable-phone] & {
     @media (max-width: $sm - 1px) {
       overflow-y: auto;
     }
