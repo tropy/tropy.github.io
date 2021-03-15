@@ -9,13 +9,13 @@
     margin-left: -2px;
   }
 
-  > .btn:not(:last-child):not(tpy-dropdown-toggle) {
+  > .btn:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 
   > tpy-download-button:not(:last-child) {
-    &::part(a) {
+    a {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
@@ -27,8 +27,8 @@
       border-bottom-left-radius: 0;
     }
 
-    > tpy-dropdown-toggle {
-      &::part(button) {
+    > .dropdown-toggle {
+      > .btn {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }

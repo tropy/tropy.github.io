@@ -71,7 +71,7 @@
       display: none;
     }
 
-    tpy-download-button::part(strong) {
+    tpy-download-button strong {
       font-weight: 800;
     }
   }

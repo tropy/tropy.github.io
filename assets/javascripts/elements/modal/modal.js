@@ -6,26 +6,30 @@ class Modal extends HTMLElement {
     return ['is-open', 'modal-title', 'centered']
   }
 
-  constructor() {
-    super()
+  connectedCallback() {
+    this.classList.add('modal')
+    this.tabIndex = '-1'
     this.handleClick = this.handleClick.bind(this)
-    this.handleKey = this.handleKey.bind(this);
-    const shadow = this.attachShadow({ mode: 'open' })
-      .innerHTML = `
-      <div part="modal-dialog">
-        <div part="modal-content">
+    this.handleKey = this.handleKey.bind(this)
+    this.template = `
+      <div class="modal-dialog">
+        <div class="modal-content">
           <slot></slot>
         </div>
       </div>`
-    const slot = this.shadowRoot.querySelector('slot')
-    this.tabIndex = "-1"
 
-    slot.addEventListener('slotchange', e => {
-      this.modalHeader = this.querySelector('tpy-modal-header')
-      this.modalHeaderTitle = this.modalHeader.shadowRoot.querySelector('h3')
-      this.btnClose = this.modalHeader.shadowRoot.querySelector('button')
-      this.modalBody = this.querySelector('tpy-modal-body')
-    })
+    new MutationObserver(this.elementChangedCallback)
+      .observe(this, { childList: true })
+
+    const slotted = this.innerHTML
+    this.innerHTML = this.template
+    this.querySelector('slot').parentElement.innerHTML = slotted
+  }
+
+  elementChangedCallback = (mutationsList, observer) => {
+    this.modalHeaderTitle = this.querySelector('.modal-title')
+    this.btnClose = this.querySelector('.btn-close')
+    this.modalBody = this.querySelector('.modal-body')
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
@@ -35,6 +39,7 @@ class Modal extends HTMLElement {
   }
 
   open() {
+    this.trigger = document.activeElement
     this.focus()
     this.modalHeaderTitle.innerText = this.modalTitle
     this.modalBody.innerHTML = this.content
@@ -48,7 +53,7 @@ class Modal extends HTMLElement {
     this.removeBackdrop()
     document.body.classList.remove('modal-open')
     document.removeEventListener('click', this.handleClick)
-    document.removeEventListener('keydown', this.handleKey);
+    document.removeEventListener('keydown', this.handleKey)
     this.trigger.focus()
   }
 

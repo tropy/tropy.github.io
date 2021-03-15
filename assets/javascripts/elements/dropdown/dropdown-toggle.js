@@ -8,11 +8,17 @@ class DropdownToggle extends HTMLElement {
 
   constructor() {
     super()
-    const shadow = this.attachShadow({ mode: 'open' }).innerHTML = `
-      <button part="button" aria-haspopup="listbox">
+    this.classList.add('dropdown-toggle')
+    this.template =`
+      <button class="btn" aria-haspopup="listbox">
         <slot></slot>
       </button>`
-    this.button = this.shadowRoot.querySelector('button')
+
+    const slotted = this.innerHTML
+    this.innerHTML = this.template
+    this.querySelector('slot').parentElement.innerHTML = slotted
+
+    this.button = this.querySelector('.btn')
 
     this.button.ariaExpanded = false
 

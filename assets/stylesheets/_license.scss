@@ -2,10 +2,6 @@
 // License
 //
 
-tpy-license-link:focus {
-  background: yellow !important;
-}
-
 .license {
   @media (min-width: $sm) {
     text-align: center;
@@ -93,8 +89,8 @@ tpy-license-link:focus {
   }
 }
 
-tpy-modal.license {
-  &::part(modal-content) {
+.modal.license {
+  .modal-content {
     max-width: 823px;
     color: #9bebeb;
     border-radius: 10px;
@@ -102,14 +98,14 @@ tpy-modal.license {
     background-color: $blue-darkest;
   }
 
-  tpy-modal-header {
+  .modal-header {
     padding: 0 36px;
 
     @media (min-width: $sm) {
       padding: 0 24px;
     }
 
-    &::part(modal-title) {
+    .modal-title {
       font-size: 16px;
       line-height: 36px;
       font-weight: 700;
@@ -125,7 +121,7 @@ tpy-modal.license {
       }
     }
 
-    &::part(btn-close) {
+    .btn-close {
       color: inherit;
       padding: 10px;
       -webkit-tap-highlight-color: transparent;
@@ -139,18 +135,18 @@ tpy-modal.license {
       }
     }
 
-    &::part(icon) {
+    svg {
       @media (max-width: $sm - 1px), (pointer: coarse) {
         transform: scale(1.33);
       }
     }
   }
 
-  tpy-modal-body {
+  .modal-body {
     text-align: left;
     padding: $space-md;
 
-    &::part(pre) {
+    pre {
       margin: 0;
       white-space: pre-line;
       overflow-wrap: break-word;

@@ -8,10 +8,14 @@ class DropdownItem extends HTMLElement {
 
   constructor() {
     super()
-    const shadow = this.attachShadow({ mode: 'open' })
-      .innerHTML = `<a part="a" href="${this.href}" tabindex="-1"><slot></slot></a>`
+    this.classList.add('dropdown-item')
+    this.template = `<a href="${this.href}" tabindex="-1"><slot></slot></a>`
+    const slotted = this.innerHTML
+    this.innerHTML = this.template
+    this.querySelector('slot').parentElement.innerHTML = slotted
+    this.a = this.querySelector('a')
 
-    this.a = this.shadowRoot.querySelector('a')
+    this.classList.add('dropdown-item')
 
     this.addEventListener('mousemove', e => {
       this.dispatchEvent(new CustomEvent('dropdown.mousemove', {

@@ -9,25 +9,16 @@ class Dropdown extends HTMLElement {
   constructor() {
     super()
     this.id = Dropdown.id()
-    const shadow = this.attachShadow({ mode: 'open' })
-      .innerHTML = `<slot></slot>`
-    const slot = this.shadowRoot.querySelector('slot')
+    this.classList.add('dropdown')
+    this.template = `<slot></slot>`
+    const slotted = this.innerHTML
     this.handleFocusOutside = this.handleFocusOutside.bind(this)
 
-    slot.addEventListener('slotchange', e => {
-      this.dropdownToggle =
-        this.firstElementChild
-      this.dropdownToggleButton =
-        this.dropdownToggle.shadowRoot.querySelector('button')
-      this.dropdownMenu =
-        this.lastElementChild
-      this.dropdownItems =
-        this.dropdownMenu.querySelectorAll(':not([disabled])')
-      this.length =
-        this.dropdownItems.length
+    new MutationObserver(this.elementChangedCallback)
+      .observe(this, { childList: true })
 
-      this.setup()
-    })
+    this.innerHTML = this.template
+    this.querySelector('slot').parentElement.innerHTML = slotted
 
     this.addEventListener('dropdown.toggle', e => {
       this.isOpen = !this.isOpen
@@ -58,6 +49,18 @@ class Dropdown extends HTMLElement {
     })
   }
 
+  elementChangedCallback = (mutationsList, observer) => {
+    this.dropdownToggle = this.firstElementChild
+    this.dropdownToggleButton = this.dropdownToggle.querySelector('.btn')
+    this.dropdownMenu = this.lastElementChild
+    this.dropdownItems = this.dropdownMenu.querySelectorAll('.dropdown-item:not([disabled])')
+    this.length = this.dropdownItems.length
+
+    this.dropdownToggle.buttonId = `${this.id}-toggle`
+    this.dropdownMenu.ariaLabelledby = this.dropdownToggle.id
+    this.dropdownItems.forEach((item, index) => item.index = index)
+  }
+
   attributeChangedCallback(name, oldVal, newVal) {
     if (name == 'is-open') {
       this.isOpen ? this.open() : this.close()
@@ -68,12 +71,6 @@ class Dropdown extends HTMLElement {
       if (oldVal) this.dropdownItems[oldVal].selected = false
       if (newVal) this.dropdownItems[newVal].selected = true
     }
-  }
-
-  setup() {
-    this.dropdownToggle.buttonId = `${this.id}-toggle`
-    this.dropdownMenu.ariaLabelledby = this.dropdownToggle.id
-    this.dropdownItems.forEach((item, index) => item.index = index)
   }
 
   open() {
@@ -104,7 +101,7 @@ class Dropdown extends HTMLElement {
   }
 
   handleFocusOutside(e) {
-    if(e.target != this.dropdownToggle && e.target != this.dropdownMenu) {
+    if(e.target != this.dropdownToggleButton && e.target != this.dropdownMenu) {
       this.isOpen = false
     }
   }

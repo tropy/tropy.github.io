@@ -2,7 +2,7 @@
 // Modal
 //
 
-tpy-modal {
+.modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -16,51 +16,52 @@ tpy-modal {
   &[is-open] {
     display: block;
   }
+}
 
-  &::part(modal-dialog) {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    pointer-events: none;
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  pointer-events: none;
 
-    @include variant("tpy-modal[centered]") {
-      align-items: center;
-      min-height: 100%;
-    }
-
-    @include variant("tpy-modal[scrollable-phone]") {
-      @media (max-width: $sm - 1px) {
-        height: 100%;
-      }
-    }
+  [centered] & {
+    align-items: center;
+    min-height: 100%;
   }
 
-  &::part(modal-content) {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 16px);
-    pointer-events: all;
-    margin: $space-xs;
-    overflow: hidden;
-
-    @media (min-width: $sm) {
-      width: calc(100% - 2 * #{$space-xl});
-      margin: $space-xl;
-    }
-
-    @include variant("tpy-modal[scrollable-phone]") {
-      @media (max-width: $sm - 1px) {
-        max-height: calc(100% - #{2 * $space-xs});
-      }
+  [scrollable-phone] & {
+    @media (max-width: $sm - 1px) {
+      height: 100%;
     }
   }
 }
 
-tpy-modal-header {
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 16px);
+  pointer-events: all;
+  margin: $space-xs;
+  overflow: hidden;
+
+  @media (min-width: $sm) {
+    width: calc(100% - 2 * #{$space-xl});
+    margin: $space-xl;
+  }
+
+  [scrollable-phone] & {
+    @media (max-width: $sm - 1px) {
+      max-height: calc(100% - #{2 * $space-xs});
+    }
+  }
+}
+
+
+.modal-header {
   display: block;
   position: relative;
 
-  &::part(btn-close) {
+  .btn-close {
     position: absolute;
     right: 0;
     top: 0;
@@ -68,13 +69,13 @@ tpy-modal-header {
     border: none;
   }
 
-  &::part(icon) {
+  svg {
     vertical-align: top;
     pointer-events: none;
   }
 }
 
-tpy-modal-body {
+.modal-body {
   display: block;
 
   [scrollable-phone] & {

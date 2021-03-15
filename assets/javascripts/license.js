@@ -11,7 +11,6 @@ export class License {
         Object.assign(this.modal, {
           modalTitle: this.getTitle(),
           content: this.getLicense(),
-          trigger: this.module,
           isOpen: true
         })
       }
@@ -23,8 +22,8 @@ export class License {
   }
 
   getLicense() {
-    const license = this.module.nextElementSibling.querySelector('pre');
+    const license = this.module.nextElementSibling.querySelector('pre')
 
-    return license.outerHTML;
+    return license.outerHTML
   }
 }

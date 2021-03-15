@@ -1,8 +1,5 @@
 export class ScrollNav extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
-      .innerHTML = `<slot></slot>`
+  connectedCallback() {
     this.role = 'nav'
 
     if (this.scrollWidth > this.clientWidth) {

@@ -8,9 +8,7 @@ class DropdownMenu extends HTMLElement {
 
   constructor() {
     super()
-    const shadow = this.attachShadow({ mode: 'open' })
-      .innerHTML = `<slot></slot>`
-
+    this.classList.add('dropdown-menu')
     this.role = 'listbox'
   }
 }

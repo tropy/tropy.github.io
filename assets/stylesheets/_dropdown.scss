@@ -3,16 +3,18 @@
 //
 
 tpy-dropdown {
-  display: flex;
-  z-index: $z-index-dropdown;
-  position: relative;
-
   &:not(:defined) {
     display: none;
   }
 }
 
-tpy-dropdown-menu {
+.dropdown {
+  display: flex;
+  z-index: $z-index-dropdown;
+  position: relative;
+}
+
+.dropdown-menu {
   position: absolute;
   left: 0;
   top: 100%;
@@ -28,37 +30,37 @@ tpy-dropdown-menu {
   }
 }
 
-tpy-dropdown-toggle {
+.dropdown-toggle {
   display: flex;
 
-  > * {
-    pointer-events: none;
-  }
-
-  &::part(button) {
+  .btn {
     &:focus {
       outline: none;
     }
 
-    @include state("tpy-dropdown-toggle[is-open]") {
+    @include state(".dropdown-toggle[is-open]") {
       color: $blue;
       background-color: $white;
       border-color: white;
     }
 
-    @include variant("tpy-dropdown-toggle.dropdown-toggle-split") {
+    @include variant(".dropdown-toggle.dropdown-toggle-split") {
       padding-left: $space-sm;
       padding-right: $space-sm;
+    }
+
+    > * {
+      pointer-events: none;
     }
   }
 }
 
-tpy-dropdown-item {
+.dropdown-item {
   &[disabled] {
     display: none;
   }
 
-  &::part(a) {
+  a {
     display: block;
     color: $body-color;
     padding: $space-min $space-md;
@@ -70,13 +72,12 @@ tpy-dropdown-item {
     }
 
     &:focus {
-      outline: none;
       background-color: $gray-lighter;
       text-decoration: none;
+
+      .key & {
+        outline: none;
+      }
     }
   }
-}
-
-tpy-download-option {
-  @extend tpy-dropdown-item;
 }

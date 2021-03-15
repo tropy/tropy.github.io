@@ -1,6 +1,5 @@
 export class Sticky extends HTMLElement {
-  constructor() {
-    super()
+  connectedCallback() {
     this.el = this.querySelector(':first-child')
 
     this.handleIntersect = (entries, observer) => {

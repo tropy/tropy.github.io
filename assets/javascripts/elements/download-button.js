@@ -7,14 +7,10 @@ class DownloadButton extends HTMLElement {
     return ['href', 'text']
   }
 
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
-      .innerHTML = `<a part="a"></a>`
-    this.a = this.shadowRoot.querySelector('a')
-  }
-
   connectedCallback() {
+    this.innerHTML = `<a class="btn"></a>`
+    this.a = this.querySelector('a')
+
     if (os('mac')) {
       this.href = '/download/mac'
       this.text = 'macOS'
