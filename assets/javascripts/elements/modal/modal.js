@@ -44,9 +44,10 @@ export const Modal = createElement(
     open() {
       this.trigger = document.activeElement
       this.focus()
-      this.modalHeaderTitle.innerText = this.modalTitle
-      this.modalBody.innerHTML = this.content
       this.addBackdrop()
+      if (this.modalTitle) this.modalHeaderTitle.innerText = this.modalTitle
+      if (this.content) this.modalBody.innerHTML = this.content
+
       document.body.classList.add('modal-open')
       document.addEventListener('click', this.handleClick)
       document.addEventListener('keydown', this.handleKey)
