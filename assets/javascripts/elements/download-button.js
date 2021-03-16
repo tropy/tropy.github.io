@@ -11,7 +11,7 @@ export const DownloadButton = createElement(
     }
 
     connectedCallback() {
-      this.innerHTML = `<a class="btn"></a>`
+      this.innerHTML = `<a class="btn" href="/download/windows"></a>`
       this.a = this.querySelector('a')
 
       if (os('mac')) {
