@@ -1,4 +1,4 @@
-import { withAccessors } from '../../helpers/with-accessors.js'
+import { createElement } from '../../helpers/create-element.js'
 
 
 class Dropdown extends HTMLElement {
@@ -113,9 +113,9 @@ Dropdown.id = (() => {
   return () => `dropdown-${id++}`
 })()
 
-const DropdownWithAccessors = withAccessors(Dropdown, {
+const DropdownElement = createElement('tpy-dropdown', Dropdown, {
   isOpen: true,
   selected: false
 })
 
-export { DropdownWithAccessors as Dropdown }
+export { DropdownElement as Dropdown }

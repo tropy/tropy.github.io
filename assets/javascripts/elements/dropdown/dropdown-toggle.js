@@ -1,53 +1,53 @@
-import { withAccessors } from '../../helpers/with-accessors.js'
+import { createElement } from '../../helpers/create-element.js'
 
 
-class DropdownToggle extends HTMLElement {
-  static get observedAttributes() {
-    return ['button-id', 'is-open', 'label']
-  }
+export const DropdownToggle = createElement(
+  'tpy-dropdown-toggle',
 
-  constructor() {
-    super()
-    this.classList.add('dropdown-toggle')
-    this.template =`
-      <button class="btn" aria-haspopup="listbox">
-        <slot></slot>
-      </button>`
+  class extends HTMLElement {
+    static get observedAttributes() {
+      return ['button-id', 'is-open', 'label']
+    }
 
-    const slotted = this.innerHTML
-    this.innerHTML = this.template
-    this.querySelector('slot').parentElement.innerHTML = slotted
+    constructor() {
+      super()
+      this.classList.add('dropdown-toggle')
+      this.template =`
+        <button class="btn" aria-haspopup="listbox">
+          <slot></slot>
+        </button>`
 
-    this.button = this.querySelector('.btn')
+      const slotted = this.innerHTML
+      this.innerHTML = this.template
+      this.querySelector('slot').parentElement.innerHTML = slotted
 
-    this.button.ariaExpanded = false
+      this.button = this.querySelector('.btn')
 
-    this.button.addEventListener('click', (e) => {
-      this.dispatchEvent(new Event('dropdown.toggle', {bubbles: true}))
-    })
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name == 'is-open') {
-      this.isOpen ?
-      this.button.ariaExpanded = true :
       this.button.ariaExpanded = false
+
+      this.button.addEventListener('click', (e) => {
+        this.dispatchEvent(new Event('dropdown.toggle', { bubbles: true }))
+      })
     }
 
-    if (name == 'label') {
-      this.button.ariaLabel = this.label
-    }
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (name == 'is-open') {
+        this.isOpen ?
+        this.button.ariaExpanded = true :
+        this.button.ariaExpanded = false
+      }
 
-    if (name == 'button-id') {
-      this.button.id = this.buttonId
+      if (name == 'label') {
+        this.button.ariaLabel = this.label
+      }
+
+      if (name == 'button-id') {
+        this.button.id = this.buttonId
+      }
     }
+  }, {
+    buttonId: false,
+    label: false,
+    isOpen: true
   }
-}
-
-const DropdownToggleWithAccessors = withAccessors(DropdownToggle, {
-  buttonId: false,
-  label: false,
-  isOpen: true
-})
-
-export { DropdownToggleWithAccessors as DropdownToggle }
+)
