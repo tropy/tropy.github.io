@@ -1,4 +1,4 @@
-export function focusVisible() {
+export const focusVisible = (() => {
   const html = document.querySelector('html')
 
   document.addEventListener("keydown", e => {
@@ -10,4 +10,4 @@ export function focusVisible() {
   document.addEventListener("mousedown", e => {
     html.classList.remove('key')
   })
-}
+})()

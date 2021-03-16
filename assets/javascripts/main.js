@@ -6,5 +6,4 @@ import { focusVisible } from './focus-visible.js'
 import { License } from './license.js'
 
 
-focusVisible()
 const license = new License()
