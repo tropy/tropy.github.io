@@ -93,13 +93,13 @@ Use a liquid tag for images with captions (specify `@2x` version for responsive 
 You can add a shadow and rounded corners to images and figures by adding the `screenshot` class:
 
 ```
-{% include image src="…" alt="…" %}{: .screenshot}
+{% include image src="…" alt="…" class="screenshot" %}
 ```
 
 If all you want is a border, you can add the `border` class instead:
 
 ```
-{% include image src="…" alt="…" %}{: .border}
+{% include image src="…" alt="…" class="border" %}
 ```
 
 ## Deployment

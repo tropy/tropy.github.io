@@ -25,13 +25,13 @@ Tropy’s metadata templates are the first place to start for organization, no m
 {: .h3}
 My metadata templates give me as much information as I need to find the sources I’ve photographed. But to track other instances of my sources, I need a more complex system. I could add a field to my template to indicate other sources of publication, but I wanted to be able to see at a glance which of my sources have been published elsewhere. Tropy’s colored tags allow me to instantly see important categories across my whole project. However, overuse of colored tags just creates a muddle. I have dozens of content-related tags (people, places, thematic elements), but I’ve chosen to use my colored tags to mark information about the documents themselves, not their content. Therefore, I have only two colored tags at the moment: <em>transcribed</em> and <em>published</em>.
 
-{% include figure src="/assets/images/blog/2018/01/tag-colors@2x.png" caption="You can see the green dots that indicate <em>published</em> and the yellow that indicate <em>transcribed.</em>" %}{: .border}
+{% include figure src="/assets/images/blog/2018/01/tag-colors@2x.png" caption="You can see the green dots that indicate <em>published</em> and the yellow that indicate <em>transcribed.</em>" class="border" %}
 
 ## Notes
 {: .h3}
 The final piece that allows me to track publication of my sources is the notes field. My goal is to transcribe everything I have (remember, I don’t actually have that many photos), so right now I use notes mostly for transcription. But for every document that I find published elsewhere, I create a note about its location and any discrepancies with the source in my photo. I could put this information in the metadata template, but it’s long and idiosyncratic enough that I found it easier to do in notes.
 
-{% include figure src="/assets/images/blog/2018/01/notes@2x.png" caption="This is my note about the Morris letter's alternate source." %}{: .border}
+{% include figure src="/assets/images/blog/2018/01/notes@2x.png" caption="This is my note about the Morris letter's alternate source." class="border" %}
 
 ## Conclusion
 {: .h3}

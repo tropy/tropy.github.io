@@ -1,10 +1,18 @@
-{% if include.src contains "@2x" %}
-  <img
+<img
+  {%- if include.src contains "@2x" %}
     srcset="{{ include.src | replace: "@2x", "" }} 1x, {{ include.src }} 2x"
     src="{{ include.src | replace: "@2x", "" }}"
-    alt="{{ include.alt | default: "" }}">
-{% else %}
-  <img
+  {%- else %}
     src="{{ include.src }}"
-    alt="{{ include.alt | default: "" }}">
-{% endif %}
+  {%- endif %}
+  alt="{{ include.alt | default: "" }}"
+  {%- if include.width %}
+    width="{{ include.width }}"
+  {%- endif -%}
+  {%- if include.height %}
+    height="{{ include.height }}"
+  {%- endif -%}
+  {%- if include.class %}
+    class="{{ include.class }}"
+  {%- endif -%}
+>
