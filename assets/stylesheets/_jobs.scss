@@ -23,7 +23,7 @@
 
     .lead {
       color: inherit;
-      margin-top: $section-padding-y-phone * 3 / 4 - 16px; // 2.5% Optical adjustment
+      margin-top: $section-padding-y-phone * 3 / 4 - 14px; // 2.5% Optical adjustment
 
       @media (min-width: $sm) {
         width: 100% * 5 / 6;
@@ -35,8 +35,12 @@
 
     img {
       display: block;
+      width: 255px; // 3/4
       margin: 0 auto;
-      max-width: 100%;
+
+      @media (min-width: $sm) {
+        width: auto;
+      }
     }
 
     span {
