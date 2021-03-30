@@ -6,14 +6,12 @@ export const Sticky = createElement(
 
   class extends HTMLElement {
     connectedCallback() {
-      this.el = this.querySelector(':first-child')
-
       this.handleIntersect = (entries, observer) => {
         entries.forEach(entry => {
           if(entry.boundingClientRect.y < 1) {
-            this.el.classList.add('stuck')
+            this.classList.add('stuck')
           } else {
-            this.el.classList.remove('stuck')
+            this.classList.remove('stuck')
           }
         })
       }
@@ -24,7 +22,7 @@ export const Sticky = createElement(
         threshold: 1
       })
 
-      this.observer.observe(this.el)
+      this.observer.observe(this)
     }
   }
 )
