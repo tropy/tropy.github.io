@@ -6,18 +6,18 @@ main .blog-hero {
   display: flex;
   background-image: linear-gradient(#{$blue-darkest} 0%, #4848b3 56%, #68c1e8 100%);
   color: $white;
-  padding-top: $section-padding-y-phone + 26px;
-  padding-bottom: $section-padding-y-phone + 66px + 10px; // Optical 80px
+  padding-top: $section-spacing-y-phone + 26px;
+  padding-bottom: $section-spacing-y-phone + 66px + 10px; // Optical 80px
   margin-top: -$header-height-mobile;
-  margin-bottom: $section-padding-y-phone + 171px;
+  margin-bottom: $section-spacing-y-phone + 171px;
   position: relative;
 
   @media (min-width: $sm) {
     height: 560px;
     background-image: linear-gradient(#{$blue-darkest} 0%, mix($blue-darkest, #4848b3, 50%), #4848b3 75%, #68c1e8 100%);
-    padding: $section-padding-y 0;
+    padding: $section-spacing-y 0;
     margin-top: -$header-height;
-    margin-bottom: $section-padding-y + 138px + 32px; // 32px: compensation for illustration
+    margin-bottom: $section-spacing-y + 138px + 32px; // 32px: compensation for illustration
   }
 
   @media (pointer: coarse) and (min-width: $sm) {

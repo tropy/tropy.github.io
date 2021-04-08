@@ -4,11 +4,11 @@
 
 .about {
   border-top: 1px solid $gray-light;
-  padding: ($section-padding-y-phone - 14px) 0 ($section-padding-y-phone -  8px) 0;
+  padding: ($section-spacing-y-phone - 14px) 0 ($section-spacing-y-phone -  8px) 0;
 
   @media (min-width: $sm) {
-    padding-top: $section-padding-y - 19px;
-    padding-bottom: $section-padding-y - 8px;
+    padding-top: $section-spacing-y - 19px;
+    padding-bottom: $section-spacing-y - 8px;
   }
 
   .container-fluid {
@@ -25,21 +25,21 @@
   }
 
   .lead {
-    margin-bottom: ($section-padding-y-phone * 3 / 4) - 12px;
+    margin-bottom: ($section-spacing-y-phone * 3 / 4) - 12px;
 
     @media (min-width: $sm) {
       width: 83.333%;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: ($section-padding-y * 3 / 4) - 12px;
+      margin-bottom: ($section-spacing-y * 3 / 4) - 12px;
     }
   }
 
   .about-text {
-    margin: 0 0 ($section-padding-y-phone * 3 / 4 - 18px) 0;
+    margin: 0 0 ($section-spacing-y-phone * 3 / 4 - 18px) 0;
 
     @media (min-width: $sm) {
-      margin-bottom: $section-padding-y * 3 / 4 - 18px;
+      margin-bottom: $section-spacing-y * 3 / 4 - 18px;
     }
 
     &:not(.lead) {

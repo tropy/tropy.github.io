@@ -15,10 +15,10 @@
   &.blog-home,
   &.blog-category {
     main {
-      padding-bottom: $section-padding-y-phone - 35px;
+      padding-bottom: $section-spacing-y-phone - 35px;
 
       @media (min-width: $sm) {
-        padding-bottom: $section-padding-y - 33px;
+        padding-bottom: $section-spacing-y - 33px;
       }
     }
   }

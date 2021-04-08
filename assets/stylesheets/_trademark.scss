@@ -4,10 +4,10 @@
 
 .trademark {
   main {
-    padding-bottom: $section-padding-y-phone - 22px;
+    padding-bottom: $section-spacing-y-phone - 22px;
 
     @media (min-width: $sm) {
-      padding-bottom: $section-padding-y - 22px;
+      padding-bottom: $section-spacing-y - 22px;
     }
 
     h1,
@@ -18,20 +18,20 @@
     }
 
     h1 {
-      margin-top: 2 * $section-padding-y-phone * 3 / 4 - 78px;
+      margin-top: 2 * $section-spacing-y-phone * 3 / 4 - 78px;
       margin-bottom: 16px;
 
       @media (min-width: $sm) {
-        margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
+        margin-top: 2 * $section-spacing-y * 3 / 4 - 115px;
       }
     }
 
     h2 {
-      margin-top: $section-padding-y-phone * 3 / 4 - 16px;
+      margin-top: $section-spacing-y-phone * 3 / 4 - 16px;
       margin-bottom: $font-size-base;
 
       @media (min-width: $sm) {
-        margin-top: $section-padding-y * 3 / 4 - 18px;
+        margin-top: $section-spacing-y * 3 / 4 - 18px;
       }
     }
   }

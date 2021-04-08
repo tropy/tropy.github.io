@@ -7,7 +7,7 @@
   background: linear-gradient($blue-dark, $blue, tint($blue-light, 40%) calc(100% - 80px));
   padding-top: $header-height-mobile + $space-xl;
   color: $white;
-  margin-bottom: $section-padding-y-phone + 96px + 32px; // 32px: compensation for illustration
+  margin-bottom: $section-spacing-y-phone + 96px + 32px; // 32px: compensation for illustration
   position: relative;
 
   @media (pointer: coarse), (max-width: $sm - 1px) {
@@ -18,7 +18,7 @@
     padding-top: $header-height + $space-xl;
     padding-bottom: 123px; // 560px height
     margin-top: -$header-height;
-    margin-bottom: $section-padding-y + 61px + 32px; // 32px: compensation for illustration
+    margin-bottom: $section-spacing-y + 61px + 32px; // 32px: compensation for illustration
   }
 
   @media (pointer: coarse) and (min-width: $sm) {

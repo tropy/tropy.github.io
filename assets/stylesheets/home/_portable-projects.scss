@@ -10,10 +10,10 @@
   background-color: #1e1e21;
   color: $white;
   overflow: visible;
-  padding-top: $section-padding-y-phone;
+  padding-top: $section-spacing-y-phone;
 
   @media (min-width: $sm) {
-    padding-top: $section-padding-y;
+    padding-top: $section-spacing-y;
   }
 
   .row {
@@ -22,7 +22,7 @@
 
   .col-md-6 {
     @media (min-width: $sm) {
-      padding: $section-padding-y 0;
+      padding: $section-spacing-y 0;
     }
 
     @include tween(
@@ -35,12 +35,12 @@
   }
 
   h2 {
-    margin: -14px 0 ($section-padding-y-phone * 3 / 4 - 16px);
+    margin: -14px 0 ($section-spacing-y-phone * 3 / 4 - 16px);
     position: relative;
     z-index: 1;
 
     @media (min-width: $sm) {
-      margin: -19px 0 ($section-padding-y * 3 / 4 - $section-padding-y - 20px);
+      margin: -19px 0 ($section-spacing-y * 3 / 4 - $section-spacing-y - 20px);
       text-align: left;
     }
 

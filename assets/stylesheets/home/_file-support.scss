@@ -4,16 +4,16 @@
 
 .file-support {
   border-top: 1px solid $gray-light;
-  padding: $section-padding-y-phone 0 ($section-padding-y-phone - $space-min) 0;
+  padding: $section-spacing-y-phone 0 ($section-spacing-y-phone - $space-min) 0;
 
   @for $i from 3 through 7 {
     @media (min-width: (16px + (96px * $i))) {
-      padding-bottom: calc((#{$section-padding-y-phone - $space-min}) - ((100vw - #{$i * $file-support-icon-size}) / (#{$i + 1}) - 20px));
+      padding-bottom: calc((#{$section-spacing-y-phone - $space-min}) - ((100vw - #{$i * $file-support-icon-size}) / (#{$i + 1}) - 20px));
     }
   }
 
   @media (min-width: $sm) {
-    padding: $section-padding-y 0 ($section-padding-y - $space-xl);
+    padding: $section-spacing-y 0 ($section-spacing-y - $space-xl);
   }
 
   .container-fluid {
@@ -49,7 +49,7 @@
     list-style: none;
     margin: 0 auto;
     padding: 0;
-    margin-top: ($section-padding-y-phone * 3 / 4) - 6px;
+    margin-top: ($section-spacing-y-phone * 3 / 4) - 6px;
 
     @media (min-width: $sm) {
       display: flex;
@@ -57,7 +57,7 @@
       justify-content: center;
       grid-gap: 0; // Reset
       width: 5 * ($file-support-icon-size + $space-xl);
-      margin-top: ($section-padding-y * 3 / 4) - 6px;
+      margin-top: ($section-spacing-y * 3 / 4) - 6px;
     }
 
     @media (min-width: $lg + 144px) {

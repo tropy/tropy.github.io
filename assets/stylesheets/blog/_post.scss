@@ -7,31 +7,31 @@
   line-height: $blog-line-height;
 
   &.post-full {
-    padding-bottom: $section-padding-y-phone - 35px;
+    padding-bottom: $section-spacing-y-phone - 35px;
 
     @media (min-width: $sm) {
-      padding-bottom: $section-padding-y - 35px;
+      padding-bottom: $section-spacing-y - 35px;
     }
   }
 
   .post-header {
-    margin-bottom: $section-padding-y-phone * 3 / 4 - 16px;
+    margin-bottom: $section-spacing-y-phone * 3 / 4 - 16px;
 
     @media (min-width: $sm) {
       text-align: center;
-      margin-bottom: $section-padding-y * 3 / 4 - 16px;
+      margin-bottom: $section-spacing-y * 3 / 4 - 16px;
     }
   }
 
   .post-title {
     font-size: 32px; // 4/5
-    margin-top: 2 * $section-padding-y-phone * 3 / 4 - 76px;
+    margin-top: 2 * $section-spacing-y-phone * 3 / 4 - 76px;
     margin-bottom: $blog-font-size * $blog-line-height;
     letter-spacing: -0.015em;
 
     @media (min-width: $sm) {
       font-size: 40px;
-      margin-top: 2 * $section-padding-y * 3 / 4 - 112px;
+      margin-top: 2 * $section-spacing-y * 3 / 4 - 112px;
     }
   }
 

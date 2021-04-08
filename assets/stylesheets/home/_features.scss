@@ -3,10 +3,10 @@
 //
 
 .features {
-  padding: $section-padding-y-phone 0 ($section-padding-y-phone - 6px) 0;
+  padding: $section-spacing-y-phone 0 ($section-spacing-y-phone - 6px) 0;
 
   @media (min-width: $sm) {
-    padding: $section-padding-y 0 ($section-padding-y - 6px);
+    padding: $section-spacing-y 0 ($section-spacing-y - 6px);
   }
 
   .col-md-5 {
@@ -21,12 +21,12 @@
 
   h2 {
     margin-top: -14px;
-    margin-bottom: $section-padding-y-phone * 3 / 4 - 9px; // 2.5% optical correction
+    margin-bottom: $section-spacing-y-phone * 3 / 4 - 9px; // 2.5% optical correction
 
     @media (min-width: $sm) {
       text-align: center;
       margin-top: -19px;
-      margin-bottom: $section-padding-y * 3 / 4 - 14px;
+      margin-bottom: $section-spacing-y * 3 / 4 - 14px;
     }
   }
 
@@ -59,7 +59,7 @@
     }
 
     &:first-child {
-      margin-bottom: ($section-padding-y-phone * 5 / 8) - 8px;
+      margin-bottom: ($section-spacing-y-phone * 5 / 8) - 8px;
 
       @media (min-width: $sm) {
         margin-bottom: 0;

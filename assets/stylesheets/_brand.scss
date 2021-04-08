@@ -4,21 +4,21 @@
 
 .brand {
   main {
-    padding-bottom: $section-padding-y-phone - 6px;
+    padding-bottom: $section-spacing-y-phone - 6px;
 
     @media (min-width: $sm) {
-      padding-bottom: $section-padding-y - 6px;
+      padding-bottom: $section-spacing-y - 6px;
     }
   }
 
   h1 {
     text-align: center;
-    margin-top: 2 * $section-padding-y-phone * 3 / 4 - 78px;
-    margin-bottom: ($section-padding-y-phone * 3 / 4) - 10px; // 2.5% Optical correction
+    margin-top: 2 * $section-spacing-y-phone * 3 / 4 - 78px;
+    margin-bottom: ($section-spacing-y-phone * 3 / 4) - 10px; // 2.5% Optical correction
 
     @media (min-width: $sm) {
-      margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
-      margin-bottom: $section-padding-y * 3 / 4 - 14px; // 2.5% Optical correction
+      margin-top: 2 * $section-spacing-y * 3 / 4 - 115px;
+      margin-bottom: $section-spacing-y * 3 / 4 - 14px; // 2.5% Optical correction
     }
   }
 
@@ -36,11 +36,11 @@
 
   .lead {
     color: inherit;
-    margin-top: $section-padding-y-phone * 3 / 4 - 13px; // 2.5% Optical correction
+    margin-top: $section-spacing-y-phone * 3 / 4 - 13px; // 2.5% Optical correction
 
     @media (min-width: $sm) {
       text-align: center;
-      margin-top: $section-padding-y * 3 / 4 - 17px; // 2.5% Optical correction
+      margin-top: $section-spacing-y * 3 / 4 - 17px; // 2.5% Optical correction
     }
   }
 }

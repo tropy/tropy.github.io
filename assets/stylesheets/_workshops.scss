@@ -4,28 +4,28 @@
 
 .workshops {
   main {
-    padding-bottom: $section-padding-y-phone - 23px;
+    padding-bottom: $section-spacing-y-phone - 23px;
 
     @media (min-width: $sm) {
       text-align: center;
-      padding-bottom: $section-padding-y - 24px;
+      padding-bottom: $section-spacing-y - 24px;
     }
 
     h1 {
-      margin-top: 2 * $section-padding-y-phone * 3 / 4 - 78px;
-      margin-bottom: ($section-padding-y-phone * 3 / 4) - 16px;
+      margin-top: 2 * $section-spacing-y-phone * 3 / 4 - 78px;
+      margin-bottom: ($section-spacing-y-phone * 3 / 4) - 16px;
 
       @media (min-width: $sm) {
-        margin-top: 2 * $section-padding-y * 3 / 4 - 115px;
+        margin-top: 2 * $section-spacing-y * 3 / 4 - 115px;
       }
     }
 
     h2 {
-      margin-top: ($section-padding-y-phone * 3 / 4) - 17px;
+      margin-top: ($section-spacing-y-phone * 3 / 4) - 17px;
       margin-bottom: 18px;
 
       @media (min-width: $sm) {
-        margin-top: ($section-padding-y * 3 / 4) - 20px;
+        margin-top: ($section-spacing-y * 3 / 4) - 20px;
         margin-bottom: $font-size-large;
       }
     }

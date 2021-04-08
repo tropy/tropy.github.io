@@ -4,10 +4,10 @@
 
 .not-found {
   main {
-    padding-bottom: $section-padding-y-phone - 6px;
+    padding-bottom: $section-spacing-y-phone - 6px;
 
     @media (min-width: $sm) {
-      padding-bottom: $section-padding-y - 6px;
+      padding-bottom: $section-spacing-y - 6px;
     }
   }
 
@@ -15,24 +15,24 @@
     display: block;
     width: 240px;
     height: auto;
-    margin: ($section-padding-y-phone * 3 / 4 - 27px) auto 0;
+    margin: ($section-spacing-y-phone * 3 / 4 - 27px) auto 0;
 
     @media (min-width: $sm) {
       width: auto;
-      margin-top: $section-padding-y * 3 / 4 - 30px;
+      margin-top: $section-spacing-y * 3 / 4 - 30px;
     }
   }
 
   .lead {
     color: $red;
     text-align: center;
-    margin-top: $section-padding-y-phone * 3 / 4 - 28px;
+    margin-top: $section-spacing-y-phone * 3 / 4 - 28px;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 0.025em;
 
     @media (min-width: $sm) {
-      margin-top: $section-padding-y * 3 / 4 - 37px;
+      margin-top: $section-spacing-y * 3 / 4 - 37px;
     }
   }
 }
