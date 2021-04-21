@@ -7,7 +7,7 @@ class: workshops
 
 ## Webinars
 
-- [June 16, 2020 – Tropy 101](https://www.youtube.com/watch?v=jWjP90EWHkQ)
+- [June 16, 2020 — Tropy 101](https://www.youtube.com/watch?v=jWjP90EWHkQ)
 - [October 9, 2020 — Tropy for Graduate Students](https://www.youtube.com/watch?v=yppPfY9Vb48)
 - [February 24, 2021 — European University Institute Research Skills Series](https://www.youtube.com/watch?v=yuxlkRlFwhI)
 
