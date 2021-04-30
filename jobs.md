@@ -10,14 +10,14 @@ twitter:
 
 ![](/assets/images/jobs.svg){: aria-hidden="true"}
 
-<strong>We’re looking to hire a full-time, remote, contract developer</strong>
-to join our team building open-source software for researchers. If you love the
-AGPL and know JavaScript, then come work with us on Tropy, a beautiful Electron
-app built with React, SQLite, and WebGL. Tropy is not out to disrupt industries,
-transform markets, or change the world: it simply wants to be an elegant
-solution to research entropy. To help us achieve this goal, you’ll work closely
-with our lead developer and product designer, who will encourage you to focus on
-the areas that interest you most, and help you to build new skills.
+**We’re looking to hire a full-time, remote, contract developer** to join our
+team building open-source software for researchers. If you love the AGPL and
+know JavaScript, then come work with us on Tropy, a beautiful Electron app built
+with React, SQLite, and WebGL. Tropy is not out to disrupt industries, transform
+markets, or change the world: it simply wants to be an elegant solution to
+research entropy. To help us achieve this goal, you’ll work closely with our
+lead developer and product designer, who will encourage you to focus on the
+areas that interest you most, and help you to build new skills.
 {: .lead}
 
 ## Requirements
