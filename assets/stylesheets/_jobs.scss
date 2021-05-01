@@ -102,6 +102,14 @@
         margin: ($blog-font-size * $blog-line-height) 0;
       }
 
+      ul {
+        list-style-type: "– ";
+
+        @media (max-width: $sm - 1px) {
+          padding-left: 40px * 5 / 8;
+        }
+      }
+
       a {
         color: mix($blue, $blue-dark, 50%);
       }
