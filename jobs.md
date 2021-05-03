@@ -17,7 +17,9 @@ with React, SQLite, and WebGL. Tropy is not out to disrupt industries, transform
 markets, or change the world: it simply wants to be an elegant solution to
 research entropy. To help us achieve this goal, you’ll work closely with our
 lead developer and product designer, who will encourage you to focus on the
-areas that interest you most, and help you to build new skills.
+areas that interest you most, and help you to build new skills. If this sounds 
+like a good fit, we'd love to hear from you. Please send a cover letter and 
+résumé to [jobs@tropy.org](mailto:jobs@tropy.org?subject=Tropy%20Developer).
 {: .lead}
 
 ## Requirements
@@ -36,8 +38,6 @@ might help you hit the ground running:
 * You love-to-hate linked data, RDF, or JSON-LD
 * An interest in digital humanities, digital archives and preservation
 * You speak more than one language
-
-If this sounds like a good fit, we'd love to hear from you. Please send a cover letter and résumé to [jobs@tropy.org](mailto:jobs@tropy.org?subject=Tropy%20Developer).
 
 ## About Us
 The Tropy team is currently based in Vienna, Luxembourg, Philadelphia, and
