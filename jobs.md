@@ -37,6 +37,8 @@ might help you hit the ground running:
 * An interest in digital humanities, digital archives and preservation
 * You speak more than one language
 
+If this sounds like a good fit, we'd love to hear from you. Please send a cover letter and résumé to [jobs@tropy.org](mailto:jobs@tropy.org?subject=Tropy%20Developer).
+
 ## About Us
 The Tropy team is currently based in Vienna, Luxembourg, Philadelphia, and
 Washington, DC; the project itself is hosted by the [Roy Rosenzweig Center for
