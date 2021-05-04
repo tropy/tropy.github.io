@@ -3,6 +3,17 @@
 //
 
 .blog {
+  &.blog-home,
+  &.blog-category {
+    main {
+      padding-bottom: $section-spacing-y-phone - 35px;
+
+      @media (min-width: $sm) {
+        padding-bottom: $section-spacing-y - 33px;
+      }
+    }
+  }
+
   .posts,
   .post {
     .container-fluid {
@@ -12,14 +23,15 @@
     }
   }
 
-  &.blog-home,
-  &.blog-category {
-    main {
-      padding-bottom: $section-spacing-y-phone - 35px;
+  // Keep nav stable, ensure that the fragment-loading class is removed
+  .posts {
+    $footer-height-phone: 101px;
+    $footer-height: 97px;
 
-      @media (min-width: $sm) {
-        padding-bottom: $section-spacing-y - 33px;
-      }
+    min-height: calc(100vh - #{$footer-height-phone} - #{$section-spacing-y-phone - 35px});
+
+    @media (min-width: $sm) {
+      min-height: calc(100vh - #{$footer-height} - #{$section-spacing-y - 33px});
     }
   }
 }
