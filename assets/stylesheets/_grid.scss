@@ -18,8 +18,10 @@
 }
 
 .row {
+  display: grid;
+  grid-template-columns: 1fr;
+
   @media (min-width: $sm) {
-    display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: $grid-column-gap;
   }
@@ -28,6 +30,10 @@
 [class*="col"] {
   grid-column-end: span 12;
   min-width: 0; // Prevent grid blowout
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 @media (min-width: $sm) {

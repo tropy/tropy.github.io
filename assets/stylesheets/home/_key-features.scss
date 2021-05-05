@@ -102,16 +102,39 @@
   }
 
   .screenshot {
+    width: 800px; // 5/8
     overflow: hidden;
-    border-radius: 0.924vw;
+    border-radius: 6.875px;
     box-shadow:
       inset 0 0.5px 0.5px 0.1px rgba(255, 255, 255, 0.67),
-      0 0 0.33vw 0 rgba(0, 0, 0, 0.1),
-      0 0px 3vw -1.5vw rgba(0, 0, 0, 0.125),
-      0 1.5vw 3vw -1.5vw rgba(0, 0, 0, 0.25),
-      0 2.25vw 4.5vw -2.25vw rgba($blue-dark, 0.25);
+      0 0 2.5px 0 rgba(0, 0, 0, 0.1),
+      0 0px 22.5px -11.25px rgba(0, 0, 0, 0.125),
+      0 11.25px 22.5px -11.25px rgba(0, 0, 0, 0.25),
+      0 16.875px 33.75px -16.875px rgba($blue-dark, 0.25);
 
-    @media (min-width: $lg) {
+    @media (max-width: 359px) {
+      width: 640px; // 1/2
+      border-radius: 5.5px;
+      box-shadow:
+        inset 0 0.5px 0.5px 0.1px rgba(255, 255, 255, 0.67),
+        0 0 2px 0 rgba(0, 0, 0, 0.1),
+        0 0px 18px -9px rgba(0, 0, 0, 0.125),
+        0 9px 18px -9px rgba(0, 0, 0, 0.25),
+        0 13.5px 27px -13.5px rgba($blue-dark, 0.25);
+    }
+
+    @media (min-width: $sm) {
+      width: 1120px; // 7/8
+      border-radius: 9.625px;
+      box-shadow:
+        inset 0 0.5px 0.5px 0.1px rgba(255, 255, 255, 0.67),
+        0 0 3.5px 0 rgba(0, 0, 0, 0.1),
+        0 0px 31.5px -15.75px rgba(0, 0, 0, 0.125),
+        0 15.75px 31.5px -15.75px rgba(0, 0, 0, 0.25),
+        0 23.625px 47.25px -23.625px rgba($blue-dark, 0.25);
+    }
+
+    @media (min-width: $md) {
       width: 1280px;
       border-radius: 11px;
       box-shadow:
