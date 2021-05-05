@@ -38,18 +38,15 @@
     background: url("../images/eye-catcher@2x.png") no-repeat 0 0 / 100%;
     outline-color: $white;
     left: 50%;
-    margin-left: 68px;
-    top: 84px;
+    margin-left: 43px;
+    top: 53px;
     width: 76px;
     height: 96px;
 
-    @include tween(
-      68px,
-      92px,
-      320px,
-      360px,
-      margin-left
-    );
+    @media (min-width: 360px) {
+      margin-left: 92px;
+      top: 84px;
+    }
 
     @include tween(
       52px,
