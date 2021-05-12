@@ -57,7 +57,7 @@ class Dropdown extends HTMLElement {
     this.length = this.dropdownItems.length
 
     this.dropdownToggle.buttonId = `${this.id}-toggle`
-    this.dropdownMenu.ariaLabelledby = this.dropdownToggle.id
+    this.dropdownMenu.ariaLabelledby = this.dropdownToggle.buttonId
     this.dropdownItems.forEach((item, index) => item.index = index)
   }
 
