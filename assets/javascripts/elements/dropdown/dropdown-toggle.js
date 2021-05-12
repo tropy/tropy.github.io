@@ -1,5 +1,9 @@
+---
+---
 import { createElement } from '../../helpers/create-element.js'
 
+const DropdownToggleTemplate = document.createElement('template')
+DropdownToggleTemplate.innerHTML = `{%- include dropdown-toggle.html -%}`
 
 export const DropdownToggle = createElement(
   'tpy-dropdown-toggle',
@@ -12,17 +16,10 @@ export const DropdownToggle = createElement(
     constructor() {
       super()
       this.classList.add('dropdown-toggle')
-      this.template =`
-        <button class="btn" aria-haspopup="listbox">
-          <slot></slot>
-        </button>`
 
-      const slotted = this.innerHTML
-      this.innerHTML = this.template
-      this.querySelector('slot').parentElement.innerHTML = slotted
+      this.replaceChildren(DropdownToggleTemplate.content.cloneNode(true))
 
       this.button = this.querySelector('.btn')
-
       this.button.ariaExpanded = false
 
       this.button.addEventListener('click', (e) => {
