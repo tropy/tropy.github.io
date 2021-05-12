@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Ruby 2.5.0 (`ruby -v`)
+- Ruby 2.5.0 or later (`ruby -v`)
 - Bundler (`gem install bundler`)
 
 ## Install dependencies
