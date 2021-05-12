@@ -29,9 +29,7 @@ export const DropdownToggle = createElement(
 
     attributeChangedCallback(name, oldValue, newValue) {
       if (name == 'is-open') {
-        this.isOpen ?
-        this.button.ariaExpanded = true :
-        this.button.ariaExpanded = false
+        this.button.ariaExpanded = this.isOpen
       }
 
       if (name == 'label') {
