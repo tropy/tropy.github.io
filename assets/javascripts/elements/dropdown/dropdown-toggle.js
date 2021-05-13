@@ -3,9 +3,16 @@
 import { createElement } from '../../helpers/create-element.js'
 
 const DropdownToggleTemplate = document.createElement('template')
-DropdownToggleTemplate.innerHTML = `{%- include dropdown-toggle.html -%}`
 
-export const DropdownToggle = createElement(
+DropdownToggleTemplate.innerHTML = `
+  <button class="btn" aria-haspopup="listbox">
+    <span class="icon icon-caret-down">
+      {%- include chevron-down.svg -%}
+    </span>
+  </button>`
+
+
+export var DropdownToggle = createElement(
   'tpy-dropdown-toggle',
 
   class extends HTMLElement {

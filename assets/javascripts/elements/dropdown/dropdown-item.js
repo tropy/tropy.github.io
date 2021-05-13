@@ -1,7 +1,6 @@
 import { createElement } from '../../helpers/create-element.js'
 
-
-export const DropdownItem = createElement(
+export var DropdownItem = createElement(
   'tpy-dropdown-item',
 
   class extends HTMLElement {
@@ -12,13 +11,13 @@ export const DropdownItem = createElement(
     constructor() {
       super()
       this.classList.add('dropdown-item')
-      this.template = `<a href="${this.href}" tabindex="-1"><slot></slot></a>`
-      const slotted = this.innerHTML
-      this.innerHTML = this.template
-      this.querySelector('slot').parentElement.innerHTML = slotted
-      this.a = this.querySelector('a')
 
-      this.classList.add('dropdown-item')
+      this.a = document.createElement('a')
+      this.a.tabIndex = -1
+      this.a.href = this.href
+
+      this.a.replaceChildren(...this.childNodes)
+      this.append(this.a)
 
       this.addEventListener('mousemove', e => {
         this.dispatchEvent(new CustomEvent('dropdown.mousemove', {
