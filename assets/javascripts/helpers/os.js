@@ -1,11 +1,11 @@
 export let platform
 export let arch
 
-export const guess() => {
+export const guess = () => {
   if (hasTouchScreen()) {
     if (WindowsLike())
       platform = 'win32'
-    else if !((iOSLike() || AndroidLike()))
+    else if (!(iOSLike() || AndroidLike()))
       platform = 'linux'
 
   } else {
@@ -23,17 +23,17 @@ export const guess() => {
       break
     case 'darwin':
       if (isAppleSilicon())
-        platform = 'arm64'
+        arch = 'arm64'
       else
-        platform = 'x64'
+        arch = 'x64'
       break
     case 'win32':
       if (ia32Like())
-        platform = 'ia32'
+        arch = 'ia32'
       else if (arm64Like())
-        platform = 'arm64'
+        arch = 'arm64'
       else
-        platform = 'x64'
+        arch = 'x64'
       break
     default:
       // Ignore unsupported platforms
@@ -44,7 +44,7 @@ export const iOSLike = () =>
   (/^iP(hone|ad|od)/).test(navigator.platform) ||
     (/^Mac/).test(navigator.platform) && navigator.maxTouchPoints > 4
 
-export const AdroidLike = () =>
+export const AndroidLike = () =>
   (/^Android/).test(navigator.platform) ||
     (/\bandroid\b/i).test(navigator.userAgent)
 
@@ -59,7 +59,7 @@ export const hasTouchScreen = () =>
     matchMedia('(pointer:coarse)').matches
 
 export const ia32Like = () =>
-  (/(ia32|i[346])[;\)]/i).test(navigator.userAgent)
+  (/(ia32|i[346])[;)]/i).test(navigator.userAgent)
 
 export const arm64Like = () =>
   (/\b(aarch64|arm(v?8e?l?|_?64))\b/i).test(navigator.userAgent)
