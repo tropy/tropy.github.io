@@ -14,13 +14,6 @@
     border-bottom-right-radius: 0;
   }
 
-  > tpy-download-button:not(:last-child) {
-    a {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-
   > .btn-group:not(:first-child) {
     > .btn {
       border-top-left-radius: 0;

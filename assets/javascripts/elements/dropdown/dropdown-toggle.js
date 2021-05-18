@@ -22,19 +22,21 @@ export var DropdownToggle = createElement(
 
     constructor() {
       super()
-      this.classList.add('dropdown-toggle')
-
       this.replaceChildren(DropdownToggleTemplate.content.cloneNode(true))
 
       this.button = this.querySelector('.btn')
       this.button.ariaExpanded = false
 
-      this.button.addEventListener('click', (e) => {
+      this.button.addEventListener('click', () => {
         this.dispatchEvent(new Event('dropdown.toggle', { bubbles: true }))
       })
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    connectedCallback() {
+      this.classList.add('dropdown-toggle')
+    }
+
+    attributeChangedCallback(name) {
       if (name == 'is-open') {
         this.button.ariaExpanded = this.isOpen
       }

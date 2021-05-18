@@ -12,7 +12,6 @@ class Dropdown extends HTMLElement {
     this.classList.add('dropdown')
     this.template = `<slot></slot>`
     const slotted = this.innerHTML
-    this.handleFocusOutside = this.handleFocusOutside.bind(this)
 
     new MutationObserver(this.elementChangedCallback)
       .observe(this, { childList: true })
@@ -100,7 +99,7 @@ class Dropdown extends HTMLElement {
     }
   }
 
-  handleFocusOutside(e) {
+  handleFocusOutside = (e) => {
     if(e.target != this.dropdownToggleButton && e.target != this.dropdownMenu) {
       this.isOpen = false
     }

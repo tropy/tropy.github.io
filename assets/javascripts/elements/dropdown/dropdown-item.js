@@ -10,16 +10,14 @@ export var DropdownItem = createElement(
 
     constructor() {
       super()
-      this.classList.add('dropdown-item')
 
       this.a = document.createElement('a')
       this.a.tabIndex = -1
       this.a.href = this.href
 
       this.a.replaceChildren(...this.childNodes)
-      this.append(this.a)
 
-      this.addEventListener('mousemove', e => {
+      this.addEventListener('mousemove', () => {
         this.dispatchEvent(new CustomEvent('dropdown.mousemove', {
           bubbles: true,
           detail: { index: this.index }
@@ -27,8 +25,15 @@ export var DropdownItem = createElement(
       })
     }
 
-    attributeChangedCallback(name, oldVal, newVal) {
+    connectedCallback() {
+      this.classList.add('dropdown-item')
+      this.replaceChildren(this.a)
+    }
+
+    attributeChangedCallback(name) {
       if (name == 'selected' && this.selected) this.a.focus()
+
+      if (name == 'href') this.a.href = this.href
     }
   }, {
     index: false,

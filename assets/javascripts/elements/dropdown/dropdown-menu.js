@@ -11,8 +11,8 @@ export const DropdownMenu = createElement(
 
     constructor() {
       super()
-      this.classList.add('dropdown-menu')
       this.role = 'listbox'
+      this.classList.add('dropdown-menu')
     }
   }, {
     isOpen: true,
