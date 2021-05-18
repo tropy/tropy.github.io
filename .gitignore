@@ -4,3 +4,6 @@ _site
 .jekyll-metadata
 .bundle/
 vendor/
+.eslintrc.yml
+node-modules
+package.json
