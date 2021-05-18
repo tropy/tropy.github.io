@@ -7,3 +7,4 @@ vendor/
 .eslintrc.yml
 node-modules
 package.json
+Gemfile.lock
