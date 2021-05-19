@@ -63,7 +63,7 @@ const comboButton = (assets) => {
 }
 
 const primaryButton = (asset) =>
-  create('a', `Download Tropy for <strong part="strong">${tag(asset)}</strong>`, {
+  create('a', `Download Tropy for <strong>${tag(asset)}</strong>`, {
     className: 'btn',
     href: asset.url
   })
