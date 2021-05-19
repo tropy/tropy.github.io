@@ -24,11 +24,14 @@ button {
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
 
+  &:hover {
+    text-decoration: none;
+  }
+
   @media (hover: hover) {
     &:hover {
       color: $blue;
       background-color: $white;
-      text-decoration: none;
     }
   }
 
