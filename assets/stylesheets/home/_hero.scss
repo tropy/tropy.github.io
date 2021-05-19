@@ -9,20 +9,12 @@
   color: $white;
   margin-bottom: $section-spacing-y-phone + 96px + 32px; // 32px: compensation for illustration
   position: relative;
-
-  @media (pointer: coarse), (max-width: $sm - 1px) {
-    padding-bottom: 110px; // 23px to highest summit
-  }
+  padding-bottom: 123px; // 23px to highest summit
 
   @media (min-width: $sm) {
     padding-top: $header-height + $space-xl;
-    padding-bottom: 123px; // 560px height
     margin-top: -$header-height;
     margin-bottom: $section-spacing-y + 61px + 32px; // 32px: compensation for illustration
-  }
-
-  @media (pointer: coarse) and (min-width: $sm) {
-    padding-bottom: 117px; // 30px to highest summit
   }
 
   .container-fluid {
@@ -100,11 +92,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 81px;
+
+    @media (min-width: $sm) {
+      min-height: 87px;
+    }
   }
 
   .download {
     margin-bottom: ($space-lg - 6px);
-    min-height: $space-xxl;
 
     @media (pointer: coarse), (max-width: $sm - 1px) {
       display: none;
@@ -118,6 +114,10 @@
   .btn-email {
     margin-bottom: (18px - 6px);
 
+    @media (min-width: $sm) {
+      margin-bottom: ($space-lg - 6px);
+    }
+
     @media (pointer: fine) and (min-width: $sm) {
       display: none;
     }
@@ -127,12 +127,7 @@
     font-size: 14px;
     font-weight: 600;
     color: inherit;
-    margin-bottom: ($space-lg - 11px);
     text-decoration: none;
-
-    @media (min-width: $sm) {
-      margin-bottom: 0;
-    }
 
     &:focus {
       outline-color: $white;

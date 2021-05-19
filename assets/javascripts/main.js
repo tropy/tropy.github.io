@@ -9,7 +9,7 @@ import { getLatestRelease } from './helpers/release.js'
 os.guess()
 
 document.addEventListener('DOMContentLoaded', async () => {
-  let button = document.querySelector('tpy-download')
-  button.release = await getLatestRelease()
+  let download = document.querySelector('tpy-download')
+  download.release = await getLatestRelease()
 
 }, { once: true })

@@ -76,7 +76,7 @@ const releaseNotesLink = ({ version }) =>
 
 const eMailButton = (assets) =>
   create('a', 'Send Download Links', {
-    className: 'btn',
+    className: 'btn btn-email',
     href: `mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}`
   })
 
