@@ -5,7 +5,7 @@ const SUPPORTED_PLATFORMS = ['darwin', 'win32', 'linux']
 const APPLE_ARCH = { x64: 'Intel', arm64: 'Silicon' }
 
 
-export class DownloadButton extends HTMLElement {
+export class Download extends HTMLElement {
   constructor(release) {
     super()
     this.release = release
@@ -33,7 +33,7 @@ export class DownloadButton extends HTMLElement {
   }
 }
 
-createElement('tpy-download-button', DownloadButton)
+createElement('tpy-download', Download)
 
 const DropdownTemplate = document.createElement('template')
 
