@@ -84,20 +84,12 @@
       @media (min-width: $sm) {
         display: inline;
       }
-
-      .home & {
-        display: inline;
-      }
     }
   }
 
   .tropy-icon-small {
     @media (min-width: $sm) {
       margin-right: $space-xs;
-    }
-
-    .home & {
-      display: none;
     }
   }
 
