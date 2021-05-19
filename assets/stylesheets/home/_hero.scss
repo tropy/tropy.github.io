@@ -102,10 +102,6 @@
   .download {
     margin-bottom: ($space-lg - 6px);
 
-    @media (pointer: coarse), (max-width: $sm - 1px) {
-      display: none;
-    }
-
     > .btn strong {
       font-weight: 800;
     }
@@ -116,10 +112,6 @@
 
     @media (min-width: $sm) {
       margin-bottom: ($space-lg - 6px);
-    }
-
-    @media (pointer: fine) and (min-width: $sm) {
-      display: none;
     }
   }
 
