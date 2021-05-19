@@ -96,6 +96,12 @@
     }
   }
 
+  tpy-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .download {
     margin-bottom: ($space-lg - 6px);
     min-height: $space-xxl;
