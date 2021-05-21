@@ -8,10 +8,10 @@
   }
 
   main {
-    padding-bottom: $section-spacing-y-phone - 25px;
+    padding-bottom: $section-spacing-y-phone - 7px;
 
     @media (min-width: $sm) {
-      padding-bottom: $section-spacing-y - 29px;
+      padding-bottom: $section-spacing-y - 8px;
     }
 
     > .container-fluid {
@@ -38,15 +38,9 @@
         margin-top: $section-spacing-y * 3 / 4 - 20px;
         margin-bottom: 21px;
       }
-    }
 
-    h3 {
-      margin-top: ceil($section-spacing-y-phone * 27 / 64 - 2px);
-      margin-bottom: -9px;
-
-      @media (min-width: $sm) {
-        margin-top: $section-spacing-y * 9 / 16 - 16px ;
-        margin-bottom: -10px;
+      & + p {
+        margin: 0;
       }
     }
 
