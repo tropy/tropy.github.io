@@ -104,3 +104,11 @@ If all you want is a border, you can add the `border` class instead:
 
 ## Deployment
 Push to GitHub and your changes are live.
+
+## License Page
+The includes `libraries.html` and `modules.html` on the license page are automatically generated and should not be changed by hand. To update the list, checkout the [tropy/tropy] and [tropy/sharp-libvips] repositories side-by-side and point tropy's `legal` script to the includes folder. For example:
+
+```
+npm run legal -- -o ../tropy.github.io/_includes
+```
+

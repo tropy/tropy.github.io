@@ -7,29 +7,23 @@ title: License
 <div class="container-fluid">
   <h1>License</h1>
   <p>Tropy is Copyright © 2015&thinsp;–&thinsp;{{ 'now' | date: "%Y" }}<br>Roy Rosenzweig Center for History and New Media, George Mason University, Fairfax, Virginia, USA<br><a href="https://tropy.org">tropy.org</a></p>
-  <p>The Roy Rosenzweig Center for History and New Media distributes the Tropy source code under the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License, version 3 (AGPL-3.0)</a>.</p>
+  <p>The Tropy source code licensed under the terms of the <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License, version 3 (AGPL-3.0)</a>.</p>
   <p>The Tropy name is a registered <a href="/trademark">trademark</a> of the Corporation for Digital Scholarship.</p>
   <p>Third-party copyright in this distribution is noted where applicable.</p>
   <p>All rights not expressly granted are reserved.</p>
 </div>
 <section>
   <div class="container-fluid">
-    <h2>Third-party licenses</h2>
+    <h2>Third-party notices</h2>
+    <p>Tropy contains third-party libraries used under the terms of their respective licenses.</p>
+    <h3>Libraries</h3>
+    <p>
+      {%- include libraries.html -%}
+    </p>
+    <h3>JavaScript modules</h3>
     <tpy-dependencies class="dependencies">
-      {%- include dependencies.html -%}
+      {%- include modules.html -%}
     </tpy-dependencies>
-  </div>
-</section>
-<section>
-  <div class="container-fluid">
-    <h3>Chromium licenses</h3>
-    <p><a href="https://source.chromium.org/chromium/chromium/src/+/master:LICENSE">Chromium</a></p>
-  </div>
-</section>
-<section>
-  <div class="container-fluid">
-    <h3>SQLite license</h3>
-    <p><a href="https://sqlite.org/copyright.html">SQLite</a></p>
   </div>
 </section>
 <tpy-modal centered scrollable-phone class="license">
