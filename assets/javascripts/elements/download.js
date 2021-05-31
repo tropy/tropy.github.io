@@ -18,10 +18,7 @@ export class Download extends HTMLElement {
     let assets = [...release.assets].sort(byPlatform)
 
     if (SUPPORTED_PLATFORMS.includes(platform)) {
-      if (assets.length > 1)
-        this.append(comboButton(assets))
-      else
-        this.append(primaryButton(assets[0]))
+      this.append(comboButton(assets, release))
 
     } else {
       this.append(eMailButton(release.assets))
@@ -44,7 +41,7 @@ DropdownTemplate.innerHTML = `
     </tpy-dropdown-menu>
   </tpy-dropdown>`
 
-const comboButton = (assets) => {
+const comboButton = (assets, release) => {
   let [head, ...tail] = assets
 
   let combo = create('div', null, { className: 'btn-group download' })
@@ -55,6 +52,12 @@ const comboButton = (assets) => {
     menu.append(create('tpy-dropdown-item', tag(asset), {
       href: asset.url
     }))
+
+  if (release.url) {
+    menu.append(create('tpy-dropdown-item', 'Other platforms', {
+      href: release.url
+    }))
+  }
 
   combo.append(primaryButton(head))
   combo.append(dropdown)
@@ -68,10 +71,10 @@ const primaryButton = (asset) =>
     href: asset.url
   })
 
-const releaseNotesLink = ({ version }) =>
-  create('a', `What’s new in version ${version.replace(/\.0$/, '')}`, {
+const releaseNotesLink = ({ url, version }) =>
+  create('a', `What’s new in version ${version}`, {
     className: 'release-notes',
-    href: `https://github.com/tropy/tropy/releases/tag/${version}`
+    href: url
   })
 
 const eMailButton = (assets) =>
