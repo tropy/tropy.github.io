@@ -17,8 +17,8 @@ with React, SQLite, and WebGL. Tropy is not out to disrupt industries, transform
 markets, or change the world: it simply wants to be an elegant solution to
 research entropy. To help us achieve this goal, you’ll work closely with our
 lead developer and product designer, who will encourage you to focus on the
-areas that interest you most, and help you to build new skills. If this sounds 
-like a good fit, we'd love to hear from you. Please send a cover letter and 
+areas that interest you most, and help you to build new skills. If this sounds
+like a good fit, we'd love to hear from you. Please send a cover letter and
 résumé to [jobs@tropy.org](mailto:jobs@tropy.org?subject=Tropy%20Developer).
 {: .lead}
 
@@ -31,7 +31,7 @@ Depending on what part of Tropy you’ll be working on, these skills and interes
 might help you hit the ground running:
 
 * A good design sense and familiarity with CSS
-* You value a good database schema, constraints and trigger
+* You value a good database schema, constraints and triggers
 * You’ve hacked on or customized desktop apps before
 * You’ve toyed with pixel shaders (or like computer graphics in general)
 * You’re well-versed in the Babylonian confusion of AWS
