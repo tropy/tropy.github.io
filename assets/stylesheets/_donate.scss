@@ -1,0 +1,41 @@
+.donate {
+  main {
+    @media (min-width: $sm) {
+      padding-bottom: $section-spacing-y; // todo
+    }
+  }
+
+  .col-text {
+    margin-right: -$grid-column-gap;
+  }
+
+  .tropy-icon {
+    width: 192px;
+    height: 192px;
+    margin: auto;
+    background: $blue;
+    border-radius: 50%;
+
+    @media (min-width: $sm) {
+      margin-top: $space-xl - 5px;
+      margin-bottom: $section-spacing-y * 3 / 4 - 5px;
+    }
+  }
+
+  h1 {
+    margin-bottom: 0;
+    margin-top: -19px;
+  }
+
+  .lead {
+    text-align: left;
+
+    @media (min-width: $sm) {
+      margin-top: $font-size-large;
+    }
+  }
+
+  .frequency {
+    margin-bottom: $space-lg;
+  }
+}

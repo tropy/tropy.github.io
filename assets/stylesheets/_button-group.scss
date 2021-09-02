@@ -5,6 +5,27 @@
 .btn-group {
   display: flex;
 
+  > .btn {
+    position: relative;
+    flex: 1 1 auto;
+
+    & ~ .btn {
+      margin-left: -1px;
+    }
+  }
+
+  > .btn:hover,
+  > .btn:focus,
+  > .btn.active,
+  > .btn.active {
+    z-index: 1;
+  }
+
+  > .btn-check:checked + .btn-form {
+    z-index: 2;
+  }
+
+  // todo
   > .btn-group:not(:first-child) {
     margin-left: -2px;
   }
@@ -12,6 +33,11 @@
   > .btn:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  > .btn ~ .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   > .btn-group:not(:first-child) {

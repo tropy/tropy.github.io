@@ -2,8 +2,8 @@
 // Focus-visible
 //
 
-@mixin focus-visible {
-  &:focus {
+@mixin focus-visible($focus: ":focus") {
+  &#{$focus} {
     .key & {
       @content;
     }
