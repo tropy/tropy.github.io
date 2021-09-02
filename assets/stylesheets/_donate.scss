@@ -6,7 +6,9 @@
   }
 
   .col-text {
-    margin-right: -$grid-column-gap;
+    @media (min-width: $md) {
+      margin-right: -$grid-column-gap;
+    }
   }
 
   .tropy-icon {
