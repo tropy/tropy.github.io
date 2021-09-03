@@ -36,7 +36,9 @@
       margin-top: $font-size-large;
     }
   }
+}
 
+tpy-donations {
   .frequency {
     margin-bottom: $space-lg;
   }
@@ -47,8 +49,28 @@
     grid-template-rows: auto;
     margin-bottom: $space-xxl;
 
-    @media (max-width: $sm - 1px) {
-      label {
+    @media (min-width: $sm) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media (min-width: $md) and (max-width: $xl - 1px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &.one-time {
+      @include state("tpy-donations[is-monthly]") {
+        display: none;
+      }
+    }
+
+    &.monthly {
+      @include state("tpy-donations:not([is-monthly])") {
+        display: none;
+      }
+    }
+
+    label {
+      @media (max-width: $sm - 1px) {
         &:nth-of-type(odd) {
           margin-left: 0;
         }
@@ -70,16 +92,8 @@
           border-bottom-left-radius: 4px;
         }
       }
-    }
 
-    @media (min-width: $sm) {
-      grid-template-columns: repeat(6, 1fr);
-    }
-
-    @media (min-width: $md) and (max-width: $xl - 1px) {
-      grid-template-columns: 1fr 1fr 1fr;
-
-      label {
+      @media (min-width: $md) and (max-width: $xl - 1px) {
         &:nth-of-type(1) {
           border-bottom-left-radius: 0;
         }
@@ -101,10 +115,10 @@
           border-top-right-radius: 0;
         }
       }
-    }
 
-    .other {
-      grid-column-end: span 2;
+      &.other {
+        grid-column-end: span 2;
+      }
     }
   }
 }

@@ -10,29 +10,43 @@ class: donate
     <p class="lead">Contributions are not tax-deductible as charitable contributions.</p>
   </div>
   <div class="col-md-5 start-md-7">
-    <form>
-      <div class="btn-group frequency">
-        <input id="one-time" class="btn-check" type="radio" name="frequency" value="one-time" checked>
-        <label class="btn btn-lg btn-form" for="one-time">One time</label>
-        <input id="monthly" class="btn-check" type="radio" name="frequency" value="monthly">
-        <label class="btn btn-lg btn-form" for="monthly">Monthly</label>
-      </div>
-      <div class="btn-group amount">
-        <input id="one-time-amount-1" class="btn-check" type="radio" name="amount" value="10">
-        <label class="btn btn-lg btn-form" for="one-time-amount-1">$&thinsp;10</label>
-        <input id="one-time-amount-2" class="btn-check" type="radio" name="amount" value="20">
-        <label class="btn btn-lg btn-form" for="one-time-amount-2">$&thinsp;20</label>
-        <input id="one-time-amount-3" class="btn-check" type="radio" name="amount" value="30">
-        <label class="btn btn-lg btn-form" for="one-time-amount-3">$&thinsp;30</label>
-        <input id="one-time-amount-4" class="btn-check" type="radio" name="amount" value="60" checked>
-        <label class="btn btn-lg btn-form" for="one-time-amount-4">$&thinsp;60</label>
-        <input id="one-time-amount-5" class="btn-check" type="radio" name="amount" value="other">
-        <label class="btn btn-lg btn-form other" for="one-time-amount-5">Other amount</label>
-      </div>
-      <p>
-        <button type="submit">Pay with Card</button>
-      </p>
-    </form>
+    <tpy-donations>
+      <form>
+        <div class="btn-group frequency">
+          <input id="one-time" class="btn-check" type="radio" name="frequency" value="one-time" checked>
+          <label class="btn btn-lg btn-form" for="one-time">One time</label>
+          <input id="monthly" class="btn-check" type="radio" name="frequency" value="monthly">
+          <label class="btn btn-lg btn-form" for="monthly">Monthly</label>
+        </div>
+        <div class="btn-group amount one-time">
+          <input id="one-time-amount-1" class="btn-check" type="radio" name="one-time-amount" value="10">
+          <label class="btn btn-lg btn-form" for="one-time-amount-1">$&thinsp;10</label>
+          <input id="one-time-amount-2" class="btn-check" type="radio" name="one-time-amount" value="20">
+          <label class="btn btn-lg btn-form" for="one-time-amount-2">$&thinsp;20</label>
+          <input id="one-time-amount-3" class="btn-check" type="radio" name="one-time-amount" value="30">
+          <label class="btn btn-lg btn-form" for="one-time-amount-3">$&thinsp;30</label>
+          <input id="one-time-amount-4" class="btn-check" type="radio" name="one-time-amount" value="60" checked>
+          <label class="btn btn-lg btn-form" for="one-time-amount-4">$&thinsp;60</label>
+          <input id="one-time-amount-5" class="btn-check" type="radio" name="one-time-amount" value="other">
+          <label class="btn btn-lg btn-form other" for="one-time-amount-5">Other amount</label>
+        </div>
+        <div class="btn-group amount monthly">
+          <input id="monthly-amount-1" class="btn-check" type="radio" name="monthly-amount" value="2">
+          <label class="btn btn-lg btn-form" for="monthly-amount-1">$&thinsp;2</label>
+          <input id="monthly-amount-2" class="btn-check" type="radio" name="monthly-amount" value="5" checked>
+          <label class="btn btn-lg btn-form" for="monthly-amount-2">$&thinsp;5</label>
+          <input id="monthly-amount-3" class="btn-check" type="radio" name="monthly-amount" value="10">
+          <label class="btn btn-lg btn-form" for="monthly-amount-3">$&thinsp;10</label>
+          <input id="monthly-amount-4" class="btn-check" type="radio" name="monthly-amount" value="15">
+          <label class="btn btn-lg btn-form" for="monthly-amount-4">$&thinsp;15</label>
+          <input id="monthly-amount-5" class="btn-check" type="radio" name="monthly-amount" value="other">
+          <label class="btn btn-lg btn-form other" for="monthly-amount-5">Other amount</label>
+        </div>
+        <p>
+          <button type="submit">Pay with Card</button>
+        </p>
+      </form>
+    </tpy-donations>
   </div>
 </div>
 
