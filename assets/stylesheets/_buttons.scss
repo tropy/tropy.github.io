@@ -12,11 +12,19 @@ button {
   text-align: center;
   border: 1px solid transparent;
   cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .btn-lg {
   padding: 11px 16px;
   border-radius: 4px;
+}
+
+.btn-xl {
+  padding: 19px 24px;
 }
 
 .btn-check {
