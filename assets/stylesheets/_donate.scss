@@ -1,7 +1,7 @@
 .donate {
   main {
     @media (min-width: $sm) {
-      padding-bottom: $section-spacing-y; // todo
+      padding-bottom: $section-spacing-y - 22px;
     }
   }
 
@@ -35,6 +35,10 @@
     @media (min-width: $sm) {
       margin-top: $font-size-large;
     }
+  }
+
+  p {
+    color: $gray-dark;
   }
 }
 
@@ -148,6 +152,10 @@ tpy-donations {
       &:active {
         background-color: mix($blue, $blue-dark, 50%);
       }
+    }
+
+    @media (min-width: $sm) {
+      margin-bottom: $space-xxxl - 7px;
     }
   }
 }
