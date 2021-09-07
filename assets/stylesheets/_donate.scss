@@ -208,7 +208,7 @@ tpy-editable-radio {
 
   .content {
     min-height: $font-size-base * $line-height-base;
-    padding: 0 0 0 12px;
+    padding: 0 3px 0 12px;
     text-align: left;
     min-width: 15px;
     max-width: 100%;
@@ -218,11 +218,10 @@ tpy-editable-radio {
   input {
     position: absolute;
     inset: 0;
-    min-width: 15px;
     max-width: 100%;
     font: inherit;
     line-height: inherit;
-    padding: 0 0 0 12px;
+    padding: 0 0 0 12px; // Keep 3px empty space for iOS caret
     border: 0;
     margin: 0;
     background-color: transparent;
