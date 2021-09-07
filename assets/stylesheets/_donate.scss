@@ -73,49 +73,49 @@ tpy-donations {
       }
     }
 
-    label {
+    .btn-form {
       @media (max-width: $sm - 1px) {
         &:nth-of-type(odd) {
           margin-left: 0;
         }
 
-        &:nth-of-type(1) {
+        &:nth-child(2) {
           border-bottom-left-radius: 0;
         }
 
-        &:nth-of-type(2) {
+        &:nth-child(4) {
           border-top-right-radius: 4px !important;
         }
 
-        &:nth-of-type(n+3) {
+        &:nth-child(n+6) {
           margin-top: -1px;
         }
 
-        &:nth-of-type(5) {
+        &:nth-child(10) {
           border-top-right-radius: 0;
           border-bottom-left-radius: 4px;
         }
       }
 
       @media (min-width: $md) and (max-width: $xl - 1px) {
-        &:nth-of-type(1) {
+        &:nth-child(2) {
           border-bottom-left-radius: 0;
         }
 
-        &:nth-of-type(3) {
+        &:nth-child(6) {
           border-top-right-radius: 4px !important;
         }
 
-        &:nth-of-type(4) {
+        &:nth-child(8) {
           margin-left: 0;
           border-bottom-left-radius: 4px;
         }
 
-        &:nth-of-type(n+4) {
+        &:nth-child(n+8) {
           margin-top: -1px;
         }
 
-        &:nth-of-type(5) {
+        &:nth-child(10) {
           border-top-right-radius: 0;
         }
       }
@@ -159,3 +159,62 @@ tpy-donations {
     }
   }
 }
+
+tpy-editable-radio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &[is-active] {
+    cursor: text;
+  }
+}
+
+.auto-resizer {
+  flex: 0 0 auto;
+  max-width: 100%;
+  position: relative;
+
+  .currency {
+    position: absolute;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  [type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .content {
+    min-height: $font-size-base * $line-height-base;
+    padding: 0 0 0 12px;
+    text-align: left;
+    min-width: 15px;
+    max-width: 100%;
+    visibility: hidden;
+  }
+
+  input {
+    position: absolute;
+    inset: 0;
+    min-width: 15px;
+    max-width: 100%;
+    font: inherit;
+    line-height: inherit;
+    padding: 0 0 0 12px;
+    border: 0;
+    margin: 0;
+    background-color: transparent;
+    color: inherit;
+    text-align: left;
+
+    @include focus-visible {
+      outline-color: $white;
+    }
+  }
+}
+
