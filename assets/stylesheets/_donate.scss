@@ -1,5 +1,7 @@
 .donate {
   main {
+    padding-bottom: $section-spacing-y-phone - 21px;
+
     @media (min-width: $sm) {
       padding-bottom: $section-spacing-y - 22px;
     }
@@ -12,21 +14,26 @@
   }
 
   .tropy-icon {
-    width: 192px;
-    height: 192px;
+    display: block;
     margin: auto;
-    background: $blue;
-    border-radius: 50%;
+    margin-top: 2 * $section-spacing-y-phone * 3 / 4 - $header-height-mobile - 4px;
+    margin-bottom: $section-spacing-y-phone * 3 / 4 - 14px - 4px;
+    width: 192px * 3 / 4;
+    height: auto;
 
     @media (min-width: $sm) {
+      width: auto;
       margin-top: $space-xl - 5px;
       margin-bottom: $section-spacing-y * 3 / 4 - 5px;
     }
   }
 
   h1 {
-    margin-bottom: 0;
-    margin-top: -19px;
+    margin: 0;
+
+    @media (min-width: $sm) {
+      margin-top: -19px;
+    }
   }
 
   .lead {
@@ -43,6 +50,19 @@
 }
 
 tpy-donations {
+  display: block;
+  margin-top: $section-spacing-y-phone * 3 / 4 - 6px;
+  margin-bottom: $space-xxl - 10px;
+
+  @media (min-width: $sm) {
+    margin-top: $section-spacing-y * 3 / 4 - 6px;
+    margin-bottom: $space-xxxl - 7px;
+  }
+
+  @media (min-width: $md) {
+    margin-top: 0;
+  }
+
   .frequency {
     margin-bottom: $space-lg;
   }
@@ -51,10 +71,11 @@ tpy-donations {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    margin-bottom: $space-xxl;
+    margin-bottom: $space-lg;
 
     @media (min-width: $sm) {
       grid-template-columns: repeat(6, 1fr);
+      margin-bottom: $space-xxl;
     }
 
     @media (min-width: $md) and (max-width: $xl - 1px) {
@@ -152,10 +173,6 @@ tpy-donations {
       &:active {
         background-color: mix($blue, $blue-dark, 50%);
       }
-    }
-
-    @media (min-width: $sm) {
-      margin-bottom: $space-xxxl - 7px;
     }
   }
 }
