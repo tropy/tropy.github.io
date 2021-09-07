@@ -7,7 +7,7 @@ export const EditableRadio = createElement(
   class extends HTMLElement {
     static get observedAttributes() {
       return ['is-pristine', 'is-active', 'label', 'type', 'min', 'inputmode',
-        'aria-label']
+        'step', 'aria-label']
     }
 
     connectedCallback() {
@@ -18,7 +18,8 @@ export const EditableRadio = createElement(
           <input
             type="${this.type}"
             ${this.min ? `min="${this.min}"` : null}
-            ${this.inputmode ? `inputmode="${this.inputmode}"`: null}
+            ${this.inputmode ? `inputmode="${this.inputmode}"` : null}
+            ${this.step ? `step="${this.step}"` : null}
             required
             aria-label="${this.ariaLabel}">
         </div>`
@@ -77,6 +78,7 @@ export const EditableRadio = createElement(
     type: false,
     min: false,
     inputmode: false,
+    step: false,
     ariaLabel: false
   }
 )
