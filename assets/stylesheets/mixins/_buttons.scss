@@ -1,0 +1,15 @@
+//
+// Button variants
+//
+
+@mixin button-variant($color, $bg) {
+  color: $color;
+  background-color: $bg;
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
+
+  @include focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px $bg;
+  }
+}

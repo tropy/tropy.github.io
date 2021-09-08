@@ -9,9 +9,17 @@ button {
 }
 
 .btn {
+  display: inline-block;
+  vertical-align: middle;
   text-align: center;
   border: 1px solid transparent;
   cursor: pointer;
+  padding: 3px 12px;
+  border-radius: 3px;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 
   &:hover {
     text-decoration: none;
@@ -25,6 +33,7 @@ button {
 
 .btn-xl {
   padding: 19px 24px;
+  border-radius: 5px;
 }
 
 .btn-check {
@@ -52,4 +61,10 @@ button {
     background-color: $brand-primary;
     color: $white;
   }
+}
+
+// Standard button variants
+
+.btn-green {
+  @include button-variant($color: $white, $bg: $green)
 }

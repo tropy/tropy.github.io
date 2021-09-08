@@ -9,6 +9,7 @@ $blue:         #5c93e5;
 $blue-dark:    #395bac;
 $blue-darkest: #060d2e;
 $red:          #e62e2e;
+$green:        #67ce9d; // Same as in hero illustration;
 
 $white:        #fff;
 $gray-lighter: #f0f0f5; // 2% saturation
@@ -63,10 +64,10 @@ $xl: 1440px;
 
 // Z-index master list
 
-$z-index-header:   1010;
-$z-index-dropdown: 1020;
-$z-index-backdrop: 1030;
-$z-index-modal:    1040;
+$z-index-dropdown:    1020;
+$z-index-header:      1030;
+$z-index-backdrop:    1040;
+$z-index-modal:       1050;
 
 // Layout
 
