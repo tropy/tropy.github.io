@@ -61,10 +61,6 @@ button {
 
 // Standard button variants
 
-.btn-green {
-  @include button-variant($color: $white, $bg: $green)
-}
-
 .btn-hover-green {
   @include button-variant($color: $white, $bg: $green, $hover-bg: lighten($green, 5%))
 }
