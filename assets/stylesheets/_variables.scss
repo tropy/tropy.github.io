@@ -35,7 +35,7 @@ $space-xxxl: 64px;
 
 $body-color:  $black;
 $focus-color: $brand-primary;
-$link-color:  $brand-primary;
+$link-color:  mix($blue, $blue-dark, 75%);
 
 // Type
 
