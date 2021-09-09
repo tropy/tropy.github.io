@@ -18,8 +18,8 @@
   visibility: hidden;
   transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
   box-shadow:
-    0 0 32px 0px rgba($blue-darkest, 0.125),
-    0 16px 32px -16px rgba($blue-darkest, 0.5);
+    0 0 48px 0px rgba($blue-darkest, 0.125),
+    0 24px 48px -24px rgba($blue-darkest, 0.5);
 
   @media (min-width: $sm) {
     display: none;
