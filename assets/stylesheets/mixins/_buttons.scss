@@ -7,6 +7,10 @@
   background-color: $bg;
   -webkit-font-smoothing: initial;
   -moz-osx-font-smoothing: initial;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 
   @if $hover-bg == null {
     @include focus-visible {

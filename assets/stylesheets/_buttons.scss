@@ -16,10 +16,6 @@ button {
   cursor: pointer;
   padding: 3px 12px;
   border-radius: 3px;
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
 
   &:hover {
     text-decoration: none;
