@@ -69,13 +69,12 @@
     .btn {
       display: block;
       font-size: 18px;
+      line-height: 1.5rem;
     }
 
     a:not(.btn) {
       padding: $space-sm $space-md;
       color: $body-color;
-      font-size: 18px;
-      line-height: (4 / 3);
       white-space: nowrap;
       text-align: center;
 
