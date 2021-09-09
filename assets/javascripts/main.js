@@ -1,4 +1,4 @@
-import './elements/toggle.js'
+import './elements/menu.js'
 import './elements/dropdown/index.js'
 import './elements/modal/index.js'
 import './elements/dependencies.js'

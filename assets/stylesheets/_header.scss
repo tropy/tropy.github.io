@@ -25,7 +25,7 @@
       margin: 0 (-$space-md);
     }
 
-    ul {
+    > ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -38,7 +38,7 @@
         height: $header-height;
       }
 
-      li {
+      > li {
         display: none;
 
         @media (min-width: $sm) {
@@ -56,75 +56,75 @@
             display: none;
           }
         }
-      }
-    }
 
-    a,
-    .btn-menu {
-      display: block;
+        a,
+        .btn-menu {
+          display: block;
 
-      @include focus-visible {
-        outline-offset: -3px;
-        outline-color: $focus-color;
+          @include focus-visible {
+            outline-offset: -3px;
+            outline-color: $focus-color;
 
-        @include variant(".home.key, .blog-home.key, .blog-category.key") {
-          outline-color: $white;
+            @include variant(".home.key, .blog-home.key, .blog-category.key") {
+              outline-color: $white;
+            }
+          }
+        }
+
+        a:not(.btn) {
+          color: inherit;
+          padding: $space-sm $space-xs;
+          white-space: nowrap;
+          outline-offset: -3px;
+
+          @media (min-width: $sm) {
+            padding: $space-sm $space-md;
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &.home {
+          @media (min-width: $sm) {
+            font-size: 24px;
+            line-height: 1;
+            margin-right: auto;
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+          }
+
+          span {
+            display: none;
+
+            @media (min-width: $sm) {
+              display: inline;
+            }
+          }
+        }
+
+        .tropy-icon-small {
+          @media (min-width: $sm) {
+            margin-right: $space-xs;
+          }
+        }
+
+        .btn-donate {
+          margin-left: $space-md;
+        }
+
+        .btn-menu {
+          border: 0;
+          background-color: transparent;
+          padding: 8px;
+          margin: 0 4px 0 0;
+          color: inherit;
         }
       }
-    }
-
-    a:not(.btn) {
-      color: inherit;
-      padding: $space-sm $space-xs;
-      white-space: nowrap;
-      outline-offset: -3px;
-
-      @media (min-width: $sm) {
-        padding: $space-sm $space-md;
-      }
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
-    .home {
-      @media (min-width: $sm) {
-        font-size: 24px;
-        line-height: 1;
-        margin-right: auto;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-      }
-
-      span {
-        display: none;
-
-        @media (min-width: $sm) {
-          display: inline;
-        }
-      }
-    }
-
-    .tropy-icon-small {
-      @media (min-width: $sm) {
-        margin-right: $space-xs;
-      }
-    }
-
-    .btn-donate {
-      margin-left: $space-md;
-    }
-
-    .btn-menu {
-      border: 0;
-      background-color: transparent;
-      padding: 8px;
-      margin: 0 4px 0 0;
-      color: inherit;
     }
   }
 }

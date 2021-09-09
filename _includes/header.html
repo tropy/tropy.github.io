@@ -1,6 +1,6 @@
 <header class="main-header">
   <div class="container-fluid">
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main navigation">
       <ul>
         <li class="home"><a href="/" aria-label="Home">{%- include tropy-icon-small.svg -%} <span>Tropy</span></a></li>
         <li><a href="https://docs.tropy.org">User Guide</a></li>
@@ -8,12 +8,9 @@
         <li><a href="https://forums.tropy.org">Support</a></li>
         <li><a href="https://github.com/tropy/tropy">GitHub</a></li>
         <li><a class="btn btn-green btn-donate" href="/donate">Donate</a></li>
-        <li><button class="btn-menu">{%- include menu-icon.svg -%}</button></li>
+        <li><button class="btn-menu" aria-label="Toggle navigation" aria-controls="mobile-menu">{%- include menu-icon.svg -%}</button></li>
       </ul>
-    </nav>
-    <tpy-toggle class="mobile-menu" trigger=".btn-menu, .btn-toggle">
-      <button class="btn-toggle">{%- include icon-xmark.svg -%}</button>
-      <nav>
+      <tpy-menu id="mobile-menu" class="mobile-menu" toggle=".btn-menu">
         <ul>
           <li><a href="https://docs.tropy.org">User Guide</a></li>
           <li><a href="/blog">Blog</a></li>
@@ -25,7 +22,8 @@
           <li><a href="/jobs">Jobs</a></li>
           <li><a class="btn btn-lg btn-green btn-donate" href="/donate">Donate</a></li>
         </ul>
-      </nav>
-    </tpy-toggle>
+        <button class="btn-close" aria-label="Close mobile navigation">{%- include icon-xmark.svg -%}</button>
+      </tpy-menu>
+    </nav>
   </div>
 </header>
