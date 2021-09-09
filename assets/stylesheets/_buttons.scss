@@ -11,6 +11,8 @@ button {
 .btn {
   display: inline-block;
   vertical-align: middle;
+  font-family: inherit;
+  line-height: $line-height-base;
   text-align: center;
   border: 1px solid transparent;
   cursor: pointer;
