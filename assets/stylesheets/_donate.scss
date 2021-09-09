@@ -133,6 +133,12 @@ tpy-donations {
         grid-column-end: span 2;
       }
     }
+
+    &.monthly {
+      @include state("tpy-donations:not(:defined)") {
+        display: none;
+      }
+    }
   }
 
   .btn-donate {
