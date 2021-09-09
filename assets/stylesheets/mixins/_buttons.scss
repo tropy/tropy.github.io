@@ -2,14 +2,38 @@
 // Button variants
 //
 
-@mixin button-variant($color, $bg) {
+@mixin button-variant($color, $bg, $hover-bg: null) {
   color: $color;
   background-color: $bg;
   -webkit-font-smoothing: initial;
   -moz-osx-font-smoothing: initial;
 
-  @include focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px $bg;
+  @if $hover-bg == null {
+    @include focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px $bg;
+    }
+
+  } @else {
+    @media (hover: hover) {
+      &:hover {
+        background-color: $hover-bg;
+      }
+
+      &:active {
+        background-color: $bg;
+      }
+
+      @include focus-visible {
+        outline: none;
+        background-color: $hover-bg;
+        box-shadow: 0 0 0 2px $hover-bg;
+
+        &:active {
+          background-color: $bg;
+          box-shadow: 0 0 0 2px $bg;
+        }
+      }
+    }
   }
 }
