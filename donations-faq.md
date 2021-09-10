@@ -3,7 +3,7 @@ layout: page
 class: page donations-faq
 ---
 
-# Donation FAQ
+# Donations FAQ
 
 ## Why should I donate to Tropy?
 Tropy is not just the *only* free and open-source software for researchers working with archival photographs, it’s also the best one. By donating to Tropy you recognize that the software provides a valuable service not just to you but also to researchers around the world who may not be able to donate as generously as you can. In short, because it’s worth it.
