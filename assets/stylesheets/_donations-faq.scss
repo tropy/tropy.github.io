@@ -1,7 +1,33 @@
 .donations-faq {
+  main {
+    padding-bottom: $section-spacing-y-phone - 22px;
+
+    @media (min-width: $sm) {
+      padding-bottom: $section-spacing-y - 22px;
+    }
+  }
+
   h1 {
+    margin-top: 2 * $section-spacing-y-phone * 3 / 4 - 78px;
+    margin-bottom: $section-spacing-y-phone * 3 / 4 - 16px;
+
     @media (min-width: $sm) {
       text-align: center;
+      margin-top: 2 * $section-spacing-y * 3 / 4 - 115px;
+      margin-bottom: $section-spacing-y * 3 / 4 - 20px;
     }
+  }
+
+  h2 {
+    margin-top: $font-size-base * $line-height-base;
+    margin-bottom: $font-size-base;
+
+    @media (min-width: $sm) {
+      margin-top: $font-size-base * 2;
+    }
+  }
+
+  p {
+    color: $gray-dark;
   }
 }

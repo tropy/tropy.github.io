@@ -65,7 +65,8 @@
       padding-top: $blog-font-size * $blog-line-height;
     }
 
-    @include variant("post.post-preview") {
+    // State mixin creates unwanted .post h2 styles
+    @at-root .post.post-preview h2 {
       margin-bottom: $blog-font-size * $blog-line-height;
 
       a {
