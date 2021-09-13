@@ -34,6 +34,15 @@ const startContact = function(evt) {
   if (evt) {
     evt.preventDefault();
   }
+
+  // Show modal and add backdrop
+  document.querySelector("#payment-section").classList.add("is-open");
+
+  const backdrop = document.createElement('div')
+
+  backdrop.className = 'modal-backdrop'
+  document.body.appendChild(backdrop)
+
   // hide payment form if we went back to contact
   document.getElementById("payment-form").classList.add("hidden");
   // show the payment form

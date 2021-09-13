@@ -13,7 +13,8 @@
   overflow-y: auto;
   display: none;
 
-  &[is-open] {
+  &[is-open],
+  &.is-open {
     display: block;
   }
 }
@@ -24,7 +25,8 @@
   margin: 0 auto;
   pointer-events: none;
 
-  [centered] & {
+  [centered] &,
+  .centered & {
     align-items: center;
     min-height: 100%;
   }
