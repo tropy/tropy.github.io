@@ -2,6 +2,8 @@
 layout: page
 class: donate
 ---
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/assets/javascripts/donate-stripe.js"></script>
 
 <img class="tropy-icon" src="assets/images/tropy-icon.svg" width="192" height="192" alt="Tropy icon">
 <div class="row">
@@ -12,7 +14,7 @@ class: donate
   </div>
   <div class="col-md-5 start-md-7">
     <tpy-donations>
-      <form>
+      <form id="amount-form">
         <div class="btn-group frequency">
           <input id="one-time" class="btn-check" type="radio" name="frequency" value="one-time" checked>
           <label class="btn btn-lg btn-form" for="one-time">One time</label>
@@ -62,6 +64,34 @@ class: donate
         </div>
         <button class="btn btn-xl btn-donate" type="submit">Pay with Card</button>
       </form>
+      <div id='payment-section'>
+        <div id="stripe-error" class="hidden">
+          <p role="alert"></p>
+        </div>
+        <form id="contact-form" class="hidden">
+          <div>
+            <input id="payment-name" type="text" placeholder="Name" required>
+          </div>
+          <div>
+            <input id="payment-email" type="email" placeholder="Email" required>
+          </div>
+          <button type="submit">
+            <span id="button-text">Continue</span>
+          </button>
+        </form>
+        <form id="payment-form" class="hidden">
+          <div id="stripe-testkey-flag" class="hidden">Test mode</div>
+          <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+          <button id="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pay now</span>
+          </button>
+          <p id="card-error" role="alert"></p>
+          <p class="result-message hidden">
+            Payment succeeded, a receipt will be emailed to you shortly.
+          </p>
+        </form>
+      </div>
     </tpy-donations>
     <p>Your payment details will be processed by <a href="https://stripe.com/privacy">Stripe</a> and a record of your donation will be stored by Tropy.</p>
     <p>Problems donating? Visit our <a href="/donations-faq">FAQ</a> for answers to most common questions. Still have problems? Email us at <a href="mailto:donations@tropy.org">donations@tropy.org</a></p>
