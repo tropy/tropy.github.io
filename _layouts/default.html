@@ -3,7 +3,7 @@ js: /assets/javascripts/main.js
 ---
 
 <!doctype html>
-<html lang="en" class="{{ page.class }}">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@ js: /assets/javascripts/main.js
   </head>
   <body>
     {%- include header.html -%}
-    <main>
+    <main class="{{ page.class }}">
       {{ content }}
     </main>
     {%- include footer.html -%}

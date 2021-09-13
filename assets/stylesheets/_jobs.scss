@@ -26,93 +26,89 @@
   }
 
   &:not(.ad) {
-    main {
-      padding-bottom: $section-spacing-y-phone - 6px;
+    padding-bottom: $section-spacing-y-phone - 6px;
+
+    @media (min-width: $sm) {
+      padding-bottom: $section-spacing-y - 6px;
+    }
+
+    .lead {
+      color: inherit;
+      margin-top: $section-spacing-y-phone * 3 / 4 - 14px; // 2.5% Optical adjustment
 
       @media (min-width: $sm) {
-        padding-bottom: $section-spacing-y - 6px;
+        width: 100% * 5 / 6;
+        margin-top: $section-spacing-y * 3 / 4 - 57px; // To maze
+        margin-left: auto;
+        margin-right: auto;
       }
+    }
 
-      .lead {
-        color: inherit;
-        margin-top: $section-spacing-y-phone * 3 / 4 - 14px; // 2.5% Optical adjustment
+    span {
+      &::before {
+        content: " ";
 
         @media (min-width: $sm) {
-          width: 100% * 5 / 6;
-          margin-top: $section-spacing-y * 3 / 4 - 57px; // To maze
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-
-      span {
-        &::before {
-          content: " ";
-
-          @media (min-width: $sm) {
-            content: "\a0";
-          }
+          content: "\a0";
         }
       }
     }
   }
 
   &.ad {
-    main {
-      font-size: $blog-font-size;
-      line-height: $blog-line-height;
-      padding-bottom: $section-spacing-y-phone - 35px;
+    font-size: $blog-font-size;
+    line-height: $blog-line-height;
+    padding-bottom: $section-spacing-y-phone - 35px;
+
+    @media (min-width: $sm) {
+      padding-bottom: $section-spacing-y - 35px;
+    }
+
+    .container-fluid {
+      @media (min-width: $sm) {
+        max-width: $blog-max-width;
+      }
+    }
+
+    h2 {
+      font-size: 26px; // De Groot interpolation
+      padding-top: $blog-font-size;
+      margin: 0 0 -10px 0;
 
       @media (min-width: $sm) {
-        padding-bottom: $section-spacing-y - 35px;
+        font-size: 30px;
+        padding-top: $blog-font-size * $blog-line-height;
       }
+    }
 
-      .container-fluid {
-        @media (min-width: $sm) {
-          max-width: $blog-max-width;
-        }
-      }
+    .lead {
+      margin-top: $section-spacing-y-phone * 3 / 4 - 14px; // 2.5% Optical adjustment
+      margin-bottom: $blog-font-size * $blog-line-height + 2px;
+      text-align: left;
 
-      h2 {
-        font-size: 26px; // De Groot interpolation
-        padding-top: $blog-font-size;
-        margin: 0 0 -10px 0;
-
-        @media (min-width: $sm) {
-          font-size: 30px;
-          padding-top: $blog-font-size * $blog-line-height;
-        }
-      }
-
-      .lead {
-        margin-top: $section-spacing-y-phone * 3 / 4 - 14px; // 2.5% Optical adjustment
-        margin-bottom: $blog-font-size * $blog-line-height + 2px;
+      @media (min-width: $sm) {
+        margin-top: $section-spacing-y * 3 / 4 - 57px; // To maze
         text-align: left;
-
-        @media (min-width: $sm) {
-          margin-top: $section-spacing-y * 3 / 4 - 57px; // To maze
-          text-align: left;
-          letter-spacing: -0.01em;
-          margin-bottom: $blog-font-size * $blog-line-height + 2px;
-        }
+        letter-spacing: -0.01em;
+        margin-bottom: $blog-font-size * $blog-line-height + 2px;
       }
+    }
 
-      p,
-      ul {
-        margin: ($blog-font-size * $blog-line-height) 0;
+    p,
+    ul {
+      margin: ($blog-font-size * $blog-line-height) 0;
+    }
+
+    ul {
+      list-style-type: "– ";
+
+      @media (max-width: $sm - 1px) {
+        padding-left: 40px * 5 / 8;
       }
+    }
 
-      ul {
-        list-style-type: "– ";
-
-        @media (max-width: $sm - 1px) {
-          padding-left: 40px * 5 / 8;
-        }
-      }
-
-      a {
-        color: mix($blue, $blue-dark, 50%);
-      }
+    a {
+      color: mix($blue, $blue-dark, 50%);
     }
   }
 }

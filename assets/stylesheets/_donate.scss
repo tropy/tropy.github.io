@@ -1,10 +1,8 @@
 .donate {
-  main {
-    padding-bottom: $section-spacing-y-phone - 21px;
+  padding-bottom: $section-spacing-y-phone - 21px;
 
-    @media (min-width: $sm) {
-      padding-bottom: $section-spacing-y - 22px;
-    }
+  @media (min-width: $sm) {
+    padding-bottom: $section-spacing-y - 22px;
   }
 
   .col-text {

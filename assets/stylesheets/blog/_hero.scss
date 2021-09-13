@@ -2,7 +2,7 @@
 // Blog hero
 //
 
-main .blog-hero {
+.blog-hero {
   display: flex;
   background-image: linear-gradient(#{$blue-darkest} 0%, #4848b3 56%, #68c1e8 100%);
   color: $white;
