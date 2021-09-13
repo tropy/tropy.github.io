@@ -12,10 +12,8 @@
     letter-spacing: -0.02em;
   }
 
-  .home &,
-  .blog-home &,
-  .blog-category & {
-    color: $header-home-color;
+  &.inverse {
+    color: $header-inverse-color;
   }
 
   .main-nav {
@@ -65,7 +63,7 @@
             outline-offset: -3px;
             outline-color: $focus-color;
 
-            @include variant(".home.key, .blog-home.key, .blog-category.key") {
+            @include variant(".main-header.inverse") {
               outline-color: $white;
             }
           }

@@ -1,4 +1,9 @@
-<header class="main-header">
+{%- if page.class contains 'home' or page.class contains 'blog-home' or page.class contains 'blog-category' -%}
+  {%- assign header_classes = 'main-header inverse' -%}
+{%- else -%}
+  {%- assign header_classes = 'main-header' -%}
+{%- endif -%}
+<header class="{{ header_classes }}">
   <div class="container-fluid">
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
