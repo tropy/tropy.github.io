@@ -8,7 +8,7 @@ export const Sticky = createElement(
     connectedCallback() {
       this.handleIntersect = (entries, observer) => {
         entries.forEach(entry => {
-          if(entry.boundingClientRect.y < 1) {
+          if(entry.boundingClientRect.y == 0) {
             this.classList.add('stuck')
           } else {
             this.classList.remove('stuck')
