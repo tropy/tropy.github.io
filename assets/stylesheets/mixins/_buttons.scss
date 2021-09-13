@@ -23,21 +23,22 @@
       &:hover {
         background-color: $hover-bg;
       }
+    }
+
+    &:active {
+      background-color: $bg;
+    }
+
+    @include focus-visible {
+      outline: none;
+      background-color: $hover-bg;
+      box-shadow: 0 0 0 2px $hover-bg;
 
       &:active {
         background-color: $bg;
-      }
-
-      @include focus-visible {
-        outline: none;
-        background-color: $hover-bg;
-        box-shadow: 0 0 0 2px $hover-bg;
-
-        &:active {
-          background-color: $bg;
-          box-shadow: 0 0 0 2px $bg;
-        }
+        box-shadow: 0 0 0 2px $bg;
       }
     }
+
   }
 }

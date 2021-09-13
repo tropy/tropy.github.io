@@ -36,12 +36,7 @@ const startContact = function(evt) {
   }
 
   // Show modal and add backdrop
-  document.querySelector("#payment-section").classList.add("is-open");
-
-  const backdrop = document.createElement('div')
-
-  backdrop.className = 'modal-backdrop'
-  document.body.appendChild(backdrop)
+  document.querySelector("#payment-section").setAttribute("is-open", "");
 
   // hide payment form if we went back to contact
   document.getElementById("payment-form").classList.add("hidden");
@@ -213,11 +208,11 @@ var removeStripeError = function() {
 var loading = function(isLoading) {
   if (isLoading) {
     // Disable the button and show a spinner
-    document.querySelector("#payment-section button").disabled = true;
+    document.querySelector("#submit").disabled = true;
     document.querySelector("#payment-section #spinner").classList.remove("hidden");
     document.querySelector("#payment-section #button-text").classList.add("hidden");
   } else {
-    document.querySelector("#payment-section button").disabled = false;
+    document.querySelector("#submit").disabled = false;
     document.querySelector("#payment-section #spinner").classList.add("hidden");
     document.querySelector("#payment-section #button-text").classList.remove("hidden");
   }

@@ -12,6 +12,7 @@ button {
   display: inline-block;
   vertical-align: middle;
   font-family: inherit;
+  font-size: inherit;
   line-height: $line-height-base;
   text-align: center;
   border: 1px solid transparent;
@@ -21,6 +22,11 @@ button {
 
   &:hover {
     text-decoration: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
 
@@ -63,6 +69,18 @@ button {
 
 // Standard button variants
 
+.btn-hover-primary {
+  @include button-variant(
+    $color: $white,
+    $bg: $brand-primary,
+    $hover-bg: lighten($brand-primary, 5%)
+  );
+}
+
 .btn-hover-green {
-  @include button-variant($color: $white, $bg: $green, $hover-bg: lighten($green, 5%))
+  @include button-variant(
+    $color: $white,
+    $bg: $green,
+    $hover-bg: lighten($green, 5%)
+  );
 }

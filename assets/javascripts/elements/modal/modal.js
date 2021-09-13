@@ -64,7 +64,7 @@ export const Modal = createElement(
     handleClick(e) {
       if (
         e.target != this.trigger &&
-        e.target == this ||
+        //e.target == this ||
         e.target == this.btnClose
       ) {
         this.isOpen = false
@@ -77,7 +77,7 @@ export const Modal = createElement(
           this.isOpen = false
           break
         case 'Tab':
-          e.preventDefault()
+          //e.preventDefault()
       }
     }
 

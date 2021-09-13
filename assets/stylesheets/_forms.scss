@@ -1,0 +1,27 @@
+//
+// Forms
+//
+
+.form-control {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: $line-height-base;
+  background-color: $white;
+  border: 1px solid #ddd;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border-color: $brand-primary;
+    outline: 0;
+    box-shadow: 0 0 0 2px $brand-primary;
+  }
+}
+
+.form-control-lg {
+  padding: 11px $space-sm;
+  border-radius: 4px;
+}

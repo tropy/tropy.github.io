@@ -64,44 +64,35 @@ class: donate
         </div>
         <button class="btn btn-xl btn-donate" type="submit">Pay with Card</button>
       </form>
-      <div id='payment-section' class="modal centered payment">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div id="stripe-error" class="hidden">
-              <p role="alert"></p>
-            </div>
-            <form id="contact-form" class="hidden">
-              <div>
-                <input id="payment-name" type="text" placeholder="Name" required>
-              </div>
-              <div>
-                <input id="payment-email" type="email" placeholder="Email" required>
-              </div>
-              <button type="submit">
-                <span id="button-text">Continue</span>
-              </button>
-            </form>
-            <form id="payment-form" class="hidden">
-              <div id="stripe-testkey-flag" class="hidden">Test mode</div>
-              <div id="card-element"><!--Stripe.js injects the Card Element--></div>
-              <button id="submit">
-                <div class="spinner hidden" id="spinner"></div>
-                <span id="button-text">Pay now</span>
-              </button>
-              <p id="card-error" role="alert"></p>
-              <p class="result-message hidden">
-                Payment succeeded, a receipt will be emailed to you shortly.
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
     </tpy-donations>
     <p>Your payment details will be processed by <a href="https://stripe.com/privacy">Stripe</a> and a record of your donation will be stored by Tropy.</p>
     <p>Problems donating? Visit our <a href="/donations-faq">FAQ</a> for answers to most common questions. Still have problems? Email us at <a href="mailto:donations@tropy.org">donations@tropy.org</a></p>
     <p>Contributions go to <a href="https://digitalscholar.org">Digital Scholar</a> and will be reserved for use in the Tropy project. Donations are not tax-deductible as charitable contributions.</p>
   </div>
 </div>
-
-
+<tpy-modal id="payment-section" class="payment" centered>
+  <tpy-modal-header>Tropy Donation</tpy-modal-header>
+  <tpy-modal-body>
+    <div id="stripe-error" class="hidden">
+      <p role="alert"></p>
+    </div>
+    <form id="contact-form" class="hidden">
+      <input id="payment-name" class="form-control form-control-lg" type="text" placeholder="Name" required>
+      <input id="payment-email" class="form-control form-control-lg" type="email" placeholder="Email" required>
+      <button class="btn btn-lg btn-hover-primary" type="submit">Continue</button>
+    </form>
+    <form id="payment-form" class="hidden">
+      <div id="stripe-testkey-flag" class="hidden">Test mode</div>
+      <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+      <button id="submit" class="btn btn-lg btn-hover-primary">
+        <div class="spinner hidden" id="spinner">Loading …</div>
+        <span id="button-text">Pay Now</span>
+      </button>
+      <p id="card-error" role="alert"></p>
+      <p class="result-message hidden">
+        Payment succeeded, a receipt will be emailed to you shortly.
+      </p>
+    </form>
+  </tpy-modal-body>
+</tpy-modal>
 
