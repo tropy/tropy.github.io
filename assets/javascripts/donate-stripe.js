@@ -190,7 +190,7 @@ var setPayButtonText = function(text) {
 var orderComplete = function() {
   loading(false);
   document.querySelector(".result-message").classList.remove("hidden");
-  document.querySelector("button").disabled = true;
+  document.querySelector("button#submit").disabled = true;
 };
 
 // Show the customer the error from Stripe if their card fails to charge
