@@ -13,6 +13,9 @@ os.guess()
 
 document.addEventListener('DOMContentLoaded', async () => {
   let download = document.querySelector('tpy-download')
-  download.release = await getLatestRelease()
+
+  if (download) {
+    download.release = await getLatestRelease()
+  }
 
 }, { once: true })
