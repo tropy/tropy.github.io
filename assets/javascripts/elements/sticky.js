@@ -1,3 +1,14 @@
+---
+---
+
+{% if jekyll.environment == "development" %}
+   console.log('dev');
+{% endif %}
+
+{% if jekyll.environment == "production" %}
+   console.log('prod');
+{% endif %}
+
 import { createElement } from '../helpers/create-element.js'
 
 
