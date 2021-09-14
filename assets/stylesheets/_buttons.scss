@@ -73,7 +73,7 @@ button {
   @include button-variant(
     $color: $white,
     $bg: $brand-primary,
-    $hover-bg: lighten($brand-primary, 5%)
+    $hover-bg: saturate(lighten($brand-primary, 5%), 10%)
   );
 }
 

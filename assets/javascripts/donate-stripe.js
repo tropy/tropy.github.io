@@ -35,7 +35,7 @@ const startContact = function(evt) {
     evt.preventDefault();
   }
 
-  // Show modal and add backdrop
+  // Show modal
   document.querySelector("#payment-section").setAttribute("is-open", "");
 
   // hide payment form if we went back to contact
@@ -62,7 +62,7 @@ const startPayment = function(evt) {
 
     //set the payment button text with the amount selected
     console.log(purchaseObj);
-    setPayButtonText("Pay US " + formatCurrency(purchaseObj.amount) + " now");
+    setPayButtonText("Pay " + formatCurrency(purchaseObj.amount) + " Now");
 
     // Disable the button until we have Stripe set up on the page
     // document.querySelector("button").disabled = true;
@@ -85,16 +85,16 @@ const startPayment = function(evt) {
 
       var style = {
         base: {
-          color: "#32325d",
-          fontFamily: 'Arial, sans-serif',
+          color: "#101012",
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
           fontSmoothing: "antialiased",
           fontSize: "16px",
           "::placeholder": {
-            color: "#32325d"
+            color: "#77777c"
           }
         },
         invalid: {
-          fontFamily: 'Arial, sans-serif',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
           color: "#fa755a",
           iconColor: "#fa755a"
         }
