@@ -1,6 +1,12 @@
+// test credentials
 var stripe = Stripe("pk_test_51JT0o3IfQcuZiDTgYUM3KIDT69YA5BL6kZMNDBrwLCLuVkGhFspqbynjnRgPqJgNy7A3bPd3or0AZIy9E0VkIChK00FGZh4e83");
-const paymentEndpoint = 'https://cakatr39t1.execute-api.us-east-1.amazonaws.com/Prod/';
+const paymentEndpoint = 'https://dpq4275s2h.execute-api.us-east-1.amazonaws.com/Prod/';
 // const paymentEndpoint = 'http://127.0.0.1:3000/';
+
+// live credentials
+// var stripe = Stripe("pk_live_51JT0o3IfQcuZiDTgkKraHa2dBIaSF3BXW0WJPrOgA2PlvssbadO8rUCwOW6QzC1DrME6cPtwjkEE99PFuFx3KWJ700l2687cir");
+// const paymentEndpoint = 'https://cakatr39t1.execute-api.us-east-1.amazonaws.com/Prod/';
+
 const startPaymentAddress = paymentEndpoint + 'start-payment';
 
 const getPurchaseObject = function() {
