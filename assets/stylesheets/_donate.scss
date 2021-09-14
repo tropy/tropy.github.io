@@ -45,6 +45,10 @@
   p {
     color: $gray-dark;
   }
+
+  .hidden {
+    display: none;
+  }
 }
 
 tpy-donations {
@@ -61,6 +65,17 @@ tpy-donations {
     margin-top: 0;
   }
 
+  #stripe-error {
+    text-align: left;
+    font-size: 13px;
+    line-height: 17px;
+    margin-top: 12px;
+
+    p {
+      color: rgb(255, 50, 50);
+    }
+  }
+
   .frequency {
     margin-bottom: $space-lg;
   }
@@ -73,7 +88,6 @@ tpy-donations {
 
     @media (min-width: $sm) {
       grid-template-columns: repeat(6, 1fr);
-      margin-bottom: $space-xxl;
     }
 
     @media (min-width: $md) and (max-width: $xl - 1px) {
@@ -139,6 +153,10 @@ tpy-donations {
     }
   }
 
+  .form-control {
+    margin-bottom: $space-lg;
+  }
+
   .btn-donate {
     @include button-variant(
       $color: $white,
@@ -150,6 +168,11 @@ tpy-donations {
     font-weight: 600;
     font-size: $font-size-large;
     line-height: #{$line-height-base}rem;
+    margin-top: $space-lg;
+
+    @media (min-width: $sm) {
+      margin-top: $space-xxl;
+    }
   }
 }
 
@@ -252,26 +275,11 @@ tpy-editable-radio {
     text-decoration: none;
   }
 
-  .hidden {
-    display: none;
-  }
-
   #stripe-testkey-flag {
     background-color: rgba(255, 255, 0, .5);
     position: absolute;
     left: 0;
     top: 0;
-  }
-
-  #stripe-error {
-    text-align: left;
-    font-size: 13px;
-    line-height: 17px;
-    margin-top: 12px;
-
-    p {
-      color: rgb(255, 50, 50);
-    }
   }
 
   #card-error {

@@ -18,8 +18,8 @@ const getPurchaseObject = function() {
   }
 
   amount = parseFloat(amtStr, 10) * 100; //stripe charge amounts are integer cents
-  var paymentName = document.querySelector("#contact-form #payment-name").value;
-  var paymentEmail = document.querySelector("#contact-form #payment-email").value;
+  var paymentName = document.querySelector("#payment-name").value;
+  var paymentEmail = document.querySelector("#payment-email").value;
   var purchaseObj = {
     period,
     amount,
@@ -30,28 +30,16 @@ const getPurchaseObject = function() {
   return purchaseObj;
 }
 
-const startContact = function(evt) {
-  if (evt) {
-    evt.preventDefault();
-  }
-
-  // Show modal
-  document.querySelector("#payment-section").setAttribute("is-open", "");
-
-  // hide payment form if we went back to contact
-  document.getElementById("payment-form").classList.add("hidden");
-  // show the payment form
-  document.getElementById("contact-form").classList.remove("hidden");
-  document.getElementById("payment-name").focus();
-}
-
 const startPayment = function(evt) {
   if (evt) {
     evt.preventDefault();
   }
   try {
-    // hide contact form
-    document.getElementById("contact-form").classList.add("hidden");
+    // Remove Stripe error
+    removeStripeError();
+
+    // Show modal
+    document.querySelector("#payment-section").setAttribute("is-open", "");
 
     // show the payment form
     document.getElementById("payment-form").classList.remove("hidden");
@@ -114,10 +102,8 @@ const startPayment = function(evt) {
       form.addEventListener("submit", function(event) {
         event.preventDefault();
         // Complete payment when the submit button is clicked
-        var paymentName = document.querySelector("#contact-form #payment-name").value;
-        var paymentEmail = document.querySelector("#contact-form #payment-email").value;
 
-        payWithCard(stripe, card, data.clientSecret, paymentName, paymentEmail);
+        payWithCard(stripe, card, data.clientSecret, purchaseObj.paymentName, purchaseObj.paymentEmail);
       });
 
       loading(false);
@@ -125,11 +111,13 @@ const startPayment = function(evt) {
       //show error for promise rejection
       showStripeError("There was an error processing your payment. Please try again in a few minutes.");
       loading(false);
+      document.querySelector("#payment-section").removeAttribute("is-open");
     });
   } catch(err) {
     //show error for unhandled exception
     showStripeError("There was an error processing your payment. Please try again in a few minutes.");
     loading(false);
+    document.querySelector("#payment-section").removeAttribute("is-open");
   };
 }
 
@@ -195,7 +183,7 @@ var showCardError = function(errorMsgText) {
 
 // show error above payment form with general stripe error
 var showStripeError = function(message) {
-  startContact();
+  //startContact();
   document.querySelector("#stripe-error p").textContent = message;
   document.getElementById("stripe-error").classList.remove("hidden");
 }
@@ -230,8 +218,7 @@ function docReady(fn) {
 
 docReady(function(){
   // start stripe payment flow when donation form is submitted
-  document.querySelector('tpy-donations #amount-form').addEventListener('submit', startContact);
-  document.querySelector('#contact-form').addEventListener('submit', startPayment);
+  document.querySelector('tpy-donations #amount-form').addEventListener('submit', startPayment);
   //show testing flag if stripe is using a test key
   if (stripe._apiKey.startsWith('pk_test')) {
     document.getElementById('stripe-testkey-flag').classList.remove("hidden");
