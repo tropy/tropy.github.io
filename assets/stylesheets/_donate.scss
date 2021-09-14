@@ -314,13 +314,29 @@ tpy-editable-radio {
     }
   }
 
-  #card-element {
+  .StripeElement {
     border-radius: 4px;
     padding: 14px 16px;
     border: 1px solid #ddd;
     height: 48px;
     width: 100%;
-    background: white;
+    background: $white;
+    transition:
+      border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
+
+    &--focus {
+      border: 1px solid $brand-primary;
+      box-shadow: 0 0 0 2px $brand-primary;
+    }
+
+    &--invalid {
+      border-color: $red;
+
+      &.StripeElement--focus {
+        box-shadow: 0 0 0 2px $red;
+      }
+    }
   }
 
   #payment-request-button {

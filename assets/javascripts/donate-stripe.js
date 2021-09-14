@@ -85,8 +85,8 @@ const startPayment = function(evt) {
         },
         invalid: {
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-          color: "#fa755a",
-          iconColor: "#fa755a"
+          color: "#e62e2e",
+          iconColor: "#e62e2e"
         }
       };
 
