@@ -109,21 +109,22 @@
 
     .btn-close {
       color: inherit;
-      padding: 10px;
+      width: 36px;
+      height: 36px;
       -webkit-tap-highlight-color: transparent;
+      background: url("../images/close-icon-license-modal.svg") no-repeat center transparent;
+
+      @media (max-width: $sm - 1px), (pointer: coarse) {
+        background-size: 16px * 1.33;
+      }
 
       @media (min-width: $sm) and (pointer: fine) {
-        padding: 4px;
+        width: 24px;
+        height: 24px;
       }
 
       &:focus {
         outline: none;
-      }
-    }
-
-    svg {
-      @media (max-width: $sm - 1px), (pointer: coarse) {
-        transform: scale(1.33);
       }
     }
   }

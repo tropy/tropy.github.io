@@ -241,16 +241,39 @@ tpy-editable-radio {
   }
 
   .modal-header {
-    padding: 0 $space-xl;
+    padding: 20px $space-lg;
     border-bottom: 1px solid $gray-light;
+
+    @media (min-width: $sm) {
+      padding: 20px $space-xl;
+    }
+  }
+
+  .btn-close {
+    background: url("../images/close-icon-payment-modal.svg") no-repeat center transparent;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    top: 16px;
+    right: 8px;
+
+    @media (min-width: $sm) {
+      top: 16px;
+      right: 16px;
+    }
   }
 
   .modal-title {
+    font-size: $font-size-large;
     text-align: center;
   }
 
   .modal-body {
-    padding: $space-xl;
+    padding: $space-lg $space-xs;
+
+    @media (min-width: $sm) {
+      padding: $space-xl;
+    }
   }
 }
 
