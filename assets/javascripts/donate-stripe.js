@@ -110,6 +110,25 @@ const startPayment = function(evt) {
       });
 
       loading(false);
+
+      // Reset payment form when the modal is closed
+      const modal = document.querySelector("#payment-section");
+
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === "attributes") {
+            if (mutation.attributeName == "is-open" && modal.getAttribute('is-open') == null) {
+              card.unmount();
+              document.querySelector("#card-error").textContent = "";
+              document.querySelector(".result-message").classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      observer.observe(modal, {
+        attributes: true
+      });
     }).catch(function(err){
       //show error for promise rejection
       showStripeError("There was an error processing your payment. Please try again in a few minutes.");
