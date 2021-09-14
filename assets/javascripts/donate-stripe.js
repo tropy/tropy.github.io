@@ -69,7 +69,9 @@ const startPayment = function(evt) {
       return result.json();
     })
     .then(function(data) {
-      var elements = stripe.elements();
+      var elements = stripe.elements({
+        locale: 'en' // Other languages cause usability issues on small phones
+      });
 
       var style = {
         base: {
