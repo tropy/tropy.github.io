@@ -41,6 +41,9 @@ const startPayment = function(evt) {
     // Show modal
     document.querySelector("#payment-section").setAttribute("is-open", "");
 
+    // Show payment form (if hidden)
+    document.querySelector("#payment-form").classList.remove("hidden");
+
     // create purchase object from form values
     let purchaseObj = getPurchaseObject();
 
@@ -190,6 +193,8 @@ var orderComplete = function() {
   loading(false);
   document.querySelector(".result-message").classList.remove("hidden");
   document.querySelector("button#submit").disabled = true;
+  document.querySelector("#payment-form").classList.add("hidden");
+  document.querySelector("#payment-section .modal-header").classList.add("hidden");
 };
 
 // Show the customer the error from Stripe if their card fails to charge

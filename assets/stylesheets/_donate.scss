@@ -287,14 +287,42 @@ tpy-editable-radio {
   }
 
   .result-message {
-    line-height: 22px;
-    font-size: 16px;
-  }
+    text-align: center;
 
-  .result-message a {
-    color: rgb(89, 111, 214);
-    font-weight: 600;
-    text-decoration: none;
+    .heart-icon {
+      display: block;
+      margin: -5px auto;
+
+      @media (min-width: $sm) {
+        margin: -6px auto;
+      }
+    }
+
+    h2 {
+      margin: 12px 16px;
+
+      @media (min-width: $sm) {
+        margin: 12px 0;
+      }
+    }
+
+    p {
+      margin: 18px 16px;
+
+      @media (min-width: $sm) {
+        margin: 24px 0;
+      }
+    }
+
+    .btn {
+      margin: 0 16px;
+      width: calc(100% - 32px);
+
+      @media (min-width: $sm) {
+        margin: 0;
+        width: 100%;
+      }
+    }
   }
 
   #stripe-testkey-flag {
