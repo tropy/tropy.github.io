@@ -14,6 +14,9 @@
   line-height: $line-height-base;
   background-color: $white;
   border: 1px solid #ddd;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   transition:
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
