@@ -102,12 +102,11 @@ const startPayment = function(evt) {
       });
 
       var form = document.getElementById("payment-form");
-      form.addEventListener("submit", function(event) {
+      form.onsubmit = (event) => {
         event.preventDefault();
         // Complete payment when the submit button is clicked
-
         payWithCard(stripe, card, data.clientSecret, purchaseObj.paymentName, purchaseObj.paymentEmail);
-      });
+      };
 
       loading(false);
 
