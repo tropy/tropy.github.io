@@ -173,6 +173,19 @@ tpy-donations {
     @media (min-width: $sm) {
       margin-top: $space-xxl;
     }
+
+    &::before {
+      box-sizing: border-box;
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 15px;
+      border: 2px solid $white;
+      border-top-width: 3px;
+      border-bottom-width: 9px;
+      border-radius: 2px;
+      margin-right: 12px;
+    }
   }
 }
 
