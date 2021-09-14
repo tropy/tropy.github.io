@@ -41,10 +41,6 @@ const startPayment = function(evt) {
     // Show modal
     document.querySelector("#payment-section").setAttribute("is-open", "");
 
-    // show the payment form
-    document.getElementById("payment-form").classList.remove("hidden");
-    document.getElementById("card-element").focus();
-
     // create purchase object from form values
     let purchaseObj = getPurchaseObject();
 
@@ -93,6 +89,11 @@ const startPayment = function(evt) {
       var card = elements.create("card", { style: style });
       // Stripe injects an iframe into the DOM
       card.mount("#card-element");
+
+      // Focus card element
+      card.on('ready', function(event) {
+        card.focus()
+      });
 
       card.on("change", function (event) {
         // Disable the Pay button if there are no card details in the Element

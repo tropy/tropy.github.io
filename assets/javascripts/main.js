@@ -19,3 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
 }, { once: true })
+
+document.addEventListener('focusin', function() {
+  console.log('focused: ', document.activeElement)
+}, true);

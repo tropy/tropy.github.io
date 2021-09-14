@@ -314,7 +314,7 @@ tpy-editable-radio {
     }
   }
 
-  .StripeElement {
+  #card-element {
     border-radius: 4px;
     padding: 14px 16px;
     border: 1px solid #ddd;
@@ -325,12 +325,12 @@ tpy-editable-radio {
       border-color 0.15s ease-in-out,
       box-shadow 0.15s ease-in-out;
 
-    &--focus {
+    &.StripeElement--focus {
       border: 1px solid $brand-primary;
       box-shadow: 0 0 0 2px $brand-primary;
     }
 
-    &--invalid {
+    &.StripeElement--invalid {
       border-color: $red;
 
       &.StripeElement--focus {
