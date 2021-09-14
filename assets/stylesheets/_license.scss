@@ -10,7 +10,7 @@
     padding-bottom: $section-spacing-y - 8px;
   }
 
-  .container-fluid {
+  > .container-fluid {
     @media (min-width: $sm) {
       max-width: 789px;
     }
