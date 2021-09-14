@@ -237,7 +237,7 @@ tpy-editable-radio {
   .modal-content {
     background-color: $white;
     max-width: 360px;
-    border-radius: 6px;
+    border-radius: 10px;
   }
 
   .modal-header {
@@ -282,8 +282,7 @@ tpy-editable-radio {
 }
 
 #payment-section {
-  .form-control,
-  #card-element {
+  .form-control {
     margin-bottom: 24px;
   }
 
@@ -306,11 +305,13 @@ tpy-editable-radio {
   }
 
   #card-error {
-    color: rgb(105, 115, 134);
-    text-align: left;
-    font-size: 13px;
-    line-height: 17px;
-    margin-top: 12px;
+    color: $red;
+    margin: 4px 0 0 0;
+    font-size: 14px;
+
+    &:empty {
+      display: none;
+    }
   }
 
   #card-element {

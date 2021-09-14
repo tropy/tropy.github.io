@@ -80,12 +80,14 @@ class: donate
   <tpy-modal-body>
     <form id="payment-form" class="hidden">
       <div id="stripe-testkey-flag" class="hidden">Test mode</div>
-      <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+      <div class="form-group form-group-lg">
+        <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+        <p id="card-error" role="alert"></p>
+      </div>
       <button id="submit" class="btn btn-lg btn-hover-primary">
         <div class="spinner hidden" id="spinner">Loading …</div>
         <span id="button-text">Pay Now</span>
       </button>
-      <p id="card-error" role="alert"></p>
       <p class="result-message hidden">
         Payment succeeded, a receipt will be emailed to you shortly.
       </p>
