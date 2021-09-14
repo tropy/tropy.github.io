@@ -216,11 +216,11 @@ var showCardError = function(errorMsgText) {
 // show error above payment form with general stripe error
 var showStripeError = function(message) {
   //startContact();
-  document.querySelector("#stripe-error p").textContent = message;
+  document.querySelector("#stripe-error").textContent = message;
   document.getElementById("stripe-error").classList.remove("hidden");
 }
 var removeStripeError = function() {
-  document.querySelector("#stripe-error p").textContent = "";
+  document.querySelector("#stripe-error").textContent = "";
   document.getElementById("stripe-error").classList.add("hidden");
 }
 

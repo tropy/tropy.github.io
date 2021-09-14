@@ -65,15 +65,8 @@ tpy-donations {
     margin-top: 0;
   }
 
-  #stripe-error {
-    text-align: left;
-    font-size: 13px;
-    line-height: 17px;
-    margin-top: 12px;
-
-    p {
-      color: rgb(255, 50, 50);
-    }
+  .alert {
+    margin-bottom: $space-lg;
   }
 
   .frequency {
@@ -386,10 +379,6 @@ tpy-editable-radio {
         box-shadow: 0 0 0 2px $red;
       }
     }
-  }
-
-  #payment-request-button {
-    margin-bottom: 32px;
   }
 
   .btn {

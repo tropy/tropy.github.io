@@ -1,0 +1,13 @@
+//
+// Alert
+//
+
+.alert {
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: $space-md;
+
+  &.alert-red {
+    background-color: saturate(mix($red, $white, 18%), 100%); // todo
+  }
+}
