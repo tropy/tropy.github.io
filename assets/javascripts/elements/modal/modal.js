@@ -6,7 +6,7 @@ export const Modal = createElement(
 
   class extends HTMLElement {
     static get observedAttributes() {
-      return ['is-open', 'modal-title', 'centered']
+      return ['is-open', 'modal-title', 'centered', 'is-static']
     }
 
     connectedCallback() {
@@ -62,9 +62,12 @@ export const Modal = createElement(
     }
 
     handleClick(e) {
-      if (
+      if (!this.isStatic ?
         e.target != this.trigger &&
-        //e.target == this ||
+        e.target == this ||
+        e.target == this.btnClose :
+
+        e.target != this.trigger &&
         e.target == this.btnClose
       ) {
         this.isOpen = false
@@ -74,7 +77,7 @@ export const Modal = createElement(
     handleKey(e) {
       switch (e.key) {
         case 'Escape':
-          this.isOpen = false
+          if (!this.isStatic) this.isOpen = false
           break
         case 'Tab':
           //e.preventDefault()
@@ -94,6 +97,7 @@ export const Modal = createElement(
   }, {
     isOpen: true,
     modalTitle: false,
-    centered: true
+    centered: true,
+    isStatic: true
   }
 )
