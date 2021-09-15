@@ -196,6 +196,7 @@ var orderComplete = function() {
   loading(false);
   document.querySelector(".result-message").classList.remove("hidden");
   document.querySelector("button#submit").disabled = true;
+  document.querySelector("#payment-section").focus();
   document.querySelector("#payment-form").classList.add("hidden");
   document.querySelector("#payment-section .modal-header").classList.add("hidden");
 };

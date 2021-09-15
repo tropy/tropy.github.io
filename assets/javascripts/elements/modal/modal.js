@@ -1,5 +1,5 @@
 import { createElement } from '../../helpers/create-element.js'
-
+import { FocusTrap } from '../../helpers/focus-trap.js'
 
 export const Modal = createElement(
   'tpy-modal',
@@ -12,6 +12,7 @@ export const Modal = createElement(
     connectedCallback() {
       this.classList.add('modal')
       this.tabIndex = '-1'
+      this.focusTrap = new FocusTrap(this)
       this.handleClick = this.handleClick.bind(this)
       this.handleKey = this.handleKey.bind(this)
       this.template = `
@@ -22,7 +23,11 @@ export const Modal = createElement(
         </div>`
 
       new MutationObserver(this.elementChangedCallback)
-        .observe(this, { childList: true })
+        .observe(this, {
+          childList: true,
+          subtree: true,
+          attributes: true
+        })
 
       const slotted = this.innerHTML
       this.innerHTML = this.template
@@ -30,9 +35,16 @@ export const Modal = createElement(
     }
 
     elementChangedCallback = (mutationsList, observer) => {
-      this.modalHeaderTitle = this.querySelector('.modal-title')
-      this.btnClose = this.querySelector('.btn-close')
-      this.modalBody = this.querySelector('.modal-body')
+      let once;
+
+      if (!once) {
+        this.modalHeaderTitle = this.querySelector('.modal-title')
+        this.btnClose = this.querySelector('.btn-close')
+        this.modalBody = this.querySelector('.modal-body')
+        once = true
+      }
+
+      this.focusTrap.update()
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -78,9 +90,6 @@ export const Modal = createElement(
       switch (e.key) {
         case 'Escape':
           if (!this.isStatic) this.isOpen = false
-          break
-        case 'Tab':
-          //e.preventDefault()
       }
     }
 
