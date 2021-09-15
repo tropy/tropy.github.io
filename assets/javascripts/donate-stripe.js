@@ -15,28 +15,18 @@
 const startPaymentAddress = paymentEndpoint + 'start-payment';
 
 const getPurchaseObject = function() {
-  let period = false;
-  let amtStr = "";
-  let amount = false;
-  if(document.getElementById('one-time').checked) {
-    period = 'one-time';
-    amtStr = document.querySelector('div.amount.one-time input:checked').value;
-  } else if (document.getElementById('monthly').checked) {
-    period = 'monthly';
-    amtStr = document.querySelector('div.amount.monthly input:checked').value;
-  } else {
-    throw new Error("No period set");
+  const form = document.querySelector("#amount-form");
+  const data = new FormData(form);
+  const keys = ["period", "amount", "paymentName", "paymentEmail"];
+  let values = [];
+  let purchaseObj = {};
+
+  for (let value of data.values()) {
+     values.push(value);
   }
 
-  amount = parseFloat(amtStr, 10) * 100; //stripe charge amounts are integer cents
-  var paymentName = document.querySelector("#payment-name").value;
-  var paymentEmail = document.querySelector("#payment-email").value;
-  var purchaseObj = {
-    period,
-    amount,
-    paymentName,
-    paymentEmail
-  };
+  keys.forEach((key, i) => purchaseObj[key] = values[i]);
+  purchaseObj.amount = parseFloat(purchaseObj.amount, 10) * 100;
 
   return purchaseObj;
 }
