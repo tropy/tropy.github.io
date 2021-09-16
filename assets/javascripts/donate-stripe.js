@@ -1,16 +1,17 @@
 ---
 ---
 
-{% if jekyll.environment == "development" %}
-  // test credentials
-  var stripe = Stripe("pk_test_51JT0o3IfQcuZiDTgYUM3KIDT69YA5BL6kZMNDBrwLCLuVkGhFspqbynjnRgPqJgNy7A3bPd3or0AZIy9E0VkIChK00FGZh4e83");
-  const paymentEndpoint = 'https://qlrmb89byi.execute-api.us-east-1.amazonaws.com/dev/';
-  // const paymentEndpoint = 'http://127.0.0.1:3000/';
-{% elsif jekyll.environment == "production" %}
-  // live credentials
-  var stripe = Stripe("pk_live_51JT0o3IfQcuZiDTgkKraHa2dBIaSF3BXW0WJPrOgA2PlvssbadO8rUCwOW6QzC1DrME6cPtwjkEE99PFuFx3KWJ700l2687cir");
-  const paymentEndpoint = 'https://cakatr39t1.execute-api.us-east-1.amazonaws.com/Prod/';
-{% endif %}
+{%- if jekyll.environment == "development" -%}
+// test credentials
+var stripe = Stripe("pk_test_51JT0o3IfQcuZiDTgYUM3KIDT69YA5BL6kZMNDBrwLCLuVkGhFspqbynjnRgPqJgNy7A3bPd3or0AZIy9E0VkIChK00FGZh4e83");
+const paymentEndpoint = 'https://qlrmb89byi.execute-api.us-east-1.amazonaws.com/dev/';
+// const paymentEndpoint = 'http://127.0.0.1:3000/';
+
+{%- elsif jekyll.environment == "production" -%}
+// live credentials
+var stripe = Stripe("pk_live_51JT0o3IfQcuZiDTgkKraHa2dBIaSF3BXW0WJPrOgA2PlvssbadO8rUCwOW6QzC1DrME6cPtwjkEE99PFuFx3KWJ700l2687cir");
+const paymentEndpoint = 'https://cakatr39t1.execute-api.us-east-1.amazonaws.com/Prod/';
+{%- endif -%}
 
 const startPaymentAddress = paymentEndpoint + 'start-payment';
 
@@ -49,9 +50,9 @@ const startPayment = function(evt) {
     let purchaseObj = getPurchaseObject();
 
     //set the payment button text with the amount selected
-    {% if jekyll.environment == "development" %}
+    {% if jekyll.environment == "development" -%}
       console.log(purchaseObj);
-    {% endif %}
+    {%- endif %}
     setPayButtonText("Pay " + formatCurrency(purchaseObj.amount) + " Now");
 
     // Disable the button until we have Stripe set up on the page
