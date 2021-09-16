@@ -7,7 +7,6 @@ export class FocusTrap {
     this.elements
     this.result = []
     this.firstFocusableElement
-    this.focusableElements
     this.lastFocusableElement
     this.handleKey = this.handleKey.bind(this)
     this.selector =`
@@ -33,7 +32,6 @@ export class FocusTrap {
       })
 
       this.firstFocusableElement = this.result[0]
-      this.focusableElements = this.result
       this.lastFocusableElement = this.result[this.result.length - 1]
 
       if (e.shiftKey) {
