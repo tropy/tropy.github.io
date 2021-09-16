@@ -2,14 +2,11 @@
 ---
 
 {% if jekyll.environment == "development" %}
-  // test credentials
-  var stripe = Stripe("pk_test_51JT0o3IfQcuZiDTgYUM3KIDT69YA5BL6kZMNDBrwLCLuVkGhFspqbynjnRgPqJgNy7A3bPd3or0AZIy9E0VkIChK00FGZh4e83");
-  const paymentEndpoint = 'https://qlrmb89byi.execute-api.us-east-1.amazonaws.com/dev/';
-  // const paymentEndpoint = 'http://127.0.0.1:3000/';
+  var stripe = Stripe("{{ site.stripe_dev }}");
+  const paymentEndpoint = "{{ site.paymentEndpoint_dev }}";
 {% elsif jekyll.environment == "production" %}
-  // live credentials
-  var stripe = Stripe("pk_live_51JT0o3IfQcuZiDTgkKraHa2dBIaSF3BXW0WJPrOgA2PlvssbadO8rUCwOW6QzC1DrME6cPtwjkEE99PFuFx3KWJ700l2687cir");
-  const paymentEndpoint = 'https://cakatr39t1.execute-api.us-east-1.amazonaws.com/Prod/';
+  var stripe = Stripe("{{ site.stripe }}");
+  const paymentEndpoint = "{{ site.paymentEndpoint }}";
 {% endif %}
 
 const startPaymentAddress = paymentEndpoint + 'start-payment';

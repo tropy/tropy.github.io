@@ -11,6 +11,15 @@ url: "https://tropy.org" # the base hostname & protocol for your site, e.g. http
 twitter_username: tropy
 github_username: tropy
 
+# Stripe test credentials
+stripe_dev: pk_test_51JT0o3IfQcuZiDTgYUM3KIDT69YA5BL6kZMNDBrwLCLuVkGhFspqbynjnRgPqJgNy7A3bPd3or0AZIy9E0VkIChK00FGZh4e83
+paymentEndpoint_dev: https://qlrmb89byi.execute-api.us-east-1.amazonaws.com/dev/
+# paymentEndpoint_dev: http://127.0.0.1:3000/
+
+# Stripe live credentials
+stripe: pk_live_51JT0o3IfQcuZiDTgkKraHa2dBIaSF3BXW0WJPrOgA2PlvssbadO8rUCwOW6QzC1DrME6cPtwjkEE99PFuFx3KWJ700l2687cir
+paymentEndpoint: https://cakatr39t1.execute-api.us-east-1.amazonaws.com/Prod/
+
 # Options
 show_excerpts: true
 
@@ -65,4 +74,3 @@ plugins:
 
 # Serve command options
 host: 0.0.0.0
-
