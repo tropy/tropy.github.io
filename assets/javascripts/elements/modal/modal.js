@@ -23,11 +23,7 @@ export const Modal = createElement(
         </div>`
 
       new MutationObserver(this.elementChangedCallback)
-        .observe(this, {
-          childList: true,
-          subtree: true,
-          attributes: true
-        })
+        .observe(this, { childList: true })
 
       const slotted = this.innerHTML
       this.innerHTML = this.template
@@ -35,16 +31,9 @@ export const Modal = createElement(
     }
 
     elementChangedCallback = (mutationsList, observer) => {
-      let once;
-
-      if (!once) {
-        this.modalHeaderTitle = this.querySelector('.modal-title')
-        this.btnClose = this.querySelector('.btn-close')
-        this.modalBody = this.querySelector('.modal-body')
-        once = true
-      }
-
-      this.focusTrap.update()
+      this.modalHeaderTitle = this.querySelector('.modal-title')
+      this.btnClose = this.querySelector('.btn-close')
+      this.modalBody = this.querySelector('.modal-body')
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
@@ -63,6 +52,7 @@ export const Modal = createElement(
       document.body.classList.add('modal-open')
       document.addEventListener('click', this.handleClick)
       document.addEventListener('keydown', this.handleKey)
+      this.focusTrap.activate()
     }
 
     close() {
@@ -71,6 +61,7 @@ export const Modal = createElement(
       document.removeEventListener('click', this.handleClick)
       document.removeEventListener('keydown', this.handleKey)
       this.trigger.focus()
+      this.focusTrap.deactivate()
     }
 
     handleClick(e) {
