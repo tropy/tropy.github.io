@@ -1,0 +1,130 @@
+//
+// Donations form
+//
+
+tpy-donations {
+  display: block;
+  margin-top: $section-spacing-y-phone * 3 / 4 - 6px;
+  margin-bottom: $space-xxl - 10px;
+
+  @media (min-width: $sm) {
+    margin-top: $section-spacing-y * 3 / 4 - 6px;
+    margin-bottom: $space-xxxl - 7px;
+  }
+
+  @media (min-width: $md) {
+    margin-top: 0;
+  }
+
+  .frequency {
+    margin-bottom: $space-lg;
+  }
+
+  .amount {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin-bottom: $space-lg;
+
+    @media (min-width: $sm) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media (min-width: $md) and (max-width: $xl - 1px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .btn-form {
+      @media (max-width: $sm - 1px) {
+        &:nth-of-type(odd) {
+          margin-left: 0;
+        }
+
+        &:nth-child(2) {
+          border-bottom-left-radius: 0;
+        }
+
+        &:nth-child(4) {
+          border-top-right-radius: 4px !important;
+        }
+
+        &:nth-child(n+6) {
+          margin-top: -1px;
+        }
+
+        &:nth-child(10) {
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 4px;
+        }
+      }
+
+      @media (min-width: $md) and (max-width: $xl - 1px) {
+        &:nth-child(2) {
+          border-bottom-left-radius: 0;
+        }
+
+        &:nth-child(6) {
+          border-top-right-radius: 4px !important;
+        }
+
+        &:nth-child(8) {
+          margin-left: 0;
+          border-bottom-left-radius: 4px;
+        }
+
+        &:nth-child(n+8) {
+          margin-top: -1px;
+        }
+
+        &:nth-child(10) {
+          border-top-right-radius: 0;
+        }
+      }
+
+      &.other {
+        grid-column-end: span 2;
+      }
+    }
+
+    &.monthly {
+      @include state("tpy-donations:not(:defined)") {
+        display: none;
+      }
+    }
+  }
+
+  .form-control {
+    margin-bottom: $space-lg;
+  }
+
+  .btn-donate {
+    @include button-variant(
+      $color: $white,
+      $bg: mix($blue, $blue-dark, 50%),
+      $hover-bg: $blue
+    );
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: $font-size-large;
+    line-height: #{$line-height-base}rem;
+    margin-top: $space-lg;
+
+    @media (min-width: $sm) {
+      margin-top: $space-xxl;
+    }
+
+    &::before {
+      box-sizing: border-box;
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 15px;
+      border: 2px solid $white;
+      border-top-width: 3px;
+      border-bottom-width: 9px;
+      border-radius: 2px;
+      margin-right: 12px;
+    }
+  }
+}

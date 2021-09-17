@@ -13,6 +13,9 @@ js: /assets/javascripts/main.js
     {%- if layout.loading-js -%}
       <script src="{{ layout.loading-js }}"></script>
     {%- endif -%}
+    {%- if page.loading-js -%}
+      <script src="{{ page.loading-js }}"></script>
+    {%- endif -%}
     <script type="module" src="{{ layout.js }}"></script>
   </head>
   <body>

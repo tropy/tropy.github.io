@@ -1,0 +1,218 @@
+//
+// Checkout
+//
+
+tpy-checkout {
+  .alert {
+    margin-bottom: $space-lg;
+    display: none;
+
+    @include state("tpy-checkout[state='error']") {
+      display: block;
+    }
+  }
+
+  .modal.payment {
+    .btn-close {
+      background: url("../images/close-icon-payment-modal.svg") no-repeat center transparent;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      top: 16px;
+      right: 8px;
+
+      @media (min-width: $sm) {
+        top: 16px;
+        right: 16px;
+      }
+    }
+
+    .modal-content {
+      background-color: $white;
+      max-width: 360px;
+      border-radius: 10px;
+    }
+
+    .modal-header {
+      padding: 20px $space-lg;
+      border-bottom: 1px solid $gray-light;
+
+      @media (min-width: $sm) {
+        padding: 20px $space-xl;
+      }
+
+      @include state("tpy-checkout[state='success']") {
+        display: none;
+      }
+    }
+
+    .modal-title {
+      font-size: $font-size-large;
+      text-align: center;
+    }
+
+    .modal-body {
+      padding: $space-lg $space-xs;
+
+      @media (min-width: $sm) {
+        padding: $space-xl;
+      }
+    }
+  }
+
+  #payment-form {
+    @include state("tpy-checkout[state='success']") {
+      display: none;
+    }
+  }
+
+  .form-control {
+    margin-bottom: 24px;
+  }
+
+  .success-message {
+    text-align: center;
+    display: none;
+
+    @include state("tpy-checkout[state='success']") {
+      display: block;
+    }
+
+    .heart-icon {
+      display: block;
+      margin: -5px auto;
+
+      @media (min-width: $sm) {
+        margin: -6px auto;
+      }
+    }
+
+    h2 {
+      margin: 12px 16px;
+
+      @media (min-width: $sm) {
+        margin: 12px 0;
+      }
+    }
+
+    p {
+      margin: 18px 16px;
+
+      @media (min-width: $sm) {
+        margin: 24px 0;
+      }
+    }
+
+    .btn {
+      margin: 0 16px;
+      width: calc(100% - 32px);
+
+      @media (min-width: $sm) {
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  #stripe-testkey-flag {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 48px;
+    color: $white;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    display: none;
+
+    @include variant("tpy-checkout[test]") {
+      display: block;
+    }
+  }
+
+  #card-error {
+    color: $red;
+    margin: 4px 0 0 0;
+    font-size: 14px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  #card-element {
+    border-radius: 4px;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    height: 48px;
+    width: 100%;
+    background: $white;
+    transition:
+      border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
+
+    &.StripeElement--focus {
+      border: 1px solid $brand-primary;
+      box-shadow: 0 0 0 2px $brand-primary;
+    }
+
+    &.StripeElement--complete {
+      border: 1px solid $green;
+
+      &.StripeElement--focus {
+        box-shadow: 0 0 0 2px $green;
+      }
+    }
+
+    &.StripeElement--invalid {
+      border-color: $red;
+
+      &.StripeElement--focus {
+        box-shadow: 0 0 0 2px $red;
+      }
+    }
+
+    @include state("tpy-checkout[card-error-message]") {
+      @extend .StripeElement--invalid;
+    }
+  }
+
+  #payment-form .btn {
+    display: block;
+    width: 100%;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .spinner {
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    text-indent: -99em;
+    margin: 0px auto;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 2px solid currentColor;
+    border-color: currentColor transparent;
+    border-radius: 50%;
+    animation: loading 1.2s infinite linear;
+    display: none;
+
+    @include state("tpy-checkout[loading]") {
+      display: block;
+    }
+  }
+
+  #submit .button-text {
+    @include state("tpy-checkout[loading]") {
+      display: none;
+    }
+  }
+}

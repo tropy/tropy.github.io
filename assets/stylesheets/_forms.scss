@@ -36,3 +36,60 @@
   padding: 11px $space-sm;
   border-radius: 4px;
 }
+
+tpy-editable-radio {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+
+  &[is-active] {
+    cursor: text;
+  }
+}
+
+.auto-resizer {
+  flex: 0 0 auto;
+  max-width: 100%;
+  position: relative;
+
+  .currency {
+    position: absolute;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  [type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .content {
+    min-height: $font-size-base * $line-height-base;
+    padding: 0 3px 0 12px;
+    text-align: left;
+    min-width: 15px;
+    max-width: 100%;
+    visibility: hidden;
+  }
+
+  input {
+    position: absolute;
+    inset: 0;
+    max-width: 100%;
+    font: inherit;
+    line-height: inherit;
+    padding: 0 0 0 12px; // Keep 3px empty space for iOS caret
+    border: 0;
+    margin: 0;
+    background-color: transparent;
+    color: inherit;
+    text-align: left;
+
+    @include focus-visible {
+      outline-color: $white;
+    }
+  }
+}

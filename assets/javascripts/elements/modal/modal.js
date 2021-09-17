@@ -62,6 +62,7 @@ export const Modal = createElement(
       document.removeEventListener('keydown', this.handleKey)
       this.trigger.focus()
       this.focusTrap.deactivate()
+      this.dispatchEvent(new Event('modal.close', { bubbles: true }))
     }
 
     handleClick(e) {
