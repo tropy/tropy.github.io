@@ -1,5 +1,4 @@
 import { createElement } from '../../helpers/create-element.js'
-import { stripe, paymentEndpoint, style } from './stripe-config.js'
 
 
 export const Checkout = createElement(
