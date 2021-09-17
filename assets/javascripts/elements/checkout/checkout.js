@@ -12,6 +12,7 @@ export const Checkout = createElement(
 
     connectedCallback() {
       this.modal = this.querySelector('.modal.payment')
+      this.donationElement = this.querySelector('tpy-donations')
       this.donationForm = this.querySelector('#donation-form')
       this.paymentForm = this.querySelector('#payment-form')
       this.submitButton = this.querySelector('#submit')
@@ -158,7 +159,7 @@ export const Checkout = createElement(
       this.loading = false
       if (this.card.unmount) this.card.unmount()
       this.cardErrorMessage = null
-      if (this.state == 'success') this.donationForm.reset()
+      if (this.state == 'success') this.donationElement.reset = true
       if (this.state != 'error') this.state = 'default'
     }
 
