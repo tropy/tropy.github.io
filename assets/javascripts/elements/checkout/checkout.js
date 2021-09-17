@@ -1,6 +1,3 @@
----
----
-
 import { createElement } from '../../helpers/create-element.js'
 import { stripe, paymentEndpoint, style } from './stripe-config.js'
 
@@ -74,11 +71,9 @@ export const Checkout = createElement(
         this.modal.isOpen = true
         this.purchaseObj = this.getPurchaseObject()
 
-        this.setSubmitButtonText(this.purchaseObj.amount)
+        if (this.test) console.log(this.purchaseObj)
 
-        {% if jekyll.environment == "development" %}
-          console.log(this.purchaseObj);
-        {% endif %}
+        this.setSubmitButtonText(this.purchaseObj.amount)
 
         this.state = 'pay'
 
