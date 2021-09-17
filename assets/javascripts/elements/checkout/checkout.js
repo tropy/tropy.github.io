@@ -31,7 +31,7 @@ export const Checkout = createElement(
       })
 
       this.addEventListener('modal.close', e => {
-        this.closing();
+        this.closing()
       })
     }
 
@@ -113,7 +113,7 @@ export const Checkout = createElement(
 
             this.card.on("change", e => {
               this.submitButton.disabled = e.complete ? false : true
-              this.cardErrorMessage = e.error ? e.error.message : null;
+              this.cardErrorMessage = e.error ? e.error.message : null
             })
           })
 
