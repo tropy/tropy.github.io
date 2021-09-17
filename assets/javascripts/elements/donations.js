@@ -46,7 +46,7 @@ export const Donations = createElement(
       }
     }
 
-    handleFrequencyChange(e) {
+    handleFrequencyChange = (e) => {
       if (e.target.value == "monthly") {
         this.isMonthly = true
       } else {
