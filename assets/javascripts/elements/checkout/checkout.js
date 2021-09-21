@@ -6,7 +6,7 @@ export const Checkout = createElement(
 
   class extends HTMLElement {
     static get observedAttributes() {
-      return ['state', 'loading', 'error-message', 'card-error-message', 'test']
+      return ['state', 'is-open', 'loading', 'error-message', 'card-error-message', 'test']
     }
 
     connectedCallback() {
@@ -22,7 +22,8 @@ export const Checkout = createElement(
       this.card
       this.cardError = this.querySelector('#card-error')
       this.test = stripe._apiKey.startsWith('pk_test') ? true : false
-      this.state = 'default'
+      this.state = 'initial'
+      this.once
 
       this.donationForm.addEventListener('submit', e => {
         e.preventDefault()
@@ -30,15 +31,18 @@ export const Checkout = createElement(
       })
 
       this.addEventListener('modal.close', e => {
-        this.closing()
+        if (this.state != 'error') this.state = 'dirty'
       })
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
       if (name == 'state') {
         switch (this.state) {
-          case 'default':
-            // Default state
+          case 'initial':
+            // Initial
+            break
+          case 'dirty':
+            this.dirty()
             break
           case 'setup':
             this.setup()
@@ -54,6 +58,10 @@ export const Checkout = createElement(
         }
       }
 
+      if (name == 'is-open') {
+        this.modal.isOpen = this.isOpen ? true : false
+      }
+
       if (name == 'error-message') this.state = 'error'
 
       if (name == 'loading') {
@@ -65,10 +73,16 @@ export const Checkout = createElement(
       }
     }
 
+    dirty() {
+      this.loading = false
+      if (this.card && this.card.destroy) this.card.destroy()
+      this.cardErrorMessage = null
+    }
+
     setup() {
       try {
+        this.isOpen = true
         this.loading = true
-        this.modal.isOpen = true
         this.purchaseObj = this.getPurchaseObject()
 
         if (this.test) console.log(this.purchaseObj)
@@ -101,6 +115,7 @@ export const Checkout = createElement(
           let elements = stripe.elements({
             locale: 'en' // Other locales cause usability issues on small phones
           })
+
           this.card = elements.create("card", { style: style })
 
           this.card.mount("#card-element")
@@ -116,16 +131,20 @@ export const Checkout = createElement(
             })
           })
 
-          this.paymentForm.addEventListener('submit', e => {
-            event.preventDefault()
-            this.payWithCard(
-              stripe,
-              this.card,
-              data.clientSecret,
-              this.purchaseObj.paymentName,
-              this.purchaseObj.paymentEmail
-            )
-          })
+          if (!this.once) {
+            this.paymentForm.addEventListener('submit', e => {
+              event.preventDefault()
+              this.payWithCard(
+                stripe,
+                this.card,
+                data.clientSecret,
+                this.purchaseObj.paymentName,
+                this.purchaseObj.paymentEmail
+              )
+            })
+
+            this.once = true
+          }
         }).catch((error) => {
           console.error(error)
           this.errorMessage = `There was an error processing your payment.
@@ -145,21 +164,13 @@ export const Checkout = createElement(
       this.modal.focus()
 
       this.returnButton.addEventListener('click', e => {
-        this.modal.isOpen = false
+        this.isOpen = false
       }, { once: true })
     }
 
     error() {
       this.alert.textContent = this.errorMessage
-      this.modal.isOpen = false
-    }
-
-    closing() {
-      this.loading = false
-      if (this.card.unmount) this.card.unmount()
-      this.cardErrorMessage = null
-      if (this.state == 'success') this.donationElement.reset = true
-      if (this.state != 'error') this.state = 'default'
+      this.isOpen = false
     }
 
     getPurchaseObject() {
@@ -219,6 +230,7 @@ export const Checkout = createElement(
     }
   }, {
     state: false,
+    isOpen: true,
     loading: true,
     errorMessage: false,
     cardErrorMessage: false,

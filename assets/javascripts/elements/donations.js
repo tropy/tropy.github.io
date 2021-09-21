@@ -6,7 +6,7 @@ export const Donations = createElement(
 
   class extends HTMLElement {
     static get observedAttributes() {
-      return ['is-monthly', 'reset']
+      return ['is-monthly']
     }
 
     connectedCallback() {
@@ -40,10 +40,6 @@ export const Donations = createElement(
           this.m.replaceWith(this.o)
         }
       }
-
-      if (name == 'reset') {
-        this.handleReset()
-      }
     }
 
     handleFrequencyChange = (e) => {
@@ -53,17 +49,7 @@ export const Donations = createElement(
         this.isMonthly = false
       }
     }
-
-    handleReset() {
-      const editableRadios = this.querySelectorAll('tpy-editable-radio')
-
-      this.form.reset()
-      editableRadios.forEach(radio => radio.isActive = false)
-
-      this.reset = false
-    }
   }, {
     isMonthly: true,
-    reset: true
   }
 )
