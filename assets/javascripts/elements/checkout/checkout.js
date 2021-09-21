@@ -6,7 +6,8 @@ export const Checkout = createElement(
 
   class extends HTMLElement {
     static get observedAttributes() {
-      return ['state', 'is-open', 'loading', 'error-message', 'card-error-message', 'test']
+      return ['state', 'is-open', 'loading', 'error-message',
+        'card-error-message', 'test']
     }
 
     connectedCallback() {
@@ -164,8 +165,8 @@ export const Checkout = createElement(
       this.modal.focus()
 
       this.returnButton.addEventListener('click', e => {
-        this.isOpen = false
-      }, { once: true })
+        location.reload()
+      })
     }
 
     error() {
