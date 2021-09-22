@@ -104,13 +104,13 @@ export const Checkout = createElement(
     pay() {
       try {
         fetch(paymentEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(this.purchaseObj)
         })
 
         .then(result => {
-          if (!result.ok) throw new Error("Error from pay method.")
+          if (!result.ok) throw new Error('Error from pay method.')
 
           return result.json()
         })
@@ -122,16 +122,16 @@ export const Checkout = createElement(
             locale: 'en' // Other locales cause usability issues on small phones
           })
 
-          this.card = elements.create("card", { style: style })
+          this.card = elements.create('card', { style: style })
 
-          this.card.mount("#card-element")
+          this.card.mount('#card-element')
 
           this.card.on('ready', e => {
             this.card.focus()
             this.loading = false
             this.submitButton.disabled = true
 
-            this.card.on("change", e => {
+            this.card.on('change', e => {
               this.submitButton.disabled = e.complete ? false : true
               this.cardErrorMessage = e.error ? e.error.message : null
             })
