@@ -19,17 +19,20 @@ export const Checkout = createElement(
       this.submitButtonText = this.querySelector('#submit .button-text')
       this.returnButton = this.querySelector('.btn.return')
       this.alert = this.querySelector('.alert')
-      this.errorMessage
-      this.card
       this.cardError = this.querySelector('#card-error')
       this.test = stripe._apiKey.startsWith('pk_test') ? true : false
+      this.errorMessage
+      this.purchaseObj
+      this.card
+      this.clientSecret
       this.state = 'initial'
-      this.once
 
       this.donationForm.addEventListener('submit', e => {
         e.preventDefault()
         this.state = 'setup'
       })
+
+      this.paymentForm.addEventListener('submit', this.payWithCard)
 
       this.addEventListener('modal.close', e => {
         if (this.state != 'error') this.state = 'dirty'
@@ -113,6 +116,8 @@ export const Checkout = createElement(
         })
 
         .then(data => {
+          this.clientSecret = data.clientSecret
+
           let elements = stripe.elements({
             locale: 'en' // Other locales cause usability issues on small phones
           })
@@ -132,20 +137,6 @@ export const Checkout = createElement(
             })
           })
 
-          if (!this.once) {
-            this.paymentForm.addEventListener('submit', e => {
-              event.preventDefault()
-              this.payWithCard(
-                stripe,
-                this.card,
-                data.clientSecret,
-                this.purchaseObj.paymentName,
-                this.purchaseObj.paymentEmail
-              )
-            })
-
-            this.once = true
-          }
         }).catch((error) => {
           console.error(error)
           this.errorMessage = `There was an error processing your payment.
@@ -197,25 +188,29 @@ export const Checkout = createElement(
 
     formatCurrency(cents) {
       let d = cents / 100
+
       if(typeof(Intl) !== 'undefined') {
         return new Intl.NumberFormat('en-US', {
           style:'currency',
           currency:'USD'
         }).format(d)
+
       } else {
         return `${d.toFixed(2)}`
       }
     }
 
-    payWithCard(stripe, card, clientSecret, paymentName, paymentEmail) {
+    payWithCard = e => {
+      e.preventDefault()
       this.loading = true
+
       stripe
-        .confirmCardPayment(clientSecret, {
+        .confirmCardPayment(this.clientSecret, {
           payment_method: {
             card: this.card,
             billing_details: {
-              name: paymentName,
-              email: paymentEmail,
+              name: this.paymentName,
+              email: this.paymentEmail,
             },
           }
         })
