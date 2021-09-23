@@ -20,7 +20,8 @@ export const Checkout = createElement(
       this.returnButton = this.querySelector('.btn.return')
       this.alert = this.querySelector('.alert')
       this.cardError = this.querySelector('#card-error')
-      this.test = stripe._apiKey.startsWith('pk_test') ? true : false
+      this.test = key.startsWith('pk_test') ? true : false
+      this.stripe
       this.errorMessage
       this.purchaseObj
       this.card
@@ -93,11 +94,33 @@ export const Checkout = createElement(
 
         this.setSubmitButtonText(this.purchaseObj.amount)
 
-        this.state = 'pay'
+        if (!this.stripe) {
+          const loadStripe = new Promise((resolve, reject) => {
+            const script = document.createElement('script')
+
+            document.body.appendChild(script)
+
+            script.addEventListener('load', resolve)
+            script.addEventListener('error', reject)
+            script.src = 'https://js.stripe.com/v3/'
+          })
+
+          loadStripe.then(() => {
+            this.stripe = Stripe(key)
+            this.state = 'pay'
+
+          }).catch((error) => {
+            this.errorMessage = 'There was an error loading Stripe.'
+          })
+
+        } else {
+          this.state = 'pay'
+        }
 
       } catch(error) {
         console.error(error)
-        this.errorMessage = 'There has been a setup error.'
+        this.errorMessage = 'There was a setup error.'
+        return
       }
     }
 
@@ -118,7 +141,7 @@ export const Checkout = createElement(
         .then(data => {
           this.clientSecret = data.clientSecret
 
-          let elements = stripe.elements({
+          let elements = this.stripe.elements({
             locale: 'en' // Other locales cause usability issues on small phones
           })
 
@@ -204,7 +227,7 @@ export const Checkout = createElement(
       e.preventDefault()
       this.loading = true
 
-      stripe
+      this.stripe
         .confirmCardPayment(this.clientSecret, {
           payment_method: {
             card: this.card,

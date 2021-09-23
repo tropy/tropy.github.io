@@ -2,11 +2,11 @@
 ---
 
 {% if jekyll.environment == "development" %}
-  var stripe = Stripe("{{ site.stripe_dev }}");
-  const paymentEndpoint = "{{ site.paymentEndpoint_dev }}start-payment";
+  const key = "{{ site.stripe_dev }}"
+  const paymentEndpoint = "{{ site.paymentEndpoint_dev }}start-payment"
 {% elsif jekyll.environment == "production" %}
-  var stripe = Stripe("{{ site.stripe }}");
-  const paymentEndpoint = "{{ site.paymentEndpoint }}start-payment";
+  const key = "{{ site.stripe }}"
+  const paymentEndpoint = "{{ site.paymentEndpoint }}start-payment"
 {% endif %}
 
 const style = {
