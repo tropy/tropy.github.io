@@ -84,43 +84,24 @@ export const Checkout = createElement(
       this.cardErrorMessage = null
     }
 
-    setup() {
+    async setup() {
+      if (typeof Stripe === 'undefined') await this.loadStripe()
+      if (typeof Stripe === 'undefined') return
+
       try {
         this.isOpen = true
         this.loading = true
         this.purchaseObj = this.getPurchaseObject()
+        this.stripe = Stripe(key)
 
         if (this.test) console.log(this.purchaseObj)
 
         this.setSubmitButtonText(this.purchaseObj.amount)
-
-        if (!this.stripe) {
-          const loadStripe = new Promise((resolve, reject) => {
-            const script = document.createElement('script')
-
-            document.body.appendChild(script)
-
-            script.addEventListener('load', resolve)
-            script.addEventListener('error', reject)
-            script.src = 'https://js.stripe.com/v3/'
-          })
-
-          loadStripe.then(() => {
-            this.stripe = Stripe(key)
-            this.state = 'pay'
-
-          }).catch((error) => {
-            this.errorMessage = 'There was an error loading Stripe.'
-          })
-
-        } else {
-          this.state = 'pay'
-        }
+        this.state = 'pay'
 
       } catch(error) {
         console.error(error)
         this.errorMessage = 'There was a setup error.'
-        return
       }
     }
 
@@ -177,8 +158,29 @@ export const Checkout = createElement(
     }
 
     error() {
+      console.log(this.errorMessage)
       this.alert.textContent = this.errorMessage
       this.isOpen = false
+    }
+
+    loadStripe() {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+
+        document.body.appendChild(script)
+
+        script.addEventListener('load', resolve)
+        script.addEventListener('error', reject)
+        script.src = 'https://js.stripe.com/v3/'
+      })
+
+      .then(() => {
+        return
+
+      }).catch((error) => {
+        console.error(error)
+        this.errorMessage = 'There was an error loading Stripe.'
+      })
     }
 
     getPurchaseObject() {
