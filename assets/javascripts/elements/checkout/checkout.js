@@ -125,52 +125,45 @@ export const Checkout = createElement(
     }
 
     pay() {
-      try {
-        fetch(paymentEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(this.purchaseObj)
+      fetch(paymentEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.purchaseObj)
+      })
+
+      .then(result => {
+        if (!result.ok) throw new Error('Error from pay method.')
+
+        return result.json()
+      })
+
+      .then(data => {
+        this.clientSecret = data.clientSecret
+
+        let elements = this.stripe.elements({
+          locale: 'en' // Other locales cause usability issues on small phones
         })
 
-        .then(result => {
-          if (!result.ok) throw new Error('Error from pay method.')
+        this.card = elements.create('card', { style: style })
 
-          return result.json()
-        })
+        this.card.mount('#card-element')
 
-        .then(data => {
-          this.clientSecret = data.clientSecret
+        this.card.on('ready', e => {
+          this.card.focus()
+          this.loading = false
+          this.submitButton.disabled = true
 
-          let elements = this.stripe.elements({
-            locale: 'en' // Other locales cause usability issues on small phones
+          this.card.on('change', e => {
+            this.submitButton.disabled = e.complete ? false : true
+            this.cardErrorMessage = e.error ? e.error.message : null
           })
-
-          this.card = elements.create('card', { style: style })
-
-          this.card.mount('#card-element')
-
-          this.card.on('ready', e => {
-            this.card.focus()
-            this.loading = false
-            this.submitButton.disabled = true
-
-            this.card.on('change', e => {
-              this.submitButton.disabled = e.complete ? false : true
-              this.cardErrorMessage = e.error ? e.error.message : null
-            })
-          })
-
-        }).catch((error) => {
-          console.error(error)
-          this.errorMessage = `There was an error processing your payment.
-                               Please try again in a few minutes.`
         })
 
-      } catch(error) {
+      }).catch((error) => {
         console.error(error)
         this.errorMessage = `There was an error processing your payment.
                              Please try again in a few minutes.`
-      }
+      })
     }
 
     success() {
