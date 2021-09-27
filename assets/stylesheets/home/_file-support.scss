@@ -3,7 +3,7 @@
 //
 
 .file-support {
-  border-top: 1px solid $gray-light;
+  border-top: 1px solid $gray-lighter;
   padding: $section-spacing-y-phone 0 ($section-spacing-y-phone - $space-min) 0;
 
   @for $i from 3 through 7 {
