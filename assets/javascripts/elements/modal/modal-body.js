@@ -1,12 +1,10 @@
-import { createElement } from '../../helpers/create-element.js'
+import { CustomElement } from '../custom-element.js'
 
 
-export const ModalBody = createElement(
-  'tpy-modal-body',
-
-  class extends HTMLElement {
-    connectedCallback() {
-      this.classList.add('modal-body')
-    }
+export class ModalBody extends CustomElement {
+  connectedCallback() {
+    this.classList.add('modal-body')
   }
-)
+}
+
+customElements.define('tpy-modal-body', ModalBody)

@@ -1,21 +1,17 @@
-import { createElement } from '../../helpers/create-element.js'
+import { CustomElement } from '../custom-element.js'
 
 
-export const DropdownMenu = createElement(
-  'tpy-dropdown-menu',
-
-  class extends HTMLElement {
-    static get observedAttributes() {
-      return ['is-open', 'aria-labelledby']
-    }
-
-    constructor() {
-      super()
-      this.role = 'listbox'
-      this.classList.add('dropdown-menu')
-    }
-  }, {
-    isOpen: true,
-    ariaLabelledby: false
+export class DropdownMenu extends CustomElement {
+  constructor() {
+    super()
+    this.role = 'listbox'
+    this.classList.add('dropdown-menu')
   }
-)
+}
+
+DropdownMenu.propTypes({
+  isOpen: 'bool',
+  ariaLabelledby: 'string'
+})
+
+customElements.define('tpy-dropdown-menu', DropdownMenu)

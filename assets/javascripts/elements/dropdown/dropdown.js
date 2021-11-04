@@ -1,23 +1,11 @@
-import { createElement } from '../../helpers/create-element.js'
+import { CustomElement } from '../custom-element.js'
 
 
-class Dropdown extends HTMLElement {
-  static get observedAttributes() {
-    return ['is-open', 'selected']
-  }
-
+export class Dropdown extends CustomElement {
   constructor() {
     super()
     this.id = Dropdown.id()
     this.classList.add('dropdown')
-    this.template = `<slot></slot>`
-    const slotted = this.innerHTML
-
-    new MutationObserver(this.elementChangedCallback)
-      .observe(this, { childList: true })
-
-    this.innerHTML = this.template
-    this.querySelector('slot').parentElement.innerHTML = slotted
 
     this.addEventListener('dropdown.toggle', e => {
       this.isOpen = !this.isOpen
@@ -48,7 +36,7 @@ class Dropdown extends HTMLElement {
     })
   }
 
-  elementChangedCallback = (mutationsList, observer) => {
+  connectedCallback() {
     this.dropdownToggle = this.firstElementChild
     this.dropdownToggleButton = this.dropdownToggle.querySelector('.btn')
     this.dropdownMenu = this.lastElementChild
@@ -104,6 +92,10 @@ class Dropdown extends HTMLElement {
       this.isOpen = false
     }
   }
+
+  render() {
+    return `<slot></slot>`
+  }
 }
 
 // Safari does not support public field declarations yet
@@ -112,9 +104,9 @@ Dropdown.id = (() => {
   return () => `dropdown-${id++}`
 })()
 
-const DropdownElement = createElement('tpy-dropdown', Dropdown, {
-  isOpen: true,
-  selected: false
+Dropdown.propTypes({
+  isOpen: 'bool',
+  selected: 'string'
 })
 
-export { DropdownElement as Dropdown }
+customElements.define('tpy-dropdown', Dropdown)

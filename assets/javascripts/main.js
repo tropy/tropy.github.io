@@ -8,16 +8,5 @@ import './elements/editable-radio.js'
 import './elements/checkout/checkout.js'
 import './focus-visible.js'
 import * as os from './helpers/os.js'
-import { getLatestRelease } from './helpers/release.js'
 
 os.guess()
-
-document.addEventListener('DOMContentLoaded', async () => {
-  let download = document.querySelector('tpy-download')
-
-  if (download) {
-    download.release = await getLatestRelease()
-  }
-
-}, { once: true })
-

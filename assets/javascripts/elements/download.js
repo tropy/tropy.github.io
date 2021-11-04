@@ -1,14 +1,19 @@
-import { createElement } from '../helpers/create-element.js'
+import { CustomElement } from './custom-element.js'
 import { platform, arch } from '../helpers/os.js'
+import { getLatestRelease } from '../helpers/release.js'
 
 const SUPPORTED_PLATFORMS = ['darwin', 'win32', 'linux']
 const APPLE_ARCH = { x64: 'Intel', arm64: 'Silicon' }
 
 
-export class Download extends HTMLElement {
-  constructor(release) {
+export class Download extends CustomElement {
+  constructor() {
     super()
-    this.release = release
+    this.getRelease()
+  }
+
+  async getRelease() {
+    this.release = await getLatestRelease()
   }
 
   set release(release) {
@@ -30,7 +35,7 @@ export class Download extends HTMLElement {
   }
 }
 
-createElement('tpy-download', Download)
+customElements.define('tpy-download', Download)
 
 const DropdownTemplate = document.createElement('template')
 

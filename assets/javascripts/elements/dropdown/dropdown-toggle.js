@@ -1,57 +1,51 @@
 ---
 ---
-import { createElement } from '../../helpers/create-element.js'
-
-const DropdownToggleTemplate = document.createElement('template')
-
-DropdownToggleTemplate.innerHTML = `
-  <button class="btn" aria-haspopup="listbox">
-    <span class="icon icon-caret-down">
-      {%- include chevron-down.svg -%}
-    </span>
-  </button>`
+import { CustomElement } from '../custom-element.js'
 
 
-export var DropdownToggle = createElement(
-  'tpy-dropdown-toggle',
+export class DropdownToggle extends CustomElement {
+  constructor() {
+    super()
+    this.button = this.querySelector('.btn')
+    this.button.ariaExpanded = false
 
-  class extends HTMLElement {
-    static get observedAttributes() {
-      return ['button-id', 'is-open', 'label']
-    }
-
-    constructor() {
-      super()
-      this.replaceChildren(DropdownToggleTemplate.content.cloneNode(true))
-
-      this.button = this.querySelector('.btn')
-      this.button.ariaExpanded = false
-
-      this.button.addEventListener('click', () => {
-        this.dispatchEvent(new Event('dropdown.toggle', { bubbles: true }))
-      })
-    }
-
-    connectedCallback() {
-      this.classList.add('dropdown-toggle')
-    }
-
-    attributeChangedCallback(name) {
-      if (name == 'is-open') {
-        this.button.ariaExpanded = this.isOpen
-      }
-
-      if (name == 'label') {
-        this.button.ariaLabel = this.label
-      }
-
-      if (name == 'button-id') {
-        this.button.id = this.buttonId
-      }
-    }
-  }, {
-    buttonId: false,
-    label: false,
-    isOpen: true
+    this.button.addEventListener('click', () => {
+      this.dispatchEvent(new Event('dropdown.toggle', { bubbles: true }))
+    })
   }
-)
+
+  connectedCallback() {
+    this.classList.add('dropdown-toggle')
+  }
+
+  attributeChangedCallback(name) {
+    if (name == 'is-open') {
+      this.button.ariaExpanded = this.isOpen
+    }
+
+    if (name == 'label') {
+      this.button.ariaLabel = this.label
+    }
+
+    if (name == 'button-id') {
+      this.button.id = this.buttonId
+    }
+  }
+
+  render() {
+    return `
+      <button class="btn" aria-haspopup="listbox">
+        <span class="icon icon-caret-down">
+          {%- include chevron-down.svg -%}
+        </span>
+      </button>`
+  }
+}
+
+DropdownToggle.propTypes({
+  buttonId: 'string',
+  label: 'string',
+  isOpen: 'bool'
+})
+
+customElements.define('tpy-dropdown-toggle', DropdownToggle)

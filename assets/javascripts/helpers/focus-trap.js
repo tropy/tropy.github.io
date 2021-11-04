@@ -8,7 +8,6 @@ export class FocusTrap {
     this.result = []
     this.firstFocusableElement
     this.lastFocusableElement
-    this.handleKey = this.handleKey.bind(this)
     this.selector =`
       :is(
         a,
@@ -22,7 +21,7 @@ export class FocusTrap {
       ):not([tabindex^="-"]):not(:disabled)`
   }
 
-  handleKey(e) {
+  handleKey = e => {
     if (e.key === 'Tab') {
       this.elements = this.container.querySelectorAll(this.selector)
       this.result = []
