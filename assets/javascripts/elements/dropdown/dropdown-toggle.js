@@ -19,17 +19,14 @@ export class DropdownToggle extends CustomElement {
   }
 
   attributeChangedCallback(name) {
-    if (name == 'is-open') {
+    if (name == 'is-open')
       this.button.ariaExpanded = this.isOpen
-    }
 
-    if (name == 'label') {
+    if (name == 'label')
       this.button.ariaLabel = this.label
-    }
 
-    if (name == 'button-id') {
+    if (name == 'button-id')
       this.button.id = this.buttonId
-    }
   }
 
   render() {

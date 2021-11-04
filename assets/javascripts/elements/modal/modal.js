@@ -7,8 +7,6 @@ export class Modal extends CustomElement {
     this.classList.add('modal')
     this.tabIndex = '-1'
     this.focusTrap = new FocusTrap(this)
-    this.handleClick = this.handleClick.bind(this)
-    this.handleKey = this.handleKey.bind(this)
   }
 
   elementChangedCallback(mutationsList, observer) {
@@ -18,17 +16,18 @@ export class Modal extends CustomElement {
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    if (name == 'is-open') {
+    if (name == 'is-open')
       this.isOpen ? this.open() : this.close()
-    }
   }
 
   open() {
     this.trigger = document.activeElement
     this.focus()
     this.addBackdrop()
-    if (this.modalTitle) this.modalHeaderTitle.innerText = this.modalTitle
-    if (this.content) this.modalBody.innerHTML = this.content
+    if (this.modalTitle)
+      this.modalHeaderTitle.innerText = this.modalTitle
+    if (this.content)
+      this.modalBody.innerHTML = this.content
 
     document.body.classList.add('modal-open')
     document.addEventListener('click', this.handleClick)
@@ -46,7 +45,7 @@ export class Modal extends CustomElement {
     this.dispatchEvent(new Event('modal.close', { bubbles: true }))
   }
 
-  handleClick(e) {
+  handleClick = e => {
     if (!this.isStatic ?
       e.target != this.trigger &&
       e.target == this ||
@@ -59,10 +58,11 @@ export class Modal extends CustomElement {
     }
   }
 
-  handleKey(e) {
+  handleKey = e => {
     switch (e.key) {
       case 'Escape':
-        if (!this.isStatic) this.isOpen = false
+        if (!this.isStatic)
+          this.isOpen = false
     }
   }
 

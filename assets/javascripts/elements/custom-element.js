@@ -19,7 +19,8 @@ export class CustomElement extends HTMLElement {
 
       const slot = this.querySelector('slot')
 
-      if (children && slot) slot.outerHTML = children
+      if (children && slot)
+        slot.outerHTML = children
     }
   }
 
@@ -39,9 +40,14 @@ export class CustomElement extends HTMLElement {
             },
 
             set: function(val) {
-              if (val || val === 0) this.setAttribute(attr, val)
-              else if (val === false) this.setAttribute(attr, val)
-              else if (val === null) this.removeAttribute(attr)
+              if (val || val === 0)
+                this.setAttribute(attr, val)
+
+              else if (val === false)
+                this.setAttribute(attr, val)
+
+              else if (val === null)
+                this.removeAttribute(attr)
             }
           })
 

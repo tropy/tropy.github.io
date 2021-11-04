@@ -32,9 +32,8 @@ export class EditableRadio extends CustomElement {
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    if (name == 'is-active') {
+    if (name == 'is-active')
       this.isActive ? this.activate() : this.deactivate()
-    }
   }
 
   handleChange = (e) => {

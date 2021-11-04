@@ -5,11 +5,11 @@ export class Sticky extends CustomElement {
   connectedCallback() {
     this.handleIntersect = (entries, observer) => {
       entries.forEach(entry => {
-        if(entry.boundingClientRect.y == 0) {
+        if(entry.boundingClientRect.y == 0)
           this.classList.add('stuck')
-        } else {
+
+        else
           this.classList.remove('stuck')
-        }
       })
     }
 

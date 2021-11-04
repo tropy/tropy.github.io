@@ -72,19 +72,19 @@ export class Dropdown extends CustomElement {
   }
 
   prev() {
-    if (!this.selected) {
+    if (!this.selected)
       this.selected = this.length - 1
-    } else if (this.selected > 0) {
+
+    else if (this.selected > 0)
       this.selected--
-    }
   }
 
   next() {
-    if (!this.selected) {
+    if (!this.selected)
       this.selected = 0
-    } else if (this.selected < this.length - 1) {
+
+    else if (this.selected < this.length - 1)
       this.selected++
-    }
   }
 
   handleFocusOutside = (e) => {

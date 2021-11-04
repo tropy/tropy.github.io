@@ -25,9 +25,11 @@ export class DropdownItem extends CustomElement {
   }
 
   attributeChangedCallback(name) {
-    if (name == 'selected' && this.selected) this.a.focus()
+    if (name == 'selected' && this.selected)
+      this.a.focus()
 
-    if (name == 'href') this.a.href = this.href
+    if (name == 'href')
+      this.a.href = this.href
   }
 }
 

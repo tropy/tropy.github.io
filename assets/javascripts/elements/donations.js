@@ -31,11 +31,11 @@ export class Donations extends CustomElement {
   }
 
   handleFrequencyChange = (e) => {
-    if (e.target.value == "monthly") {
+    if (e.target.value == "monthly")
       this.isMonthly = true
-    } else {
+
+    else
       this.isMonthly = false
-    }
   }
 
   render() {

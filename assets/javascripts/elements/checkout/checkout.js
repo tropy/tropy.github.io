@@ -28,12 +28,13 @@ export class Checkout extends CustomElement {
     this.paymentForm.addEventListener('submit', this.payWithCard)
 
     this.addEventListener('modal.close', e => {
-      if (this.state != 'error') this.state = 'dirty'
+      if (this.state != 'error')
+        this.state = 'dirty'
     })
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    if (name == 'state') {
+    if (name == 'state')
       switch (this.state) {
         case 'initial':
           // Initial
@@ -53,32 +54,35 @@ export class Checkout extends CustomElement {
         case 'error':
           this.error()
       }
-    }
 
-    if (name == 'is-open') {
+    if (name == 'is-open')
       this.modal.isOpen = this.isOpen ? true : false
-    }
 
-    if (name == 'error-message') this.state = 'error'
+    if (name == 'error-message')
+      this.state = 'error'
 
-    if (name == 'loading') {
+    if (name == 'loading')
       this.submitButton.disabled = this.loading ? true : false
-    }
 
-    if (name == 'card-error-message') {
+    if (name == 'card-error-message')
       this.cardError.textContent = this.cardErrorMessage
-    }
   }
 
   dirty() {
     this.loading = false
-    if (this.card && this.card.destroy) this.card.destroy()
+
+    if (this.card && this.card.destroy)
+      this.card.destroy()
+
     this.cardErrorMessage = null
   }
 
   async setup() {
-    if (typeof Stripe === 'undefined') await this.loadStripe()
-    if (typeof Stripe === 'undefined') return
+    if (typeof Stripe === 'undefined')
+      await this.loadStripe()
+
+    if (typeof Stripe === 'undefined')
+      return
 
     try {
       this.isOpen = true
@@ -86,7 +90,8 @@ export class Checkout extends CustomElement {
       this.purchaseObj = this.getPurchaseObject()
       this.stripe = Stripe(key)
 
-      if (this.test) console.log(this.purchaseObj)
+      if (this.test)
+        console.log(this.purchaseObj)
 
       this.setSubmitButtonText(this.purchaseObj.amount)
       this.state = 'pay'
@@ -105,7 +110,8 @@ export class Checkout extends CustomElement {
     })
 
     .then(result => {
-      if (!result.ok) throw new Error('Error from pay method.')
+      if (!result.ok)
+        throw new Error('Error from pay method.')
 
       return result.json()
     })
@@ -199,15 +205,14 @@ export class Checkout extends CustomElement {
   formatCurrency(cents) {
     let d = cents / 100
 
-    if(typeof(Intl) !== 'undefined') {
+    if(typeof(Intl) !== 'undefined')
       return new Intl.NumberFormat('en-US', {
         style:'currency',
         currency:'USD'
       }).format(d)
 
-    } else {
+    else
       return `${d.toFixed(2)}`
-    }
   }
 
   payWithCard = e => {
