@@ -104,9 +104,9 @@ Dropdown.id = (() => {
   return () => `dropdown-${id++}`
 })()
 
-Dropdown.propTypes({
+Dropdown.propTypes = {
   isOpen: 'bool',
   selected: 'string'
-})
+}
 
 customElements.define('tpy-dropdown', Dropdown)

@@ -87,11 +87,11 @@ export class Modal extends CustomElement {
   }
 }
 
-Modal.propTypes({
+Modal.propTypes = {
   isOpen: 'bool',
   modalTitle: 'string',
   centered: 'bool',
   isStatic: 'bool'
-})
+}
 
 customElements.define('tpy-modal', Modal)

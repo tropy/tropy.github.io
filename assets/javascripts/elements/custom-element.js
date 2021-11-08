@@ -4,6 +4,7 @@ import { camelToLispCase } from '../helpers/camel-to-lisp-case.js'
 export class CustomElement extends HTMLElement {
   constructor() {
     super()
+
     if (this.elementChangedCallback)
       new MutationObserver(this.elementChangedCallback.bind(this))
         .observe(this, { childList: true, attributes: true })
@@ -24,16 +25,22 @@ export class CustomElement extends HTMLElement {
     }
   }
 
-  static propTypes(props) {
-    this.observedAttributes = []
+  attributeChangedCallback() {
+    // This makes sure that observedAttributes is called
+  }
 
-    for (const prop in props) {
+  static get observedAttributes() {
+    return this.reflectedProps
+  }
+
+  static get reflectedProps() {
+    const attributes = []
+
+    for (const prop in this.propTypes) {
       const attr = camelToLispCase(prop)
 
-      switch(props[prop]) {
+      switch(this.propTypes[prop]) {
         case 'string':
-          this.observedAttributes.push(attr)
-
           Object.defineProperty(this.prototype, prop, {
             get: function() {
               return this.getAttribute(attr)
@@ -54,8 +61,6 @@ export class CustomElement extends HTMLElement {
           break
 
         case 'bool':
-          this.observedAttributes.push(attr)
-
           Object.defineProperty(this.prototype, prop, {
             get: function() {
               return this.hasAttribute(attr)
@@ -66,6 +71,10 @@ export class CustomElement extends HTMLElement {
             }
           })
       }
+
+      attributes.push(attr)
     }
+
+    return attributes
   }
 }

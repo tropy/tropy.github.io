@@ -241,13 +241,13 @@ export class Checkout extends CustomElement {
   }
 }
 
-Checkout.propTypes({
+Checkout.propTypes = {
   state: 'string',
   isOpen: 'bool',
   loading: 'bool',
   errorMessage: 'string',
   cardErrorMessage: 'string',
   test: 'bool'
-})
+}
 
 customElements.define('tpy-checkout', Checkout)
