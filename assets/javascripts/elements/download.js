@@ -77,7 +77,7 @@ export class Download extends CustomElement {
       </a>`
   }
 
-  eMailButton(asssets) {
+  eMailButton(assets) {
     return `
       <a
         href="mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}"
