@@ -12,16 +12,23 @@ export class CustomElement extends HTMLElement {
     this.doRender()
   }
 
-  doRender() {
+  doRender(...args) {
     if (this.render) {
-      const children = this.innerHTML
+      let result = this.render(...args)
 
-      this.innerHTML = this.render()
+      if (result) {
+        const template = document.createElement('template')
 
-      const slot = this.querySelector('slot')
+        template.innerHTML = result
 
-      if (children && slot)
-        slot.outerHTML = children
+        const children = this.childNodes
+        const slot = template.content.querySelector('slot')
+
+        if (children && slot)
+          slot.replaceWith(...children)
+
+        this.replaceChildren(template.content)
+      }
     }
   }
 

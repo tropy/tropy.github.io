@@ -1,5 +1,3 @@
----
----
 import { CustomElement } from '../custom-element.js'
 
 
@@ -32,9 +30,7 @@ export class DropdownToggle extends CustomElement {
   render() {
     return `
       <button class="btn" aria-haspopup="listbox">
-        <span class="icon icon-caret-down">
-          {%- include chevron-down.svg -%}
-        </span>
+        <slot></slot>
       </button>`
   }
 }

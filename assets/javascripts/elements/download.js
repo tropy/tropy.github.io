@@ -1,6 +1,7 @@
 import { CustomElement } from './custom-element.js'
 import { platform, arch } from '../helpers/os.js'
 import { getLatestRelease } from '../helpers/release.js'
+import { chevronDown } from '../helpers/includes.js'
 
 const SUPPORTED_PLATFORMS = ['darwin', 'win32', 'linux']
 const APPLE_ARCH = { x64: 'Intel', arm64: 'Silicon' }
@@ -13,80 +14,80 @@ export class Download extends CustomElement {
   }
 
   async getRelease() {
-    this.release = await getLatestRelease()
+    const release = await getLatestRelease()
+    if (!release?.assets.length) return
+    const assets = [...release.assets].sort(byPlatform)
+
+    super.doRender(release, assets)
   }
 
-  set release(release) {
-    this.replaceChildren()
-    if (!release?.assets.length) return
+  render(release, assets) {
+    if (release) {
+      const template = []
 
-    let assets = [...release.assets].sort(byPlatform)
+      if (SUPPORTED_PLATFORMS.includes(platform))
+        template.push(this.comboButton(release, assets))
 
-    if (SUPPORTED_PLATFORMS.includes(platform)) {
-      this.append(comboButton(assets, release))
+      else
+        template.push(this.eMailButton(release.assets))
 
-    } else {
-      this.append(eMailButton(release.assets))
+      if (release.version)
+        template.push(this.releaseNotesLink(release))
+
+      return template.join('')
     }
+  }
 
-    if (release.version) {
-      this.append(releaseNotesLink(release))
-    }
+  comboButton(release, assets) {
+    let [head, ...tail] = assets
+
+    let dropdownItems = tail.map(asset => `
+      <tpy-dropdown-item href="${asset.url}">
+        ${tag(asset)}
+      </tpy-dropdown-item>`
+    ).join('')
+
+    if (release.url) dropdownItems += `
+      <tpy-dropdown-item href="${release.url}">
+        Other platforms
+      </tpy-dropdown-item>`
+
+    return `
+      <div class="btn-group download">
+        <a href="${head.url}" class="btn">
+          Download Tropy for <strong>${tag(head)}</strong>
+        </a>
+        <tpy-dropdown class="btn-group">
+          <tpy-dropdown-toggle
+            class="dropdown-toggle-split"
+            label="More Platforms">
+            <span class="icon icon-caret-down">${chevronDown}</span>
+          </tpy-dropdown-toggle>
+          <tpy-dropdown-menu>
+            ${dropdownItems}
+          </tpy-dropdown-menu>
+        </tpy-dropdown>
+      </div>`
+  }
+
+  releaseNotesLink({ url, version }) {
+    return `
+      <a href="${url}" class="release-notes">
+        What’s new in version ${version}
+      </a>`
+  }
+
+  eMailButton(asssets) {
+    return `
+      <a
+        href="mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}"
+        class="btn btn-email">
+        Send Download Links
+      </a>`
   }
 }
 
 customElements.define('tpy-download', Download)
-
-const DropdownTemplate = document.createElement('template')
-
-DropdownTemplate.innerHTML = `
-  <tpy-dropdown class="btn-group">
-    <tpy-dropdown-toggle class="dropdown-toggle-split" label="More Platforms"></tpy-dropdown-toggle>
-    <tpy-dropdown-menu>
-    </tpy-dropdown-menu>
-  </tpy-dropdown>`
-
-const comboButton = (assets, release) => {
-  let [head, ...tail] = assets
-
-  let combo = create('div', null, { className: 'btn-group download' })
-  let dropdown = DropdownTemplate.content.cloneNode(true)
-
-  let menu = dropdown.querySelector('tpy-dropdown-menu')
-  for (let asset of tail)
-    menu.append(create('tpy-dropdown-item', tag(asset), {
-      href: asset.url
-    }))
-
-  if (release.url) {
-    menu.append(create('tpy-dropdown-item', 'Other platforms', {
-      href: release.url
-    }))
-  }
-
-  combo.append(primaryButton(head))
-  combo.append(dropdown)
-
-  return combo
-}
-
-const primaryButton = (asset) =>
-  create('a', `Download Tropy for <strong>${tag(asset)}</strong>`, {
-    className: 'btn',
-    href: asset.url
-  })
-
-const releaseNotesLink = ({ url, version }) =>
-  create('a', `What’s new in version ${version}`, {
-    className: 'release-notes',
-    href: url
-  })
-
-const eMailButton = (assets) =>
-  create('a', 'Send Download Links', {
-    className: 'btn btn-email',
-    href: `mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}`
-  })
 
 const eMailSubject = () =>
   encodeURIComponent('Download Tropy')
@@ -95,18 +96,6 @@ const eMailBody = (assets) =>
   encodeURIComponent(assets.map(asset =>
     `Download Tropy for ${tag(asset)}:\n${asset.url}\n`
   ).join('\n'))
-
-const create = (nodeName, content, attrs = {}) => {
-  let node = document.createElement(nodeName)
-
-  for (let [name, value] of Object.entries(attrs))
-    node[name] = value
-
-  if (content)
-    node.innerHTML = content
-
-  return node
-}
 
 const tag = (asset) => {
   switch (asset.platform) {

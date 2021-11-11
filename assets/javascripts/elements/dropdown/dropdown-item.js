@@ -5,11 +5,7 @@ export class DropdownItem extends CustomElement {
   constructor() {
     super()
 
-    this.a = document.createElement('a')
-    this.a.tabIndex = -1
-    this.a.href = this.href
-
-    this.a.replaceChildren(...this.childNodes)
+    this.a = this.querySelector('a')
 
     this.addEventListener('mousemove', () => {
       this.dispatchEvent(new CustomEvent('dropdown.mousemove', {
@@ -21,7 +17,6 @@ export class DropdownItem extends CustomElement {
 
   connectedCallback() {
     this.classList.add('dropdown-item')
-    this.replaceChildren(this.a)
   }
 
   attributeChangedCallback(name) {
@@ -30,6 +25,10 @@ export class DropdownItem extends CustomElement {
 
     if (name == 'href')
       this.a.href = this.href
+  }
+
+  render() {
+    return `<a href="${this.href}" tabindex="-1"><slot></slot></a>`
   }
 }
 

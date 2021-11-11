@@ -4,8 +4,6 @@ import { CustomElement } from '../custom-element.js'
 export class Dropdown extends CustomElement {
   constructor() {
     super()
-    this.id = Dropdown.id()
-    this.classList.add('dropdown')
 
     this.addEventListener('dropdown.toggle', e => {
       this.isOpen = !this.isOpen
@@ -37,6 +35,9 @@ export class Dropdown extends CustomElement {
   }
 
   connectedCallback() {
+    this.id = Dropdown.id()
+    this.classList.add('dropdown')
+
     this.dropdownToggle = this.firstElementChild
     this.dropdownToggleButton = this.dropdownToggle.querySelector('.btn')
     this.dropdownMenu = this.lastElementChild

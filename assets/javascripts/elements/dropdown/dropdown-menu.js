@@ -2,8 +2,7 @@ import { CustomElement } from '../custom-element.js'
 
 
 export class DropdownMenu extends CustomElement {
-  constructor() {
-    super()
+  connectedCallback() {
     this.role = 'listbox'
     this.classList.add('dropdown-menu')
   }
