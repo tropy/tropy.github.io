@@ -47,7 +47,7 @@ export class CustomElement extends HTMLElement {
       const attr = camelToLispCase(prop)
 
       switch(this.propTypes[prop]) {
-        case 'string':
+        case String:
           Object.defineProperty(this.prototype, prop, {
             get: function() {
               return this.getAttribute(attr)
@@ -67,7 +67,7 @@ export class CustomElement extends HTMLElement {
 
           break
 
-        case 'bool':
+        case Boolean:
           Object.defineProperty(this.prototype, prop, {
             get: function() {
               return this.hasAttribute(attr)

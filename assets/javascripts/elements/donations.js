@@ -44,7 +44,7 @@ export class Donations extends CustomElement {
 }
 
 Donations.propTypes = {
-  isMonthly: 'bool'
+  isMonthly: Boolean
 }
 
 customElements.define('tpy-donations', Donations)

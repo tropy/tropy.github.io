@@ -36,9 +36,9 @@ export class DropdownToggle extends CustomElement {
 }
 
 DropdownToggle.propTypes = {
-  buttonId: 'string',
-  label: 'string',
-  isOpen: 'bool'
+  buttonId: String,
+  label: String,
+  isOpen: Boolean
 }
 
 customElements.define('tpy-dropdown-toggle', DropdownToggle)

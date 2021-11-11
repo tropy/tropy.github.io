@@ -33,9 +33,9 @@ export class DropdownItem extends CustomElement {
 }
 
 CustomElement.propTypes = {
-  index: 'string',
-  href: 'string',
-  selected: 'bool'
+  index: String,
+  href: String,
+  selected: Boolean
 }
 
 customElements.define('tpy-dropdown-item', DropdownItem)

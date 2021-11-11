@@ -65,14 +65,14 @@ export class EditableRadio extends CustomElement {
 }
 
 EditableRadio.propTypes = {
-  isPristine: 'bool',
-  isActive: 'bool',
-  label: 'string',
-  type: 'string',
-  min: 'string',
-  inputmode: 'string',
-  step: 'string',
-  ariaLabel: 'string'
+  isPristine: Boolean,
+  isActive: Boolean,
+  label: String,
+  type: String,
+  min: String,
+  inputmode: String,
+  step: String,
+  ariaLabel: String
 }
 
 customElements.define('tpy-editable-radio', EditableRadio)

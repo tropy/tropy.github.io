@@ -33,8 +33,8 @@ export class Menu extends CustomElement {
 }
 
 Menu.propTypes = {
-  toggle: 'string',
-  isOpen: 'bool'
+  toggle: String,
+  isOpen: Boolean
 }
 
 customElements.define('tpy-menu', Menu)

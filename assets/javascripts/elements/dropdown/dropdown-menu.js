@@ -9,8 +9,8 @@ export class DropdownMenu extends CustomElement {
 }
 
 DropdownMenu.propTypes = {
-  isOpen: 'bool',
-  ariaLabelledby: 'string'
+  isOpen: Boolean,
+  ariaLabelledby: String
 }
 
 customElements.define('tpy-dropdown-menu', DropdownMenu)

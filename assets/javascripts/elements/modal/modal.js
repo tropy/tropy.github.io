@@ -88,10 +88,10 @@ export class Modal extends CustomElement {
 }
 
 Modal.propTypes = {
-  isOpen: 'bool',
-  modalTitle: 'string',
-  centered: 'bool',
-  isStatic: 'bool'
+  isOpen: Boolean,
+  modalTitle: String,
+  centered: Boolean,
+  isStatic: Boolean
 }
 
 customElements.define('tpy-modal', Modal)
