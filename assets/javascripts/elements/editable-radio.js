@@ -3,19 +3,6 @@ import { CustomElement } from './custom-element.js'
 
 export class EditableRadio extends CustomElement {
   connectedCallback() {
-    this.editable = `
-      <div class="auto-resizer">
-        <div class="currency">$</div>
-        <div class="content"></div>
-        <input
-          type="${this.type}"
-          ${this.min ? `min="${this.min}"` : null}
-          ${this.inputmode ? `inputmode="${this.inputmode}"` : null}
-          ${this.step ? `step="${this.step}"` : null}
-          required
-          aria-label="${this.ariaLabel}">
-      </div>`
-
     this.radios = this.parentElement.querySelectorAll('input')
     this.radio = this.previousElementSibling
     this.input
@@ -32,8 +19,9 @@ export class EditableRadio extends CustomElement {
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    if (name == 'is-active')
+    if (name == 'is-active') {
       this.isActive ? this.activate() : this.deactivate()
+    }
   }
 
   handleChange = (e) => {
@@ -43,7 +31,7 @@ export class EditableRadio extends CustomElement {
   activate = () => {
     if (this.isPristine) {
       this.radio.click()
-      this.innerHTML = this.editable
+      super.doRender()
       this.input = this.querySelector('input')
       this.isPristine = false
     }
@@ -54,13 +42,32 @@ export class EditableRadio extends CustomElement {
   }
 
   deactivate = () => {
-    this.innerText = this.label
+    super.doRender()
     this.isPristine = true
   }
 
   update = (e) => {
     this.radio.value = this.input.value
     this.querySelector('.content').innerText = this.input.value
+  }
+
+  render() {
+    if (this.isActive)
+      return `
+        <div class="auto-resizer">
+          <div class="currency">$</div>
+          <div class="content"></div>
+          <input
+            type="${this.type}"
+            ${this.min ? `min="${this.min}"` : null}
+            ${this.inputmode ? `inputmode="${this.inputmode}"` : null}
+            ${this.step ? `step="${this.step}"` : null}
+            required
+            aria-label="${this.ariaLabel}">
+        </div>`
+
+    else
+      return `${this.label}`
   }
 }
 
