@@ -15,7 +15,12 @@ export class Download extends CustomElement {
 
   async getRelease() {
     const release = await getLatestRelease()
-    if (!release?.assets.length) return
+
+    if (!release?.assets.length) {
+      this.failed = true
+      return
+    }
+
     const assets = [...release.assets].sort(byPlatform)
 
     super.doRender(release, assets)
@@ -85,6 +90,10 @@ export class Download extends CustomElement {
         Send Download Links
       </a>`
   }
+}
+
+Download.propTypes = {
+  failed: Boolean
 }
 
 customElements.define('tpy-download', Download)

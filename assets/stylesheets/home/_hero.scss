@@ -147,6 +147,10 @@
       @include state("tpy-download:defined") {
         display: none;
       }
+
+      @include state("tpy-download:defined[failed]") {
+        display: block;
+      }
     }
   }
 
