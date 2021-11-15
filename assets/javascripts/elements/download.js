@@ -14,16 +14,15 @@ export class Download extends CustomElement {
   }
 
   async getRelease() {
-    const release = await getLatestRelease()
+    try {
+      const release = await getLatestRelease()
+      const assets = [...release.assets].sort(byPlatform)
 
-    if (!release?.assets.length) {
+      super.doRender(release, assets)
+
+    } catch {
       this.failed = true
-      return
     }
-
-    const assets = [...release.assets].sort(byPlatform)
-
-    super.doRender(release, assets)
   }
 
   render(release, assets) {
