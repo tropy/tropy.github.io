@@ -130,6 +130,24 @@
     @media (min-width: $sm) {
       min-height: 87px;
     }
+
+    @keyframes fallback {
+      0% {
+        visibility: hidden;
+      }
+
+      100% {
+        visibility: visible;
+      }
+    }
+
+    .fallback {
+      animation: fallback 1s step-end forwards;
+
+      @include state("tpy-download:defined") {
+        display: none;
+      }
+    }
   }
 
   .download {
