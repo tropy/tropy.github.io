@@ -149,6 +149,7 @@
       }
 
       @include state("tpy-download:defined[failed]") {
+        animation: none;
         display: block;
       }
     }
