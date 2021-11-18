@@ -16,9 +16,9 @@ export class Download extends CustomElement {
   async getRelease() {
     try {
       const release = await getLatestRelease()
-      const assets = [...release.assets].sort(byPlatform)
+      release.assets = [...release.assets].sort(byPlatform)
 
-      super.doRender(release, assets)
+      super.doRender(release, release.assets)
 
     } catch {
       this.failed = true
@@ -33,7 +33,7 @@ export class Download extends CustomElement {
         template.push(this.comboButton(release, assets))
 
       else
-        template.push(this.eMailButton(release.assets))
+        template.push(this.eMailButton(assets))
 
       if (release.version)
         template.push(this.releaseNotesLink(release))
