@@ -74,19 +74,19 @@ export class Download extends CustomElement {
       </div>`
   }
 
-  releaseNotesLink({ url, version }) {
-    return `
-      <a href="${url}" class="release-notes">
-        What’s new in version ${version}
-      </a>`
-  }
-
   eMailButton(assets) {
     return `
       <a
         href="mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}"
         class="btn btn-email">
         Send Download Links
+      </a>`
+  }
+
+  releaseNotesLink({ url, version }) {
+    return `
+      <a href="${url}" class="release-notes">
+        What’s new in version ${version}
       </a>`
   }
 }
