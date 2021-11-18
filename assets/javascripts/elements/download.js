@@ -26,68 +26,63 @@ export class Download extends CustomElement {
   }
 
   render(release, assets) {
-    if (release) {
-      const template = []
+    if (release)
+      return `
+        ${this.downloadButton(release, assets)}
+        ${this.releaseNotesLink(release)}`
+  }
 
-      if (SUPPORTED_PLATFORMS.includes(platform))
-        template.push(this.comboButton(release, assets))
+  downloadButton(release, assets) {
+    if (SUPPORTED_PLATFORMS.includes(platform)) {
+      let [head, ...tail] = assets
 
-      else
-        template.push(this.eMailButton(assets))
+      let dropdownItems = tail.map(asset => `
+        <tpy-dropdown-item href="${asset.url}">
+          ${tag(asset)}
+        </tpy-dropdown-item>`
+      ).join('')
 
-      if (release.version)
-        template.push(this.releaseNotesLink(release))
+      if (release.url) dropdownItems += `
+        <tpy-dropdown-item href="${release.url}">
+          Other platforms
+        </tpy-dropdown-item>`
 
-      return template.join('')
+      return `
+        <div class="btn-group download">
+          <a href="${head.url}" class="btn">
+            Download Tropy for <strong>${tag(head)}</strong>
+          </a>
+          <tpy-dropdown class="btn-group">
+            <tpy-dropdown-toggle
+              class="dropdown-toggle-split"
+              label="More Platforms">
+              <span class="icon icon-caret-down">${chevronDown}</span>
+            </tpy-dropdown-toggle>
+            <tpy-dropdown-menu>
+              ${dropdownItems}
+            </tpy-dropdown-menu>
+          </tpy-dropdown>
+        </div>`
+
+    } else {
+      return `
+        <a
+          href="mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}"
+          class="btn btn-email">
+          Send Download Links
+        </a>`
     }
   }
 
-  comboButton(release, assets) {
-    let [head, ...tail] = assets
-
-    let dropdownItems = tail.map(asset => `
-      <tpy-dropdown-item href="${asset.url}">
-        ${tag(asset)}
-      </tpy-dropdown-item>`
-    ).join('')
-
-    if (release.url) dropdownItems += `
-      <tpy-dropdown-item href="${release.url}">
-        Other platforms
-      </tpy-dropdown-item>`
-
-    return `
-      <div class="btn-group download">
-        <a href="${head.url}" class="btn">
-          Download Tropy for <strong>${tag(head)}</strong>
-        </a>
-        <tpy-dropdown class="btn-group">
-          <tpy-dropdown-toggle
-            class="dropdown-toggle-split"
-            label="More Platforms">
-            <span class="icon icon-caret-down">${chevronDown}</span>
-          </tpy-dropdown-toggle>
-          <tpy-dropdown-menu>
-            ${dropdownItems}
-          </tpy-dropdown-menu>
-        </tpy-dropdown>
-      </div>`
-  }
-
-  eMailButton(assets) {
-    return `
-      <a
-        href="mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}"
-        class="btn btn-email">
-        Send Download Links
-      </a>`
-  }
-
   releaseNotesLink({ url, version }) {
-    return `
-      <a href="${url}" class="release-notes">
-        What’s new in version ${version}
-      </a>`
+    if (version)
+      return `
+        <a href="${url}" class="release-notes">
+          What’s new in version ${version}
+        </a>`
+
+    else
+      return ''
   }
 }
 
