@@ -15,26 +15,26 @@ export class Download extends CustomElement {
 
   async getRelease() {
     try {
-      const release = await getLatestRelease()
-      release.assets = [...release.assets].sort(byPlatform)
+      this.release = await getLatestRelease()
+      this.release.assets = [...this.release.assets].sort(byPlatform)
 
-      super.doRender(release, release.assets)
+      super.doRender()
 
     } catch {
       this.failed = true
     }
   }
 
-  render(release, assets) {
-    if (release)
+  render() {
+    if (this.release)
       return `
-        ${this.downloadButton(release, assets)}
-        ${this.releaseNotesLink(release)}`
+        ${this.downloadButton()}
+        ${this.releaseNotesLink()}`
   }
 
-  downloadButton(release, assets) {
+  downloadButton() {
     if (SUPPORTED_PLATFORMS.includes(platform)) {
-      let [head, ...tail] = assets
+      let [head, ...tail] = this.release.assets
 
       let dropdownItems = tail.map(asset => `
         <tpy-dropdown-item href="${asset.url}">
@@ -42,8 +42,8 @@ export class Download extends CustomElement {
         </tpy-dropdown-item>`
       ).join('')
 
-      if (release.url) dropdownItems += `
-        <tpy-dropdown-item href="${release.url}">
+      if (this.release.url) dropdownItems += `
+        <tpy-dropdown-item href="${this.release.url}">
           Other platforms
         </tpy-dropdown-item>`
 
@@ -67,18 +67,18 @@ export class Download extends CustomElement {
     } else {
       return `
         <a
-          href="mailto:?subject=${eMailSubject()}&body=${eMailBody(assets)}"
+          href="mailto:?subject=${eMailSubject()}&body=${eMailBody(this.release.assets)}"
           class="btn btn-email">
           Send Download Links
         </a>`
     }
   }
 
-  releaseNotesLink({ url, version }) {
-    if (version)
+  releaseNotesLink() {
+    if (this.release.version)
       return `
-        <a href="${url}" class="release-notes">
-          What’s new in version ${version}
+        <a href="${this.release.url}" class="release-notes">
+          What’s new in version ${this.release.version}
         </a>`
 
     else
@@ -87,6 +87,7 @@ export class Download extends CustomElement {
 }
 
 Download.propTypes = {
+  release: Object,
   failed: Boolean
 }
 

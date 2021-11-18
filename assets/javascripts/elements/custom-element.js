@@ -12,9 +12,9 @@ export class CustomElement extends HTMLElement {
     this.doRender()
   }
 
-  doRender(...args) {
+  doRender() {
     if (this.render) {
-      let result = this.render(...args)
+      let result = this.render()
 
       if (result) {
         const template = document.createElement('template')
