@@ -13,7 +13,7 @@ export class CustomElement extends HTMLElement {
   }
 
   doRender() {
-    if (this.render && this.render() !== '')
+    if (this.render && this.render())
       this.innerHTML = this.render()
   }
 
