@@ -95,7 +95,7 @@ export class Dropdown extends CustomElement {
   }
 
   render() {
-    return `<slot></slot>`
+    return this.children
   }
 }
 

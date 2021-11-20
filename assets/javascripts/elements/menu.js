@@ -28,7 +28,7 @@ export class Menu extends CustomElement {
   }
 
   render() {
-    return `<slot></slot>`
+    return this.children
   }
 }
 
