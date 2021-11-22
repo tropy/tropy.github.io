@@ -18,13 +18,8 @@ export class Menu extends CustomElement {
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    if (name == 'is-open') {
-      if (this.isOpen)
-        this.toggleButton.setAttribute('aria-expanded', true)
-
-      else
-        this.toggleButton.setAttribute('aria-expanded', false)
-    }
+    if (name == 'is-open')
+      this.toggleButton.ariaExpanded = this.isOpen
   }
 
   render() {

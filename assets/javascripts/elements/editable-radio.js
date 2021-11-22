@@ -8,7 +8,7 @@ export class EditableRadio extends CustomElement {
     this.input
     this.isPristine = true
 
-    this.radio.setAttribute('aria-label', this.label)
+    this.radio.ariaLabel = this.label
     this.innerText = this.label
 
     this.radios.forEach(radio => {
