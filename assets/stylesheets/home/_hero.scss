@@ -131,7 +131,13 @@
       min-height: 87px;
     }
 
-    @keyframes fallback {
+    @keyframes spinner {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes show-delayed {
       0% {
         visibility: hidden;
       }
@@ -141,8 +147,25 @@
       }
     }
 
+    .spinner {
+      display: none;
+
+      @include state("tpy-download:defined") {
+        display: block;
+        width: $space-lg;
+        height: $space-lg;
+        border-radius: 50%;
+        border: 2px solid $white;
+        border-right-color: transparent;
+        margin-top: $space-sm;
+        animation:
+          show-delayed 1s step-end forwards,
+          spinner 1s linear infinite 1s;
+      }
+    }
+
     .fallback {
-      animation: fallback 1s step-end forwards;
+      animation: show-delayed 3s step-end forwards;
 
       @include state("tpy-download:defined") {
         display: none;

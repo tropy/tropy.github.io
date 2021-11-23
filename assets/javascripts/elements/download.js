@@ -30,6 +30,9 @@ export class Download extends CustomElement {
       return `
         ${this.downloadButton()}
         ${this.releaseNotesLink()}`
+
+    else
+      return `<div class="spinner"></div>`
   }
 
   downloadButton() {
