@@ -30,7 +30,7 @@ export class DropdownToggle extends CustomElement {
   render() {
     return `
       <button class="btn" aria-haspopup="listbox">
-        ${this.children}
+        <slot></slot>
       </button>`
   }
 }

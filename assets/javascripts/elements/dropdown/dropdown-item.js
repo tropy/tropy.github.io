@@ -28,7 +28,7 @@ export class DropdownItem extends CustomElement {
   }
 
   render() {
-    return `<a href="${this.href}" tabindex="-1">${this.children}</a>`
+    return `<a href="${this.href}" tabindex="-1"><slot></slot></a>`
   }
 }
 

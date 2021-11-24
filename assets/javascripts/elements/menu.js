@@ -23,7 +23,7 @@ export class Menu extends CustomElement {
   }
 
   render() {
-    return this.children
+    return `<slot></slot>`
   }
 }
 

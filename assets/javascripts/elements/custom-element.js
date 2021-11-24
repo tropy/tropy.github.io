@@ -13,8 +13,23 @@ export class CustomElement extends HTMLElement {
   }
 
   doRender() {
-    if (this.render && this.render())
-      this.innerHTML = this.render()
+    if (this.render && this.render()) {
+      let result = this.render()
+
+      if (result) {
+        const template = document.createElement('template')
+
+        template.innerHTML = result
+
+        const children = this.childNodes // Avoid rerendering in children
+        const slot = template.content.querySelector('slot')
+
+        if (children && slot)
+          slot.replaceWith(...children)
+
+        this.replaceChildren(template.content)
+      }
+    }
   }
 
   attributeChangedCallback() {

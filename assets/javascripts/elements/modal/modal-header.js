@@ -8,7 +8,7 @@ export class ModalHeader extends CustomElement {
 
   render() {
     return `
-      <h3 class="modal-title">${this.children}</h3>
+      <h3 class="modal-title"><slot></slot></h3>
       <button class="btn-close"></button>`
   }
 }

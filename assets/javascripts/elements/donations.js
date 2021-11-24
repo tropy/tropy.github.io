@@ -39,7 +39,7 @@ export class Donations extends CustomElement {
   }
 
   render() {
-    return this.children
+    return `<slot></slot>`
   }
 }
 

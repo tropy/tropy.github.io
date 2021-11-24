@@ -81,7 +81,7 @@ export class Modal extends CustomElement {
     return `
       <div class="modal-dialog">
         <div class="modal-content">
-          ${this.children}
+          <slot></slot>
         </div>
       </div>`
   }
