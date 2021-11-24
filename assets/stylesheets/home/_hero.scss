@@ -159,7 +159,7 @@
         border-right-color: transparent;
         margin-top: $space-sm;
         animation:
-          show-delayed 1s step-end forwards,
+          show-delayed 0.5s step-end forwards,
           spinner 1s linear infinite 1s;
       }
     }
