@@ -1,0 +1,107 @@
+//
+// Plugins
+//
+
+.plugins {
+  background-color: #fafaff;
+  padding-top: $section-spacing-y-phone - 14px;
+  padding-bottom: $section-spacing-y-phone;
+
+  @media (min-width: $sm) {
+    padding-top: $section-spacing-y - 19px;
+    padding-bottom: $section-spacing-y;
+  }
+
+  h2 {
+    margin: 0;
+
+    @media (min-width: $sm) {
+      text-align: center;
+    }
+  }
+
+  .lead {
+    margin-bottom: ($section-spacing-y-phone * 3 / 4) - 6px;
+    @include tween(
+      $sm * 5 / 6,
+      columns(10, $container-fluid-max-width) * 0.8,
+      $sm,
+      $container-fluid-max-width / ($container-fluid-width / 100%),
+      width
+    );
+
+    @media (min-width: $sm) {
+      margin-bottom: $section-spacing-y * 3 / 4 - 6px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: $grid-column-gap / 2;
+
+    @media (min-width: $sm) {
+      grid-template-columns: 1fr 1fr;
+      gap: $grid-column-gap;
+    }
+
+    @media (min-width: $lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  li {
+
+  }
+
+  a {
+    display: flex;
+    column-gap: $space-lg;
+    height: 100%;
+    padding: $space-lg;
+    background-color: $white;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow:
+      0 4px 8px -4px rgba($blue-darkest, 0.2),
+      0 0 0 1px rgba(#000, 0.02);
+    transition:
+      transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+      box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &:hover {
+      position: relative;
+      z-index: 1;
+      transform: translateY(-1px);
+      box-shadow:
+        0 16px 32px -16px rgba($blue-darkest, 0.25),
+        0 0 0 1px rgba(#000, 0.02);
+    }
+  }
+
+  img {
+    flex: 0 0 auto;
+    text-indent: -99em;
+    overflow: hidden;
+    border: 0;
+  }
+
+  .name,
+  .description {
+    margin: 0;
+  }
+
+  .name {
+    font-size: $font-size-large;
+    font-weight: 600;
+    line-height: 24px / $font-size-large;
+  }
+
+  .description {
+    color: $gray-dark;
+  }
+}
