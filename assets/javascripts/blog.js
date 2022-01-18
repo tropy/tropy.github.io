@@ -1,3 +1,4 @@
-import { focusVisible } from './focus-visible.js'
-import { Sticky } from './elements/sticky.js'
-import { ScrollNav } from './elements/scroll-nav.js'
+import './focus-visible.js'
+import './elements/menu.js'
+import './elements/sticky.js'
+import './elements/scroll-nav.js'
