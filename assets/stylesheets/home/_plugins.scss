@@ -61,10 +61,11 @@
     display: flex;
     column-gap: $space-lg;
     height: 100%;
-    padding: $space-lg;
+    padding: $space-lg - 3px;
     background-color: $white;
     color: inherit;
     text-decoration: none;
+    border: 3px solid transparent;
     border-radius: 10px;
     box-shadow:
       0 4px 8px -4px rgba($blue-darkest, 0.2),
@@ -80,6 +81,11 @@
       box-shadow:
         0 16px 32px -16px rgba($blue-darkest, 0.25),
         0 0 0 1px rgba(#000, 0.02);
+    }
+
+    @include focus-visible {
+      outline: none;
+      border-color: $focus-color;
     }
   }
 
