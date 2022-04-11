@@ -169,7 +169,12 @@
   }
 
   ul {
+    list-style-type: "– ";
     margin: ($blog-font-size * $blog-line-height) 0;
+
+    @media (max-width: $sm - 1px) {
+      padding-left: 40px * 5 / 8;
+    }
   }
 
   code {
