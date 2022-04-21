@@ -1,0 +1,13 @@
+//
+// Display
+//
+
+.d-none {
+  display: none !important;
+}
+
+.d-sm-block {
+  @media (min-width: $sm) {
+    display: block !important;
+  }
+}
