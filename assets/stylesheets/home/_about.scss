@@ -89,8 +89,22 @@
         justify-content: space-around;
       }
 
+      .key & {
+        @media (max-width: $sm - 1px) {
+          flex-basis: auto;
+          flex-direction: column;
+          align-items: center;
+          gap: ($section-spacing-y-phone * 9 / 16);
+          animation: none;
+        }
+      }
+
       & + ul {
         @media (min-width: 947px) {
+          display: none;
+        }
+
+        .key & {
           display: none;
         }
       }
@@ -127,10 +141,30 @@
 
     .rrchnm-logo {
       margin-top: 12px;
+
+      .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: -9px;
+        }
+      }
+    }
+
+    .cd2h-logo {
+      .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: -16px;
+        }
+      }
     }
 
     .mellon-logo {
       margin-top: 3px;
+
+      .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: -9px;
+        }
+      }
     }
   }
 }
