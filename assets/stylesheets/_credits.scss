@@ -122,6 +122,16 @@
           padding: 0 ($grid-column-gap / 2);
           margin-bottom: 8px;
         }
+
+        @media (min-width: $sm) and (max-width: $lg - 1px) {
+          flex-basis: auto;
+          flex-direction: column;
+          gap: ($section-spacing-y * 9 / 16);
+          padding: 0 ($grid-column-gap / 2);
+          margin-bottom: 8px;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
 
       & + ul {
@@ -183,12 +193,16 @@
         @media (max-width: $sm - 1px) {
           margin-top: 7px;
         }
+
+        @media (min-width: $sm) and (max-width: $lg - 1px) {
+          margin-top: 5px;
+        }
       }
     }
 
     .react-logo {
        .key & {
-        @media (max-width: $sm - 1px) {
+        @media (max-width: $lg - 1px) {
           margin-top: -20px;
         }
       }
@@ -198,7 +212,7 @@
       top: -2px;
 
       .key & {
-        @media (max-width: $sm - 1px) {
+        @media (max-width: $lg - 1px) {
           margin-top: -14px;
         }
       }
@@ -208,7 +222,7 @@
       top: -5px;
 
       .key & {
-        @media (max-width: $sm - 1px) {
+        @media (max-width: $lg - 1px) {
           margin-top: -11px; // Middle between square and caps
         }
       }
@@ -218,7 +232,7 @@
       top: -1px;
 
       .key & {
-        @media (max-width: $sm - 1px) {
+        @media (max-width: $lg - 1px) {
           margin-top: -22px;
         }
       }
