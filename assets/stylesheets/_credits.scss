@@ -111,8 +111,25 @@
         animation: none;
       }
 
+      .key & {
+        animation: none;
+
+        @media (max-width: $sm - 1px) {
+          flex-basis: auto;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: ($section-spacing-y-phone * 9 / 16);
+          padding: 0 ($grid-column-gap / 2);
+          margin-bottom: 8px;
+        }
+      }
+
       & + ul {
         @media (min-width: $lg) {
+          display: none;
+        }
+
+        .key & {
           display: none;
         }
       }
@@ -161,18 +178,50 @@
 
     .electron-logo {
       top: 1px;
+
+      .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: 7px;
+        }
+      }
+    }
+
+    .react-logo {
+       .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: -20px;
+        }
+      }
     }
 
     .pixijs-logo {
       top: -2px;
+
+      .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: -14px;
+        }
+      }
     }
 
     .sqlite-logo {
       top: -5px;
+
+      .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: -11px; // Middle between square and caps
+        }
+      }
     }
 
     .prosemirror-logo {
       top: -1px;
+
+      .key & {
+        @media (max-width: $sm - 1px) {
+          margin-top: -22px;
+        }
+      }
     }
   }
 
