@@ -90,12 +90,23 @@
       }
 
       .key & {
+        animation: none;
+
         @media (max-width: $sm - 1px) {
           flex-basis: auto;
           flex-direction: column;
           align-items: center;
-          gap: ($section-spacing-y-phone * 9 / 16);
-          animation: none;
+          gap: ($section-spacing-y-phone * 3 / 4);
+        }
+
+        @media (min-width: $sm) and (max-width: 947px - 1px) {
+          flex: 0 0 auto;
+          position: relative;
+          left: $grid-column-gap / 2;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          row-gap: $section-spacing-y * 9 / 16 + 7px;
         }
       }
 
@@ -113,6 +124,14 @@
     a,
     svg {
       display: block;
+    }
+
+    a {
+      .key & {
+        @media (min-width: $sm) and (max-width: 947px - 1px) {
+          width: min-content;
+        }
+      }
     }
 
     svg {
