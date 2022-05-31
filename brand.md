@@ -7,7 +7,7 @@ class: page brand
 
 {% include image src="/assets/images/tropy-app-icon@2x.png" alt="Tropy app icon" width="220" height="220" %}
 
-Feel free to use Tropy’s official icon. Available sizes:<br>
+Feel free to use Tropy’s official logo. Available sizes:<br>
 [16&#8239;×&#8239;16](/assets/images/tropy-app-icon-16x16.png),
 [32&#8239;×&#8239;32](/assets/images/tropy-app-icon-32x32.png),
 [64&#8239;×&#8239;64](/assets/images/tropy-app-icon-64x64.png),
