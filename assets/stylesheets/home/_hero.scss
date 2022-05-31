@@ -23,39 +23,6 @@
     align-items: center;
   }
 
-  .eye-catcher {
-    position: absolute;
-    text-indent: -99em;
-    overflow: hidden;
-    background: url("../images/eye-catcher@2x.png") no-repeat 0 0 / 100%;
-    outline-color: $white;
-    left: 50%;
-    margin-left: 43px;
-    top: 53px;
-    width: 76px;
-    height: 96px;
-
-    @media (min-width: 360px) {
-      margin-left: 92px;
-      top: 84px;
-    }
-
-    @include tween(
-      52px,
-      0,
-      $sm,
-      $xl,
-      margin-left
-    );
-
-    @media (min-width: $sm) {
-      width: 101px;
-      height: 128px;
-      left: 72.5vw;
-      top: 114px;
-    }
-  }
-
   h1 {
     width: 118px;
     height: 101px;
