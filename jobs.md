@@ -38,7 +38,7 @@ For further information, please contact [tkelly7@gmu.edu](mailto:tkelly7@gmu.edu
 
 ## [Postdoctoral Researcher in Digital History](https://recruitment.uni.lu/en/details.html?id=QMUFK026203F3VBQB7V7VV4S8&nPostingID=74296&nPostingTargetID=108419&mask=karriereseiten&lg=UK)
 
-**The Luxembourg Centre for Contemporary and Digital History (C²DH) is looking to hire a postdoctoral researcher** to work on Tropy [https://tropy.org](https://tropy.org), a grant-funded research project sponsored by the Andrew W. Mellon Foundation. Operating since 2015, Tropy is a multi-year research project which has developed a widely used free and open-source software application for archival research. In order to promote the use of Tropy and improve Tropy’s support of varying types of users, we seek to hire a postdoctoral researcher to join our small outreach and development team who will work under the supervision of the project’s principal investigator.
+**The Luxembourg Centre for Contemporary and Digital History (C²DH) is looking to hire a postdoctoral researcher** to work on Tropy [https://tropy.org](https://tropy.org), a grant-funded research project sponsored by the Mellon Foundation. Operating since 2015, Tropy is a multi-year research project which has developed a widely used free and open-source software application for archival research. In order to promote the use of Tropy and improve Tropy’s support of varying types of users, we seek to hire a postdoctoral researcher to join our small outreach and development team who will work under the supervision of the project’s principal investigator.
 {: .lead}
 
 ### Your Role …
