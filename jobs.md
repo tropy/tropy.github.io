@@ -41,10 +41,6 @@ For further information, please contact [tkelly7@gmu.edu](mailto:tkelly7@gmu.edu
 **The Luxembourg Centre for Contemporary and Digital History (C²DH) is looking to hire a postdoctoral researcher** to work on Tropy [https://tropy.org](https://tropy.org), a grant-funded research project sponsored by the Andrew W. Mellon Foundation. Operating since 2015, Tropy is a multi-year research project which has developed a widely used free and open-source software application for archival research. In order to promote the use of Tropy and improve Tropy’s support of varying types of users, we seek to hire a postdoctoral researcher to join our small outreach and development team who will work under the supervision of the project’s principal investigator.
 {: .lead}
 
-The University of Luxembourg is an international research university with a distinctly multilingual and interdisciplinary character. The University was founded in 2003 and counts more than 6,700 students and more than 2,000 employees from around the world. The University’s faculties and interdisciplinary centres focus on research in the areas of Computer Science and ICT Security, Materials Science, European and International Law, Finance and Financial Innovation, Education, Contemporary and Digital History. In addition, the University focuses on cross-disciplinary research in the areas of Data Modelling and Simulation as well as Health and System Biomedicine. Times Higher Education ranks the University of Luxembourg #3 worldwide for its “international outlook,” #20 in the Young University Ranking 2021 and among the top 250 universities worldwide.
-
-The Luxembourg Centre for Contemporary and Digital History (C²DH) is a research centre for the study, analysis and public dissemination of contemporary history of Luxembourg and Europe with a particular focus on digital methods and tools for doing innovative historical research. It serves as a catalyst for innovative and creative scholarship and new forms of public dissemination and societal engagement with history.
-
 ### Your Role …
 
 - You will develop training modules around the use of Tropy by researchers, archivists, and librarians of varying skill levels;
@@ -63,7 +59,7 @@ The Luxembourg Centre for Contemporary and Digital History (C²DH) is a research
 
 ### In Short …
 
-- Contract Type: Fixed Term Contract 18 Month
+- Contract Type: Fixed Term Contract 18 Months
 - Work Hours: Full Time 40.0 Hours per Week
 - Location: Belval
 - Job Reference: UOL04994
@@ -71,4 +67,8 @@ The Luxembourg Centre for Contemporary and Digital History (C²DH) is a research
 
 ### Further information …
 
-Please contact: [sean.takats@uni.lu](mailto:sean.takats@uni.lu)
+The Luxembourg Centre for Contemporary and Digital History (C²DH) is a research centre for the study, analysis and public dissemination of contemporary history of Luxembourg and Europe with a particular focus on digital methods and tools for doing innovative historical research. It serves as a catalyst for innovative and creative scholarship and new forms of public dissemination and societal engagement with history.
+
+The University of Luxembourg is an international research university with a distinctly multilingual and interdisciplinary character. The University was founded in 2003 and counts more than 6,700 students and more than 2,000 employees from around the world. The University’s faculties and interdisciplinary centres focus on research in the areas of Computer Science and ICT Security, Materials Science, European and International Law, Finance and Financial Innovation, Education, Contemporary and Digital History. In addition, the University focuses on cross-disciplinary research in the areas of Data Modelling and Simulation as well as Health and System Biomedicine. Times Higher Education ranks the University of Luxembourg #3 worldwide for its “international outlook,” #20 in the Young University Ranking 2021 and among the top 250 universities worldwide.
+
+For further information, please contact [sean.takats@uni.lu](mailto:sean.takats@uni.lu).
