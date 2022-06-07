@@ -111,7 +111,7 @@
         animation: none;
       }
 
-      .key & {
+      @mixin styles {
         animation: none;
 
         @media (max-width: $sm - 1px) {
@@ -134,12 +134,24 @@
         }
       }
 
+      .key & {
+        @include styles;
+      }
+
+      @media (prefers-reduced-motion) {
+        @include styles;
+      }
+
       & + ul {
         @media (min-width: $lg) {
           display: none;
         }
 
         .key & {
+          display: none;
+        }
+
+        @media (prefers-reduced-motion) {
           display: none;
         }
       }
@@ -189,20 +201,35 @@
     .electron-logo {
       top: 1px;
 
-      .key & {
-        @media (max-width: $sm - 1px) {
+      @media (max-width: $sm - 1px) {
+        .key & {
           margin-top: 7px;
         }
 
-        @media (min-width: $sm) and (max-width: $lg - 1px) {
+        @media (prefers-reduced-motion) {
+           margin-top: 7px;
+        }
+      }
+
+      @media (min-width: $sm) and (max-width: $lg - 1px) {
+        .key & {
+          margin-top: 5px;
+        }
+
+        @media (prefers-reduced-motion) {
           margin-top: 5px;
         }
       }
+
     }
 
     .react-logo {
+      @media (max-width: $lg - 1px) {
        .key & {
-        @media (max-width: $lg - 1px) {
+          margin-top: -20px;
+        }
+
+       @media (prefers-reduced-motion) {
           margin-top: -20px;
         }
       }
@@ -211,8 +238,12 @@
     .pixijs-logo {
       top: -2px;
 
-      .key & {
-        @media (max-width: $lg - 1px) {
+      @media (max-width: $lg - 1px) {
+        .key & {
+          margin-top: -14px;
+        }
+
+        @media (prefers-reduced-motion) {
           margin-top: -14px;
         }
       }
@@ -221,9 +252,13 @@
     .sqlite-logo {
       top: -5px;
 
-      .key & {
-        @media (max-width: $lg - 1px) {
+      @media (max-width: $lg - 1px) {
+        .key & {
           margin-top: -11px; // Middle between square and caps
+        }
+
+        @media (prefers-reduced-motion) {
+          margin-top: -11px;
         }
       }
     }
@@ -231,8 +266,12 @@
     .prosemirror-logo {
       top: -1px;
 
-      .key & {
-        @media (max-width: $lg - 1px) {
+      @media (max-width: $lg - 1px) {
+        .key & {
+          margin-top: -22px;
+        }
+
+        @media (prefers-reduced-motion) {
           margin-top: -22px;
         }
       }

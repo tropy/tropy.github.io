@@ -89,7 +89,7 @@
         justify-content: space-around;
       }
 
-      .key & {
+      @mixin styles {
         animation: none;
 
         @media (max-width: $sm - 1px) {
@@ -110,6 +110,14 @@
         }
       }
 
+      .key & {
+        @include styles;
+      }
+
+      @media (prefers-reduced-motion) {
+        @include styles;
+      }
+
       & + ul {
         @media (min-width: 947px) {
           display: none;
@@ -118,8 +126,13 @@
         .key & {
           display: none;
         }
+
+        @media (prefers-reduced-motion) {
+          display: none;
+        }
       }
     }
+
 
     a,
     svg {
@@ -131,6 +144,10 @@
         @media (min-width: $sm) and (max-width: 947px - 1px) {
           width: min-content;
         }
+      }
+
+      @media (prefers-reduced-motion) {
+        width: min-content;
       }
     }
 
@@ -161,16 +178,24 @@
     .rrchnm-logo {
       margin-top: 12px;
 
-      .key & {
-        @media (max-width: $sm - 1px) {
+      @media (max-width: $sm - 1px) {
+        .key & {
+          margin-top: -9px;
+        }
+
+        @media (prefers-reduced-motion) {
           margin-top: -9px;
         }
       }
     }
 
     .cd2h-logo {
-      .key & {
-        @media (max-width: $sm - 1px) {
+      @media (max-width: $sm - 1px) {
+        .key & {
+          margin-top: -16px;
+        }
+
+        @media (prefers-reduced-motion) {
           margin-top: -16px;
         }
       }
@@ -179,9 +204,13 @@
     .mellon-logo {
       margin-top: 3px;
 
-      .key & {
-        @media (max-width: $sm - 1px) {
+      @media (max-width: $sm - 1px) {
+        .key & {
           margin-top: -9px;
+        }
+
+        @media (prefers-reduced-motion) {
+           margin-top: -9px;
         }
       }
     }

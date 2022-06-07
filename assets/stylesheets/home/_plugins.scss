@@ -74,13 +74,15 @@
       transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
       box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
-    &:hover {
-      position: relative;
-      z-index: 1;
-      transform: translateY(-1px);
-      box-shadow:
-        0 16px 32px -16px rgba($blue-darkest, 0.25),
-        0 0 0 1px rgba(#000, 0.02);
+    @media not all and (prefers-reduced-motion)  {
+      &:hover {
+        position: relative;
+        z-index: 1;
+        transform: translateY(-1px);
+        box-shadow:
+          0 16px 32px -16px rgba($blue-darkest, 0.25),
+          0 0 0 1px rgba(#000, 0.02);
+      }
     }
 
     @include focus-visible {
