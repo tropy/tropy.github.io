@@ -74,6 +74,7 @@
       font-size: 26px; // De Groot interpolation
       padding-top: $blog-font-size;
       margin: 0 0 -10px 0;
+      text-align: center;
 
       @media (min-width: $sm) {
         font-size: 30px;
