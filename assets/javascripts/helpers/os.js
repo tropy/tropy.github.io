@@ -71,10 +71,8 @@ export const isAppleSilicon = () =>
 
 const glRenderer = () => {
   try {
-    let w = document.createElement('canvas').getContext('webgl')
-    let { UNMASKED_RENDERER_WEBGL } = w.getExtension('WEBGL_debug_renderer_info')
-
-    return w.getParameter(UNMASKED_RENDERER_WEBGL)
+    let gl = document.createElement('canvas').getContext('webgl')
+    return gl.getParameter(gl.RENDERER)
 
   } catch (_) {
     return ''
