@@ -1,71 +1,82 @@
 export let platform
 export let arch
 
+const uaPlatform = (navigator.userAgentData || navigator).platform
+
+const uaBrand = navigator.userAgentData ?
+  navigator.userArgentData.brands.map(b => b.brand).join(' ') :
+  navigator.userAgent
+
+
 export const guess = () => {
-  if (hasTouchScreen()) {
-    if (WindowsLike())
-      platform = 'win32'
-    else if (!(iOSLike() || AndroidLike()))
-      platform = 'linux'
+  try {
+    if (hasTouchScreen()) {
+      if (WindowsLike())
+        platform = 'win32'
+      else if (!(iOSLike() || AndroidLike()))
+        platform = 'linux'
 
-  } else {
-    if (MacLike())
-      platform = 'darwin'
-    else if (WindowsLike())
-      platform = 'win32'
-    else
-      platform = 'linux'
-  }
+    } else {
+      if (MacLike())
+        platform = 'darwin'
+      else if (WindowsLike())
+        platform = 'win32'
+      else
+        platform = 'linux'
+    }
 
-  switch (platform) {
-    case 'linux':
-      arch = 'x64'
-      break
-    case 'darwin':
-      if (isAppleSilicon())
-        arch = 'arm64'
-      else
+    switch (platform) {
+      case 'linux':
         arch = 'x64'
-      break
-    case 'win32':
-      if (ia32Like())
-        arch = 'ia32'
-      else if (arm64Like())
-        arch = 'arm64'
-      else
-        arch = 'x64'
-      break
-    default:
-      // Ignore unsupported platforms
+        break
+      case 'darwin':
+        if (isAppleSilicon())
+          arch = 'arm64'
+        else
+          arch = 'x64'
+        break
+      case 'win32':
+        if (ia32Like())
+          arch = 'ia32'
+        else if (arm64Like())
+          arch = 'arm64'
+        else
+          arch = 'x64'
+        break
+      default:
+        // Ignore unsupported platforms
+    }
+  } catch (e) {
+    console.warn(`Platform guess failed: ${e.message}`)
   }
 }
 
 export const iOSLike = () =>
-  (/^iP(hone|ad|od)/).test(navigator.platform) ||
-    (/^Mac/).test(navigator.platform) && navigator.maxTouchPoints > 4
+  (/^iP(hone|ad|od)/).test(uaPlatform) ||
+    (/^mac/i).test(uaPlatform) && navigator.maxTouchPoints > 4
 
 export const AndroidLike = () =>
-  (/^Android/).test(navigator.platform) ||
-    (/\bandroid\b/i).test(navigator.userAgent)
+  (/^Android/).test(uaPlatform) ||
+    (/\bandroid\b/i).test(uaBrand)
 
 export const WindowsLike = () =>
-  (/^Win(dows|16|32|CE)/i).test(navigator.platform)
+  (/^Win(dows|16|32|CE)/i).test(uaPlatform)
 
 export const MacLike = () =>
-  (/^Mac/).test(navigator.platform)
+  (/^mac/i).test(uaPlatform)
 
 export const hasTouchScreen = () =>
   navigator.maxTouchPoints > 0 ||
     matchMedia('(pointer:coarse)').matches
 
 export const ia32Like = () =>
-  (/(ia32|i[346])[;)]/i).test(navigator.userAgent)
+  (/(ia32|i[346])[;)]/i).test(uaBrand)
 
 export const arm64Like = () =>
-  (/\b(aarch64|arm(v?8e?l?|_?64))\b/i).test(navigator.userAgent)
+  (/\b(aarch64|arm(v?8e?l?|_?64))\b/i).test(uaBrand)
 
 export const isAppleSilicon = () =>
-  !(/OS X 10_([789]|1[01234])/).test(navigator.userAgent) &&
+  !(/OS X 10_([789]|1[01234])/).test(uaBrand) &&
     (/^Apple M/).test(glRenderer()) // Does not work on Safari!
 
 
