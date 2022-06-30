@@ -4,7 +4,7 @@ export let arch
 const uaPlatform = (navigator.userAgentData || navigator).platform
 
 const uaBrand = navigator.userAgentData ?
-  navigator.userArgentData.brands.map(b => b.brand).join(' ') :
+  navigator.userAgentData.brands.map(b => b.brand).join(' ') :
   navigator.userAgent
 
 
