@@ -7,6 +7,10 @@ const uaBrand = navigator.userAgentData ?
   navigator.userAgentData.brands.map(b => b.brand).join(' ') :
   navigator.userAgent
 
+const uaHints = navigator.userAgentData ?
+  navigator.userAgentData.getHighEntropyValues(['architecture']) :
+  Promise.resolve({})
+
 
 export const guess = () => {
   try {
@@ -75,9 +79,21 @@ export const ia32Like = () =>
 export const arm64Like = () =>
   (/\b(aarch64|arm(v?8e?l?|_?64))\b/i).test(uaBrand)
 
-export const isAppleSilicon = () =>
-  !(/OS X 10_([789]|1[01234])/).test(uaBrand) &&
-    (/^Apple M/).test(glRenderer()) // Does not work on Safari!
+export const isAppleSilicon = () => {
+  if ((/OS X 10_([789]|1[01234])/).test(uaBrand))
+    return false
+
+  if ((/^Apple M/).test(glRenderer()))
+    return true
+
+  // Assume x64 but override later if we get arch hints!
+  uaHints.then(hints => {
+    if (hints.architecture === 'arm')
+      arch = 'arm64'
+  })
+
+  return false
+}
 
 
 const glRenderer = () => {
