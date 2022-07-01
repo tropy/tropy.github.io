@@ -1,0 +1,24 @@
+{
+  "name": "tropy-www",
+  "version": "1.0.0",
+  "description": "Tropy Website",
+  "private": true,
+  "main": "assets/javascripts/main.js",
+  "scripts": {
+    "test": "eslint assets/javascripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tropy/tropy.github.io.git"
+  },
+  "author": "Tropy Team",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tropy/tropy.github.io/issues"
+  },
+  "homepage": "https://github.com/tropy/tropy.github.io#readme",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "eslint": "^8.18.0"
+  }
+}

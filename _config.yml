@@ -74,3 +74,9 @@ plugins:
 
 # Serve command options
 host: 0.0.0.0
+
+# Exclude development files
+exclude:
+  - package.json
+  - package-lock.json
+  - node_modules
