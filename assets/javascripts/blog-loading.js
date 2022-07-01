@@ -5,13 +5,9 @@ if (
 ) {
   const html = document.querySelector('html')
 
-  const removeClasses = function(e) {
-    html.classList.remove('fragment-loading')
-
-    window.removeEventListener('scroll', removeClasses)
-  }
-
   html.classList.add('fragment-loading')
 
-  window.addEventListener('scroll', removeClasses)
+  window.addEventListener('scroll', () => {
+    html.classList.remove('fragment-loading')
+  }, { once: true })
 }

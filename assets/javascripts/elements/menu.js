@@ -8,16 +8,16 @@ export class Menu extends CustomElement {
 
     this.toggleButton.setAttribute('aria-expanded', false)
 
-    this.toggleButton.addEventListener('click', e => {
+    this.toggleButton.addEventListener('click', () => {
       this.isOpen = !this.isOpen
     })
 
-    this.closeButton.addEventListener('click', e => {
+    this.closeButton.addEventListener('click', () => {
       this.isOpen = false
     })
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
+  attributeChangedCallback(name) {
     if (name == 'is-open')
       this.toggleButton.ariaExpanded = this.isOpen
   }

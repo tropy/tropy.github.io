@@ -18,13 +18,13 @@ export class EditableRadio extends CustomElement {
     this.addEventListener('click', this.activate)
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
+  attributeChangedCallback(name) {
     if (name == 'is-active') {
       this.isActive ? this.activate() : this.deactivate()
     }
   }
 
-  handleChange = (e) => {
+  handleChange = () => {
     this.radio.checked ? this.isActive = true : this.isActive = false
   }
 
@@ -46,7 +46,7 @@ export class EditableRadio extends CustomElement {
     this.isPristine = true
   }
 
-  update = (e) => {
+  update = () => {
     this.radio.value = this.input.value
     this.querySelector('.content').innerText = this.input.value
   }

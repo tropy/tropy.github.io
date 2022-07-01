@@ -27,13 +27,13 @@ export class Checkout extends CustomElement {
 
     this.paymentForm.addEventListener('submit', this.payWithCard)
 
-    this.addEventListener('modal.close', e => {
+    this.addEventListener('modal.close', () => {
       if (this.state != 'error')
         this.state = 'dirty'
     })
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
+  attributeChangedCallback(name) {
     if (name == 'state')
       switch (this.state) {
         case 'initial':
@@ -127,7 +127,7 @@ export class Checkout extends CustomElement {
 
       this.card.mount('#card-element')
 
-      this.card.on('ready', e => {
+      this.card.on('ready', () => {
         this.card.focus()
         this.loading = false
         this.submitButton.disabled = true
@@ -150,7 +150,7 @@ export class Checkout extends CustomElement {
     this.submitButton.disabled = true
     this.modal.focus()
 
-    this.returnButton.addEventListener('click', e => {
+    this.returnButton.addEventListener('click', () => {
       location.reload()
     })
   }

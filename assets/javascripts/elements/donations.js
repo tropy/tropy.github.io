@@ -17,7 +17,7 @@ export class Donations extends CustomElement {
     })
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
+  attributeChangedCallback(name) {
     if (name == 'is-monthly') {
       if (this.isMonthly) {
         this.m = this.monthly.cloneNode(true)

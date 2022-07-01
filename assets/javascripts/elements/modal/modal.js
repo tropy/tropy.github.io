@@ -9,13 +9,13 @@ export class Modal extends CustomElement {
     this.focusTrap = new FocusTrap(this)
   }
 
-  elementChangedCallback(mutationsList, observer) {
+  elementChangedCallback() {
     this.modalHeaderTitle = this.querySelector('.modal-title')
     this.btnClose = this.querySelector('.btn-close')
     this.modalBody = this.querySelector('.modal-body')
   }
 
-  attributeChangedCallback(name, oldVal, newVal) {
+  attributeChangedCallback(name) {
     if (name == 'is-open')
       this.isOpen ? this.open() : this.close()
   }

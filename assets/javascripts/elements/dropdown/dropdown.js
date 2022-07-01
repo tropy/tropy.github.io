@@ -5,7 +5,7 @@ export class Dropdown extends CustomElement {
   constructor() {
     super()
 
-    this.addEventListener('dropdown.toggle', e => {
+    this.addEventListener('dropdown.toggle', () => {
       this.isOpen = !this.isOpen
       this.dropdownToggleButton.focus() // FF
     })

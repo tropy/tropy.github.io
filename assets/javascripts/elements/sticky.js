@@ -3,7 +3,7 @@ import { CustomElement } from './custom-element.js'
 
 export class Sticky extends CustomElement {
   connectedCallback() {
-    this.handleIntersect = (entries, observer) => {
+    this.handleIntersect = (entries) => {
       entries.forEach(entry => {
         if(entry.boundingClientRect.y == 0)
           this.classList.add('stuck')

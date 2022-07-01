@@ -6,7 +6,7 @@ export const focusVisible = (() => {
       html.classList.add('key')
   })
 
-  document.addEventListener("mousedown", e => {
+  document.addEventListener("mousedown", () => {
     html.classList.remove('key')
   })
 })()
