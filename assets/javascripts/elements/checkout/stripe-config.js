@@ -2,14 +2,14 @@
 ---
 
 {% if jekyll.environment == "development" %}
-  const key = "{{ site.stripe_dev }}"
-  const paymentEndpoint = "{{ site.paymentEndpoint_dev }}start-payment"
+  export const key = "{{ site.stripe_dev }}"
+  export const paymentEndpoint = "{{ site.paymentEndpoint_dev }}start-payment"
 {% elsif jekyll.environment == "production" %}
-  const key = "{{ site.stripe }}"
-  const paymentEndpoint = "{{ site.paymentEndpoint }}start-payment"
+  export const key = "{{ site.stripe }}"
+  export const paymentEndpoint = "{{ site.paymentEndpoint }}start-payment"
 {% endif %}
 
-const style = {
+export const style = {
   base: {
     color: "#101012",
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',

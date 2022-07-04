@@ -8,3 +8,5 @@ parserOptions:
   sourceType: module
   requireConfigFile: false
 rules: {}
+globals:
+  Stripe: true

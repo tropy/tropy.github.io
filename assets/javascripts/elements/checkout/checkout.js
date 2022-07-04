@@ -1,4 +1,5 @@
 import { CustomElement } from '../custom-element.js'
+import { key, paymentEndpoint, style } from './stripe-config.js'
 
 
 export class Checkout extends CustomElement {
