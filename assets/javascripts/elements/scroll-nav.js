@@ -1,5 +1,7 @@
+import { CustomElement } from './custom-element.js'
 
-export class ScrollNav extends HTMLElement {
+
+export class ScrollNav extends CustomElement {
   connectedCallback() {
     this.role = 'nav'
 
