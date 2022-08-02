@@ -3,12 +3,12 @@
 //
 
 .about {
-  padding: ($section-spacing-y-phone - 14px) 0 ($section-spacing-y-phone -  8px) 0;
+  padding: ($section-spacing-y-phone - 14px) 0 $section-spacing-y-phone 0;
   overflow-x: hidden;
 
   @media (min-width: $sm) {
     padding-top: $section-spacing-y - 19px;
-    padding-bottom: $section-spacing-y - 8px;
+    padding-bottom: $section-spacing-y - 1px;
   }
 
   .container-fluid {
@@ -73,14 +73,14 @@
       // 64px spacing in 320px viewport
       @include tween(
         815px,
-        866px,
+        846px,
         320px,
         947px,
         flex-basis
       );
 
       @media (min-width: 947px) {
-        max-width: 866px;
+        max-width: 846px;
         animation: none;
       }
 
@@ -101,12 +101,12 @@
 
         @media (min-width: $sm) and (max-width: 947px - 1px) {
           flex: 0 0 auto;
-          position: relative;
-          left: $grid-column-gap / 2;
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-template-rows: auto;
-          row-gap: $section-spacing-y * 9 / 16 + 7px;
+          row-gap: $section-spacing-y * 3 / 4 - 17px;
+          column-gap: $grid-column-gap;
+          justify-content: center;
         }
       }
 
@@ -189,28 +189,30 @@
       }
     }
 
-    .cd2h-logo {
+    .mellon-logo {
+      margin-top: 12px;
+
       @media (max-width: $sm - 1px) {
         .key & {
-          margin-top: -16px;
+          margin-top: -6px;
         }
 
         @media (prefers-reduced-motion) {
-          margin-top: -16px;
+           margin-top: -6px;
         }
       }
     }
 
-    .mellon-logo {
-      margin-top: 3px;
+    .cd2h-logo {
+      margin-top: 4px;
 
       @media (max-width: $sm - 1px) {
         .key & {
-          margin-top: -9px;
+          margin-top: -13px;
         }
 
         @media (prefers-reduced-motion) {
-           margin-top: -9px;
+          margin-top: -13px;
         }
       }
     }
