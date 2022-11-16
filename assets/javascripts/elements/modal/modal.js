@@ -1,12 +1,10 @@
 import { CustomElement } from '../custom-element.js'
-import { FocusTrap } from '../../helpers/focus-trap.js'
 
 
 export class Modal extends CustomElement {
   connectedCallback() {
     this.classList.add('modal')
     this.tabIndex = '-1'
-    this.focusTrap = new FocusTrap(this)
   }
 
   elementChangedCallback() {
@@ -32,7 +30,6 @@ export class Modal extends CustomElement {
     document.body.classList.add('modal-open')
     document.addEventListener('click', this.handleClick)
     document.addEventListener('keydown', this.handleKey)
-    this.focusTrap.activate()
   }
 
   close() {
@@ -41,7 +38,6 @@ export class Modal extends CustomElement {
     document.removeEventListener('click', this.handleClick)
     document.removeEventListener('keydown', this.handleKey)
     this.trigger.focus()
-    this.focusTrap.deactivate()
     this.dispatchEvent(new Event('modal.close', { bubbles: true }))
   }
 
