@@ -20,11 +20,11 @@
   }
 
   h2 {
+    text-align: center;
     margin-top: -14px;
     margin-bottom: $section-spacing-y-phone * 3 / 4 - 8px; // 2.5% optical correction
 
     @media (min-width: $sm) {
-      text-align: center;
       margin-top: -19px;
       margin-bottom: $section-spacing-y * 3 / 4 - 14px;
     }
