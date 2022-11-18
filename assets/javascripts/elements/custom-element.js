@@ -5,39 +5,45 @@ export class CustomElement extends HTMLElement {
   constructor() {
     super()
 
-    if (this.elementChangedCallback)
-      new MutationObserver(this.elementChangedCallback.bind(this))
-        .observe(this, { childList: true, attributes: true })
+    if (this.render)
+      this.doRender()
 
-    this.doRender()
+    if (this.childrenDefinedCallback)
+      this.childrenDefined()
   }
 
   doRender() {
-    if (this.render && this.render()) {
-      let result = this.render()
+    let result = this.render()
 
-      if (result) {
-        const template = document.createElement('template')
+    if (result) {
+      const template = document.createElement('template')
 
-        template.innerHTML = result
+      template.innerHTML = result
 
-        const children = this.childNodes // Avoid rerendering in children
-        const slot = template.content.querySelector('slot')
+      const children = this.childNodes // Avoid rerendering in children
+      const slot = template.content.querySelector('slot')
 
-        if (children && slot)
-          slot.replaceWith(...children)
+      if (children && slot)
+        slot.replaceWith(...children)
 
-        this.replaceChildren(template.content)
-      }
+      this.replaceChildren(template.content)
     }
+  }
+
+  async childrenDefined() {
+    const undefinedChildren = this.querySelectorAll(':not(:defined)')
+
+    await Promise.all(
+      [...undefinedChildren].map(
+        (child) => customElements.whenDefined(child.localName)
+      )
+    )
+
+    this.childrenDefinedCallback()
   }
 
   attributeChangedCallback() {
     // This makes sure that observedAttributes is called
-  }
-
-  get children() {
-    return this.innerHTML
   }
 
   static get observedAttributes() {

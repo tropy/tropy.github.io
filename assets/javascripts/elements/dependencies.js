@@ -13,7 +13,6 @@ export class Dependencies extends CustomElement {
 
         e.preventDefault()
         Object.assign(this.modal, {
-          modalTitle: this.getTitle(),
           content: this.getLicense(),
           isOpen: true
         })
