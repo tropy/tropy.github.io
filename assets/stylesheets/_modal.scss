@@ -2,19 +2,6 @@
 // Modal
 //
 
-.modal {
-  position: fixed;
-  display: none;
-
-  &[is-open] {
-    display: block;
-
-    @at-root body:has(&) {
-      overflow: hidden;
-    }
-  }
-}
-
 dialog {
   border: initial;
   background-color: initial;
@@ -99,4 +86,8 @@ dialog {
       overflow-y: auto;
     }
   }
+}
+
+body:has(.modal[is-open]) {
+  overflow: hidden;
 }
