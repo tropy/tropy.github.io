@@ -29,13 +29,11 @@ export class Modal extends CustomElement {
     if (this.content)
       this.modalBody.innerHTML = this.content
 
-    document.body.classList.add('modal-open')
     document.addEventListener('click', this.handleClick)
     this.dialog.showModal()
   }
 
   close() {
-    document.body.classList.remove('modal-open')
     document.removeEventListener('click', this.handleClick)
     this.dispatchEvent(new Event('modal.close', { bubbles: true }))
 
@@ -46,7 +44,7 @@ export class Modal extends CustomElement {
   handleClick = e => {
     if (!this.isStatic ?
       e.target != this.trigger &&
-      e.target == this ||
+      e.target == this.dialog ||
       e.target == this.btnClose :
 
       e.target != this.trigger &&
@@ -58,8 +56,10 @@ export class Modal extends CustomElement {
   render() {
     return `
       <dialog>
-        <div class="modal-content">
-          <slot></slot>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <slot></slot>
+          </div>
         </div>
       </dialog>`
   }

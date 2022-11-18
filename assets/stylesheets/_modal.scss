@@ -4,29 +4,40 @@
 
 .modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: $z-index-modal;
-  overflow-x: hidden;
-  overflow-y: auto;
   display: none;
 
-  &[is-open],
-  &.is-open {
+  &[is-open] {
     display: block;
+
+    @at-root body:has(&) {
+      overflow: hidden;
+    }
   }
 }
 
 dialog {
-  //display: flex;
+  border: initial;
+  background-color: initial;
+  width: initial;
+  height: initial;
+  max-width: initial;
+  max-height: initial;
+  padding: initial;
+  margin: initial;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::backdrop {
+    background-color: rgba($white, 0.5);
+  }
+}
+
+.modal-dialog {
+  display: flex;
   justify-content: center;
-  margin: 0 auto;
   pointer-events: none;
 
-  [centered] &,
-  .centered & {
+  [centered] & {
     align-items: center;
     min-height: 100%;
   }
@@ -58,7 +69,6 @@ dialog {
   }
 }
 
-
 .modal-header {
   display: block;
   position: relative;
@@ -89,22 +99,4 @@ dialog {
       overflow-y: auto;
     }
   }
-}
-
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba($white, 0.5);
-  z-index: $z-index-backdrop;
-
-  &:focus {
-    background-color: blue;
-  }
-}
-
-.modal-open {
-  overflow: hidden;
 }
