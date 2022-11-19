@@ -21,8 +21,6 @@ export class Modal extends CustomElement {
   }
 
   open() {
-    this.trigger = document.activeElement
-
     if (this.modalTitle)
       this.modalHeaderTitle.innerText = this.modalTitle
 
@@ -42,14 +40,7 @@ export class Modal extends CustomElement {
   }
 
   handleClick = e => {
-    if (!this.isStatic ?
-      e.target != this.trigger &&
-      e.target == this.dialog ||
-      e.target == this.btnClose :
-
-      e.target != this.trigger &&
-      e.target == this.btnClose
-    )
+    if (e.target == this.btnClose || !this.isStatic && e.target == this.dialog)
       this.isOpen = false
   }
 
