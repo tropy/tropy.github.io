@@ -64,13 +64,10 @@ export class CustomElement extends HTMLElement {
             },
 
             set: function(val) {
-              if (val || val === 0)
+              if (val !== null)
                 this.setAttribute(attr, val)
 
-              else if (val === false)
-                this.setAttribute(attr, val)
-
-              else if (val === null)
+              else
                 this.removeAttribute(attr)
             }
           })
