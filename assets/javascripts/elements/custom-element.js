@@ -31,10 +31,8 @@ export class CustomElement extends HTMLElement {
   }
 
   async childrenDefined() {
-    const undefinedChildren = this.querySelectorAll(':not(:defined)')
-
     await Promise.all(
-      [...undefinedChildren].map(
+      [...this.querySelectorAll(':not(:defined)')].map(
         (child) => customElements.whenDefined(child.localName)
       )
     )
