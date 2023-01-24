@@ -19,6 +19,7 @@ js: /assets/javascripts/main.js
       {%- endfor -%}
     {%- endif -%}
     <script type="module" src="{{ layout.js }}"></script>
+    <link rel="me" href="https://{{ site.mastodon_username }}">
   </head>
   <body>
     {%- include header.html -%}
