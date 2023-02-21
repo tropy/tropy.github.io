@@ -11,6 +11,7 @@ url: "https://tropy.org" # the base hostname & protocol for your site, e.g. http
 twitter_username: tropy
 mastodon_username: fosstodon.org/@tropy
 github_username: tropy
+youtube_username: tropy
 
 # Stripe test credentials
 stripe_dev: pk_test_51JT0o3IfQcuZiDTgYUM3KIDT69YA5BL6kZMNDBrwLCLuVkGhFspqbynjnRgPqJgNy7A3bPd3or0AZIy9E0VkIChK00FGZh4e83
