@@ -166,6 +166,14 @@
     margin-top: -25px;
     padding-top: 3px;
     padding-bottom: 3px;
+
+    br {
+      display: none;
+
+      @media (min-width: $sm) {
+        display: initial;
+      }
+    }
   }
 
   ul {
