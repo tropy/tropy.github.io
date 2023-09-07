@@ -9,7 +9,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tropy.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tropy
-mastodon_username: fosstodon.org/@tropy
+mastodon_url: https://fosstodon.org/@tropy
 github_username: tropy
 youtube_username: tropy
 
@@ -34,7 +34,7 @@ twitter:
 social:
   name: Tropy
   links:
-    - https://twitter.com/tropy
+    - https://fosstodon.org/@tropy
     - https://github.com/tropy
 google_site_verification: f4Qn7nonE_x2wrByaZVZfPeuP5iVt-W67eiIGE-KOWI
 lang: en_US
