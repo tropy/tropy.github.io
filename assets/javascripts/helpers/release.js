@@ -1,7 +1,7 @@
 ---
 ---
 export const getLatestRelease = () =>
-  fetch('/releases/latest?limit=1')
+  fetch('https://tropy.org/releases/latest?limit=1')
     .then(res => res.json())
     .then(res => res[0])
     {%- if jekyll.environment == "development" %}
