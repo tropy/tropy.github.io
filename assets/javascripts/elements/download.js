@@ -36,12 +36,7 @@ export class Download extends CustomElement {
         ${this.releaseNotesLink()}`
 
     else if (this.failed)
-      return `
-        <a
-          href="https://github.com/tropy/tropy/releases/latest"
-          class="btn">
-          Download Tropy
-        </a>`
+      return `${this.fallbackButton()}`
 
     else
       return `<div class="spinner"></div>`
@@ -98,6 +93,15 @@ export class Download extends CustomElement {
 
     else
       return ''
+  }
+
+  fallbackButton() {
+    return `
+      <a
+        href="https://github.com/tropy/tropy/releases/latest"
+        class="btn btn-fallback">
+        Download Tropy
+      </a>`
   }
 }
 

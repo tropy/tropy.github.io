@@ -131,7 +131,7 @@
       }
     }
 
-    .fallback {
+    .legacy {
       animation: show-delayed 3s step-end forwards;
 
       @include state("tpy-download:defined") {
