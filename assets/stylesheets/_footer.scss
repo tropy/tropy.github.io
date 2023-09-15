@@ -18,10 +18,6 @@ footer {
     justify-content: center;
   }
 
-  .social-nav-container {
-    display: flex;
-  }
-
   h2,
   a {
     padding: ($space-sm / 2) $space-xs;
@@ -58,6 +54,18 @@ footer {
 
     @include focus-visible {
       outline-offset: -3px;
+    }
+  }
+
+  .social-nav-container {
+    display: flex;
+
+    h2 {
+      display: none;
+
+      @media (min-width: $sm) {
+        display: block;
+      }
     }
   }
 
