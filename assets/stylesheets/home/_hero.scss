@@ -127,7 +127,7 @@
         margin-top: $space-sm;
         animation:
           show-delayed 0.5s step-end forwards,
-          spinner 1s linear infinite 1s;
+          spinner 1s linear infinite 0.5s;
       }
     }
 
@@ -136,11 +136,6 @@
 
       @include state("tpy-download:defined") {
         display: none;
-      }
-
-      @include state("tpy-download:defined[failed]") {
-        animation: none;
-        display: block;
       }
     }
   }
