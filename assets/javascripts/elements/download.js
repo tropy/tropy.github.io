@@ -14,14 +14,18 @@ export class Download extends CustomElement {
   }
 
   async getRelease() {
+    const timer = () => new Promise((res, rej) => setTimeout(rej, 10000))
+
     try {
-      this.release = await getLatestRelease()
+      this.release = await Promise.race([getLatestRelease(), timer()])
       this.release.assets = [...this.release.assets].sort(byPlatform)
 
       super.doRender()
 
     } catch {
       this.failed = true
+
+      super.doRender()
     }
   }
 
@@ -30,6 +34,14 @@ export class Download extends CustomElement {
       return `
         ${this.downloadButton()}
         ${this.releaseNotesLink()}`
+
+    else if (this.failed)
+      return `
+        <a
+          href="https://github.com/tropy/tropy/releases/latest"
+          class="btn">
+          Download Tropy
+        </a>`
 
     else
       return `<div class="spinner"></div>`
