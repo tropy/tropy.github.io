@@ -1,0 +1,93 @@
+.platforms {
+  background-color: #1f1f21;
+  color: $white;
+  overflow: hidden;
+  padding-top: $section-spacing-y-phone - 14px;
+
+  @media (min-width: $sm) {
+    padding-top: $section-spacing-y - 19px;
+  }
+
+  h2 {
+    margin: 0;
+
+    @media (min-width: $sm) {
+      text-align: center;
+    }
+  }
+
+  .lead {
+    color: #b6b6ba;
+    margin-bottom: $section-spacing-y-phone * 3 / 4 - 6px;
+
+    @media (min-width: $sm) {
+      width: 540px;
+      margin-bottom: $section-spacing-y * 3 / 4 - 6px;
+    }
+
+    @media (min-width: $lg) {
+      width: auto;
+    }
+  }
+
+  .screenshots {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    img {
+      width: 817.5px;
+      height: auto;
+      margin: -62.5px -62.5px 0 -62.5px;
+
+      @media (min-width: $sm) {
+        width: 1144.5px;
+        margin: -87.5px -87.5px 0 -87.5px;
+      }
+
+      @media (min-width: $md) {
+        width: 1308px;
+        margin: -100px -100px 0 -100px;
+      }
+
+      @media (min-width: $lg) {
+        width: 109%;
+        margin: -8.33333% -8.33333% 0 -8.33333%;
+      }
+    }
+
+    .linux {
+      text-align: right;
+      margin-bottom: 57.5px;
+
+      @media (min-width: $sm) {
+        margin-bottom: 0;
+      }
+    }
+
+    .windows {
+      position: absolute;
+      bottom: 0;
+      right: calc(50% - 43px);
+      text-align: right;
+      margin-bottom: 28.75px;
+
+      @media (min-width: $sm) {
+        right: calc((100% - 11 * 32px) / 12 + 32px);
+        margin-bottom: 0;
+      }
+
+      @media (min-width: $lg) {
+        bottom: 0;
+        right: 3.83333%;
+        width: 100%;
+      }
+    }
+
+    .macos {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
