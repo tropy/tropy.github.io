@@ -22,12 +22,14 @@
   }
 
   .contributors {
+    overflow: hidden;
+
     h2 {
-      margin-top: ($section-spacing-y-phone * 3 / 4) - 16px;
+      margin-top: ($section-spacing-y-phone * 3 / 4) - 41px;
       margin-bottom: $section-spacing-y-phone * 9 / 16 - 12px;
 
       @media (min-width: $sm) {
-        margin-top: $section-spacing-y - 20px;
+        margin-top: $section-spacing-y - 53px;
         margin-bottom: $section-spacing-y * 3 / 4 - 14px;
       }
     }
@@ -80,96 +82,8 @@
     }
   }
 
-  .software {
-    overflow: hidden;
-    padding-bottom: 1px; // Prevent clipped electron outline
-
-    h2 {
-      margin-top: $section-spacing-y-phone * 3 / 4 - 32px;
-      margin-bottom: $section-spacing-y-phone * 9 / 16 - 23px;
-
-      @media (min-width: $sm) {
-        margin-top: 2 * $section-spacing-y * 3 / 4 - 76px;
-        margin-bottom: $section-spacing-y * 3 / 4 - 25px; // x-height of React
-      }
-    }
-
-    .marquee {
-      display: flex;
-
-      @media(min-width: $lg) {
-        justify-content: center;
-      }
-    }
-
-    ul {
-      flex: 0 0 1000px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      animation: marquee 30s linear infinite;
-
-      @media (min-width: $lg) {
-        flex: 0 0 $container-fluid-width;
-        max-width: $container-fluid-max-width;
-        animation: none;
-      }
-
-      @mixin styles {
-        animation: none;
-
-        @media (max-width: $sm - 1px) {
-          flex-basis: auto;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: ($section-spacing-y-phone * 9 / 16);
-          padding: 0 ($grid-column-gap / 2);
-          margin-bottom: 8px;
-        }
-
-        @media (min-width: $sm) and (max-width: $lg - 1px) {
-          flex-basis: auto;
-          flex-direction: column;
-          gap: ($section-spacing-y * 9 / 16);
-          padding: 0 ($grid-column-gap / 2);
-          margin-bottom: 8px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-
-      .key & {
-        @include styles;
-      }
-
-      @media (prefers-reduced-motion) {
-        @include styles;
-      }
-
-      & + ul {
-        @media (min-width: $lg) {
-          display: none;
-        }
-
-        .key & {
-          display: none;
-        }
-
-        @media (prefers-reduced-motion) {
-          display: none;
-        }
-      }
-    }
-
-    li {
-      flex: 0 0 auto;
-    }
-
-    a {
-      display: block;
-      position: relative;
-    }
-
+  .software,
+  .platforms {
     svg {
       display: block;
 
@@ -201,88 +115,185 @@
         }
       }
     }
+  }
+
+  .software {
+    overflow: hidden;
+
+    h2 {
+      margin-top: $section-spacing-y-phone - 32px;
+      margin-bottom: $section-spacing-y-phone * 9 / 16 - 25px;
+
+      @media (min-width: $sm) {
+        margin-top: 2 * $section-spacing-y * 3 / 4 - 76px;
+        margin-bottom: $section-spacing-y * 3 / 4 - 19px; // x-height of React
+      }
+
+      @media (min-width: $lg) {
+        margin-bottom: $section-spacing-y * 3 / 4 - 25px; // x-height of React
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: ($section-spacing-y-phone * 9 / 16);
+
+      @include tween(
+        54px,
+        94px,
+        768px,
+        ($lg - 1px),
+        column-gap
+      );
+
+      @media (min-width: $sm) {
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        row-gap: $section-spacing-y * 9 / 16 - 15px;
+        flex-wrap: wrap;
+      }
+
+      @media (min-width: $lg) {
+        width: initial;
+        max-width: initial;
+        column-gap: initial;
+        justify-content: space-around;
+      }
+    }
+
+    li {
+      flex: 0 0 auto;
+    }
+
+    a {
+      display: block;
+      position: relative;
+    }
 
     .electron-logo {
       top: 1px;
 
       @media (max-width: $sm - 1px) {
-        .key & {
-          margin-top: 7px;
-        }
-
-        @media (prefers-reduced-motion) {
-           margin-top: 7px;
-        }
+        margin-top: 7px;
       }
-
-      @media (min-width: $sm) and (max-width: $lg - 1px) {
-        .key & {
-          margin-top: 5px;
-        }
-
-        @media (prefers-reduced-motion) {
-          margin-top: 5px;
-        }
-      }
-
     }
 
     .react-logo {
-      @media (max-width: $lg - 1px) {
-       .key & {
-          margin-top: -20px;
-        }
-
-       @media (prefers-reduced-motion) {
-          margin-top: -20px;
-        }
+      @media (max-width: $sm - 1px) {
+        margin-top: -20px;
       }
     }
 
     .pixijs-logo {
       top: -2px;
 
-      @media (max-width: $lg - 1px) {
-        .key & {
-          margin-top: -14px;
-        }
-
-        @media (prefers-reduced-motion) {
-          margin-top: -14px;
-        }
+      @media (max-width: $sm - 1px) {
+        margin-top: -14px;
       }
     }
 
     .sqlite-logo {
       top: -5px;
 
-      @media (max-width: $lg - 1px) {
-        .key & {
-          margin-top: -11px; // Middle between square and caps
-        }
-
-        @media (prefers-reduced-motion) {
-          margin-top: -11px;
-        }
+      @media (max-width: $sm - 1px) {
+        margin-top: -11px; // Middle between square and caps
       }
     }
 
     .prosemirror-logo {
       top: -1px;
 
-      @media (max-width: $lg - 1px) {
-        .key & {
-          margin-top: -22px;
+      @media (max-width: $sm - 1px) {
+        margin-top: -22px;
+      }
+    }
+  }
+
+  .platforms {
+    overflow: hidden;
+    padding-bottom: 31px;
+
+    h2 {
+      margin-top: $section-spacing-y-phone - 14px;
+      margin-bottom: $section-spacing-y-phone * 9 / 16 - 15px;
+
+      @media (min-width: $sm) {
+        margin-top: 2 * $section-spacing-y * 3 / 4 - 26px; // Baseline of React
+        margin-bottom: $section-spacing-y * 3 / 4 - 17px; // Height of GitBook
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: ($section-spacing-y-phone * 9 / 16);
+
+      @include tween(
+        54px,
+        94px,
+        768px,
+        ($lg - 1px),
+        column-gap
+      );
+
+      @media(min-width: $sm) {
+        row-gap: initial;
+        flex-direction: row;
+      }
+
+      @media (min-width: $lg) {
+        column-gap: calc((100% - 732px) / 10 * 2); // Space between software logos
+      }
+    }
+
+    a {
+      display: block;
+      position: relative;
+    }
+
+    .gitbook-logo {
+      svg {
+        width: auto;
+        height: 42px;
+      }
+    }
+
+    .transifex-logo {
+      top: 6px;
+
+      @media (max-width: $sm - 1px) {
+        margin-top: -25px;
+      }
+
+      img {
+        width: auto;
+        height: 49px;
+
+        @media (hover: none) {
+          filter: grayscale(1);
+          opacity: 0.68;
         }
 
-        @media (prefers-reduced-motion) {
-          margin-top: -22px;
+        @media (hover: hover) {
+          transition: filter 0.25s ease, opacity 0.25s ease;
+
+          @include state("img:not(:hover)") {
+            filter: grayscale(1);
+            opacity: 0.68;
+          }
         }
       }
     }
   }
 
   .photo-credits {
+    overflow: hidden;
     padding-bottom: $section-spacing-y-phone - 7px;
 
     @media (min-width: $sm) {
@@ -290,11 +301,11 @@
     }
 
     h2 {
-      margin-top: $section-spacing-y-phone * 3 / 4 - 23px;
+      margin-top: $section-spacing-y-phone - 16px - 31px; // Middle between baselines
       margin-bottom: 18px;
 
       @media (min-width: $sm) {
-        margin-top: 2 * $section-spacing-y * 3 / 4 - 25px;
+        margin-top: 2 * $section-spacing-y * 3 / 4 - 30px - 31px;
         margin-bottom: $font-size-large;
       }
     }

@@ -7,7 +7,7 @@ title: Credits
 <div class="container-fluid">
   <h1>Credits</h1>
 </div>
-<section class="contributors">
+<section id="contributors" class="contributors">
   <div class="container-fluid">
     <h2>Contributors</h2>
     <ul>
@@ -70,16 +70,32 @@ title: Credits
     </ul>
   </div>
 </section>
-<section class="software">
+<section id="software" class="software">
   <div class="container-fluid">
-    <h2>Software used in Tropy</h2>
-  </div>
-  <div class="marquee">
-    {%- include software-marquee.html -%}
-    {%- include software-marquee.html attr="aria-hidden='true'" -%}
+    <h2>Software</h2>
+    <ul>
+      <li><a class="electron-logo" href="https://www.electronjs.org/" aria-label="Electron">{%- include electron.svg -%}</a></li>
+      <li><a class="react-logo" href="https://reactjs.org/" aria-label="React">{%- include react.svg -%}</a></li>
+      <li><a class="pixijs-logo" href="https://www.pixijs.com/" aria-label="PixiJS">{%- include pixijs.svg -%}</a></li>
+      <li><a class="sqlite-logo" href="https://www.sqlite.org/" aria-label="SQLite">{%- include sqlite.svg -%}</a></li>
+      <li><a class="prosemirror-logo" href="https://prosemirror.net/" aria-label="ProseMirror">{%- include prosemirror.svg -%}</a></li>
+    </ul>
   </div>
 </section>
-<section class="photo-credits">
+<section id="platforms" class="platforms">
+  <div class="container-fluid">
+    <h2>Platforms</h2>
+    <ul>
+      <li>
+        <a class="gitbook-logo" href="https://www.gitbook.com" aria-label="GitBook">{%- include gitbook.svg -%}</a>
+      </li>
+      <li>
+        <a class="transifex-logo" href="https://www.transifex.com" aria-label="Transifex"><img src="assets/images/transifex.png" width="650" height="248" alt=""></a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section id="photos" class="photo-credits">
   <div class="container-fluid">
     <h2>Photos</h2>
     <ul>
