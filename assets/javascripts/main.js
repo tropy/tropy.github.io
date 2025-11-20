@@ -8,5 +8,3 @@ import './elements/editable-radio.js'
 //import './elements/checkout/checkout.js'
 import './focus-visible.js'
 import * as os from './helpers/os.js'
-
-os.guess()

@@ -2,10 +2,14 @@ import { CustomElement } from '../custom-element.js'
 
 
 export class DropdownItem extends CustomElement {
-  constructor() {
-    super()
+  connectedCallback() {
+    this.role = 'option'
+    this.classList.add('dropdown-item')
+    this.el = this.querySelector(':only-child')
 
-    this.a = this.querySelector('a')
+    if (this.url) {
+      this.el.href = this.url
+    }
 
     this.addEventListener('mousemove', () => {
       this.dispatchEvent(new CustomEvent('dropdown.mousemove', {
@@ -13,28 +17,36 @@ export class DropdownItem extends CustomElement {
         detail: { index: this.index }
       }))
     })
-  }
 
-  connectedCallback() {
-    this.classList.add('dropdown-item')
+    if (this.command)
+      this.addEventListener('click', this.handleClick)
   }
 
   attributeChangedCallback(name) {
     if (name == 'selected' && this.selected)
-      this.a.focus()
-
-    if (name == 'href')
-      this.a.href = this.href
+      this.el.focus()
   }
 
   render() {
-    return `<a href="${this.href}" tabindex="-1"><slot></slot></a>`
+    if (this.command)
+      return `<button tabindex="-1"><slot></slot></button>`
+
+    else
+      return `<a href="${this.url}" tabindex="-1"><slot></slot></a>`
+  }
+
+  handleClick() {
+    this.dispatchEvent(new CustomEvent('dropdown.command', {
+      bubbles: true,
+      detail: { command: this.command }
+    }))
   }
 }
 
 CustomElement.propTypes = {
   index: String,
-  href: String,
+  command: String,
+  url: String,
   selected: Boolean
 }
 
