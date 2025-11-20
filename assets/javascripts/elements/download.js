@@ -16,8 +16,8 @@ const PACKAGES = {
 export class Download extends CustomElement {
   constructor() {
     super()
-    this.getRelease()
     guess()
+    this.getRelease()
 
     if (platform == 'linux')
       this.package = PACKAGES.flatpak.command
