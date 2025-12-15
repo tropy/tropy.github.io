@@ -112,4 +112,10 @@
       color: mix($blue, $blue-dark, 50%);
     }
   }
+
+  hr {
+    border: 0;
+    border-top: 1px solid $gray-lighter;
+    margin: 0 0 -3px 0;
+  }
 }
