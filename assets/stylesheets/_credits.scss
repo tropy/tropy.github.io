@@ -77,6 +77,11 @@
     color: $gray-dark;
     margin: 0;
 
+    @media (min-width: $sm) {
+      height: $font-size-base * $line-height-base;
+      overflow: visible;
+    }
+
     small {
       font-size: 96%;
     }
