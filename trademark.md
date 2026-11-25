@@ -6,7 +6,6 @@ class: page trademark
 # Usage of Tropy trademarks
 
 This document is intended to explain the proper usage of Tropy trademarks and the relationship between these trademarks and the licensing of the Tropy software. We've tried to make the following explanation as simple as possible, but ultimately trademarks and copyright are legal matters. If you have any questions about when and how to use Tropy trademarks, you should contact an attorney.
-{: .lead}
 
 ## Tropy trademarks
 

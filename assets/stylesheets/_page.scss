@@ -1,0 +1,39 @@
+//
+// Page
+//
+
+.page {
+  padding-bottom: $section-spacing-y-phone - 25px;
+
+  @media (min-width: $sm) {
+    padding-bottom: $section-spacing-y - 24px;
+  }
+
+  h1 {
+    margin-bottom: $space-xxl - $space-xs;
+    margin-top: 2 * $section-spacing-y-phone * 3 / 4 - 78px;
+
+    @media (min-width: $sm) {
+      margin-top: 2 * $section-spacing-y * 3 / 4 - 115px;
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-top: $space-xxl - $space-xs;
+    margin-bottom: 1rem;
+
+    @media (min-width: $sm) {
+      font-size: 30px;
+    }
+  }
+
+  p {
+    font-size: $blog-font-size;
+    margin-block: 1rem;
+
+    @media (min-width: $sm) {
+      line-height: $blog-line-height;
+    }
+  }
+}
